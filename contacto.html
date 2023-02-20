@@ -16,7 +16,7 @@
     <li><a href="contacto.html">Contacto</a></li>
   </menu>
   <h1> Página de formulario de contacto </h1>
-<form action="mailto:yastakfa@ucm.es" method="post">
+<form action="mailto:yastakfa@ucm.es" method="post" onsubmit="return validarFormulario()">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre"><br><br>
     
@@ -41,5 +41,14 @@
     
     <input type="submit" value="Enviar">
   </form>
+  <script>
+    function validarFormulario() {
+      if (!document.getElementById("terminos").checked) {
+        alert("Debes aceptar los términos y condiciones para continuar");
+        return false;
+      }
+      return true;
+    }
+  </script>
 </body>
 </html>
