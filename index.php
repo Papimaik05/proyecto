@@ -10,13 +10,11 @@
 <body>
     <div style="text-align:center;">
             <?php
-            require ('./basico/cabecera.php');
+            require ('cabecera.php');
             ?>
 	    <main>
-	        <article>
-		        <h1>AMIGOS MARINOS</h1>
-                <h2>Bajo el Mar, Nada va mal</h2>                
-                <br>
+	        <article>  
+                <br>          
                 <img src="./img/logo.jpg"  width ="580"  height ="480"  alt="logotipo">
 	        </article>
 	    </main>         
