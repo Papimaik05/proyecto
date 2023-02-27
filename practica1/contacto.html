@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Página de contacto</title>
+  <!--Referencia al codigo css que modifica el estilo de la pagina-->
+  <link  rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+<body>
+  <!--Titulo y logo de la pagina-->
+  <h1>
+    <img src="./img/logo.jpg"
+      width="50"
+      alt = "logo"
+      height="50"
+      >
+    Amigos Marinos
+  </h1>
+  <h2>
+		Índice
+	</h2>
+  <!--Indice para acceder al resto de páginas que conforman la web-->
+	<menu>
+		<li><a href="index.html">Inicio</a></li>
+		<li><a href="detalles.html">Detalles</a></li>
+		<li><a href="bocetos.html">Bocetos</a></li>
+		<li><a href="miembros.html">Miembros</a></li>
+		<li><a href="planificacion.html">Planificación</a></li>
+		<li><a href="contacto.html">Contacto</a></li>
+	</menu>
+  <h2> Página de formulario de contacto </h2>
+  <!--Inicio del formulario, enviado al mail indicado, y al enviar, se ejecuta la funcion pasada como parametro-->
+  <form action="mailto:yastakfa@ucm.es" method="post" onsubmit="return validarFormulario()">
+    <!--Cuadro de texto para incluir nombre-->
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre"><br><br>
+    <!--Cuadro de texto para incluir direccion email-->
+    <label for="email">Dirección de email de contacto:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <!--Viñetas para indicar el motivo de la consulta-->
+    <p>Motivo de la consulta:</p>
+    <input type="radio" id="evaluacion" name="motivo" value="Evaluación">
+    <label for="evaluacion">Evaluación</label><br>
+
+    <input type="radio" id="sugerencias" name="motivo" value="Sugerencias">
+    <label for="sugerencias">Sugerencias</label><br>
+    
+    <input type="radio" id="criticas" name="motivo" value="Críticas">
+    <label for="criticas">Críticas</label><br><br>
+    <!--Viñeta para indicar que se aceptan los terminos-->
+    <input type="checkbox" id="terminos" name="terminos">
+    <label for="terminos">Marque esta casilla para verificar que ha leído nuestros términos y condiciones del servicio</label><br><br>
+    <!--Cuadro de texto más largo para incluir la consulta completa-->
+    <label for="consulta">Consulta:</label><br>
+    <textarea id="consulta" name="consulta"></textarea><br><br>
+    <!--Boton paraenviar la consulta -->
+    <input type="submit" value="Enviar">
+  </form>
+  <!--Funcion para checkear si se ha marcado la viñeta de aceptacion de terminos-->
+  <script>
+    function validarFormulario() {
+      if (!document.getElementById("terminos").checked) {
+        alert("Debes aceptar los términos y condiciones para continuar");
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
