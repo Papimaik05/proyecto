@@ -11,7 +11,10 @@
 </head>
 
 <body>
-
+<section>
+    <img src="./img/pinguinos_madagascar.jpg">
+    <img src="./img/pinguinos_madagascar.jpg">
+</section>
 
 </body>
 </html>
