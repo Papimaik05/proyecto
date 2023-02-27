@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <h1>Tienda</h1>
 <section>
     <img src="./img/pinguinos_madagascar.jpg">
     <img src="./img/pinguinos_madagascar.jpg">
