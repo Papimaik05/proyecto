@@ -1,0 +1,27 @@
+body{
+color: black; 
+background-color:  #00FFFF;
+}
+
+img{
+width :580; 
+height :480; 
+border :5;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+table {
+  background-color:darkkhaki;
+}
