@@ -1,13 +1,17 @@
 <?php
 function reconocerUsuario() {
   if (isset($_SESSION["login"])) {
+    echo '<form method="post" action="login.php">
+    <input type="image" src="./img/señor.png" name="boton" width="150" alt="Botón icono cangrejo"  height="100" />
+    </form>';
     echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
-    echo "<img src='./img/señor.png' width='150' alt = 'Nivel cangrejo' height='100'>";
     echo '<a href="logout.php">(salir)</a>';
   } else {
+    echo '<form method="post" action="login.php">
+    <input type="image" src="./img/circulo.png" name="boton" width="150" alt="Botón para ir a login"  height="100" />
+    </form>';
     echo 'Usuario desconocido. ';
     echo '<a href="login.php">Login </a>';
-    echo "<img src='./img/circulo.png' width='150' alt = 'Nivel cangrejo' height='100'>";
   }
 }
 
