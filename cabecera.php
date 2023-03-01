@@ -14,10 +14,9 @@ function reconocerUsuario() {
 	<h1 style="text-align:center;" >Amigos Marinos</h1>
     <h3 style="text-align:center;" >Bajo el Mar, Nada va mal</h3>
         <div style="text-align:left;" >
-		    <button href="tienda.php" type="button" style="background-color:#007bff; color:#ffffff; padding:10px 20px; border-radius:5px;">Tienda</button>
-        <button type="button" style="background-color:#007bff; color:#ffffff; padding:10px 20px; border-radius:5px;">Experiencias</button>
-        <button type="button" style="background-color:#007bff; color:#ffffff; padding:10px 20px; border-radius:5px;">Noticias</button>
-        <button type="button" style="background-color:#007bff; color:#ffffff; padding:10px 20px; border-radius:5px;">Blog</button>
+		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
+        <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
+        <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
 		<div style="text-align:right;" >
 		<?php 
 		reconocerUsuario();
