@@ -14,6 +14,7 @@ function reconocerUsuario() {
 	<h1 style="text-align:center;" >Amigos Marinos</h1>
     <h3 style="text-align:center;" >Bajo el Mar, Nada va mal</h3>
         <div style="text-align:left;" >
+        <button onclick="window.location.href='index.php'" type="button" > Inicio</button>
 		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
         <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
