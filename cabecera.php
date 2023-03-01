@@ -1,6 +1,7 @@
 <?php
 function reconocerUsuario() {
-  if (isset($_SESSION["login"])) {
+  if (isset($_SESSION["login"])) { 
+    // Asi se ponen en php las imagenes de forma que sean boton tambien
     echo '<form method="post" action="login.php">
     <input type="image" src="./img/señor.png" name="boton" width="150" alt="Botón icono cangrejo"  height="100" />
     </form>';
