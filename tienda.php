@@ -11,6 +11,9 @@
 </head>
 
 <body>
+    <?php
+        require ('cabecera.php');
+    ?>
     <h1>Tienda</h1>
     <br />
     <div class="experiencias">
