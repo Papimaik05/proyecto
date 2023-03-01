@@ -40,6 +40,11 @@ input[type="submit"]{
 <p>Contraseña</p>
 <input type="password" name="contraseña"/>
 <p><input type="submit" value="Iniciar sesión" /></p>
+<?php
+if(isset($_GET['error'])){
+    echo $_GET['error'];
+}
+?>
 </form>
 
 </body>
