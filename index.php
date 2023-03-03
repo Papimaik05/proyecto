@@ -11,6 +11,7 @@
     <div style="text-align:center;">
             <?php
             require ('cabecera.php');
+            require('pie.php');
             ?>
 	    <main>
 	        <article>  
