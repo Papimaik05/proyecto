@@ -16,18 +16,7 @@
 
 	Amigos Marinos
 	</h1>
-	<!-- Enlace a las demas paginas -->
-	<h2>
-		Índice
-	</h2>
-	<menu>
-			<li><a href="index.html">Inicio</a></li>
-			<li><a href="detalles.html">Detalles</a></li>
-			<li><a href="bocetos.html">Bocetos</a></li>
-			<li><a href="miembros.html">Miembros</a></li>
-			<li><a href="planificacion.html">Planificación</a></li>
-			<li><a href="contacto.html">Contacto</a></li>
-	</menu>
+
 	<!-- Enlaces directos a los miembros -->
 	<h2>
 		Enlaces directos a los miembros
