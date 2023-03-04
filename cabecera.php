@@ -9,7 +9,7 @@ function reconocerUsuario() {
     echo '<a href="logout.php">(salir)</a>';
   } else {
     echo '<form method="post" action="login.php">
-    <input type="image" src="./img/circulo.png" name="boton" width="150" alt="Botón para ir a login"  height="100" />
+    <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
     </form>';
     echo 'Usuario desconocido. ';
     echo '<a href="login.php">Login </a>';
