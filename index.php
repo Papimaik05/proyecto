@@ -11,7 +11,6 @@
     <div style="text-align:center;">
             <?php
             require ('cabecera.php');
-            require('pie.php');
             ?>
 	    <main>
 	        <article>  
@@ -21,7 +20,10 @@
                 <button onclick="window.location.href='login.php'" type="button"  > Inicio de Sesión</button>
 		        <button onclick="window.location.href='registro.php'" type="button" > Registrate</button>
 	        </article>
-	    </main>         
+	    </main> 
+        <?php
+            require('pie.php');
+        ?>        
     </div>     
 </body>
 </html>

@@ -61,3 +61,11 @@ filter: contrast(120%);
 .experiencias{
   background-color: #DFEB22;
 }
+
+footer	 {
+	clear: both;
+	padding: 20px;
+	background-color: #303030;
+	color: white;
+	text-align: right;
+}
