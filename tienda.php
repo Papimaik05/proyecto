@@ -40,7 +40,7 @@
 <input type="hidden" name="precio" value="20">
 <input type="hidden" value="./img/alets.jpg" name="img">
 <img src="./img/aletas.jpg" width="200" alt = "aletas" height="200">
-<h3>Aletas SuperBlast  &nbsp; <a href="index.php">Comprar</a></h3>
+<h3>Aletas SuperBlast </h3>
 <p>Aletas de material resistente para nadar a toda velocidad. Se el más molón del mar con las aletas SuperBlast.</p>
 <input type="submit" value="Ver producto" name="botonComprar">
 <br><br>
