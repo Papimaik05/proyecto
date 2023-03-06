@@ -5,18 +5,11 @@
 	<title>Miembros del equipo</title>
 	<link id="estilo" href="./css/style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-	<!-- Logo en pequeño con el titulo -->
-	<h1 id="principio">
-		<img src="./img/logo.jpg"
-			width="50"
-			alt = "logo"
-			height="50"
-		>
-
-	Amigos Marinos
-	</h1>
-
+	<?php
+        require ('cabecera.php');
+    ?>
 	<!-- Enlaces directos a los miembros -->
 	<h2>
 		Enlaces directos a los miembros
@@ -89,5 +82,9 @@
 		eso soy voluntario en una perrera en la que cuido perretes muy mayores<br />
 		que nadie quiere adoptar. Me gusta salir en barco para ver los delfines.</p>
 	<a href="#principio">Ir al principio de la pagina</a>
+
+	<?php
+        require ('pie.php');
+    ?>
 </body>
 </html>

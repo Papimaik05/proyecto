@@ -36,19 +36,21 @@
 <div class="equipamiento">
 <h2>Equipamiento</h2>
 
+<form action="tienda.php" method="POST">
 <input type="hidden" name="producto" value="AletasSuperBlast">
 <input type="hidden" name="precio" value="20">
-<input type="hidden" value="./img/alets.jpg" name="img">
+<input type="hidden" name="img" value="./img/alets.jpg">
 <img src="./img/aletas.jpg" width="200" alt = "aletas" height="200">
 <h3>Aletas SuperBlast </h3>
 <p>Aletas de material resistente para nadar a toda velocidad. Se el más molón del mar con las aletas SuperBlast.</p>
 <input type="submit" value="Ver producto" name="botonComprar">
-<br><br>
+</form>
+<br><br><br><br>
 
 <img src="./img/snorkel.jpg" width="200" alt = "snorkel" height="200">
 <h3>Snorkel UltraPower  &nbsp; <a href="index.php">Comprar</a></h3>
 <p>Gafas y snorkel de polietileno y titaneo parar resispar sin parar.</p>
-<br><br>
+<br><br><br><br>
 
 <img src="./img/submarino.jpg" width="200" alt = "submarino" height="200">
 <h3>Submarino el Coloso  &nbsp; <a href="index.php">Comprar</a></h3>
