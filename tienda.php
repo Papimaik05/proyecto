@@ -21,18 +21,21 @@
     <?php
         require ('cabecera.php');
     ?>
+
     <h1>Tienda</h1>
-    <br />
-    <div class="experiencias">
+    <br>
+<div class="experiencias">
     <h2>Experiencias</h2>
-<section>
-    <img src="./img/pesca_inaki.jpg">
-    <img src="./img/pinguinos_madagascar.jpg">
-    <img src="./img/nemo.jpg">
-    <img src="./img/jaula_tiburones.jpg">
-</section>
+    <section>
+        <img src="./img/pesca_inaki.jpg">
+        <img src="./img/pinguinos_madagascar.jpg">
+        <img src="./img/nemo.jpg">
+        <img src="./img/jaula_tiburones.jpg">
+    </section>
 </div>
 <br><br><br><br>
+
+
 <div class="equipamiento">
 <h2>Equipamiento</h2>
 
