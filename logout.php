@@ -17,7 +17,7 @@ session_destroy();
 
     <body>
 
-    <div style="text-align:center;">
+
             <?php
             require ('cabecera.php');
             ?>
@@ -31,7 +31,7 @@ session_destroy();
         <?php
             require('pie.php');
         ?>        
-    </div>     
+        
 
     </body>
 </html>

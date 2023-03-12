@@ -8,7 +8,6 @@
     </head>
 
 <body>
-    <div style="text-align:center;">
             <?php
             require ('cabecera.php');
             ?>
@@ -32,6 +31,6 @@
         <?php
             require('pie.php');
         ?>        
-    </div>     
+  
 </body>
 </html>
