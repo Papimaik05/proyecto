@@ -1,30 +1,37 @@
-
+<?php
+session_start();
+unset($_SESSION["login"]);
+unset($_SESSION["nombre"]);
+if (isset($_SESSION["esadmin"])) { //Usuario incorrecto
+    unset($_SESSION["esadmin"]);
+}
+session_destroy();
+?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Index</title>
+        <title>Logout</title>
     </head>
 
-<body>
+    <body>
+
     <div style="text-align:center;">
             <?php
             require ('cabecera.php');
             ?>
 	    <main>
 	        <article>  
-                <br>          
-                <img src="./img/logo.jpg"  width ="580"  height ="480"  alt="logotipo">
+                <h2>Has cerrado la sesión </h2>
                 <br>
-                <button onclick="window.location.href='login.php'" type="button"  > Inicio de Sesión</button>
-		        <button onclick="window.location.href='registro.php'" type="button" > Registrate</button>
+                <h2>Hasta Pronto!</h2>
 	        </article>
 	    </main> 
         <?php
             require('pie.php');
         ?>        
     </div>     
-</body>
+
+    </body>
 </html>
