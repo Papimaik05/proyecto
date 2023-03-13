@@ -13,9 +13,10 @@ INSERT INTO `rol` (`numero`, `nombre`) VALUES
 (2, 'Gestor de Contenido');
 
 INSERT INTO `usuario` (`username`, `password`, `email`, `rol`, `puntos`) VALUES
-('admin', 'adminpass', 'camore12@ucm.es', 0, 100);
+('admin', 'adminpass', 'camore12@ucm.es', 0, 99);
 
 INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),
 (1, 'delfin', 5, 9),
-(2, 'megalodon', 10, 19);
+(2, 'megalodon', 10, 19),
+(3, 'poseidon', 20, 100);
