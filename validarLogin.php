@@ -40,9 +40,11 @@ require_once './includes/Usuario.php';
                     } else {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
+
+                        echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
                         //header('Location: index.php');
-                        exit();
+                        //exit();
                     }
                 }
                 else{
