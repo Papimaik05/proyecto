@@ -4,8 +4,8 @@ class Usuario{
     public static function login($nombreUsuario, $password)
     {
         $usuario = self::buscaUsuario($nombreUsuario);
-        if ($usuario && $usuario->compruebaPassword($password)) {
-            return $user;
+        if ($usuario && $usuario->compruebaPassword2($password)) {
+            return $usuario;
         }
         return false;
     }
@@ -172,6 +172,16 @@ class Usuario{
     public function compruebaPassword($password)
     {
         return password_verify($password, $this->password);
+    }
+
+    public function compruebaPassword2($password)
+    {
+        if($password==$this->password){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public function cambiaPassword($nuevoPassword)
