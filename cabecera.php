@@ -1,14 +1,47 @@
 <?php
 function reconocerUsuario() {
   if (isset($_SESSION["login"])) { 
+    /*
+      if(){
+        echo '<form method="post" action="micuenta.php">
+        <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
+        </form>';
+        echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
+        echo '<a href="logout.php">(salir)</a>';
+      }
+      else if(){
+        echo '<form method="post" action="micuenta.php">
+        <input type="image" src="./img/delfin.jpg" name="boton" width="50" alt="Botón icono delfin"  height="50" />
+        </form>';
+        echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
+        echo '<a href="logout.php">(salir)</a>';
+      }
+      else if(){
+        echo '<form method="post" action="micuenta.php">
+        <input type="image" src="./img/tiburon.jpg" name="boton" width="50" alt="Botón icono tiburon"  height="50" />
+        </form>';
+        echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
+        echo '<a href="logout.php">(salir)</a>';
+      }
+      else if(){
+        echo '<form method="post" action="micuenta.php">
+        <input type="image" src="./img/poseidon.jpg" name="boton" width="50" alt="Botón icono poseidon"  height="50" />
+        </form>';
+        echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
+        echo '<a href="logout.php">(salir)</a>';
+      }
+    
+    
+    */
+
     // Asi se ponen en php las imagenes de forma que sean boton tambien
-    echo '<form method="post" action="login.php">
+    echo '<form method="post" action="micuenta.php">
     <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
     </form>';
     echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
     echo '<a href="logout.php">(salir)</a>';
   } else {
-    echo '<form method="post" action="login.php">
+    echo '<form method="post" action="micuenta.php">
     <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
     </form>';
     echo 'Usuario desconocido. ';

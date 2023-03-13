@@ -18,7 +18,7 @@ require_once './includes/config.php';
 	    <main>
 	        <h1>Esta página se encuentra en mantenimiento</h1>
             <img src="./img/mantenimiento.png"  width ="500"  height ="500"  alt="mantenimiento">
-            <h2>De momento no hay noticias, consulta la web más adelante!</h2>
+            <h2>Pronto podrás configurar tu cuenta</h2>
 	    </main> 
         <?php
             require('pie.php');
