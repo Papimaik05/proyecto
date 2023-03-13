@@ -193,7 +193,7 @@ class Usuario{
     
     public static function guarda($usuario)
     {
-        $user = self::buscaUsuario($usuario->nombreUsuario);
+        $user = self::buscaUsuario($usuario->username);
         if ($user) {
             return self::actualiza($user);
         }
