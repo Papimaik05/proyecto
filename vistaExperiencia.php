@@ -3,7 +3,7 @@
 		$experiencia = $_SESSION["experiencia"];
 		if(!isset($_SESSION["carrito"][$experiencia])){
 		$_SESSION["carrito"][$experiencia]["img"] = $_SESSION["img"];
-		$_SESSION["carrito"][$experiencia]["producto"] = $_SESSION["producto"];
+		$_SESSION["carrito"][$experiencia]["experiencia"] = $_SESSION["experiencia"];
 		$_SESSION["carrito"][$experiencia]["precio"] = $_SESSION["precio"];
 		}
 	}
