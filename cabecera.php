@@ -1,5 +1,4 @@
 <?php
-session_start();
 function reconocerUsuario() {
   if (isset($_SESSION["login"])) { 
     // Asi se ponen en php las imagenes de forma que sean boton tambien

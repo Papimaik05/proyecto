@@ -1,10 +1,6 @@
 <?php
 class Usuario{
 
-    public const ADMIN_ROLE = 1;
-
-    public const USER_ROLE = 2;
-
     public static function login($nombreUsuario, $password)
     {
         $usuario = self::buscaUsuario($nombreUsuario);
@@ -17,12 +13,12 @@ class Usuario{
     public static function buscaUsuario($nombreUsuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("SELECT * FROM Usuarios U WHERE U.nombreUsuario='%s'", $conn->real_escape_string($nombreUsuario));
+        $query = sprintf("SELECT * FROM usuario U WHERE U.username='%s'", $conn->real_escape_string($nombreUsuario));
         $rs = $conn->query($query);
         if ($rs) {
             $fila = $rs->fetch_assoc();
             if(isset($fila)){
-                $user = new Usuario($fila['nombreUsuario'], $fila['password'], $fila['nombre'], $fila['id']);
+                $user = new Usuario($fila['username'], $fila['password'], $fila['email'], $fila['rol'],$fila['puntos']);
                 $rs->free();
                 return $user;
             }
@@ -118,49 +114,52 @@ class Usuario{
     }
     
 
-    private $id;
 
-    private $nombreUsuario;
+    private $username;
 
     private $password;
 
-    private $nombre;
+    private $email;
 
-    private $roles;
+    private $rol;
 
-    private function __construct($nombreUsuario, $password, $nombre, $id = null, $roles = [])
+    private $puntos;
+
+    private function __construct($username, $password, $email, $rol,$puntos)
     {
-        $this->id = $id;
-        $this->nombreUsuario = $nombreUsuario;
+        $this->username = $username;
         $this->password = $password;
-        $this->nombre = $nombre;
-        $this->roles = $roles;
-    }
-
-    public function getId()
-    {
-        return $this->id;
+        $this->email = $email;
+        $this->rol = $rol;
+        $this->puntos = $puntos;
     }
 
     public function getNombreUsuario()
     {
-        return $this->nombreUsuario;
+        return $this->username;
     }
 
-    public function getNombre()
+    public function getEmail()
     {
-        return $this->nombre;
+        return $this->email;
     }
 
-    public function añadeRol($role)
+    public function getRol()
     {
-        $this->roles[] = $role;
+        return $this->rol;
     }
 
-    public function getRoles()
+    public function getPuntos()
     {
-        return $this->roles;
+        return $this->puntos;
     }
+    
+
+    public function añadeRol($rol)
+    {
+        $this->rol = $rol;
+    }
+
 
     public function tieneRol($role)
     {

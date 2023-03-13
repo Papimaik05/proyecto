@@ -1,3 +1,7 @@
+<?php
+require_once './includes/config.php';
+require_once './includes/Usuario.php';
+?>
 <!DOCTYPE html>
 
 <html>
@@ -15,44 +19,35 @@
 	        <article>  
                 <br><br><br>
                 <?php
-                $dbhost="localhost";
-                $dbuser="root";
-                $dbpass="";
-                $dbname="proyecto";
+                $sinerrores=true;
 
-                $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-
-                if(!$conn){
-                    exit("Fallo en la conexion");
+                $nombreUsuario = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                if ( ! $nombreUsuario || empty($nombreUsuario=trim($nombreUsuario)) ) {
+                    echo "<h2>El nombre de usuario no puede estar vacío <br></h2>";
+                    $sinerrores=false;
+                }
+                
+                $password = filter_input(INPUT_POST, 'contr', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+                if ( ! $password || empty($password=trim($password)) ) {
+                    echo "<h2>El password no puede estar vacío <br></h2>";
+                    $sinerrores=false;
                 }
 
-                $nombre=$_POST["nombre"];
-                $contr=$_POST["contr"];
-
-                $query="SELECT * FROM login WHERE username='$nombre' AND password='$contr'";
-                $resultado=mysqli_query($conn, $query);
-
-                if(mysqli_num_rows($resultado)==1){
-                echo "<h2>Acceso Correcto</h2>";
-                echo "Bienvenido $nombre <br>";
-                $fila = $resultado->fetch_assoc();
-                $_SESSION["login"] = true;
-                $_SESSION["nombre"] = $nombre;
-                    if($fila['esadmin']){
-                        $_SESSION["esadmin"] = true;
-                        echo "Tienes el rol de Admin <br>";
-                    }
-                    else{
-                        $_SESSION["esadmin"] = false;
-                        echo "NO tienes el rol de Admin <br>";
+                if($sinerrores){
+                    $usuario = Usuario::login($nombreUsuario, $password);
+                    if (!$usuario) {
+                        echo "<h2>El usuario o password no coinciden <br></h2>";
+                    } else {
+                        $_SESSION['login'] = true;
+                        $_SESSION['nombre'] = $usuario->getNombreUsuario();
+                        //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
+                        //header('Location: index.php');
+                        exit();
                     }
                 }
                 else{
-                echo "<h2>Acceso Denegado</h2>";
-                echo "No hay nadie registrado con ese nombre <br>";
-                echo "Haz click aqui <br>";
-                }
-            
+                    echo "<h2>Hay errores y no se ha podido llevar a cabo el login <br></h2>";
+                }            
                 ?>
             <br><br><br><br><br>
         </form>
