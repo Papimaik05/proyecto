@@ -10,6 +10,7 @@ require_once './includes/config.php';
 	$_SESSION["precio"] = $precio;
 	$_SESSION["img"] = $imagen;
 	}
+    require_once __DIR__.'/Producto.php';
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,20 @@ require_once './includes/config.php';
 <input type="submit" value="Ver producto" name="botonComprar">
 </form>
 <br><br><br><br>
-
+<?php
+$productos = Producto::cargarProductos();
+if($productos == false){
+    echo "No hay productos disponibles a la venta";
+}
+else{
+    foreach($productos as $producto){
+        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";
+        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='index.php'>Comprar</a></h3>";
+        echo "<p>" . $producto->getDescripcion() ."</p>";
+        echo "<br><br><br><br>";
+    }
+}
+?>
 <img src="./img/snorkel.jpg" width="200" alt = "snorkel" height="200">
 <h3>Snorkel UltraPower  &nbsp; <a href="index.php">Comprar</a></h3>
 <p>Gafas y snorkel de polietileno y titaneo parar resispar sin parar.</p>
