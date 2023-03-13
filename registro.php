@@ -1,3 +1,6 @@
+<?php
+require_once './includes/config.php';
+?>
 <!DOCTYPE html>
 
 <html>
@@ -19,6 +22,8 @@
             <fieldset>
                 <legend><b>DATOS REGISTRO</b></legend>
                 Nombre Usuario : <br><input type="text" name="nombre" > 
+                <br>
+                Email :<br><input type="text" name="email" > 
                 <br>
                 Contraseña :<br><input type="text" name="contr" > 
                 <br>

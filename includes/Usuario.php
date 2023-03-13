@@ -1,19 +1,19 @@
 <?php
 class Usuario{
 
-    public static function login($nombreUsuario, $password)
+    public static function login($username, $password)
     {
-        $usuario = self::buscaUsuario($nombreUsuario);
+        $usuario = self::buscaUsuario($username);
         if ($usuario && $usuario->compruebaPassword2($password)) {
             return $usuario;
         }
         return false;
     }
 
-    public static function buscaUsuario($nombreUsuario)
+    public static function buscaUsuario($username)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("SELECT * FROM usuario U WHERE U.username='%s'", $conn->real_escape_string($nombreUsuario));
+        $query = sprintf("SELECT * FROM usuario U WHERE U.username='%s'", $conn->real_escape_string($username));
         $rs = $conn->query($query);
         if ($rs) {
             $fila = $rs->fetch_assoc();
@@ -28,13 +28,13 @@ class Usuario{
         return false;
     }
     
-    public static function crea($nombreUsuario, $password, $nombre, $rol)
+    public static function crea($username, $password, $email)
     {
-        $user = self::buscaUsuario($nombreUsuario);
+        $user = self::buscaUsuario($username);
         if ($user) {
             return false;
         }
-        $user = new Usuario($nombreUsuario, $nombre, self::hashPassword($password), $rol);
+        $user = new Usuario($username, $password,$email,1,0);
         return self::guarda($user);
     }
     
@@ -71,14 +71,16 @@ class Usuario{
     private static function inserta($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO Usuarios(nombreUsuario, nombre, password, rol) VALUES('%s', '%s', '%s', '%s')"
-        , $conn->real_escape_string($usuario->nombreUsuario)
-        , $conn->real_escape_string($usuario->nombre)
+        $query=sprintf("INSERT INTO usuario(username,password,email,rol,puntos) VALUES('%s', '%s', '%s', '%d','%d')"
+        , $conn->real_escape_string($usuario->username)
         , $conn->real_escape_string($usuario->password)
-        , $conn->real_escape_string($usuario->rol));
+        , $conn->real_escape_string($usuario->email)
+        , $conn->real_escape_string($usuario->rol)
+        , $conn->real_escape_string($usuario->puntos)
+    );
 
         if ( $conn->query($query) ) {
-            $usuario->id = $conn->insert_id;
+            echo "<h2>Inserción con éxito </h2> <br>";
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -191,8 +193,9 @@ class Usuario{
     
     public static function guarda($usuario)
     {
-        if ($usuario->id !== null) {
-            return self::actualiza($usuario);
+        $user = self::buscaUsuario($usuario->nombreUsuario);
+        if ($user) {
+            return self::actualiza($user);
         }
         return self::inserta($usuario);
     }
