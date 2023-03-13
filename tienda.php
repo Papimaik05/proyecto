@@ -1,4 +1,7 @@
 <?php
+require_once './includes/config.php';
+?>
+<?php
 	function producto(){
 	$producto = htmlspecialchars(trim(strip_tags($_REQUEST["producto"])));
 	$precio = htmlspecialchars(trim(strip_tags($_REQUEST["precio"])));

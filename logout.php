@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+require_once './includes/config.php';
+
 unset($_SESSION["login"]);
 unset($_SESSION["nombre"]);
 if (isset($_SESSION["esadmin"])) { //Usuario incorrecto
