@@ -1,29 +1,38 @@
 <?php
+
+
 function reconocerUsuario() {
-  if (isset($_SESSION["login"])) { 
-    /*
-      if(){
+  if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
+    
+    $a=5;
+    $b=10;
+    $c=20;
+    $d=100;
+    $e =$_SESSION['puntos'];
+    echo ' Bienvenido, ' . $_SESSION['puntos'];
+    
+      if($_SESSION['puntos'] < $a){
         echo '<form method="post" action="micuenta.php">
         <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
         </form>';
         echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
         echo '<a href="logout.php">(salir)</a>';
       }
-      else if(){
+      else if($_SESSION['puntos'] >= $a && $_SESSION['puntos'] < $b){
         echo '<form method="post" action="micuenta.php">
         <input type="image" src="./img/delfin.jpg" name="boton" width="50" alt="Botón icono delfin"  height="50" />
         </form>';
         echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
         echo '<a href="logout.php">(salir)</a>';
       }
-      else if(){
+      else if($_SESSION['puntos'] >= $b && $_SESSION['puntos'] < $c){
         echo '<form method="post" action="micuenta.php">
         <input type="image" src="./img/tiburon.jpg" name="boton" width="50" alt="Botón icono tiburon"  height="50" />
         </form>';
         echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
         echo '<a href="logout.php">(salir)</a>';
       }
-      else if(){
+      else if($_SESSION['puntos'] >= $c && $_SESSION['puntos'] < $d){
         echo '<form method="post" action="micuenta.php">
         <input type="image" src="./img/poseidon.jpg" name="boton" width="50" alt="Botón icono poseidon"  height="50" />
         </form>';
@@ -32,14 +41,15 @@ function reconocerUsuario() {
       }
     
     
-    */
+    
 
     // Asi se ponen en php las imagenes de forma que sean boton tambien
-    echo '<form method="post" action="micuenta.php">
+    
+   /* echo '<form method="post" action="micuenta.php">
     <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
     </form>';
     echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
-    echo '<a href="logout.php">(salir)</a>';
+    echo '<a href="logout.php">(salir)</a>';*/
   } else {
     echo '<form method="post" action="micuenta.php">
     <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
@@ -60,7 +70,9 @@ function reconocerUsuario() {
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
 		<div style="text-align:right;" >
 		<?php 
+    
 		reconocerUsuario();
+    
 		?>
 		</div>
 </header>
