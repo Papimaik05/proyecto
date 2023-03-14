@@ -24,3 +24,9 @@ INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 INSERT INTO `producto` (`nombre`, `id`, `descripcion`, `unidades`, `precio`, `imagen`) VALUES
 ('Snorkel Ultrapower', 1, 'Gafas y snorkel de polietileno y titaneo parar resispar sin parar.', 3, 20, './img/snorkel.jpg'),
 ('Submarino el coloso', 2, 'Submarino premium delux ideal para disfrutar de nuestras excursiones con el mayor confort imaginado.\r\nSurca los mares descubriendo sus profundidades gracias a la más última tecnolodia de este navío.', 1, 50000, './img/submarino.jpg');
+
+INSERT INTO `experiencias` (`nombre`, `id`, `descripcion`, `precio`, `nivelminimo`, `puntos`, `imagen`) VALUES
+('Pesca con Iñaki', 1, 'Sumérgete en esta aventura para poder vivir la experiencia de pescar con el inigualable Iñaki Arrizabalaga.', 150, 0, 3, './img/pesca_inaki.jpg'),
+('Conoce a los pinguinos', 2, 'Adéntrate en esta aventura única en la que podrás relacionarte con los pinguinos y jugar a numerosos juegos entretenidos y originales.', 189, 1, 5, './img/pinguinos_madagascar.jpg'),
+('Busquemos a Nemo', 3, 'Revive la experiencia de nuevo viviendo en primera persona la inigualable historia de buscando a Nemo.', 250, 2, 7, './img/nemo.jpg'),
+('Nada entre tiburones', 4, 'Atrévete a disfrutar la máxima experiencia de esta tienda, ¡NADAR ENTRE TIBURONES!, SERÁ INOLVIDABLE.', 379, 2, 10, './img/jaula_tiburones.jpg');
