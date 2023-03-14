@@ -51,7 +51,7 @@ require_once './includes/Usuario.php';
                     }
                 }
                 if($coinciden){
-                    echo "<h2>ERROR: El usuario o password no coinciden <br></h2>";
+                    echo "<h3>ERROR: El usuario o password no coinciden <br></h3>";
                 }
                 echo '<form action="validarLogin.php" method="post">';
                 echo '<fieldset>';
