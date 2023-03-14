@@ -4,14 +4,12 @@ class level{
     public const delfin = 1;
     public const megalodon = 2;
     public const poseidon = 3;
-    private $puntos;
 
     private static function getLevel($puntos){
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("SELECT RU.rol FROM nivel RU WHERE RU.usuario=%d"
-            , $usuario->id
-        );
+        $query = sprintf("SELECT numero FROM nivel U WHERE $puntos<=U.maximo AND $puntos>=U.minimo");
         $rs = $conn->query($query);
+        return $rs;
     }
 
 }

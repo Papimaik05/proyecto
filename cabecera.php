@@ -1,5 +1,5 @@
 <?php
-
+require_once './includes/level.php'
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
     
