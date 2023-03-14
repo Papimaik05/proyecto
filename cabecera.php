@@ -1,6 +1,5 @@
 <?php
 
-
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
     
@@ -9,7 +8,7 @@ function reconocerUsuario() {
     $c=20;
     $d=100;
     $e =$_SESSION['puntos'];
-    echo ' Bienvenido, ' . $_SESSION['puntos'];
+    echo ' Bienvenido, tienes ' . $_SESSION['puntos'] . ' puntos';
     
       if($_SESSION['puntos'] < $a){
         echo '<form method="post" action="micuenta.php">
@@ -39,17 +38,6 @@ function reconocerUsuario() {
         echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
         echo '<a href="logout.php">(salir)</a>';
       }
-    
-    
-    
-
-    // Asi se ponen en php las imagenes de forma que sean boton tambien
-    
-   /* echo '<form method="post" action="micuenta.php">
-    <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
-    </form>';
-    echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
-    echo '<a href="logout.php">(salir)</a>';*/
   } else {
     echo '<form method="post" action="micuenta.php">
     <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />

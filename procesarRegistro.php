@@ -60,6 +60,7 @@ if (! $formEnviado ) {
                     } else {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
+                        $_SESSION['puntos'] = 0;
 
                         echo "<h2>Bienvenido $username ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
