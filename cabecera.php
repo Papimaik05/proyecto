@@ -50,6 +50,7 @@ function reconocerUsuario() {
 		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
         <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
+        </div>
 		<div style="text-align:right;" >
 		<?php 
     
