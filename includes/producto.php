@@ -20,11 +20,7 @@ class Producto {
 
     public static function cargarProductos(){
         $productos = [];
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn = Aplicacion::getInstance()->getConexionBd();
         if(!$conn){
             exit("Fallo en la conexion");
         }
@@ -46,11 +42,7 @@ class Producto {
     private static function inserta($producto)
     {
         $result = false;
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn = Aplicacion::getInstance()->getConexionBd();
         $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%s', '%s', '%s')"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
@@ -68,11 +60,7 @@ class Producto {
     private static function actualiza($producto)
     {
         $result = false;
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn = Aplicacion::getInstance()->getConexionBd();
         $query=sprintf("UPDATE producto P SET nombre = '%s', descripcion='%s', unidades='%s', precio='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
@@ -91,11 +79,7 @@ class Producto {
 
     public static function buscaPorId($idProducto)
     {
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("SELECT * FROM producto WHERE id=%d", $idProducto);
         $rs = $conn->query($query);
         if ($rs) {
@@ -132,11 +116,7 @@ class Producto {
         /* Los roles se borran en cascada por la FK
          * $result = self::borraRoles($usuario) !== false;
          */
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("DELETE FROM producto P WHERE P.id = %d"
             , $idProducto
         );
