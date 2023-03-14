@@ -25,9 +25,9 @@ require_once './includes/config.php';
                 <br>
                 Email :<br><input type="text" name="email" > 
                 <br>
-                Contraseña :<br><input type="text" name="contr" > 
+                Contraseña :<br><input type="password" name="contr" > 
                 <br>
-                Repita Contraseña :<br><input type="text" name="contr2" > 
+                Repita Contraseña :<br><input type="password" name="contr2" > 
         
             </fieldset>
             <br>
