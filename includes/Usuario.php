@@ -43,11 +43,6 @@ class Usuario{
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
-    public static function getRol($usuario)
-    {
-
-    }
-   
     private static function inserta($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
