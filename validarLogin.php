@@ -42,7 +42,7 @@ require_once './includes/Usuario.php';
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = $usuario->getPuntos();
                         header('Location: index.php');
-                        echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
+                        //echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
                         //header('Location: index.php');
                         //exit();
