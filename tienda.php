@@ -11,6 +11,7 @@ require_once './includes/config.php';
 	$_SESSION["img"] = $imagen;
 	}
     require_once __DIR__.'/includes/Producto.php';
+    require_once __DIR__.'/includes/experiencias.php';
 ?>
 
 <!DOCTYPE html>
@@ -31,11 +32,28 @@ require_once './includes/config.php';
 <div class="experiencias">
     <h2>Experiencias</h2>
     <section>
+    <?php
+$experiencias=Experiencia::cargarExperiencias();
+if($experiencias==false){
+    echo "No hay experiencias disponibles a la venta";
+}else{
+foreach($experiencias as $experiencia){
+    echo "<img src='". $experiencia->getImagen() ."'>";
+}
+
+
+
+}
+    ?>
+    </section>
+    
+    <!-- <section>
         <img src="./img/pesca_inaki.jpg">
         <img src="./img/pinguinos_madagascar.jpg">
         <img src="./img/nemo.jpg">
         <img src="./img/jaula_tiburones.jpg">
-    </section>
+</section> -->
+
 </div>
 <br><br><br><br>
 
