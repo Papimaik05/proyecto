@@ -50,6 +50,7 @@ require_once './includes/Usuario.php';
                 }
                 else{
                     echo "<h2>Hay errores y no se ha podido llevar a cabo el login <br></h2>";
+                    
                 }            
                 ?>
             <br><br><br><br><br>
