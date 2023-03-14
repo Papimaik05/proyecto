@@ -31,7 +31,7 @@ require_once './includes/config.php';
         
             </fieldset>
             <br>
-            <input type="submit" name="registro">
+            <button type="submit" name="registro">Registrar</button>
             <br><br><br><br><br>
         </form>
 	        </article>
