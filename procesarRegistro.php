@@ -62,6 +62,7 @@ if (! $formEnviado ) {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = 0;
+                        $_SESSION['rol'] = "usuario";
                         header('Location: index.php');
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
                         //header('Location: index.php');
