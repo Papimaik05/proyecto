@@ -17,7 +17,6 @@ require_once './includes/Usuario.php';
         ?>     
 	    <main>
 	        <article>  
-                <br><br><br>
                 <?php
                 $sinerrores=true;
                 $coinciden=false;

@@ -26,7 +26,6 @@ if (! $formEnviado ) {
             ?>
 	    <main>
 	        <article>  
-                <br><br><br>
                 <?php
                  $sinerrores=true;
                  $existe=false;
