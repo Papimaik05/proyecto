@@ -22,7 +22,7 @@ require_once './includes/config.php';
                 <legend><b>DATOS USUARIO</b></legend>
                 Usuario : <br><input type="text" name="nombre" > 
                 <br>
-                Contraseña :<br><input type="text" name="contr" > 
+                Contraseña :<br><input type="password" name="contr" > 
         
             </fieldset>
             <br>
