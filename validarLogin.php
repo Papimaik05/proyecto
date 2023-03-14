@@ -20,23 +20,24 @@ require_once './includes/Usuario.php';
                 <br><br><br>
                 <?php
                 $sinerrores=true;
+                $coinciden=false;
 
                 $nombreUsuario = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 if ( ! $nombreUsuario || empty($nombreUsuario=trim($nombreUsuario)) ) {
-                    echo "<h2>El nombre de usuario no puede estar vacío <br></h2>";
+                    echo '<h3>ERROR: El nombre de usuario no puede estar vacío <br></h3>';
                     $sinerrores=false;
                 }
                 
                 $password = filter_input(INPUT_POST, 'contr', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 if ( ! $password || empty($password=trim($password)) ) {
-                    echo "<h2>El password no puede estar vacío <br></h2>";
+                    echo '<h3>ERROR: El password no puede estar vacío <br></h3>';
                     $sinerrores=false;
                 }
 
                 if($sinerrores){
                     $usuario = Usuario::login($nombreUsuario, $password);
                     if (!$usuario) {
-                        echo "<h2>El usuario o password no coinciden <br></h2>";
+                        $coinciden=true;
                     } else {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
@@ -49,10 +50,18 @@ require_once './includes/Usuario.php';
                         //exit();
                     }
                 }
-                else{
-                    echo "<h2>Hay errores y no se ha podido llevar a cabo el login <br></h2>";
-                    
-                }            
+                if($coinciden){
+                    echo "<h2>ERROR: El usuario o password no coinciden <br></h2>";
+                }
+                echo '<form action="validarLogin.php" method="post">';
+                echo '<fieldset>';
+                echo '<legend><b>DATOS USUARIO</b></legend>';
+                echo 'Usuario : <br><input type="text" name="nombre" > ';
+                echo '<br>';
+                echo 'Contraseña :<br><input type="password" name="contr" >'; 
+                echo '</fieldset>';
+                echo '<br>';
+                echo '<button type="submit" name="aceptar">Login</button>';                  
                 ?>
             <br><br><br><br><br>
         </form>

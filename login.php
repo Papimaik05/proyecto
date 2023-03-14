@@ -26,7 +26,7 @@ require_once './includes/config.php';
         
             </fieldset>
             <br>
-            <input type="submit" name="aceptar">
+            <button type="submit" name="aceptar">Login</button>
             <br><br><br><br><br>
         </form>
 	        </article>
