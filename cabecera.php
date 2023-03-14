@@ -1,9 +1,10 @@
 <?php
 require_once './includes/level.php';
-require_once './includes/usuario.php';
+require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    echo ' Bienvenido, tienes ' . $_SESSION['puntos'] . ' puntos';
+    echo ' Bienvenido, tienes ' . $_SESSION['puntos'] . ' puntos<br>';
+    echo'Rol: '.$_SESSION['rol'];
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
       echo '<form method="post" action="micuenta.php">
@@ -51,15 +52,7 @@ function reconocerUsuario() {
 		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
         <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
-        <?php
-        if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
-          if(Usuario::buscaUsuario($_SESSION["nombre"])->getRol() == "0"){
-            ?>
-            <button onclick='window.location.href="gestorProductos.php"' type='button' > GestorContenido</button>
-          <?php
-          }
-        }
-        ?>
+        </div>
 		<div style="text-align:right;" >
 		<?php 
     

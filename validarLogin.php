@@ -41,6 +41,7 @@ require_once './includes/Usuario.php';
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = $usuario->getPuntos();
+                        $_SESSION['rol'] = $usuario->getNombreRol($usuario);
                         header('Location: index.php');
                         //echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);

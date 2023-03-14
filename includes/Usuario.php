@@ -43,6 +43,15 @@ class Usuario{
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
+    public static function getNombreRol($usuario)
+    {
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT nombre FROM rol U WHERE U.numero='%d'", $conn->real_escape_string($usuario->rol));
+        $rs = $conn->query($query);
+        $fila=$rs->fetch_assoc();
+        return $fila['nombre'];
+    }
+   
     private static function inserta($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
