@@ -62,7 +62,6 @@ if (! $formEnviado ) {
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = 0;
                         header('Location: index.php');
-                        echo "<h2>Bienvenido $username ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
                         //header('Location: index.php');
                         //exit();
