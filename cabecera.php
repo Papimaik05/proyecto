@@ -1,5 +1,6 @@
 <?php
 require_once './includes/level.php';
+require_once './includes/usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
     echo ' Bienvenido, tienes ' . $_SESSION['puntos'] . ' puntos';
@@ -50,6 +51,15 @@ function reconocerUsuario() {
 		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
         <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
+        <?php
+        if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
+          if(Usuario::buscaUsuario($_SESSION["nombre"])->getRol() == "0"){
+            ?>
+            <button onclick='window.location.href="gestorProductos.php"' type='button' > GestorContenido</button>
+          <?php
+          }
+        }
+        ?>
 		<div style="text-align:right;" >
 		<?php 
     

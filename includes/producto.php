@@ -1,4 +1,6 @@
 <?php
+require_once "Aplicacion.php";
+require_once 'config.php';
 
 class Producto {
     private $nombre;
@@ -8,7 +10,7 @@ class Producto {
     private $precio;
     private $urlImagen;
     
-    private function __construct($id = null , $descripcion, $unidades, $precio, $urlImagen, $nombre)
+    private function __construct($id = NULL , $descripcion, $unidades, $precio, $urlImagen, $nombre)
     {
         $this->id = $id;
         $this->descripcion = $descripcion;
@@ -52,9 +54,11 @@ class Producto {
         );
         if ( $conn->query($query) ) {
             $producto->id = $conn->insert_id;
+            $result=true;
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
+        return $result;
     }
     
     private static function actualiza($producto)
@@ -96,7 +100,7 @@ class Producto {
 
     public static function crea($nombre, $descripcion, $unidades, $precio, $urlImagen)
     {
-        $producto = new Producto($nombre, $descripcion, $unidades, $precio, $urlImagen);
+        $producto = new Producto(null,$descripcion, $unidades, $precio, $urlImagen, $nombre);
         return $producto->guarda();
     }
 
