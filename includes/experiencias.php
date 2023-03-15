@@ -26,7 +26,7 @@ class Experiencia {
         $dbuser="proyecto";
         $dbpass="proyecto";
         $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn=Aplicacion::getInstance()->getConexionBd();
         if(!$conn){
             exit("Fallo en la conexion");
         }
@@ -52,7 +52,7 @@ class Experiencia {
         $dbuser="proyecto";
         $dbpass="proyecto";
         $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn=Aplicacion::getInstance()->getConexionBd();
         $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
@@ -75,7 +75,7 @@ class Experiencia {
         $dbuser="proyecto";
         $dbpass="proyecto";
         $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn=Aplicacion::getInstance()->getConexionBd();
         $query=sprintf("UPDATE experiencia P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
@@ -137,7 +137,7 @@ class Experiencia {
         $dbuser="proyecto";
         $dbpass="proyecto";
         $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+        $conn=Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("DELETE FROM experiencia P WHERE P.id = %d"
             , $idExperiencia
         );
