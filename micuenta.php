@@ -35,7 +35,7 @@ require_once './includes/Usuario.php';
             echo $_SESSION['puntos']." puntos"; 
             ?>
 
-            <br>
+            <br><br>
 
             Nivel:
             <?php 

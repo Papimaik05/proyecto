@@ -34,7 +34,7 @@ function reconocerUsuario() {
       echo '<a href="logout.php">(salir)</a>';
     }
   } else {
-    echo '<form method="post" action="micuenta.php">
+    echo '<form method="post" action="login.php">
     <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
     </form>';
     echo 'Usuario desconocido. ';
