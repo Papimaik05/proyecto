@@ -53,11 +53,12 @@ if($productos == false){
 else{
     
     foreach($productos as $producto){
-        $id = $producto->getId();
+        //$id = $producto->getId();
         echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";?>
         <h3> <a href='vistaProducto.php?id=${id}'>Comprar</a></h3>
         <?php
         //echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
+        echo "<p>" . $producto->getId() . "</p>";
         echo "<p>" . $producto->getDescripcion() ."</p>";
         echo "<br><br><br><br>";
     }
