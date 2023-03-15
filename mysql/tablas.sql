@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `rol` (
 
 CREATE TABLE IF NOT EXISTS `usuario` (
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `password` varchar(70) NOT NULL,
   `email` varchar(50) NOT NULL,
   `rol` int(11) NOT NULL,
   `puntos` int(11) NOT NULL
