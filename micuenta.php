@@ -39,7 +39,7 @@ require_once './includes/Usuario.php';
 
             Nivel:
             <?php 
-             echo $_SESSION['level']  ;
+             echo ucfirst($_SESSION['level'])  ;
             ?>
 
             <br><br>
