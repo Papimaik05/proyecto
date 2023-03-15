@@ -63,7 +63,6 @@ else{
     foreach($productos as $producto){
         echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";
         echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
-        echo "<p>" . $producto->getDescripcion() ."</p>";
         echo "<br><br><br><br>";
     }
 }

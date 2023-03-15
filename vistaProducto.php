@@ -17,6 +17,7 @@ require_once __DIR__.'/includes/producto.php';
 
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
 	echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
+	echo "<p>" . $producto->getDescripcion() ."</p>";
 	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
 	
 	?>
