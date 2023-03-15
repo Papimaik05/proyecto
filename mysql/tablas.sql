@@ -30,8 +30,8 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `experiencias`;
 DROP TABLE IF EXISTS `nivel`;
 DROP TABLE IF EXISTS `producto`;
-DROP TABLE IF EXISTS `rol`;
 DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `rol`;
 
 CREATE TABLE IF NOT EXISTS `experiencias` (
   `nombre` varchar(25) NOT NULL,
