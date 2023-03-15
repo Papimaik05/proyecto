@@ -6,7 +6,6 @@ require_once './includes/config.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Registro</title>
     </head>
 
@@ -20,7 +19,7 @@ require_once './includes/config.php';
                 <br><br><br>
             <form action="procesarRegistro.php" method="post">
             <fieldset>
-                <legend><b>DATOS REGISTRO</b></legend>
+                <legend>DATOS REGISTRO</legend>
                 Nombre Usuario : <br><input type="text" name="nombre" > 
                 <br>
                 Email :<br><input type="text" name="email" > 

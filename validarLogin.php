@@ -7,7 +7,6 @@ require_once './includes/Usuario.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>validarLogin</title>
     </head>
 
@@ -17,7 +16,6 @@ require_once './includes/Usuario.php';
         ?>     
 	    <main>
 	        <article>  
-                <br><br><br>
                 <?php
                 $sinerrores=true;
                 $coinciden=false;
@@ -43,6 +41,7 @@ require_once './includes/Usuario.php';
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = $usuario->getPuntos();
                         $_SESSION['rol'] = $usuario->getNombreRol($usuario);
+                        $_SESSION['email'] = $usuario->getEmail();
                         header('Location: index.php');
                         //echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
@@ -55,7 +54,7 @@ require_once './includes/Usuario.php';
                 }
                 echo '<form action="validarLogin.php" method="post">';
                 echo '<fieldset>';
-                echo '<legend><b>DATOS USUARIO</b></legend>';
+                echo '<legend>DATOS USUARIO</legend>';
                 echo 'Usuario : <br><input type="text" name="nombre" > ';
                 echo '<br>';
                 echo 'Contraseña :<br><input type="password" name="contr" >'; 

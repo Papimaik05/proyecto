@@ -9,7 +9,12 @@ class Usuario{
         }
         return false;
     }
-
+    /*
+    public static function cambioDatos($username, $email, $password)
+    {
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query="UPDATE usuarios SET nombre='$username', email='$email', password='$password'";
+    }*/
     public static function buscaUsuario($username)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();

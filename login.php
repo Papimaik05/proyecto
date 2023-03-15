@@ -6,7 +6,6 @@ require_once './includes/config.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Login</title>
     </head>
 
@@ -19,7 +18,7 @@ require_once './includes/config.php';
                 <br><br><br>
             <form action="validarLogin.php" method="post">
             <fieldset>
-                <legend><b>DATOS USUARIO</b></legend>
+                <legend>DATOS USUARIO</legend>
                 Usuario : <br><input type="text" name="nombre" > 
                 <br>
                 Contraseña :<br><input type="password" name="contr" > 

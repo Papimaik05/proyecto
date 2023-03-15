@@ -5,7 +5,7 @@ require_once './includes/Usuario.php';
 
 $formEnviado = isset($_POST['registro']);
 if (! $formEnviado ) {
-	header('Location: registro.php');
+	header('Location: micuenta.php');
 	exit();
 } 
 ?>
@@ -51,47 +51,19 @@ if (! $formEnviado ) {
                     echo '<h3>ERROR: Los password deben coincidir <br></h3>';
                     $sinerrores=false;
                  }
-
                  if($sinerrores){
-                    $usuario = Usuario::crea($username, $password, $email);
-                    if (!$usuario) {
-                        $existe=true;
-                    } else {
-                        $_SESSION['login'] = true;
-                        $_SESSION['nombre'] = $usuario->getNombreUsuario();
-                        $_SESSION['puntos'] = 0;
-                        $_SESSION['rol'] = "usuario";
-                        header('Location: index.php');
-                        //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
-                        //header('Location: index.php');
-                        //exit();
-                    }
+                    $username = $_POST['nombre'];
+                    $email = $_POST['email'];
+                    $password = $_POST['contr'];
+                    Usuario::cambioDatos($username, $password, $email);
                  }
-                    if($existe){
-                        echo '<h3>ERROR: El usuario ya existe <br></h3>';
-                    }
-
-                    echo ' <form action="procesarRegistro.php" method="post">';
-                    echo ' <fieldset>';
-                    echo ' <legend>DATOS REGISTRO</legend>';
-                    echo ' Nombre Usuario : <br><input type="text" name="nombre" > ';
-                    echo ' <br>';
-                    echo ' Email :<br><input type="text" name="email" >'; 
-                    echo ' <br>';
-                    echo ' Contraseña :<br><input type="password" name="contr" >'; 
-                    echo ' <br>';
-                    echo ' Repita Contraseña :<br><input type="password" name="contr2" > ';
-    
-                    echo ' </fieldset>';
-                    echo '<br>';
-                    echo ' <button type="submit" name="registro">Registrar</button>';
-                     
+                    
+                    ?>        
+                    </article>
+                </main> 
+                <?php
+                    require('pie.php');
                 ?>        
-	        </article>
-	    </main> 
-        <?php
-            require('pie.php');
-        ?>        
-    </div>     
-</body>
-</html>
+            </div>     
+        </body>
+        </html>
