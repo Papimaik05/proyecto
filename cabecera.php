@@ -3,8 +3,6 @@ require_once './includes/level.php';
 require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    echo 'Puntos: ' . $_SESSION['puntos'];
-    echo '<br>';
     echo'Rol: '.$_SESSION['rol'];
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
@@ -36,7 +34,7 @@ function reconocerUsuario() {
       echo '<a href="logout.php">(salir)</a>';
     }
   } else {
-    echo '<form method="post" action="micuenta.php">
+    echo '<form method="post" action="login.php">
     <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
     </form>';
     echo 'Usuario desconocido. ';

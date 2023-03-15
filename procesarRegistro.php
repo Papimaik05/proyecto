@@ -2,6 +2,7 @@
 
 require_once './includes/config.php';
 require_once './includes/Usuario.php';
+require_once './includes/level.php';
 
 $formEnviado = isset($_POST['registro']);
 if (! $formEnviado ) {
@@ -61,6 +62,9 @@ if (! $formEnviado ) {
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = 0;
                         $_SESSION['rol'] = "usuario";
+                        $_SESSION['email'] = $usuario->getEmail();
+                        $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
+
                         header('Location: index.php');
                         //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
                         //header('Location: index.php');
