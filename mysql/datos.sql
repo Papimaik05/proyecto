@@ -12,9 +12,11 @@ INSERT INTO `rol` (`numero`, `nombre`) VALUES
 (1, 'usuario'),
 (2, 'Gestor de Contenido');
 
+-- usuario : admin  password:adminpass
+-- admin: gestor password:gestorpass
 INSERT INTO `usuario` (`username`, `password`, `email`, `rol`, `puntos`) VALUES
-('admin', 'adminpass', 'camore12@ucm.es', 0, 99),
-('gestor', 'gestorpass', 'gestor@gmail.com', 2, 7);
+('admin', '$2y$10$6JpecvUdOny8.gxnaa4pmusrTX4kPeynEJxaK2b9hgFMk3arvRoKe', 'camore12@ucm.es', 0, 99),
+('gestor', '$2y$10$CRbtcLzhW2RSreauttF7iOkQCMkS7z3taJfl7TA/wBJ34o1EZJcN2', 'gestor@gmail.com', 2, 7);
 
 INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),

@@ -4,7 +4,7 @@ class Usuario{
     public static function login($username, $password)
     {
         $usuario = self::buscaUsuario($username);
-        if ($usuario && $usuario->compruebaPassword2($password)) {
+        if ($usuario && $usuario->compruebaPassword($password)) {
             return $usuario;
         }
         return false;
@@ -39,7 +39,7 @@ class Usuario{
         if ($user) {
             return false;
         }
-        $user = new Usuario($username, $password,$email,1,0);
+        $user = new Usuario($username,self::hashPassword($password),$email,1,0);
         return self::guarda($user);
     }
     
