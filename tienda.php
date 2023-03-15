@@ -40,8 +40,7 @@ require_once './includes/config.php';
         echo "No hay experiencias disponibles a la venta";
     }else{
     foreach($experiencias as $experiencia){
-        echo "<a href=index.php>
-        <img src=". $experiencia->getImagen() ."> </a> "; 
+        echo "<a href='vistaExperiencia.php?id=" . $experiencia->getId() . "'><img src='". $experiencia->getImagen() ."'> </a> ";
     }
     }
     ?>

@@ -95,12 +95,9 @@ class Experiencia {
 
     public static function buscaPorId($idExperiencia)
     {
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
-        $conn=mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
-        $query = sprintf("SELECT * FROM experiencia WHERE id=%d", $idExperiencia);
+        $result = false;
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM experiencias WHERE id=%d", $idExperiencia);
         $rs = $conn->query($query);
         if ($rs) {
             $fila = $rs->fetch_assoc();
