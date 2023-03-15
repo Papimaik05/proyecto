@@ -6,8 +6,7 @@ require_once './includes/config.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Index</title>
+        <title>Blog</title>
     </head>
 
 <body>

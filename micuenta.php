@@ -7,7 +7,6 @@ require_once './includes/Usuario.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <title>Index</title>
     </head>
 
