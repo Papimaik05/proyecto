@@ -1,6 +1,7 @@
 <?php
 require_once './includes/config.php';
 require_once './includes/Usuario.php';
+require_once './includes/level.php';
 ?>
 <!DOCTYPE html>
 
@@ -42,11 +43,8 @@ require_once './includes/Usuario.php';
                         $_SESSION['puntos'] = $usuario->getPuntos();
                         $_SESSION['rol'] = $usuario->getNombreRol($usuario);
                         $_SESSION['email'] = $usuario->getEmail();
+                        $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
                         header('Location: index.php');
-                        //echo "<h2>Bienvenido $nombreUsuario ,suerte Bajo el Mar  <br></h2>";
-                        //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
-                        //header('Location: index.php');
-                        //exit();
                     }
                 }
                 if($coinciden){

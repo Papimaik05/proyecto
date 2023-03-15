@@ -24,16 +24,24 @@ require_once './includes/Usuario.php';
             ?>
             Nombre de usuario:
             <br>
-            <input type="text" name="nombre" value=" <?php echo $_SESSION['nombre'] ?>">
+            <input type="text" name="nombre"  readonly value="<?php echo $_SESSION['nombre'] ?>">
             <br><br>
             Email:
             <br>
-            <input type="email" name="nombre" value=" <?php echo $_SESSION['email'] ?>">
+            <input type="email" name="nombre" readonly value="<?php echo $_SESSION['email'] ?>">
             <br><br>
             Tienes: 
             <?php 
             echo $_SESSION['puntos']." puntos"; 
             ?>
+
+            <br>
+
+            Nivel:
+            <?php 
+             echo $_SESSION['level']  ;
+            ?>
+
             <br><br>
 	        <form action="procesarDatos.php" method="post">
             <fieldset>

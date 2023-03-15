@@ -13,6 +13,14 @@ class level{
         return $fila['numero'];
     }
 
+    public static function getNombre($numero){
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT nombre FROM nivel U WHERE U.numero=$numero");
+        $rs = $conn->query($query);
+        $fila=$rs->fetch_assoc();
+        return $fila['nombre'];
+    }
+
 }
 
 ?>
