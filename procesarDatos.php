@@ -15,7 +15,7 @@ if (! $formEnviado ) {
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <title>procesarRegistro</title>
+        <title>procesarDatos</title>
     </head>
 
 <body>

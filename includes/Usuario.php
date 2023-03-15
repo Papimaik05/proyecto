@@ -9,12 +9,6 @@ class Usuario{
         }
         return false;
     }
-    /*
-    public static function cambioDatos($username, $email, $password)
-    {
-        $conn = Aplicacion::getInstance()->getConexionBd();
-        $query="UPDATE usuarios SET nombre='$username', email='$email', password='$password'";
-    }*/
     public static function buscaUsuario($username)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
@@ -32,7 +26,15 @@ class Usuario{
         }
         return false;
     }
-    
+     
+    public static function cambioDatos($username, $email, $password)
+    {
+       $this->username=$username;
+       $this->email=$email;
+       $this->password=self::hashPassword($password);
+       self::guarda($this);
+    }
+
     public static function crea($username, $password, $email)
     {
         $user = self::buscaUsuario($username);
@@ -79,7 +81,7 @@ class Usuario{
     private static function actualiza($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("UPDATE Usuarios U SET nombreUsuario = '%s', nombre='%s', password='%s', rol='%s' WHERE U.id=%i"
+        $query=sprintf("UPDATE usuario U SET username = '%s', password='%s', email='%s', WHERE U.id=%i"
             , $conn->real_escape_string($usuario->nombreUsuario)
             , $conn->real_escape_string($usuario->nombre)
             , $conn->real_escape_string($usuario->password)
