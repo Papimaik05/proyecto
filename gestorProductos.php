@@ -17,7 +17,11 @@ require_once './includes/config.php';
 	    <main>
         <button onclick="window.location.href='insertarProducto.php'" type="button" > Insertar Producto</button>
 		<button onclick="window.location.href='borrarProducto.php'" type="button" > Borrar producto</button>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br>     
+        <br><br>
+        <br><br>        
+        <button onclick="window.location.href='insertarExperiencia.php'" type="button" > Insertar Experiencia</button>
+		<button onclick="window.location.href='borrarExperiencia.php'" type="button" > Borrar Experiencia</button><br><br><br><br><br><br><br><br><br><br>
         </form>
 	    </main> 
         <?php
