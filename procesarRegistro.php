@@ -74,7 +74,7 @@ if (! $formEnviado ) {
 
                     echo ' <form action="procesarRegistro.php" method="post">';
                     echo ' <fieldset>';
-                    echo ' <legend><b>DATOS REGISTRO</b></legend>';
+                    echo ' <legend>DATOS REGISTRO</legend>';
                     echo ' Nombre Usuario : <br><input type="text" name="nombre" > ';
                     echo ' <br>';
                     echo ' Email :<br><input type="text" name="email" >'; 

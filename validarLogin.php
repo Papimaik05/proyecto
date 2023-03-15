@@ -55,7 +55,7 @@ require_once './includes/Usuario.php';
                 }
                 echo '<form action="validarLogin.php" method="post">';
                 echo '<fieldset>';
-                echo '<legend><b>DATOS USUARIO</b></legend>';
+                echo '<legend>DATOS USUARIO</legend>';
                 echo 'Usuario : <br><input type="text" name="nombre" > ';
                 echo '<br>';
                 echo 'Contraseña :<br><input type="password" name="contr" >'; 
