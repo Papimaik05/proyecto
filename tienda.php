@@ -6,9 +6,11 @@ require_once './includes/config.php';
 	$producto = htmlspecialchars(trim(strip_tags($_REQUEST["producto"])));
 	$precio = htmlspecialchars(trim(strip_tags($_REQUEST["precio"])));
 	$img = htmlspecialchars(trim(strip_tags($_REQUEST["img"])));
+    $id = htmlspecialchars(trim(strip_tags($_REQUEST["id"])));
 	$_SESSION["producto"] = $producto;
 	$_SESSION["precio"] = $precio;
 	$_SESSION["img"] = $imagen;
+    $_SESSION["id"] = $id;
 	}
     require_once __DIR__.'/includes/Producto.php';
 ?>
@@ -25,7 +27,7 @@ require_once './includes/config.php';
     <?php
         require ('cabecera.php');
     ?>
-
+    
     <h1>Tienda</h1>
     <br>
 <div class="experiencias">
@@ -44,13 +46,18 @@ require_once './includes/config.php';
 <h2>Equipamiento</h2>
 <?php
 $productos = Producto::cargarProductos();
+
 if($productos == false){
     echo "No hay productos disponibles a la venta";
 }
 else{
+    
     foreach($productos as $producto){
-        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";
-        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='index.php'>Comprar</a></h3>";
+        $id = $producto->getId();
+        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";?>
+        <h3> <a href='vistaProducto.php?id=${id}'>Comprar</a></h3>
+        <?php
+        //echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
         echo "<p>" . $producto->getDescripcion() ."</p>";
         echo "<br><br><br><br>";
     }
