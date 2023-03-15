@@ -1,5 +1,6 @@
 <?php
 require_once './includes/config.php';
+require_once './includes/Usuario.php';
 ?>
 <!DOCTYPE html>
 
@@ -14,15 +15,48 @@ require_once './includes/config.php';
     
             <?php
             require ('cabecera.php');
+            
             ?>
 	    <main>
-	        <h1>Esta página se encuentra en mantenimiento</h1>
-            <img src="./img/mantenimiento.png"  width ="500"  height ="500"  alt="mantenimiento">
-            <h2>Pronto podrás configurar tu cuenta</h2>
+            <?php
+            if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
+                
+            } 
+            ?>
+            Nombre de usuario:
+            <br>
+            <input type="text" name="nombre" value=" <?php echo $_SESSION['nombre'] ?>">
+            <br><br>
+            Email:
+            <br>
+            <input type="text" name="nombre" value=" <?php echo $_SESSION['email'] ?>">
+            <br><br>
+            Tienes: 
+            <?php 
+            echo $_SESSION['puntos']." puntos"; 
+            ?>
+            <br><br>
+	        <form action="procesarDatos.php" method="post">
+            <fieldset>
+                <legend><b>Introduce nuevos datos</b></legend>
+                Nombre Usuario : <br><input type="text" name="nombre" > 
+                <br>
+                Email :<br><input type="text" name="email" > 
+                <br>
+                Contraseña :<br><input type="password" name="contr" > 
+                <br>
+                Repita Contraseña :<br><input type="password" name="contr2" > 
+        
+            </fieldset>
+            <br>
+            <button type="submit" name="registro">Actualizar datos</button>
+            
 	    </main> 
         <?php
             require('pie.php');
         ?>        
+        
+        
         
 </body>
 </html>
