@@ -20,6 +20,7 @@ require_once './includes/config.php';
 	    } ?>
 	    <form action="validarInsercion.php" method="POST">
         <fieldset>
+			<legend>Datos del producto </legend>
 		    <label for="nombre">Nombre:</label>
 		    <input type="text" name="nombre" id="nombre"><br><br>
 		    <label for="descripcion">Descripción:</label>
