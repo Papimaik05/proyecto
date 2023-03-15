@@ -12,12 +12,12 @@ require_once __DIR__.'/includes/producto.php';
 <body>
 	<?php  
 	require ('cabecera.php');
-	$id = $_GET['id'];
-	$idproducto = Producto::buscaPorId($id);
+	$id = $_GET["id"];
+	$producto = Producto::buscaPorId($id);
 
-	echo  "<h1>" . $_SESSION["producto"] . "</h1>";
-	echo '<img src="' . $_SESSION["img"] . '" width="400" height="400">';
-	echo  "<h2>" . $_SESSION["precio"] . " € </h2>"; 
+	echo  "<h1>" . $producto->getNombre() . "</h1>";
+	echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
+	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
 	
 	?>
 

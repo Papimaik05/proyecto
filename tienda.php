@@ -13,7 +13,6 @@ require_once './includes/config.php';
     $_SESSION["id"] = $id;
 	}
     require_once __DIR__.'/includes/Producto.php';
-    require_once __DIR__.'/includes/experiencias.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,20 +33,11 @@ require_once './includes/config.php';
 <div class="experiencias">
     <h2>Experiencias</h2>
     <section>
-<?php
-$experiencias=Experiencia::cargarExperiencias();
-if($experiencias==false){
-    echo "No hay experiencias disponibles a la venta";
-}else{
-foreach($experiencias as $experiencia){
-    echo "<a href=index.php>
-    <img src=". $experiencia->getImagen() ."> </a> ";    
-}
-}    
-?>
+        <img src="./img/pesca_inaki.jpg">
+        <img src="./img/pinguinos_madagascar.jpg">
+        <img src="./img/nemo.jpg">
+        <img src="./img/jaula_tiburones.jpg">
     </section>
-  
-
 </div>
 <br><br><br><br>
 
@@ -63,12 +53,8 @@ if($productos == false){
 else{
     
     foreach($productos as $producto){
-        //$id = $producto->getId();
-        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";?>
-        <h3> <a href='vistaProducto.php?id=${id}'>Comprar</a></h3>
-        <?php
-        //echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
-        echo "<p>" . $producto->getId() . "</p>";
+        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";
+        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
         echo "<p>" . $producto->getDescripcion() ."</p>";
         echo "<br><br><br><br>";
     }
