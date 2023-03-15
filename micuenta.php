@@ -29,7 +29,7 @@ require_once './includes/Usuario.php';
             <br><br>
             Email:
             <br>
-            <input type="text" name="nombre" value=" <?php echo $_SESSION['email'] ?>">
+            <input type="email" name="nombre" value=" <?php echo $_SESSION['email'] ?>">
             <br><br>
             Tienes: 
             <?php 

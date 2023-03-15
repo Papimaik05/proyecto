@@ -13,7 +13,8 @@ INSERT INTO `rol` (`numero`, `nombre`) VALUES
 (2, 'Gestor de Contenido');
 
 INSERT INTO `usuario` (`username`, `password`, `email`, `rol`, `puntos`) VALUES
-('admin', 'adminpass', 'camore12@ucm.es', 0, 99);
+('admin', 'adminpass', 'camore12@ucm.es', 0, 99),
+('gestor', 'gestorpass', 'gestor@gmail.com', 2, 7);
 
 INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),

@@ -11,6 +11,7 @@ define('BD_HOST', 'localhost');
 define('BD_NAME', 'proyecto');
 define('BD_USER', 'proyecto');
 define('BD_PASS', 'proyecto');
+
 $app = Aplicacion::getInstance();
 $app->init(['host'=>BD_HOST, 'bd'=>BD_NAME, 'user'=>BD_USER, 'pass'=>BD_PASS]);
 
