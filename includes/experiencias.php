@@ -76,7 +76,7 @@ class Experiencia {
         $dbpass="proyecto";
         $dbname="proyecto";
         $conn=Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("UPDATE experiencia P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
+        $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $conn->real_escape_string($experiencia->precio)
@@ -125,23 +125,19 @@ class Experiencia {
         return self::inserta($this);
     }
 
-    private static function borraPorId($idExperiencia)
+    public static function borraPorId($idExperiencia)
     {
         if (!$idExperiencia) {
             return false;
         } 
         /* Los roles se borran en cascada por la FK
          * $result = self::borraRoles($usuario) !== false;
-         */
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
+         */        
         $conn=Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("DELETE FROM experiencia P WHERE P.id = %d"
+        $query = sprintf("DELETE FROM experiencias WHERE id = %d"
             , $idExperiencia
         );
-        if ( ! $conn->query($query) ) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
