@@ -112,7 +112,7 @@ class Producto {
         return self::inserta($this);
     }
 
-    private static function borraPorId($idProducto)
+    public static function borraPorId($idProducto)
     {
         if (!$idProducto) {
             return false;
@@ -121,7 +121,7 @@ class Producto {
          * $result = self::borraRoles($usuario) !== false;
          */
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("DELETE FROM producto P WHERE P.id = %d"
+        $query = sprintf("DELETE FROM producto WHERE id = %d"
             , $idProducto
         );
         if ( ! $conn->query($query) ) {
