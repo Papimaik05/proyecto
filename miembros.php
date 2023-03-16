@@ -42,7 +42,7 @@ require_once './includes/config.php';
 	ir al cine o de compras. También ver series en las distintas plataformas digtales.<br />
 	En verano me gusta ir a la playa e ir a chiringuitos para tapear.<br />
     Como buena aficionada a la playa me gusta reciclar y recoger la basura de las playas.</p>
-	</div>
+	</div>	
 	<div>
 	<a id= "Elías"></a>
 	<h3>2.Elías Janer Madiba</h3>
