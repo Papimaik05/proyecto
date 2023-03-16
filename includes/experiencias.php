@@ -112,7 +112,7 @@ class Experiencia {
 
     public static function crea($nombre, $descripcion, $precio,$nivelminimo,$puntos, $urlImagen)
     {
-        $experiencia = new Experiencia($nombre, $descripcion, $precio,$nivelminimo,$puntos, $urlImagen);
+        $experiencia = new Experiencia(null,$descripcion, $precio,$nivelminimo,$puntos,$nombre, $urlImagen);
         return $experiencia->guarda();
     }
 

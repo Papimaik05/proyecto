@@ -40,7 +40,8 @@ CREATE TABLE IF NOT EXISTS `experiencias` (
   `precio` float NOT NULL,
   `nivelminimo` int(11) NOT NULL,
   `puntos` int(11) NOT NULL,
-  `imagen` varchar(50) NOT NULL
+  `imagen` varchar(50) NOT NULL,
+  PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -68,7 +69,8 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `descripcion` text NOT NULL,
   `unidades` int(11) NOT NULL,
   `precio` float NOT NULL,
-  `imagen` varchar(50) NOT NULL
+  `imagen` varchar(50) NOT NULL,
+  PRIMARY KEY(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -104,7 +106,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Indices de la tabla `experiencias`
 --
 ALTER TABLE `experiencias`
-  ADD PRIMARY KEY (`id`),
   ADD KEY `nivelminimo` (`nivelminimo`);
 
 --
@@ -116,8 +117,7 @@ ALTER TABLE `nivel`
 --
 -- Indices de la tabla `producto`
 --
-ALTER TABLE `producto`
-  ADD PRIMARY KEY (`id`);
+
 
 --
 -- Indices de la tabla `rol`
