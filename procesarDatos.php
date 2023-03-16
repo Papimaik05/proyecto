@@ -63,16 +63,14 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     }
 
                     if($formEnviado2){
-                        $password = $_POST['contr'];
-                        $cambiapass=true;
+                        $password = Usuario::hashPassword($_POST['contr']);
                     }
                     else{
                         $password = $_SESSION['contr'];
-                        $cambiapass=false;
                     }
                     $rol=$_SESSION['rol'];
                     $puntos=$_SESSION['puntos'];
-                    Usuario::cambioDatos($username, $password, $email,$rol,$puntos,$cambiapass);
+                    Usuario::cambioDatos($username, $password, $email,$rol,$puntos);
                     header('Location: micuenta.php');
                  }
 

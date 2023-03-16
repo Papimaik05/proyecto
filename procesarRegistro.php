@@ -61,7 +61,7 @@ if (! $formEnviado ) {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
                         $_SESSION['puntos'] = $usuario->getPuntos();
-                        $_SESSION['rol'] = $usuario->getNombreRol($usuario);
+                        $_SESSION['rol'] = $usuario->getRol();
                         $_SESSION['email'] = $usuario->getEmail();
                         $_SESSION['contr'] = $usuario->getContr();
                         $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));

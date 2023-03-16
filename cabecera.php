@@ -3,7 +3,7 @@ require_once './includes/level.php';
 require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    echo'Rol: '.$_SESSION['rol'];
+    echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
       echo '<form method="post" action="micuenta.php">
