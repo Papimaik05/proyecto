@@ -20,20 +20,28 @@
         $experiencias = Experiencia::cargarExperiencias();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
-	    } ?>
-    <form action="validarBorrado.php" method="post">
+	    } 
+        if(empty($experiencias)){
+            echo '<h2>No hay experiencias en la tienda</h2>'; 
+        }
+        else{
+            echo '<form action="validarBorrado.php" method="post">';
         
-        <label>Lista de Experiencias:</label>
-        <ul>
-            <?php foreach($experiencias as $p){
-                $id = $p->getId();
-                $nombre = $p->getNombre();
-                echo "<li><input type='checkbox' name='experiencias[]' value='". $id ."'> ". $nombre ."</li>";
-            }
-            ?>
-        </ul>
-        <input type="submit" value="Enviar">
-    </form>
+            echo '<label>Lista de Experiencias:</label>';
+            echo '<ul>';
+                foreach($experiencias as $p){
+                    $id = $p->getId();
+                    $nombre = $p->getNombre();
+                    echo "<li><input type='checkbox' name='experiencias[]' value='". $id ."'> ". $nombre ."</li>";
+                }
+                
+            echo '</ul>';
+            echo '<input type="submit" value="Enviar">';
+        echo '</form>';
+        }
+        ?>
+        
+
     <br><br><br><br><br><br><br><br>
     </main>
 <?php 

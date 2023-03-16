@@ -21,35 +21,41 @@
          if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } 
+        if(empty($experiencias)){
+            echo '<h2>No hay experiencias en la tienda</h2>'; 
+        }
+        else{
+            echo '<form action="validarEdicion.php?esExp=true" method="post">';
+        
+            echo '<label>Selecciona la experiencia que quieres modificar:</label>';
+            echo '<ul>';
+                foreach($experiencias as $e){
+                    $id = $e->getId();
+                    $nombre = $e->getNombre();
+                    echo "<li><input type='radio' name='experiencia' value='". $id ."
+                    '> ". $nombre ."</li>";
+                }
+                
+                echo '</ul>';
+                echo '<label>Ahora selecciona los valores a modificar</label>';
+                echo '<fieldset>';
+                echo '<label for="nombre">Nombre:</label>';
+                echo '<input type="text" name="nombre" id="nombre"><br><br>';
+                echo '<label for="descripcion">Descripción:</label>';
+                echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';		
+                echo '<label for="precio">Precio:</label>';
+                echo '<input type="number" name="precio" id="precio"><br><br>';
+                echo '<label for="nivelminimo">Nivel mínimo:</label>';
+                echo '<input type="number" name="nivelminimo" id="nivelminimo"><br><br>';
+                echo '<label for="imagen">URL de la imagen:</label>';
+                echo '<input type="text" name="imagen" id="imagen"><br><br>';
+                echo ' </fieldset>';
+                echo '<input type="submit" value="Enviar">';
+                echo ' </form>';
+        }
         $esExp=true;
     ?>  
-    <form action="validarEdicion.php?esExp=true" method="post">
-        
-        <label>Selecciona la experiencia que quieres modificar:</label>
-        <ul>
-            <?php foreach($experiencias as $e){
-                $id = $e->getId();
-                $nombre = $e->getNombre();
-                echo "<li><input type='radio' name='experiencia' value='". $id ."
-                '> ". $nombre ."</li>";
-            }
-            ?>
-        </ul>
-        <label>Ahora selecciona los valores a modificar</label>
-        <fieldset>
-        <label for="nombre">Nombre:</label>
-		<input type="text" name="nombre" id="nombre"><br><br>
-		<label for="descripcion">Descripción:</label>
-		<textarea name="descripcion" id="descripcion"></textarea><br><br>		
-		<label for="precio">Precio:</label>
-		<input type="number" name="precio" id="precio"><br><br>
-		<label for="nivelminimo">Nivel mínimo:</label>
-        <input type="number" name="nivelminimo" id="nivelminimo"><br><br>
-		<label for="imagen">URL de la imagen:</label>
-		<input type="text" name="imagen" id="imagen"><br><br>
-        </fieldset>
-        <input type="submit" value="Enviar">
-    </form>
+    
     <br><br><br><br><br><br><br><br>
     </main>
 <?php 
