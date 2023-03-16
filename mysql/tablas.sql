@@ -35,7 +35,7 @@ DROP TABLE IF EXISTS `rol`;
 
 CREATE TABLE IF NOT EXISTS `experiencias` (
   `nombre` varchar(25) NOT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` text NOT NULL,
   `precio` float NOT NULL,
   `nivelminimo` int(11) NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `nivel` (
 
 CREATE TABLE IF NOT EXISTS `producto` (
   `nombre` varchar(25) NOT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `descripcion` text NOT NULL,
   `unidades` int(11) NOT NULL,
   `precio` float NOT NULL,
