@@ -20,34 +20,42 @@
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
-	    } ?>
-    <form action="validarEdicion.php" method="post">
+	    } 
+
+        if(empty($productos)){
+            echo '<h2>No hay productos en la tienda</h2>'; 
+        }
+        else{
+            echo '<form action="validarEdicion.php" method="post">';
         
-        <label>Selecciona el producto que quieres modificar:</label>
-        <ul>
-            <?php foreach($productos as $p){
+            echo '<label>Selecciona el producto que quieres modificar:</label>';
+            echo '<ul>';
+            foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
                 echo "<li><input type='radio' name='producto' value='". $id ."
                 '> ". $nombre ."</li>";
             }
-            ?>
-        </ul>
-        <label>Ahora selecciona los valores a modificar</label>
-        <fieldset>
-        <label for="nombre">Nombre:</label>
-		<input type="text" name="nombre" id="nombre"><br><br>
-		<label for="descripcion">Descripción:</label>
-		<textarea name="descripcion" id="descripcion"></textarea><br><br>
-		<label for="unidades">Unidades:</label>
-		<input type="number" name="unidades" id="unidades"><br><br>
-		<label for="precio">Precio:</label>
-		<input type="number" name="precio" id="precio"><br><br>
-		<label for="imagen">URL de la imagen:</label>
-		<input type="text" name="imagen" id="imagen"><br><br>
-        </fieldset>
-        <input type="submit" value="Enviar">
-    </form>
+            
+            echo '</ul>';
+            echo '<label>Ahora selecciona los valores a modificar</label>';
+            echo '<fieldset>';
+            echo '<label for="nombre">Nombre:</label>';
+		    echo '<input type="text" name="nombre" id="nombre"><br><br>';
+		    echo '<label for="descripcion">Descripción:</label>';
+		    echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';
+		    echo '<label for="unidades">Unidades:</label>';
+		    echo '<input type="number" name="unidades" id="unidades"><br><br>';
+		    echo '<label for="precio">Precio:</label>';
+		    echo '<input type="number" name="precio" id="precio"><br><br>';
+		    echo '<label for="imagen">URL de la imagen:</label>';
+		    echo '<input type="text" name="imagen" id="imagen"><br><br>';
+            echo '</fieldset>';
+            echo '<input type="submit" value="Enviar">';
+            echo '</form>';
+        }
+
+        ?>
     <br><br><br><br><br><br><br><br>
     </main>
 <?php 
