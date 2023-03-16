@@ -17,6 +17,7 @@ require_once './includes/config.php';
 	    <main>
         <button onclick="window.location.href='insertarProducto.php'" type="button" > Insertar Producto</button>
 		<button onclick="window.location.href='borrarProducto.php'" type="button" > Borrar producto</button>
+        <button onclick="window.location.href='modificarProducto.php'" type="button" > Modificar producto</button>
         <br>     
         <br><br>
         <br><br>        

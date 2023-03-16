@@ -53,7 +53,7 @@ function reconocerUsuario() {
         <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
         <?php
         if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
-          if($_SESSION["rol"] == "admin" || $_SESSION["rol"] == "Gestor de Contenido"){
+          if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
             ?>
             <button onclick='window.location.href="gestorProductos.php"' type='button' > GestorContenido</button>
           <?php
