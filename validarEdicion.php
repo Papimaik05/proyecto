@@ -6,20 +6,20 @@
     if(isset($_POST['producto'])){
         $idProducto=$_POST['producto'];
         $producto=Producto::buscaPorId($idProducto);
-        if(!empty($nombre)){
+        if(!empty($_POST["nombre"])){
             $producto->setNombre($_POST['nombre']);
         }
         if(!empty($_POST['descripcion'])){
             $producto->setDescripcion($_POST['descripcion']);
         }
-        if(!empty($_POST['Unidades'])){
-            $producto->setUnidades($_POST['Unidades']);
+        if(isset($_POST['unidades'])){
+            $producto->setUnidades($_POST['unidades']);
         }
-        if(!empty($_POST['Precio'])){
-            $producto->setPrecio($_POST['Precio']);
+        if(isset($_POST['precio'])){
+            $producto->setPrecio($_POST['precio']);
         }
-        if(!empty($_POST['URL de la imagen'])){
-            $producto->setImagen($_POST['URL de la imagen']);
+        if(!empty($_POST['imagen'])){
+            $producto->setImagen($_POST['imagen']);
         }
         $producto->guarda();
         $mensaje =  "Producto modificado con exito";
