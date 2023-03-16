@@ -45,18 +45,24 @@ require_once './includes/Usuario.php';
             <br><br>
 	        <form action="procesarDatos.php" method="post">
             <fieldset>
-                <legend><b>Introduce nuevos datos</b></legend>
-                Nombre Usuario : <br><input type="text" name="nombre" > 
-                <br>
-                Email :<br><input type="text" name="email" > 
-                <br>
+                <legend><b>Actualizar Email</b></legend>
+                Email :<br><input type="email" name="email" > 
+            </fieldset>
+            <br>
+            <button type="submit" name="emailnuevo">Actualizar email</button>
+            <br><br>
+
+	        <form action="procesarDatos.php" method="post">
+            <fieldset>
+                <legend><b>Actualizar contraseña</b></legend>
                 Contraseña :<br><input type="password" name="contr" > 
                 <br>
                 Repita Contraseña :<br><input type="password" name="contr2" > 
         
             </fieldset>
             <br>
-            <button type="submit" name="registro">Actualizar datos</button>
+            <button type="submit" name="contrnuevo">Actualizar contraseña</button>
+            <br><br>
             
 	    </main> 
         <?php

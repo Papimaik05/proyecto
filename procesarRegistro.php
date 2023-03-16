@@ -60,9 +60,10 @@ if (! $formEnviado ) {
                     } else {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
-                        $_SESSION['puntos'] = 0;
-                        $_SESSION['rol'] = "usuario";
+                        $_SESSION['puntos'] = $usuario->getPuntos();
+                        $_SESSION['rol'] = $usuario->getNombreRol($usuario);
                         $_SESSION['email'] = $usuario->getEmail();
+                        $_SESSION['contr'] = $usuario->getContr();
                         $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
 
                         header('Location: index.php');

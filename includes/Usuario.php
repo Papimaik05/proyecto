@@ -27,13 +27,6 @@ class Usuario{
         return false;
     }
      
-    public static function cambioDatos($username, $email, $password)
-    {
-       $this->username=$username;
-       $this->email=$email;
-       $this->password=self::hashPassword($password);
-       self::guarda($this);
-    }
 
     public static function crea($username, $password, $email)
     {
@@ -81,15 +74,15 @@ class Usuario{
     private static function actualiza($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("UPDATE usuario U SET username = '%s', password='%s', email='%s', WHERE U.id=%i"
-            , $conn->real_escape_string($usuario->nombreUsuario)
-            , $conn->real_escape_string($usuario->nombre)
+        $query=sprintf("UPDATE usuario U SET password='%s', email='%s',rol='%d',puntos='%d',  WHERE U.username='%s'"
             , $conn->real_escape_string($usuario->password)
+            , $conn->real_escape_string($usuario->email)
             , $conn->real_escape_string($usuario->rol)
-            , $usuario->id);
+            , $conn->real_escape_string($usuario->puntos)
+            , $conn->real_escape_string($usuario->username));
         if ( $conn->query($query) ) {
             if ( $conn->affected_rows != 1) {
-                echo "No se ha podido actualizar el usuario: " . $usuario->id;
+                echo "No se ha podido actualizar el usuario: " . $usuario->username;
                 exit();
             }
         } else {
@@ -127,6 +120,18 @@ class Usuario{
         $this->puntos = $puntos;
     }
 
+    public static function cambioDatos($username, $password, $email,$rol,$puntos,$cambiapass)
+    {
+       $this->username=$username;
+       if($cambiapass){
+        $this->password=self::hashPassword($password);
+       }
+       $this->email=$email;
+       $this->rol=$rol;
+       $this->puntos=$puntos;
+       self::guarda($this);
+    }
+
     public function getNombreUsuario()
     {
         return $this->username;
@@ -145,6 +150,11 @@ class Usuario{
     public function getPuntos()
     {
         return $this->puntos;
+    }
+
+    public function getContr()
+    {
+        return $this->password;
     }
     
 
