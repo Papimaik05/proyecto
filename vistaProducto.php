@@ -3,7 +3,7 @@ require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/producto.php';
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <link href= "./css/style.css" rel="stylesheet" type="text/css">
     <title>Producto</title>
@@ -19,11 +19,14 @@ require_once __DIR__.'/includes/producto.php';
 	echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
 	echo "<p>" . $producto->getDescripcion() ."</p>";
 	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
+	echo "<p> Quedan " . $producto->getUnidades() ." unidades</p>";
 	
 	?>
-
 	<form action="producto.php" method="POST">
-	<p>Cantidad: <input type="number" value="1" name="Unidades" width="5" min="1"></p> 
+		<?php
+		$aux=$producto->getUnidades();
+		echo "<p>Cantidad: <input type=number value=1 name=Unidades min=1 max=$aux></p>"
+		?>
 	</form>
 	<br>
 
