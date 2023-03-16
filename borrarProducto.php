@@ -20,21 +20,28 @@
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
-	    } ?>
-    <form action="validarBorrado.php" method="post">
+	    }
+
+        if(empty($productos)){
+            echo '<h2>No hay productos en la tienda</h2>'; 
+        }
+        else{
+
+            echo '<form action="validarBorrado.php" method="post">';
         
-        <label>Lista de Productos:</label>
-        <ul>
-            <?php foreach($productos as $p){
+            echo '<label>Lista de Productos:</label>';
+            echo '<ul>';        
+            foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
                 echo "<li><input type='checkbox' name='productos[]' value='". $id ."
                 '> ". $nombre ."</li>";
-            }
-            ?>
-        </ul>
-        <input type="submit" value="Enviar">
-    </form>
+            }     
+            echo '</ul>';
+            echo '<input type="submit" value="Enviar">';
+            echo '</form>';
+        }        
+        ?>
     <br><br><br><br><br><br><br><br>
     </main>
 <?php 
