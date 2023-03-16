@@ -48,13 +48,17 @@ class Experiencia {
     private static function inserta($experiencia)
     {
         $result = false;
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
         $conn=Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')"
+        $query1="SELECT MAX(id) as MAX FROM experiencias";
+        $resultado=$conn->query($query1);
+        
+        if($resultado){
+        $fila=mysqli_fetch_assoc($resultado);
+        $max=$fila["MAX"]+1;
+
+        $query=sprintf("INSERT INTO experiencias(nombre,id,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s','%d', '%s', '%s', '%s', '%s', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
+            , $max
             , $conn->real_escape_string($experiencia->descripcion)
             , $conn->real_escape_string($experiencia->precio)
             , $conn->real_escape_string($experiencia->nivelminimo)
@@ -67,17 +71,20 @@ class Experiencia {
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
+        }else{
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+
+
         return $result;
     }
     
     private static function actualiza($experiencia)
     {
         $result = false;
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
         $conn=Aplicacion::getInstance()->getConexionBd();
+
+
         $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)

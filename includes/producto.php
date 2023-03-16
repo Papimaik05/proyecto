@@ -45,19 +45,30 @@ class Producto {
     {
         $result = false;
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%s', '%s', '%s')"
+
+        $query1="SELECT MAX(id) as MAX FROM producto";
+        $resultado=$conn->query($query1);
+        if($resultado){
+        $fila=mysqli_fetch_assoc($resultado);
+        $max=$fila["MAX"]+1;
+
+        $query=sprintf("INSERT INTO producto(id,nombre,descripcion, unidades, precio, imagen) VALUES ('%d','%s', '%s', '%s', '%s', '%s')"
+            ,$max
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
             , $conn->real_escape_string($producto->unidades)
             , $conn->real_escape_string($producto->precio)
             , $conn->real_escape_string($producto->urlImagen)
         );
-        if ( $conn->query($query) ) {
-            $producto->id = $conn->insert_id;
+        if ($conn->query($query)) {
+            $producto->id = $max;
             $result=true;
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
+    }else{
+        error_log("Error BD ({$conn->errno}): {$conn->error}");
+    }
         return $result;
     }
     
