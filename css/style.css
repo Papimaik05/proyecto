@@ -5,7 +5,7 @@ text-align: center;
 }
 
 button{
-  background-color:#007bff;
+  background-color: #007bff;
   color:#ffffff;
   padding:10px 20px;
   border-radius:5px;
@@ -37,9 +37,7 @@ table {
 section{
 display: flex;
 width: 300px;
-height: 360px;
-text-align: center;
-object-position: 100px 300px;
+height: 300px;
 }
 
 section img{
