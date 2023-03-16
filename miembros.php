@@ -10,10 +10,11 @@ require_once './includes/config.php';
 </head>
 
 <body>
+	<a id= "principio"></a>
 	<?php
         require ('cabecera.php');
     ?>
-	<!-- Enlaces directos a los miembros -->
+	<!-- Enlaces directos a los miembros -->	
 	<h2>
 		Enlaces directos a los miembros
 	</h2>
@@ -31,15 +32,18 @@ require_once './includes/config.php';
 	<br />
 	<!-- Foto y descripcion de los miembros -->
 	<h2>Miembros del grupo</h2>
+	<div>
 	<a id= "Maria"></a>
 	<h3>1.María Magdalena Miralles Reyes</h3>
 	<img src="./img/fotoMaria.jpg" alt="imagenMaria" height="341">
 	<br>
 	<p>Correo:mmiralle@ucm.es</p>
 	<p>En mi tiempo libre me gusta jugar al padel con mis amigos,<br />
-	ir al cine o de compras, ver series en las distintas plataformas digtales,<br />
-	en verano me gusta ir a la playa e ir a chiringuitos para tapear.<br />
+	ir al cine o de compras. También ver series en las distintas plataformas digtales.<br />
+	En verano me gusta ir a la playa e ir a chiringuitos para tapear.<br />
     Como buena aficionada a la playa me gusta reciclar y recoger la basura de las playas.</p>
+	</div>
+	<div>
 	<a id= "Elías"></a>
 	<h3>2.Elías Janer Madiba</h3>
 	<img src="./img/fotoElias.jpg" alt="fotoElias" height="341">
@@ -49,6 +53,8 @@ require_once './includes/config.php';
 	ir al gimnasio por las tardes, salir de fiesta los fines de semana.<br />
 	Los domingos por la tarde aprovecho para ir a repartir comida a los pinguinos.
 	</p>
+	</div>
+	<div>
 	<a id= "Miguel"></a>
 	<h3>3.Miguel Mateos Matias</h3>
 	<img src="./img/fotoMiguel.jpg" alt="fotoMiguel" height="341">
@@ -58,6 +64,8 @@ require_once './includes/config.php';
 	 los fines de semana salir de fiesta a discotecas con mis amigos,<br />
 	jugar a videojuegos en el pc y bucear.
 	</p>
+	</div>
+	<div>
 	<a id= "Alberto"></a>
 	<h3>4.Alberto Dominguez Sierra</h3>
 	<img src="./img/fotoAlberto.jpg" alt="fotoAlberto" height="341">
@@ -67,6 +75,8 @@ require_once './includes/config.php';
 	ver series de Netflix y los fines de semana salir de fiesta con mis amigos.<br />
     Me gusta mucho nadar y hacer snorkel.
 	</p>
+	</div>
+	<div>
 	<a id= "Carlos"></a>
 	<h3>5.Carlos Moreno Pérez</h3>
 	<img src="./img/fotoCarlos.jpg" alt="fotoCarlos" height="341">
@@ -76,6 +86,8 @@ require_once './includes/config.php';
 	de la liga santander, me gusta jugar al futbol y pasar el rato con los amigos<br />
 	ver peliculas y salir con la bici. <br />
     Soy muy aventurero y me gusta meterme en jaulas para nadar con tiburones.</p>
+	</div>
+	<div>
 	<a id= "Yasser"></a>
 	<h3>6.Yasser Takfa Ghazal</h3>
 	<img src="./img/fotoYasser.jpg" alt="fotoYasser" height="341">
@@ -85,7 +97,7 @@ require_once './includes/config.php';
 		eso soy voluntario en una perrera en la que cuido perretes muy mayores<br />
 		que nadie quiere adoptar. Me gusta salir en barco para ver los delfines.</p>
 	<a href="#principio">Ir al principio de la pagina</a>
-
+	</div>
 	<?php
         require ('pie.php');
     ?>
