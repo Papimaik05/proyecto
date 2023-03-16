@@ -3,6 +3,7 @@
     require_once './includes/Experiencias.php';    
     $mensaje = "";
     $res=true;
+    echo " siuuuuuuuu";
     if(isset($_POST['producto'])){
         $idProducto=$_POST['producto'];
         $producto=Producto::buscaPorId($idProducto);
@@ -25,7 +26,7 @@
         $mensaje =  "Producto modificado con exito";
     }elseif(isset($_POST['experiencia'])){
         $idExperiencia=$_POST['experiencia'];
-        $experiencia=Experiencia::buscaPorId($idProducto);
+        $experiencia=Experiencia::buscaPorId($idExperiencia);
         if(!empty($_POST["nombre"])){
             $experiencia->setNombre($_POST['nombre']);
         }
@@ -36,7 +37,7 @@
             $experiencia->setNivelMinimo($_POST['nivelminimo']);
         }
         if(isset($_POST['puntos'])){
-            $experiencia->setPuntos($_POST['nivelminimo']);
+            $experiencia->setPuntos($_POST['puntos']);
         }
         if(isset($_POST['precio'])){
             $experiencia->setPrecio($_POST['precio']);

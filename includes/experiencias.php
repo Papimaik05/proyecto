@@ -85,6 +85,7 @@ class Experiencia {
             , $usuario->id
         );
         if ( $conn->query($query) ) {
+            $result=true;
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -165,7 +166,7 @@ class Experiencia {
     {
         return $this->nombre;
     }
-    public function setPuntos($untos){
+    public function setPuntos($puntos){
         $this->puntos = $puntos;
     }
     public function setNivelMinimo($nivelminimo){
