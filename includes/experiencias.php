@@ -82,7 +82,7 @@ class Experiencia {
             , $conn->real_escape_string($experiencia->nivelminimo)
             , $conn->real_escape_string($experiencia->puntos)
             , $conn->real_escape_string($experiencia->urlImagen)
-            , $usuario->id
+            , $experiencia->id
         );
         if ( $conn->query($query) ) {
             $result=true;
