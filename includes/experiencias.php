@@ -151,11 +151,29 @@ class Experiencia {
         return $this->id;
     }
 
+    public function setNombre($nombre){
+        $this->nombre = $nombre;
+    }
+    public function setDescripcion($descripcion){
+        $this->descripcion = $descripcion;
+    }
+
+    public function setImagen($imagen){
+        $this->urlImagen = $imagen;
+    }
+    public function setPrecio($precio){
+        $this->precio = $precio;
+    }
     public function getNombre()
     {
         return $this->nombre;
     }
-
+    public function setPuntos($untos){
+        $this->puntos = $puntos;
+    }
+    public function setNivelMinimo($nivelminimo){
+        $this->nivelminimo = $nivelminimo;
+    }
     public function getDescripcion(){
         return $this->descripcion;
     }
