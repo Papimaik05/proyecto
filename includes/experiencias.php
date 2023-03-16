@@ -53,7 +53,7 @@ class Experiencia {
         $dbpass="proyecto";
         $dbname="proyecto";
         $conn=Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s')"
+        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $conn->real_escape_string($experiencia->precio)
@@ -63,9 +63,11 @@ class Experiencia {
         );
         if ( $conn->query($query) ) {
             $experiencia->id = $conn->insert_id;
+            $result=true;
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
+        return $result;
     }
     
     private static function actualiza($experiencia)
