@@ -71,6 +71,13 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     $rol=$_SESSION['rol'];
                     $puntos=$_SESSION['puntos'];
                     Usuario::cambioDatos($username, $password, $email,$rol,$puntos);
+                    $_SESSION['login'] = true;
+                    $_SESSION['nombre'] = $username;
+                    $_SESSION['puntos'] = $puntos;
+                    $_SESSION['rol'] = $rol;
+                    $_SESSION['email'] = $email;
+                    $_SESSION['contr'] = $password;
+                    $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
                     header('Location: micuenta.php');
                  }
 

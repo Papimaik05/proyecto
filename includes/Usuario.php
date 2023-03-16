@@ -28,8 +28,12 @@ class Usuario{
     }
       public static function cambioDatos($username, $password, $email,$rol,$puntos)
     {
-        $user=new Usuario($username,$password,$email,$rol,$puntos);
-        self::guarda($user);
+        $user=self::buscaUsuario($username);
+        $user->password=$password;
+        $user->email=$email;
+        $user->rol=$rol;
+        $user->puntos=$puntos;
+        self::actualiza($user);
     }
 
     public static function crea($username, $password, $email)
@@ -39,10 +43,10 @@ class Usuario{
             return false;
         }
         $user = new Usuario($username,self::hashPassword($password),$email,1,0);
-        return self::guarda($user);
+        return self::inserta($user);
     }
     
-    private static function hashPassword($password)
+    public static function hashPassword($password)
     {
         return password_hash($password, PASSWORD_DEFAULT);
     }
@@ -78,18 +82,17 @@ class Usuario{
     private static function actualiza($usuario)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("UPDATE usuario U SET password='%s', email='%s',rol='%d',puntos='%d' WHERE U.username='%s'"
-            , $conn->real_escape_string($usuario->password)
+        $query=sprintf("UPDATE usuario U SET  email='%s' , password='%s',rol='%d',puntos='%d' WHERE U.username='%s'"
             , $conn->real_escape_string($usuario->email)
+            , $conn->real_escape_string($usuario->password)
             , $usuario->rol
             , $usuario->puntos
             , $conn->real_escape_string($usuario->username));
         if ( $conn->query($query) ) {
-            // if ( $conn->affected_rows != 1) {
-            //     echo "No se ha podido actualizar el usuario: " . $usuario->username;
-            //     exit();
-            // }
-            echo "Usuario actualizado : " . $usuario->username;
+            if ( $conn->affected_rows != 1) {
+                 echo "No se ha podido actualizar el usuario: " . $usuario->username;
+                exit();
+             }
         } else {
             echo "Error al actualizar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             exit();
@@ -185,14 +188,5 @@ class Usuario{
         $this->password = self::hashPassword($nuevoPassword);
     }
     
-    public static function guarda($usuario)
-    {
-        $user = self::buscaUsuario($usuario->username);
-        if ($user) {
-            return self::actualiza($user);
-        }
-        return self::inserta($usuario);
-    }
-
 }
 ?>

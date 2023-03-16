@@ -17,11 +17,6 @@ require_once './includes/Usuario.php';
             
             ?>
 	    <main>
-            <?php
-            if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-                
-            } 
-            ?>
             Nombre de usuario:
             <br>
             <input type="text" name="nombre"  readonly value="<?php echo $_SESSION['nombre'] ?>">
