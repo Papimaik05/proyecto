@@ -45,7 +45,14 @@
                 echo '<label for="precio">Precio:</label>';
                 echo '<input type="number" name="precio" id="precio"><br><br>';
                 echo '<label for="nivelminimo">Nivel mínimo:</label>';
-                echo '<input type="number" name="nivelminimo" id="nivelminimo"><br><br>';
+                echo '<select name ="nivelminimo" id="nivelminimo">';
+                
+                $result=level::getAllLevels();
+                while($row=mysqli_fetch_object($result)){
+                    echo "<option>$row->nombre</option>";
+                }
+                echo'</select> <br><br>';
+
                 echo '<label for="puntos">Puntos:</label>';
                 echo '<input type="number" name="puntos" id="puntos"><br><br>';
                 echo '<label for="imagen">URL de la imagen:</label>';
