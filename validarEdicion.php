@@ -13,10 +13,10 @@
         if(!empty($_POST['descripcion'])){
             $producto->setDescripcion($_POST['descripcion']);
         }
-        if(isset($_POST['unidades'])){
+        if(!empty($_POST['unidades'])){
             $producto->setUnidades($_POST['unidades']);
         }
-        if(isset($_POST['precio'])){
+        if(!empty($_POST['precio'])){
             $producto->setPrecio($_POST['precio']);
         }
         if(!empty($_POST['imagen'])){
@@ -33,13 +33,13 @@
         if(!empty($_POST['descripcion'])){
             $experiencia->setDescripcion($_POST['descripcion']);
         }
-        if(isset($_POST['nivelminimo'])){
+        if(!empty($_POST['nivelminimo'])){
             $experiencia->setNivelMinimo($_POST['nivelminimo']);
         }
-        if(isset($_POST['puntos'])){
+        if(!empty($_POST['puntos'])){
             $experiencia->setPuntos($_POST['puntos']);
         }
-        if(isset($_POST['precio'])){
+        if(!empty($_POST['precio'])){
             $experiencia->setPrecio($_POST['precio']);
         }
         if(!empty($_POST['imagen'])){
