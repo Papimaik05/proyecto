@@ -1,5 +1,7 @@
 <?php
 require_once './includes/config.php';
+require_once './includes/level.php';
+
 ?>
 <!DOCTYPE html>
 
@@ -26,8 +28,18 @@ require_once './includes/config.php';
 		    <textarea name="descripcion" id="descripcion"></textarea><br><br>		    
 		    <label for="precio">Precio:</label>
 		    <input type="number" name="precio" id="precio"><br><br>
+
             <label for="nivelminimo">Nivel mínimo:</label>
-		    <input type="number" name="nivelminimo" id="nivelminimo"><br><br>
+			<select name ="nivelminimo" id="nivelminimo"> 
+			<?php
+			$result=level::getAllLevels();
+			while($row=mysqli_fetch_object($result)){
+				echo "<option>$row->nombre</option>";
+			}
+			?>
+			</select>
+			<br><br>
+		    <!-- <input type="number" name="nivelminimo" id="nivelminimo"><br><br> -->
             <label for="puntos">Puntos:</label>
 		    <input type="number" name="puntos" id="puntos"><br><br>
 		    <label for="imagen">URL de la imagen:</label>

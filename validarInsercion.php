@@ -1,6 +1,7 @@
 <?php
     require_once './includes/Producto.php';
     require_once './includes/Experiencias.php';
+    require_once './includes/level.php';
     $mensaje = "";
     $ret=false;
     if(isset($_POST["nombre"],$_POST["descripcion"],$_POST["unidades"],$_POST["precio"],$_POST["imagen"])&&$_POST["nombre"]!=''&&$_POST["descripcion"]!=''&&$_POST["precio"]!=''&&$_POST["imagen"]!=''&&$_POST["unidades"]!=''){
@@ -16,7 +17,7 @@
         $puntos = $_POST['puntos'];
         $precio = $_POST['precio'];
         $imagen = $_POST['imagen'];
-        $nivelminimo = $_POST['nivelminimo'];
+        $nivelminimo = level::getNumero($_POST['nivelminimo']);
         $ret = Experiencia::crea($nombre,$descripcion,$precio,$nivelminimo,$puntos,$imagen);
     }
     if($ret==true){
