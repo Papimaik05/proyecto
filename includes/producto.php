@@ -65,7 +65,7 @@ class Producto {
     {
         $result = false;
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("UPDATE producto P SET nombre = '%s', descripcion='%s', unidades='%s', precio='%s', imagen='%s' WHERE P.id=%d"
+        $query=sprintf("UPDATE producto P SET nombre = '%s', descripcion='%s', unidades='%d', precio='%d', imagen='%s' WHERE P.id='%d'"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
             , $producto->unidades
@@ -85,7 +85,7 @@ class Producto {
     public static function buscaPorId($idProducto)
     {
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("SELECT * FROM producto WHERE id=%d", $idProducto);
+        $query = sprintf("SELECT * FROM producto WHERE id='%d'", $idProducto);
         $rs = $conn->query($query);
         if ($rs) {
             $fila = $rs->fetch_assoc();
@@ -122,7 +122,7 @@ class Producto {
          * $result = self::borraRoles($usuario) !== false;
          */
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("DELETE FROM producto WHERE id = %d"
+        $query = sprintf("DELETE FROM producto WHERE id = '%d'"
             , $idProducto
         );
         if ( ! $conn->query($query) ) {

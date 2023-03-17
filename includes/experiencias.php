@@ -47,7 +47,7 @@ class Experiencia {
        
         $conn=Aplicacion::getInstance()->getConexionBd();
         
-        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')"
+        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%d', '%d', '%d', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $experiencia->precio
@@ -71,7 +71,7 @@ class Experiencia {
 
 
 
-        $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
+        $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%d',nivelminimo='%d',puntos='%d', imagen='%s' WHERE P.id='%d'"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $experiencia->precio
@@ -93,7 +93,7 @@ class Experiencia {
     {
         $result = false;
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("SELECT * FROM experiencias WHERE id=%d", $idExperiencia);
+        $query = sprintf("SELECT * FROM experiencias WHERE id='%d'", $idExperiencia);
         $rs = $conn->query($query);
         if ($rs) {
             $fila = $rs->fetch_assoc();
@@ -130,7 +130,7 @@ class Experiencia {
          * $result = self::borraRoles($usuario) !== false;
          */        
         $conn=Aplicacion::getInstance()->getConexionBd();
-        $query = sprintf("DELETE FROM experiencias WHERE id = %d"
+        $query = sprintf("DELETE FROM experiencias WHERE id = '%d'"
             , $idExperiencia
         );
         if (!$conn->query($query) ) {

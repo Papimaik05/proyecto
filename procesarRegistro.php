@@ -67,9 +67,6 @@ if (! $formEnviado ) {
                         $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
 
                         header('Location: index.php');
-                        //$_SESSION['esAdmin'] = $usuario->tieneRol(Usuario::ADMIN_ROLE);
-                        //header('Location: index.php');
-                        //exit();
                     }
                  }
                     if($existe){
