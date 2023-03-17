@@ -3,7 +3,7 @@
     require_once './includes/Experiencias.php';    
     $mensaje = "";
     $res=true;
-    echo " siuuuuuuuu";
+    
     if(isset($_POST['producto'])){
         $idProducto=$_POST['producto'];
         $producto=Producto::buscaPorId($idProducto);
