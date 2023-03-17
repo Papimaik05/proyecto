@@ -57,7 +57,7 @@ class Experiencia {
             , $conn->real_escape_string($experiencia->precio)
             , $conn->real_escape_string($experiencia->nivelminimo)
             , $conn->real_escape_string($experiencia->puntos)
-            ,$conn->real_escape_string($experiencia->imagen)
+            ,$conn->real_escape_string($experiencia->urlImagen)
         );
         if ( $conn->query($query) ) {
             $experiencia->id = $conn->insert_id;
@@ -113,7 +113,7 @@ class Experiencia {
 
     public static function crea($nombre, $descripcion, $precio,$nivelminimo,$puntos, $urlImagen)
     {
-        $experiencia = new Experiencia(null,$descripcion, $precio,$nivelminimo,$puntos,$nombre, $urlImagen);
+        $experiencia = new Experiencia(null,$descripcion, $precio,$nivelminimo, $urlImagen, $nombre,$puntos);
         return $experiencia->guarda();
     }
 
