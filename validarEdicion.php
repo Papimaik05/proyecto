@@ -48,13 +48,7 @@
         $experiencia->guarda();
         $mensaje =  "Experiencia modificada con exito";
     }
-    else{
-        if(isset($_GET['esExp'])){
-        $mensaje="Seleccione el producto a modificar";
-        }else{
-        $mensaje="Seleccione la experiencia a modificar";
-        }
-    }
+    
     if(isset($_GET['esExp'])){
         header("Location:modificarExperiencia.php?mensaje=$mensaje");
     }else{
