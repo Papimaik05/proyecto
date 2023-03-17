@@ -39,7 +39,6 @@ require_once './includes/level.php';
 			?>
 			</select>
 			<br><br>
-		    <!-- <input type="number" name="nivelminimo" id="nivelminimo"><br><br> -->
             <label for="puntos">Puntos:</label>
 		    <input type="number" name="puntos" id="puntos"><br><br>
 		    <label for="imagen">URL de la imagen:</label>

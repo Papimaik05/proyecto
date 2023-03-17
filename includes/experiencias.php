@@ -22,10 +22,6 @@ class Experiencia {
 
     public static function cargarExperiencias(){
         $experiencias = [];
-        $dbhost="localhost";
-        $dbuser="proyecto";
-        $dbpass="proyecto";
-        $dbname="proyecto";
         $conn=Aplicacion::getInstance()->getConexionBd();
         if(!$conn){
             exit("Fallo en la conexion");
