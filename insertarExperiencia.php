@@ -17,7 +17,7 @@ require_once './includes/config.php';
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } ?>
-	    <form action="validarInsercion.php" method="POST">
+	    <form action="validarInsercion.php?esExp=true" method="POST">
         <fieldset>
 			<legend>Datos de la experiencia </legend>
 		    <label for="nombre">Nombre:</label>

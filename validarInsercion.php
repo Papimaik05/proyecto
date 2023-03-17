@@ -25,6 +25,10 @@
     else{
         $mensaje = "Error en la inserción, vuelva a intentarlo";
     }
+    if(isset($_GET['esExp'])){
+        header("Location:insertarExperiencia.php?mensaje=$mensaje");
+    }
+    else{
     header("Location:insertarProducto.php?mensaje=$mensaje");
-
+    }
 ?>
