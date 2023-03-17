@@ -21,7 +21,7 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
     </head>
 
 <body>
-    <div style="text-align:center;">
+    <div >
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
