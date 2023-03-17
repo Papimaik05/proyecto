@@ -13,7 +13,7 @@ require_once './includes/Usuario.php';
 <body>
     
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             
             ?>
 	    <main>
@@ -61,7 +61,7 @@ require_once './includes/Usuario.php';
             
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
         
         

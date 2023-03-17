@@ -12,7 +12,7 @@ require_once './includes/config.php';
 <body>
 	<a id= "principio"></a>
 	<?php
-        require ('cabecera.php');
+        require ('./includes/comun/cabecera.php');
     ?>
 	<!-- Enlaces directos a los miembros -->	
 	<h2>
@@ -99,7 +99,7 @@ require_once './includes/config.php';
 	<a href="#principio">Ir al principio de la pagina</a>
 	</div>
 	<?php
-        require ('pie.php');
+        require ('./includes/comun/pie.php');
     ?>
 </body>
 </html>

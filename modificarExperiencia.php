@@ -13,7 +13,7 @@
 
 <body>
     <?php
-        require ('cabecera.php');
+        require ('./includes/comun/cabecera.php');
     ?>
     <main>
     <?php
@@ -61,7 +61,7 @@
     <br><br><br><br><br><br><br><br>
     </main>
 <?php 
-    require('pie.php');
+    require('./includes/comun/pie.php');
 ?>
 
 </body>

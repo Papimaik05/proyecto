@@ -20,7 +20,7 @@ session_destroy();
 
 
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
 	        <article>  
@@ -30,7 +30,7 @@ session_destroy();
 	        </article>
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
         
 

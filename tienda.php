@@ -26,7 +26,7 @@ require_once './includes/config.php';
 
 <body>
     <?php
-        require ('cabecera.php');
+        require ('./includes/comun/cabecera.php');
     ?>
     
     <h1>Tienda</h1>
@@ -73,7 +73,7 @@ else{
 		producto();
 		header("Location: producto.php ");
 	}
-    require('pie.php');
+    require('./includes/comun/pie.php');
 ?>
 
 </body>

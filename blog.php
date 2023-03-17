@@ -12,7 +12,7 @@ require_once './includes/config.php';
 <body>
     
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
 	        <h1>Esta página se encuentra en mantenimiento</h1>
@@ -20,7 +20,7 @@ require_once './includes/config.php';
             <h2>Dentro de poco podrás consultar nuestro blog</h2>
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
         
 </body>

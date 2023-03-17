@@ -12,7 +12,7 @@ require_once './includes/config.php';
 <body>
     
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
         <button onclick="window.location.href='insertarProducto.php'" type="button" > Insertar Producto</button>
@@ -29,7 +29,7 @@ require_once './includes/config.php';
     </form>
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
         
 </body>

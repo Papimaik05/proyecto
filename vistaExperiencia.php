@@ -12,7 +12,7 @@ require_once __DIR__.'/includes/experiencias.php';
 
 <body>
 	<?php  
-	require ('cabecera.php');
+	require ('./includes/comun/cabecera.php');
 	$id = $_GET["id"];
 	$experiencia = Experiencia::buscaPorId($id);
 
@@ -25,7 +25,7 @@ require_once __DIR__.'/includes/experiencias.php';
 
     <?php 
 
-	require("pie.php");
+	require('./includes/comun/pie.php');
 	?>
 
 </body>

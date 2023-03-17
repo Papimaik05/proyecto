@@ -11,7 +11,7 @@ require_once __DIR__.'/includes/producto.php';
 
 <body>
 	<?php  
-	require ('cabecera.php');
+	require ('./includes/comun/cabecera.php');
 	$id = $_GET["id"];
 	$producto = Producto::buscaPorId($id);
 
@@ -31,7 +31,7 @@ require_once __DIR__.'/includes/producto.php';
 	<br>
 
     <?php 
-	require("pie.php");
+	require("./includes/comun/pie.php");
 	?>
 
 </body>

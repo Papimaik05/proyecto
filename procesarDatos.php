@@ -23,7 +23,7 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
 <body>
     <div style="text-align:center;">
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
 	        <article>  
@@ -107,7 +107,7 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     </article>
                 </main> 
                 <?php
-                    require('pie.php');
+                    require('./includes/comun/pie.php');
                 ?>        
             </div>     
         </body>

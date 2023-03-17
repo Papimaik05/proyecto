@@ -11,7 +11,7 @@ require_once './includes/config.php';
 
 <body>
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
 	        <article>  
@@ -31,7 +31,7 @@ require_once './includes/config.php';
 	        </article>
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
   
 </body>

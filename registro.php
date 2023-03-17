@@ -12,7 +12,7 @@ require_once './includes/config.php';
 <body>
     <div style="text-align:center;">
             <?php
-            require ('cabecera.php');
+            require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
 	        <article>  
@@ -36,7 +36,7 @@ require_once './includes/config.php';
 	        </article>
 	    </main> 
         <?php
-            require('pie.php');
+            require('./includes/comun/pie.php');
         ?>        
     </div>     
 </body>
