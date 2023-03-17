@@ -54,9 +54,9 @@ class Experiencia {
         $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
-            , $conn->real_escape_string($experiencia->precio)
-            , $conn->real_escape_string($experiencia->nivelminimo)
-            , $conn->real_escape_string($experiencia->puntos)
+            , $experiencia->precio
+            , $experiencia->nivelminimo
+            , $experiencia->puntos
             ,$conn->real_escape_string($experiencia->urlImagen)
         );
         if ( $conn->query($query) ) {
@@ -78,9 +78,9 @@ class Experiencia {
         $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%s',nivelminimo='%s',puntos='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
-            , $conn->real_escape_string($experiencia->precio)
-            , $conn->real_escape_string($experiencia->nivelminimo)
-            , $conn->real_escape_string($experiencia->puntos)
+            , $experiencia->precio
+            , $experiencia->nivelminimo
+            , $experiencia->puntos
             , $conn->real_escape_string($experiencia->urlImagen)
             , $experiencia->id
         );

@@ -45,11 +45,11 @@ class Producto {
     {
         $result = false;
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%s', '%s', '%s')"
+        $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%d', '%d', '%s')"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
-            , $conn->real_escape_string($producto->unidades)
-            , $conn->real_escape_string($producto->precio)
+            , $producto->unidades
+            , $producto->precio
             , $conn->real_escape_string($producto->urlImagen)
         );
         if ( $conn->query($query) ) {
@@ -68,8 +68,8 @@ class Producto {
         $query=sprintf("UPDATE producto P SET nombre = '%s', descripcion='%s', unidades='%s', precio='%s', imagen='%s' WHERE P.id=%d"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
-            , $conn->real_escape_string($producto->unidades)
-            , $conn->real_escape_string($producto->precio)
+            , $producto->unidades
+            , $producto->precio
             , $conn->real_escape_string($producto->urlImagen)
             , $producto->id
         );
