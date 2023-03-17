@@ -100,14 +100,6 @@ class Usuario{
         
         return $usuario;
     }
-   
-    
-    private static function borra($usuario)
-    {
-       
-    }
-    
-
 
     private $username;
 
@@ -152,35 +144,10 @@ class Usuario{
     {
         return $this->password;
     }
-    
-
-    public function añadeRol($rol)
-    {
-        $this->rol = $rol;
-    }
-
-
-    public function tieneRol($role)
-    {
-        if ($this->roles == null) {
-            self::cargaRoles($this);
-        }
-        return array_search($role, $this->roles) !== false;
-    }
 
     public function compruebaPassword($password)
     {
         return password_verify($password, $this->password);
-    }
-
-    public function compruebaPassword2($password)
-    {
-        if($password==$this->password){
-            return true;
-        }
-        else{
-            return false;
-        }
     }
 
     public function cambiaPassword($nuevoPassword)
