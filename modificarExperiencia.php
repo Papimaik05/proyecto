@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__.'/includes/Experiencias.php';
     require_once './includes/config.php';
+    require_once './includes/level.php';
 ?>
 
 <!DOCTYPE html>

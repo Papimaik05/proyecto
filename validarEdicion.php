@@ -1,6 +1,7 @@
 <?php
     require_once './includes/Producto.php';
-    require_once './includes/Experiencias.php';    
+    require_once './includes/Experiencias.php';  
+    require_once './includes/level.php';  
     $mensaje = "";
     $res=true;
     
@@ -34,7 +35,7 @@
             $experiencia->setDescripcion($_POST['descripcion']);
         }
         if(!empty($_POST['nivelminimo'])){
-            $experiencia->setNivelMinimo($_POST['nivelminimo']);
+            $experiencia->setNivelMinimo(level::getNumero($_POST['nivelminimo']));
         }
         if(!empty($_POST['puntos'])){
             $experiencia->setPuntos($_POST['puntos']);
