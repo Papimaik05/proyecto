@@ -4,9 +4,9 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="utf-8">
+  
     <link href= "./css/style.css" rel="stylesheet" type="text/css">
     <title>Modificar producto</title>
 </head>

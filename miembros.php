@@ -2,9 +2,8 @@
 require_once './includes/config.php';
 ?>
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-	<meta charset= "utf-8">
 	<title>Miembros del equipo</title>
 	<link id="estilo" href="./css/style.css" rel="stylesheet" type="text/css" />
 </head>
