@@ -49,8 +49,8 @@ function reconocerUsuario() {
         <div style="text-align:left;" >
         <button onclick="window.location.href='index.php'" type="button" > Inicio</button>
 		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
-        <button onclick="window.location.href='Noticias.php'" type="button" > Noticias</button>
-        <button onclick="window.location.href='Blog.php'" type="button" > Blog</button>
+        <button onclick="window.location.href='noticias.php'" type="button" > Noticias</button>
+        <button onclick="window.location.href='blog.php'" type="button" > Blog</button>
         <?php
         if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
           if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
