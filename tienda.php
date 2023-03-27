@@ -12,7 +12,7 @@ require_once './includes/config.php';
 	$_SESSION["img"] = $imagen;
     $_SESSION["id"] = $id;
 	}
-    require_once __DIR__.'/includes/Producto.php';
+    require_once __DIR__.'/includes/producto.php';
     require_once __DIR__.'/includes/experiencias.php';
 ?>
 

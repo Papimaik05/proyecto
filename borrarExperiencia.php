@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__.'/includes/Experiencias.php';
+    require_once __DIR__.'/includes/experiencias.php';
     require_once './includes/config.php';
 ?>
 

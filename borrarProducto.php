@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__.'/includes/Producto.php';
+    require_once __DIR__.'/includes/producto.php';
     require_once './includes/config.php';
 ?>
 
