@@ -1,6 +1,6 @@
 <?php
-    require_once './includes/Producto.php';
-    require_once './includes/Experiencias.php';
+    require_once './includes/producto.php';
+    require_once './includes/experiencias.php';
     require_once './includes/level.php';
     $mensaje = "";
     $ret=false;

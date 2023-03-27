@@ -1,6 +1,6 @@
 <?php
-    require_once './includes/Producto.php';
-    require_once './includes/Experiencias.php';    
+    require_once './includes/producto.php';
+    require_once './includes/experiencias.php';    
     $mensaje = "";
     $res=true;
     if(isset($_POST['productos'])){
