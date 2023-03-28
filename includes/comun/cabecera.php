@@ -3,11 +3,8 @@ require_once './includes/level.php';
 require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    echo '<form method="post" action="vistaCarritoProductos.php">
-      <input type="image" src="./img/logo_carrito_productos.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
-      </form>';
-      echo '<form method="post" action="vistaCarritoExperiencias.php">
-      <input type="image" src="./img/logo_carrito_experiencias.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
+    echo '<form method="post" action="vistaCarrito.php">
+      <input type="image" src="./img/logo_carrito.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
       </form>';
     echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
