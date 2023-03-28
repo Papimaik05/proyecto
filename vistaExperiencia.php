@@ -22,11 +22,14 @@ require_once './includes/Usuario.php';
 	echo "<h3>". $experiencia->getDescripcion() ."</h3>";
 	echo "<h3> Nivel minimo requerido: ". ucfirst(level::getNombre($experiencia->getNivelMinimo()))."</h3>";
 	echo "<h2>" . $experiencia->getPrecio() . " € </h2>"; 	
-	echo $usuario=Usuario::buscaUsuario($_SESSION["nombre"]);
-	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($usuario->getPuntos())>=$experiencia->getNivelMinimo())){ 
+	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])>=$experiencia->getNivelMinimo())){ 
 		?>
 		<button onclick='window.location.href="gestorProductos.php"' type='button' > Comprar</button>
+		<br><br>
 		<?php 
+	}
+	else{
+		echo "<h2>No tienes el nivel minimo requerido</h2>";
 	}
 	?>
 	<br>
