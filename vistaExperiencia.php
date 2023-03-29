@@ -18,9 +18,10 @@ require_once './includes/compraexperiencia.php';
 	require ('./includes/comun/cabecera.php');
 
 	$id = $_GET["id"];
+	$username=$_SESSION["nombre"];
 	function ejecutacompra(){
-		compraexperiencia::compraExp($_SESSION["nombre"],$id);
-		header:
+		compraexperiencia::compraExp($username,$id);
+
 	}
 	$experiencia = Experiencia::buscaPorId($id);
 
@@ -31,7 +32,7 @@ require_once './includes/compraexperiencia.php';
 	echo "<h2>" . $experiencia->getPrecio() . " € </h2>"; 	
 	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])>=$experiencia->getNivelMinimo())){ 
 		
-		 echo "<button onclick=ejecutacompra() type='button' > Comprar</button>";
+		 echo "<button onclick='ejecutacompra()' type='button' > Comprar</button>";
 		 echo "<br><br>"; 
 	}
 	else{

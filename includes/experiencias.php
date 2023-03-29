@@ -162,6 +162,11 @@ class Experiencia {
     {
         return $this->nombre;
     }
+
+    public function getPuntos()
+    {
+        return $this->puntos;
+    }
     public function setPuntos($puntos){
         $this->puntos = $puntos;
     }
