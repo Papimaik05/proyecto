@@ -19,21 +19,27 @@ require_once './includes/compraexperiencia.php';
 
 	$id = $_GET["id"];
 	$username=$_SESSION["nombre"];
-	function ejecutacompra(){
-		compraexperiencia::compraExp($username,$id);
-
-	}
 	$experiencia = Experiencia::buscaPorId($id);
+	$puntos=$_SESSION["puntos"]+$experiencia->getPuntos();
 
+	if(isset($_POST['submit'])) {
+		compraexperiencia::compraExp($username,$id,$puntos);
+		$_SESSION["puntos"]=$puntos;
+		$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
+		header("Location:micuenta.php");
+		
+    }
 	echo "<h1>" . $experiencia->getNombre() . "</h1>";
 	echo '<img src="' . $experiencia->getImagen() . '" width="400" height="400">';
 	echo "<h3>". $experiencia->getDescripcion() ."</h3>";
 	echo "<h3> Nivel minimo requerido: ". ucfirst(level::getNombre($experiencia->getNivelMinimo()))."</h3>";
 	echo "<h2>" . $experiencia->getPrecio() . " € </h2>"; 	
 	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])>=$experiencia->getNivelMinimo())){ 
-		
-		 echo "<button onclick='ejecutacompra()' type='button' > Comprar</button>";
-		 echo "<br><br>"; 
+		?>
+		<form method="post">
+		<input type="submit" name="submit" value="Comprar">
+		</form> 
+		<?php
 	}
 	else{
 		echo "<h2>No tienes el nivel minimo requerido</h2>";
