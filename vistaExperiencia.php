@@ -20,7 +20,7 @@ require_once './includes/compraexperiencia.php';
 	$id = $_GET["id"];
 	function ejecutacompra(){
 		compraexperiencia::compraExp($_SESSION["nombre"],$id);
-		echo"<h2>MAIKOL</h2>";
+		header:
 	}
 	$experiencia = Experiencia::buscaPorId($id);
 
