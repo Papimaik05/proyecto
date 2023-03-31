@@ -6,6 +6,8 @@ TRUNCATE TABLE `nivel`;
 TRUNCATE TABLE `producto`;
 TRUNCATE TABLE `rol`;
 TRUNCATE TABLE `usuario`;
+TRUNCATE TABLE `compraproducto`;
+TRUNCATE TABLE `compraexperiencia`;
 
 INSERT INTO `rol` (`numero`, `nombre`) VALUES
 (0, 'admin'),

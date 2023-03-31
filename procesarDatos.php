@@ -78,6 +78,7 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     $_SESSION['email'] = $email;
                     $_SESSION['contr'] = $password;
                     $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
+                    $_SESSION['carrito'] = array();
                     header('Location: micuenta.php');
                  }
 

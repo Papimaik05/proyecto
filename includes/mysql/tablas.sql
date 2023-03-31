@@ -119,7 +119,8 @@ CREATE TABLE IF NOT EXISTS`compraexperiencia` (
 
 CREATE TABLE IF NOT EXISTS `compraproducto` (
   `nombre_usuario` varchar(20) NOT NULL,
-  `id_producto` int(11) NOT NULL
+  `id_producto` int(11) NOT NULL,
+  `unidades` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 --
 -- Índices para tablas volcadas

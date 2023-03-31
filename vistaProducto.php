@@ -14,7 +14,15 @@ require_once __DIR__.'/includes/producto.php';
 	require ('./includes/comun/cabecera.php');
 	$id = $_GET["id"];
 	$producto = Producto::buscaPorId($id);
+	if(isset($_POST['submit'])) {
+		$unidades=$_POST['Unidades'];
+		$_SESSION['carrito'][] = array(
+			'id'=>$id,
+			'unidades'=> $unidades,
+			'precio'=> $producto->getPrecio()*$unidades
 
+		);
+	}
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
 	echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
 	echo "<p>" . $producto->getDescripcion() ."</p>";
@@ -22,14 +30,20 @@ require_once __DIR__.'/includes/producto.php';
 	echo "<p> Quedan " . $producto->getUnidades() ." unidades</p>";
 	
 	?>
-	<form action="producto.php" method="POST">
+	<form  method="POST">
 		<?php
 		$aux=$producto->getUnidades();
-		echo "<p>Cantidad: <input type=number value=1 name=Unidades min=1 max=$aux></p>"
+		if($aux>0){
+			echo "<p>Cantidad: <input type=number value=1 name=Unidades min=1 max=$aux></p>";
+			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){ 
+				?>
+				<input type="submit" name="submit" value="Añadir">
+				<?php
+			}
+		}
 		?>
 	</form>
 	<br>
-
     <?php 
 	require("./includes/comun/pie.php");
 	?>
