@@ -58,7 +58,9 @@ require_once './includes/Usuario.php';
             <br>
             <button type="submit" name="contrnuevo">Actualizar contraseña</button>
             <br><br>
-            
+            <fieldset>
+            <a href="historialpedidos.php" class="button">Historial de pedidos</a>
+            </fieldset>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
