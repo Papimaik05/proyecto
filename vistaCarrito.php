@@ -38,10 +38,10 @@ require_once './includes/compraproducto.php';
 		foreach ($_SESSION['carrito'] as $carrito) {
 			$id = $carrito['id'];
 			if(!isset($cantidades[$id])){
-				$cantidades[$id] = 1;
+				$cantidades[$id] = $carrito['unidades'];
 			}
 			else{
-				$cantidades[$id] = $cantidades[$id] + 1;
+				$cantidades[$id] = $cantidades[$id] + $carrito['unidades'];
 			}
 		}
 		foreach($cantidades as $id => $unidades){
@@ -50,7 +50,7 @@ require_once './includes/compraproducto.php';
 			echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
 			echo  "<h2>" . $producto->getPrecio() . " € </h2>";
 			echo  "<h2>" . $unidades . " Unidades </h2>";
-			$total=$total+$producto->getPrecio();
+			$total=$total+$producto->getPrecio()*$unidades;
 		}
 		?>
 		<h2>El precio total del carrito es: </h2>
