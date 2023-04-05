@@ -34,18 +34,28 @@ require_once './includes/compraproducto.php';
     }
 	if ($_SESSION['carrito']) {
 		$total=0;
+		$cantidades = array();
 		foreach ($_SESSION['carrito'] as $carrito) {
-			$producto = Producto::buscaPorId($carrito['id']);
+			$id = $carrito['id'];
+			if(!isset($cantidades[$id])){
+				$cantidades[$id] = 1;
+			}
+			else{
+				$cantidades[$id] = $cantidades[$id] + 1;
+			}
+		}
+		foreach($cantidades as $id => $unidades){
+			$producto = Producto::buscaPorId($id);
 			echo  "<h1>" . $producto->getNombre() . "</h1>";
 			echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
-			echo  "<h2>" . $carrito['precio'] . " € </h2>";
-			 echo  "<h2>" . $carrito['unidades'] . " Unidades </h2>";
-			$total=$total+$carrito['precio'];
+			echo  "<h2>" . $producto->getPrecio() . " € </h2>";
+			echo  "<h2>" . $unidades . " Unidades </h2>";
+			$total=$total+$producto->getPrecio();
 		}
 		?>
 		<h2>El precio total del carrito es: </h2>
 		<?php
-		echo"<h2>$total € </h2>"
+		echo"<h2>$total € </h2>";
 		?>
 		<form method="post">
 		<input type="submit" name="submit" value="Comprar">
