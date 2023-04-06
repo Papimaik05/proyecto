@@ -1,0 +1,83 @@
+body{
+color: black;
+background-color:  #00FFFF;
+text-align: center;
+}
+
+button{
+  background-color: #007bff;
+  color:#ffffff;
+  padding:10px 20px;
+  border-radius:5px;
+}
+
+img{
+width :580; 
+height :480; 
+border :5;
+}
+
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+table {
+  background-color:darkkhaki;
+}
+
+section{
+display:inline;
+width: 300px;
+height: 360px;
+}
+
+section img{
+width: 200px;
+height: 360px;
+flex-grow: 1;
+object-fit: cover;
+opacity: .8;
+transition: .5s ease;
+}
+
+section img:hover{
+cursor: crosshair;
+width: 500px; 
+height: 360px;
+opacity: 1;
+filter: contrast(120%);
+}
+
+.equipamiento{
+  background-color: #33FF39;
+}
+
+.experiencias{
+  background-color: #DFEB22;
+}
+
+footer	 {
+	clear: both;
+	padding: 20px;
+	background-color: #303030;
+	color: white;
+	text-align: right;
+}
+
+.cabecera {
+  white-space: nowrap;
+}
+
+#icono{
+  width: 50px;
+  height: 50px;
+}

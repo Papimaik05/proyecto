@@ -4,41 +4,41 @@ require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
     echo '<form method="post" action="vistaCarrito.php">
-      <input type="image" src="./img/logo_carrito.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
+      <input type="image" src="./img/logo_carrito.png" name="boton" id="icono" />
       </form>';
     echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
       echo '<form method="post" action="micuenta.php">
-      <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
+      <input type="image" src="./img/cangrejo.jpg" name="boton" id="icono" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
     else if($level == level::delfin){
       echo '<form method="post" action="micuenta.php">
-      <input type="image" src="./img/delfin.jpg" name="boton" width="50" alt="Botón icono delfin"  height="50" />
+      <input type="image" src="./img/delfin.jpg" name="boton" id="icono"/>
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
     else if($level == level::megalodon){
       echo '<form method="post" action="micuenta.php">
-      <input type="image" src="./img/tiburon.jpg" name="boton" width="50" alt="Botón icono tiburon"  height="50" />
+      <input type="image" src="./img/tiburon.jpg" name="boton" id="icono" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
     else if($level == level::poseidon){
       echo '<form method="post" action="micuenta.php">
-      <input type="image" src="./img/poseidon.jpg" name="boton" width="50" alt="Botón icono poseidon"  height="50" />
+      <input type="image" src="./img/poseidon.jpg" name="boton" id="icono" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
   } else {
     echo '<form method="post" action="login.php">
-    <input type="image" src="./img/usuariodesconocido.jpg" name="boton" width="50" alt="Botón para ir a login"  height="50" />
+    <input type="image" src="./img/usuariodesconocido.jpg" name="boton" id="icono" />
     </form>';
     echo 'Usuario desconocido. ';
     echo '<a href="login.php">Login </a>';
