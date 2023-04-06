@@ -18,17 +18,20 @@ require_once './includes/compraexperiencia.php';
 	require ('./includes/comun/cabecera.php');
 
 	$id = $_GET["id"];
-	$username=$_SESSION["nombre"];
 	$experiencia = Experiencia::buscaPorId($id);
-	$puntos=$_SESSION["puntos"]+$experiencia->getPuntos();
 
-	if(isset($_POST['submit'])) {
-		compraexperiencia::compraExp($username,$id,$puntos);
-		$_SESSION["puntos"]=$puntos;
-		$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
-		header("Location:micuenta.php");
-		
-    }
+	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){ 
+		$username=$_SESSION["nombre"];
+		$puntos=$_SESSION["puntos"]+$experiencia->getPuntos();
+
+		if(isset($_POST['submit'])) {
+			compraexperiencia::compraExp($username,$id,$puntos);
+			$_SESSION["puntos"]=$puntos;
+			$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
+			header("Location:felicitaciones.php");
+    	}
+	}
+	
 	echo "<h1>" . $experiencia->getNombre() . "</h1>";
 	echo '<img src="' . $experiencia->getImagen() . '" width="400" height="400">';
 	echo "<h3>". $experiencia->getDescripcion() ."</h3>";
@@ -42,7 +45,13 @@ require_once './includes/compraexperiencia.php';
 		<?php
 	}
 	else{
-		echo "<h2>No tienes el nivel minimo requerido</h2>";
+		if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){
+			echo "<h2>No tienes el nivel minimo requerido</h2>";
+		}
+		else{
+			echo "<h2>Debes iniciar sesion para comprar una experiencia</h2>";
+		}
+
 	}
 	?>
 	<br>

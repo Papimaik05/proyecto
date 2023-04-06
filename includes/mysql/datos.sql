@@ -34,4 +34,4 @@ INSERT INTO `experiencias` (`nombre`, `id`, `descripcion`, `precio`, `nivelminim
 ('Pesca con Iñaki', 1, 'Sumérgete en esta aventura para poder vivir la experiencia de pescar con el inigualable Iñaki Arrizabalaga.', 150, 0, 2, './img/pesca_inaki.jpg'),
 ('Conoce a los pinguinos', 2, 'Adéntrate en esta aventura única en la que podrás relacionarte con los pinguinos y jugar a numerosos juegos entretenidos y originales.', 189, 0, 3, './img/pinguinos_madagascar.jpg'),
 ('Busquemos a Nemo', 3, 'Revive la experiencia de nuevo viviendo en primera persona la inigualable historia de buscando a Nemo.', 250, 1, 5, './img/nemo.jpg'),
-('Nada entre tiburones', 4, 'Atrévete a disfrutar la máxima experiencia de esta tienda, ¡NADAR ENTRE TIBURONES!, SERÁ INOLVIDABLE.', 379, 2, 10, './img/jaula_tiburones.jpg');
+('Nada entre tiburones', 4, 'Atrévete a disfrutar la máxima experiencia de esta tienda ¡NADAR ENTRE TIBURONES! SERÁ INOLVIDABLE.', 379, 2, 10, './img/jaula_tiburones.jpg');

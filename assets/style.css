@@ -57,27 +57,71 @@ opacity: 1;
 filter: contrast(120%);
 }
 
-.equipamiento{
-  background-color: #33FF39;
-}
-
-.experiencias{
-  background-color: #DFEB22;
-}
-
-footer	 {
+footer{
 	clear: both;
 	padding: 20px;
 	background-color: #303030;
 	color: white;
 	text-align: right;
-}
-
-.cabecera {
-  white-space: nowrap;
+  margin-top: 10px;
 }
 
 #icono{
   width: 50px;
   height: 50px;
+}
+
+#imagen_producto{
+  width: 200px;
+  height: 200px;
+}
+
+.item :hover{
+  box-shadow:0px 10px 20px #303030;
+}
+
+.header {
+  background-color: #303030;
+  color:#00FFFF;
+  padding:2rem 0;
+  margin-bottom: 15px;
+}
+.header a{
+  color:#00FFFF;
+  text-decoration:none;
+}
+
+.logo{
+  letter-spacing: 5px;
+  font-size: 4em;
+  margin-left: 20px;
+}
+
+.logo-nav-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px;
+}
+.navigation ul {
+margin: 0;
+padding: 0;
+list-style: none;
+}
+.navigation ul li{
+display: inline-block;
+}
+.navigation ul li a{
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.4s linear;
+  border-radius: 5px;
+}
+.navigation ul li a:hover{
+  background: #4a4a4a;
+}
+
+.login{
+  text-align: right;
+  margin-right: 25px;
 }
