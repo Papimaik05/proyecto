@@ -17,6 +17,8 @@ require_once './includes/compraproducto.php';
 	
 	<?php
 	$username=$_SESSION["nombre"];
+
+	
 	if(isset($_POST['submit'])) {
 
 		foreach ($_SESSION['carrito'] as $carrito) {
@@ -27,12 +29,32 @@ require_once './includes/compraproducto.php';
 			if($auxunidades >= 0){
 				compraproducto::compraPro($username,$carrito['id'],$auxunidades,$carrito['unidades']);
 			}
-			
 		}
 		$_SESSION['carrito']=array();
 		echo "<h2>Compra realizada con éxito !!!</h2>";
     }
 	if ($_SESSION['carrito']) {
+		$id = 0;
+		foreach($_SESSION["carrito"] as $carrito){
+			if(isset($_POST['borrar_'.$carrito['id'].''])){
+				$id = $carrito['id'];
+			}
+		}
+		if($id != 0){
+			$i=0;
+			$carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : array();
+			foreach($carrito as $index => $producto){
+				if($producto['id'] == $id){
+					$i=$index;
+				}
+			}
+			if (isset($carrito[$i])) {
+				unset($carrito[$i]);
+			}
+			$_SESSION['carrito'] = $carrito;
+			header("Location: vistaCarrito.php");
+			exit();
+		}	
 		$total=0;
 		$cantidades = array();
 		foreach ($_SESSION['carrito'] as $carrito) {
@@ -50,6 +72,9 @@ require_once './includes/compraproducto.php';
 			echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
 			echo  "<h2>" . $producto->getPrecio() . " € </h2>";
 			echo  "<h2>" . $unidades . " Unidades </h2>";
+			echo "<form method='post' action='vistaCarrito.php'>";
+            echo "<input type='hidden' name='id' value='".$id."'>";
+            echo "<input type='submit' name='borrar_".$id."' value='Eliminar'>";
 			$total=$total+$producto->getPrecio()*$unidades;
 		}
 		?>
