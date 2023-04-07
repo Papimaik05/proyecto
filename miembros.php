@@ -5,7 +5,7 @@ require_once './includes/config.php';
 <html>
 <head>
 	<title>Miembros del equipo</title>
-	<link id="estilo" href="./css/style.css" rel="stylesheet" type="text/css" />
+	<link id="estilo" href="http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>

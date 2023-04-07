@@ -19,7 +19,7 @@ require_once './includes/config.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "css/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
     <title>Tienda</title>
 </head>
 
@@ -48,32 +48,36 @@ require_once './includes/config.php';
 </div>
 <br><br><br><br>
 
-
-<div class="equipamiento">
 <h2>Equipamiento</h2>
+<div class="productos">
 <?php
 $productos = Producto::cargarProductos();
 
 if($productos == false){
     echo "No hay productos disponibles a la venta";
 }
-else{
-    
+else{ 
     foreach($productos as $producto){
-        echo "<img src='". $producto->getImagen() ."'width='200' alt = 'imgProducto' height='200'>";
-        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Comprar</a></h3>";
+        ?>
+        <div class="item">
+        <?php  
+        echo "<img src='". $producto->getImagen() ."'id='imagen_producto'>";
+        ?>
+        </div>
+        <?php
+        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Ver producto</a></h3>";
         echo "<br><br><br><br>";
     }
 }
-?>
 
-<?php 
-	if(isset($_REQUEST["botonComprar"])){
-		producto();
-		header("Location: producto.php ");
-	}
-    require('./includes/comun/pie.php');
+if(isset($_REQUEST["botonComprar"])){
+	producto();
+	header("Location: producto.php ");
+}
 ?>
-
+</div>
+<?php
+require('./includes/comun/pie.php');
+?>
 </body>
 </html>

@@ -3,9 +3,9 @@ require_once './includes/level.php';
 require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    echo '<form method="post" action="vistaCarrito.php">
-      <input type="image" src="./img/logo_carrito.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
-      </form>';
+    // echo '<form method="post" action="vistaCarrito.php">
+    //   <input type="image" src="./img/logo_carrito.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
+    //   </form>';
     echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
@@ -46,29 +46,36 @@ function reconocerUsuario() {
 }
 
 ?>
-<header>
-	<h1 style="text-align:center;" >Amigos Marinos</h1>
-    <h3 style="text-align:center;" >Bajo el Mar, Nada va mal</h3>
-        <div style="text-align:left;" >
-        <button onclick="window.location.href='index.php'" type="button" > Inicio</button>
-		    <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
-        <button onclick="window.location.href='noticias.php'" type="button" > Noticias</button>
-        <button onclick="window.location.href='blog.php'" type="button" > Blog</button>
-        <?php
-        if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
+<header class ="header">
+        <div class="container logo-nav-cont" >
+        <a class="logo">Amigos Marinos</a>
+        <nav class="navigation">
+          <ul>
+            <li><a href="index.php">Inicio</a></li>
+            <li><a href="tienda.php">Tienda/Experiencias</a></li>
+            <li><a href="noticias.php">Noticias</a></li>
+            <li><a href="blog.php">Blog</a></li>
+          <?php
+          if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
           if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
             ?>
-            <button onclick='window.location.href="gestorProductos.php"' type='button' > GestorContenido</button>
+            <li><a href="gestorProductos.php">GestorContenido</a></li>
+            <li><a href="vistaCarrito.php">Carrito</a></li>
+
+            
           <?php
           }
-        }
-        ?>
-        </div>
-		<div style="text-align:right;" >
-		<?php 
+          }
+          ?>
+          </ul>
+        </nav>
+       </div>
+       
+		<div class="login" >
+		 <?php 
     
 		reconocerUsuario();
     
-		?>
+		?>  
 		</div>
 </header>

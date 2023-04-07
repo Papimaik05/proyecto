@@ -6,20 +6,19 @@ require_once './includes/config.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css" />
-        <title>Blog</title>
+        <title>Index</title>
     </head>
 
 <body>
     
             <?php
             require ('./includes/comun/cabecera.php');
+            echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
             ?>
-	    <main>
-	        <h1>Esta página se encuentra en mantenimiento</h1>
-            <img src="./img/mantenimiento.png"  width ="500"  height ="500"  alt="mantenimiento">
-            <h2>Dentro de poco podrás consultar nuestro blog</h2>
-	    </main> 
-        <?php
+            <img src="./img/felicitaciones.gif">
+            <h2>Gracias por confiar en nosotros</h2>
+            <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
+            <?php
             require('./includes/comun/pie.php');
         ?>        
         

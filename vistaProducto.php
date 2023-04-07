@@ -5,7 +5,7 @@ require_once __DIR__.'/includes/producto.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "./css/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
     <title>Producto</title>
 </head>
 
