@@ -31,7 +31,7 @@ require_once './includes/compraproducto.php';
 			}
 		}
 		$_SESSION['carrito']=array();
-		echo "<h2>Compra realizada con éxito !!!</h2>";
+		echo "<h2>Compra realizada con éxito !!!</h2>.<img src='./img/compra.gif'<br>";
     }
 	if ($_SESSION['carrito']) {
 		$id = 0;
