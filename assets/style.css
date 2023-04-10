@@ -51,7 +51,7 @@ transition: .5s ease;
 
 section img:hover{
 cursor: crosshair;
-width: 500px; 
+width: 600px; 
 height: 360px;
 opacity: 1;
 filter: contrast(120%);
@@ -93,7 +93,7 @@ footer{
 
 .logo{
   letter-spacing: 5px;
-  font-size: 4em;
+  font-size: 3.5em;
   margin-left: 20px;
 }
 
@@ -124,4 +124,20 @@ display: inline-block;
 .login{
   text-align: right;
   margin-right: 25px;
+}
+
+.experiencias{
+  border-radius: .5rem;
+  border: .1rem solid grey;
+  box-shadow: 0 .5rem 1rem grey;
+  margin: 1.5rem;
+  padding: 3rem 2rem;
+}
+
+.productos{
+  border-radius: .5rem;
+  border: .1rem solid grey;
+  box-shadow: 0 .5rem 1rem grey;
+  margin: 1.5rem;
+  padding: 3rem 2rem;
 }

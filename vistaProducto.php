@@ -37,7 +37,7 @@ require_once __DIR__.'/includes/producto.php';
 			echo "<p>Cantidad: <input type=number value=1 name=Unidades id=Unidades min=1 max=$aux></p>";
 			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){ 
 				?>
-				<input type="submit" name="submit" value="Añadir">
+				<input type="submit" name="submit" value="Añadir"> 
 				<?php
 			}
 		}

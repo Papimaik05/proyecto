@@ -48,8 +48,8 @@ require_once './includes/config.php';
 </div>
 <br><br><br><br>
 
-<h2>Equipamiento</h2>
 <div class="productos">
+<h2>Equipamiento</h2>
 <?php
 $productos = Producto::cargarProductos();
 
