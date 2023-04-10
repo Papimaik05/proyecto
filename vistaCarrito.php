@@ -71,6 +71,7 @@ require_once './includes/compraproducto.php';
 		}
 		?>
 		<div class="ticket">
+		<img src="./img/cabeza_ticket.png" width="750" height="200">	
 		<?php
 		foreach($cantidades as $id => $unidades){
 			$producto = Producto::buscaPorId($id);
