@@ -24,7 +24,6 @@ require_once './includes/config.php';
         <button onclick="window.location.href='insertarExperiencia.php'" type="button" > Insertar Experiencia</button>
 		<button onclick="window.location.href='borrarExperiencia.php'" type="button" > Borrar Experiencia</button>
         <button onclick="window.location.href='modificarExperiencia.php'" type="button" > Modificar Experiencia</button>
-        <br><br><br><br><br><br><br><br><br><br>
         
     </form>
 	    </main> 
