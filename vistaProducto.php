@@ -22,6 +22,8 @@ require_once __DIR__.'/includes/producto.php';
 			'precio'=> $producto->getPrecio()*$unidades
 
 		);
+		header("Location:vistaCarrito.php");
+
 	}
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
 	echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';

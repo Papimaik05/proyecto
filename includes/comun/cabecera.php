@@ -57,14 +57,14 @@ function reconocerUsuario() {
             <li><a href="blog.php">Blog</a></li>
           <?php
           if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
-          if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
+            if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
+              ?>
+              <li><a href="gestorProductos.php">GestorContenido</a></li>
+              <?php
+            }
             ?>
-            <li><a href="gestorProductos.php">GestorContenido</a></li>
             <li><a href="vistaCarrito.php">Carrito</a></li>
-
-            
-          <?php
-          }
+            <?php
           }
           ?>
           </ul>
