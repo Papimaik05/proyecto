@@ -21,7 +21,7 @@ require_once './includes/config.php';
                 <br>
                 <?php
                 if(isset($_SESSION['login'])){
-                    echo '<h2>Bienvenido,ya eres un Amigo Marino !</h2><br>';
+                    echo '<h2>Bienvenido, ya eres un Amigo Marino!</h2><br>';
                 }
                 else{
                 ?>

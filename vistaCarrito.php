@@ -66,6 +66,9 @@ require_once './includes/compraproducto.php';
 				$cantidades[$id] = $cantidades[$id] + $carrito['unidades'];
 			}
 		}
+		?>
+		<div class="ticket">
+		<?php
 		foreach($cantidades as $id => $unidades){
 			$producto = Producto::buscaPorId($id);
 			echo  "<h1>" . $producto->getNombre() . "</h1>";
@@ -82,6 +85,7 @@ require_once './includes/compraproducto.php';
 		<?php
 		echo"<h2>$total € </h2>";
 		?>
+		</div>
 		<form method="post">
 		<input type="submit" name="submit" value="Comprar">
 		</form> 
