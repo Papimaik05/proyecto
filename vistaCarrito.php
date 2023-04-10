@@ -33,6 +33,9 @@ require_once './includes/compraproducto.php';
 		$_SESSION['carrito']=array();
 		echo "<h2>Compra realizada con éxito !!!</h2>.<img src='./img/compra.gif'<br>";
     }
+	if(isset($_POST['borrar'])) {
+		$_SESSION['carrito'] = array();
+    }
 	if ($_SESSION['carrito']) {
 		$id = 0;
 		foreach($_SESSION["carrito"] as $carrito){
@@ -88,6 +91,7 @@ require_once './includes/compraproducto.php';
 		</div>
 		<form method="post">
 		<input type="submit" name="submit" value="Comprar">
+		<input type="submit" name="borrar" value="Vaciar">
 		</form> 
 		<?php
 	} else {
