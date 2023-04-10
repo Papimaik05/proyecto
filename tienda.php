@@ -60,12 +60,16 @@ else{
     foreach($productos as $producto){
         ?>
         <div class="item">
-        <?php  
-        echo "<img src='". $producto->getImagen() ."'id='imagen_producto'>";
-        ?>
-        </div>
+            <?php  
+            echo "<img src='". $producto->getImagen() ."'id='imagen_producto'>";
+            ?>
+            <div class="texto">
+                <?php  
+                echo "<h3><a href='vistaProducto.php?id=" . $producto->getId() . "'> ".$producto->getNombre()."</a></h3>";
+                ?>
+            </div>
+        </div>    
         <?php
-        echo "<h3>" . $producto->getNombre() ." &nbsp; <a href='vistaProducto.php?id=" . $producto->getId() . "'>Ver producto</a></h3>";
         echo "<br><br><br><br>";
     }
 }
