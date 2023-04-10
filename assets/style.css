@@ -1,8 +1,13 @@
 body{
-color: black;
-background-color:  #00FFFF;
-text-align: center;
-}
+  color: black;
+  background-color:  #00FFFF;
+  text-align: center;
+  width: 1650px;
+  margin: auto;
+  border: 3px solid #303030;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  }
 
 button{
   background-color: #007bff;
