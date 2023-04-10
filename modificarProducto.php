@@ -56,7 +56,6 @@
         }
 
         ?>
-    <br><br><br><br><br><br><br><br>
     </main>
 <?php 
     require('./includes/comun/pie.php');
