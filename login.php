@@ -16,14 +16,15 @@ require_once './includes/config.php';
             ?>
 	    <main>
         <div class="container">
+        <div class="iniciosesion">
 	        <article>  
                 <br><br><br>
             <form action="validarLogin.php" method="post">
             <fieldset>
                 <legend>DATOS USUARIO</legend>
-                Usuario : <br><input type="text" name="nombre" > 
-                <br>
-                Contraseña :<br><input type="password" name="contr" > 
+                Usuario <br><input type="text" name="nombre" > 
+                <br><br>
+                Contraseña<br><input type="password" name="contr" > 
         
             </fieldset>
             <br>
@@ -31,6 +32,7 @@ require_once './includes/config.php';
             <br><br><br><br><br>
         </form>
 	        </article>
+        </div>
             </div>
 	    </main> 
         <?php

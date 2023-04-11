@@ -14,7 +14,9 @@ body{
   padding-top: 10px;
   padding-bottom: 20px;
 }
-
+.iniciosesion{
+  font-size: 22px;
+}
 button{
   background-color: #007bff;
   color:#ffffff;
@@ -283,3 +285,20 @@ color: #fff;
   border-radius: 10px;
 }
 
+input[type="text"],
+input[type="password"] {
+  background-color: transparent;
+  border: none;
+  font-size: 25px;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+legend {
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+}

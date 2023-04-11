@@ -15,18 +15,19 @@ require_once './includes/config.php';
             ?>
 	    <main>
         <div class="container">
+        <div class="iniciosesion">
 	        <article>  
                 <br><br><br>
             <form action="procesarRegistro.php" method="post">
             <fieldset>
                 <legend>DATOS REGISTRO</legend>
-                Nombre Usuario : <br><input type="text" name="nombre" > 
-                <br>
-                Email :<br><input type="text" name="email" > 
-                <br>
-                Contraseña :<br><input type="password" name="contr" > 
-                <br>
-                Repita Contraseña :<br><input type="password" name="contr2" > 
+                Nombre Usuario<br><input type="text" name="nombre" > 
+                <br><br>
+                Email <br><input type="text" name="email" > 
+                <br><br>
+                Contraseña <br><input type="password" name="contr" > 
+                <br><br>
+                Repita Contraseña <br><input type="password" name="contr2" > 
         
             </fieldset>
             <br>
@@ -34,6 +35,7 @@ require_once './includes/config.php';
             <br><br><br><br><br>
         </form>
 	        </article>
+            </div>
             </div> 
 	    </main> 
         <?php
