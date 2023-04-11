@@ -11,6 +11,7 @@ require_once './includes/compraproducto.php';
 </head>
 
 <body>
+<div class="container">
 	<?php  
 	require ('./includes/comun/cabecera.php');	
 	?>
@@ -104,6 +105,6 @@ require_once './includes/compraproducto.php';
     <?php 
 	require("./includes/comun/pie.php");
 	?>
-
+</div>
 </body>
 </html>

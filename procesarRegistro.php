@@ -20,7 +20,7 @@ if (! $formEnviado ) {
     </head>
 
 <body>
-    <div >
+<div class="container">
             <?php
             require ('./includes/comun/cabecera.php');
             ?>

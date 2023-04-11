@@ -14,6 +14,7 @@ require_once './includes/compraexperiencia.php';
 </head>
 
 <body>
+<div class="container">
 	<?php  
 	require ('./includes/comun/cabecera.php');
 
@@ -59,6 +60,6 @@ require_once './includes/compraexperiencia.php';
     <?php 
 	require('./includes/comun/pie.php');
 	?>
-
+</div>
 </body>
 </html>

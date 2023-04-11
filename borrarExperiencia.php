@@ -11,6 +11,7 @@
 </head>
 
 <body>
+<div class="container">
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
@@ -46,6 +47,6 @@
 <?php 
     require('./includes/comun/pie.php');
 ?>
-
+</div>
 </body>
 </html>

@@ -10,7 +10,7 @@ require_once './includes/config.php';
     </head>
 
 <body>
-    <div >
+<div class="container">
             <?php
             require ('./includes/comun/cabecera.php');
             ?>

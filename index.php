@@ -10,15 +10,15 @@ require_once './includes/config.php';
     </head>
 
 <body>
-    
+    <div class="container">
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
-            <div class="conteiner">
+            
 	        <article>  
                 <br>          
-                <img src="./img/logo.jpg"  width ="580"  height ="480"  alt="logotipo">
+                <img src="./img/logo.jpg" id="logotipo">
                 <br>
                 <?php
                 if(isset($_SESSION['login'])){
@@ -32,11 +32,11 @@ require_once './includes/config.php';
                 }
                 ?>
 	        </article>
-            </div>
+            
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
+    </div>    
 </body>
 </html>

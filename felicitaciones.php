@@ -10,7 +10,7 @@ require_once './includes/config.php';
     </head>
 
 <body>
-    
+<div class="container">
             <?php
             require ('./includes/comun/cabecera.php');
             echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
@@ -21,6 +21,6 @@ require_once './includes/config.php';
             <?php
             require('./includes/comun/pie.php');
         ?>        
-        
+  </div>      
 </body>
 </html>

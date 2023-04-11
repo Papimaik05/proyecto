@@ -10,6 +10,7 @@ require_once __DIR__.'/includes/producto.php';
 </head>
 
 <body>
+<div class="container">
 	<?php  
 	require ('./includes/comun/cabecera.php');
 	$id = $_GET["id"];
@@ -26,7 +27,7 @@ require_once __DIR__.'/includes/producto.php';
 
 	}
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
-	echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" width="400" height="400">';
+	echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" id="imgVistaProducto">';
 	echo "<p>" . $producto->getDescripcion() ."</p>";
 	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
 	echo "<p> Quedan " . $producto->getUnidades() ." unidades</p>";
@@ -73,6 +74,6 @@ document.addEventListener("mouseout", function(event) {
     <?php 
 	require("./includes/comun/pie.php");
 	?>
-
+</div>
 </body>
 </html>

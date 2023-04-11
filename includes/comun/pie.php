@@ -27,7 +27,7 @@
         </div>
 
         <div id="sobre-nosotros">
-            <p><a href="miembros.php">Sobre nosotros</a></p>    
+            <p><a id="link" href="miembros.php">Sobre nosotros</a></p>    
         </div>
     </div>
 </div>

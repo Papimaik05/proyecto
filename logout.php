@@ -17,7 +17,7 @@ session_destroy();
     </head>
 
     <body>
-
+    <div class="container">
 
             <?php
             require ('./includes/comun/cabecera.php');
@@ -33,6 +33,6 @@ session_destroy();
             require('./includes/comun/pie.php');
         ?>        
         
-
+</div>
     </body>
 </html>
