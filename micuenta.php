@@ -21,15 +21,15 @@ require_once './includes/Usuario.php';
             <h1> Datos de sesión </h1>
             <ul class="lista-datos">
             <li class="dato">
-                <span class="dato-titulo">Nombre de usuario:</span>
+                <span class="dato-titulo">Nombre de usuario:&nbsp</span>
                 <span class="dato-valor"><?php echo $_SESSION['nombre'] ?></span>
             </li>
             <li class="dato">
-                <span class="dato-titulo">Correo electrónico:</span>
+                <span class="dato-titulo">Correo electrónico:&nbsp</span>
                 <span class="dato-valor"><?php echo $_SESSION['email'] ?></span>
             </li>
             <li class="dato">
-                <span class="dato-titulo">Puntos:</span>
+                <span class="dato-titulo">Puntos:&nbsp</span>
                 <div class="barra">
                     <div class="nivel" style="width: <?php echo $_SESSION['puntos']?>%;"></div>
                 </div>

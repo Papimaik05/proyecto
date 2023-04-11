@@ -261,22 +261,24 @@ color: #fff;
 
 .dato-titulo {
   font-weight: bold;
-  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .dato-valor {
-  color: #555;
+  color: #303030;
 }
 
 .barra {
   width: 100%;
   height: 20px;
-  background-color: #eee;
+  margin-right: 10px;
+  background-color: white;
   border-radius: 10px;
 }
 
 .nivel {
   height: 100%;
+  width: 100%;
   background-color: green;
   border-radius: 10px;
 }
