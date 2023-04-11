@@ -12,6 +12,9 @@ require_once __DIR__.'/includes/producto.php';
 <body>
 	<?php  
 	require ('./includes/comun/cabecera.php');
+	?>
+<div class="container">
+	<?php
 	$id = $_GET["id"];
 	$producto = Producto::buscaPorId($id);
 	if(isset($_POST['submit'])) {
@@ -26,7 +29,7 @@ require_once __DIR__.'/includes/producto.php';
 
 	}
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
-	echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" width="400" height="400">';
+	echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" id="imgVistaProducto">';
 	echo "<p>" . $producto->getDescripcion() ."</p>";
 	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
 	echo "<p> Quedan " . $producto->getUnidades() ." unidades</p>";
@@ -70,6 +73,7 @@ document.addEventListener("mouseout", function(event) {
 		?>
 	</form>
 	<br>
+	</div>
     <?php 
 	require("./includes/comun/pie.php");
 	?>

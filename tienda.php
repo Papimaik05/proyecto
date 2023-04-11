@@ -24,10 +24,11 @@ require_once './includes/config.php';
 </head>
 
 <body>
+
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
-    
+    <div class="container">
     <h1>Tienda</h1>
     <br>
 <div class="experiencias">
@@ -65,7 +66,7 @@ else{
             ?>
             <div class="texto">
                 <?php  
-                echo "<h3><a href='vistaProducto.php?id=" . $producto->getId() . "'> ".$producto->getNombre()."</a></h3>";
+                echo "<h3><a id='link' href='vistaProducto.php?id=" . $producto->getId() . "'> ".$producto->getNombre()."</a></h3>";
                 ?>
             </div>
         </div>    
@@ -80,8 +81,10 @@ if(isset($_REQUEST["botonComprar"])){
 }
 ?>
 </div>
+</div>
 <?php
 require('./includes/comun/pie.php');
 ?>
+
 </body>
 </html>

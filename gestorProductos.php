@@ -10,26 +10,80 @@ require_once './includes/config.php';
     </head>
 
 <body>
-    
-            <?php
+
+        <?php
             require ('./includes/comun/cabecera.php');
-            ?>
+        ?>
 	    <main>
-        <button onclick="window.location.href='insertarProducto.php'" type="button" > Insertar Producto</button>
-		<button onclick="window.location.href='borrarProducto.php'" type="button" > Borrar Producto</button>
-        <button onclick="window.location.href='modificarProducto.php'" type="button" > Modificar Producto</button>
-        <br>     
-        <br><br>
-        <br><br>        
-        <button onclick="window.location.href='insertarExperiencia.php'" type="button" > Insertar Experiencia</button>
-		<button onclick="window.location.href='borrarExperiencia.php'" type="button" > Borrar Experiencia</button>
-        <button onclick="window.location.href='modificarExperiencia.php'" type="button" > Modificar Experiencia</button>
-        
-    </form>
+        <div class="container">
+        <div class="auxgestor">
+        <div class="card">
+            <figure>
+                <img src="./img/.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Insertar Producto</h3>
+                <p>Haz click aquí para insertar un nuevo producto a la tienda</p>
+                <a href="insertarProducto.php">Insertar</a>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="./img/.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Modificar Producto</h3>
+                <p>Haz click aquí para modificar un producto existente en la tienda</p>
+                <a href="modificarProducto.php">Modificar</a>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="./img/borrar.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Borrar Producto</h3>
+                <p>Haz click aquí para borrar un producto existente en la tienda</p>
+                <a href="borrarProducto.php">Borrar</a>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="./img/.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Insertar Experiencia</h3>
+                <p>Haz click aquí para insertar una nueva experiencia en la tienda</p>
+                <a href="insertarExperiencia.php">Insertar</a>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="./img/.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Modificar Experiencia</h3>
+                <p>Haz click aquí para modificar una experiencia existente en  la tienda</p>
+                <a href="modificarExperiencia.php">Modificar</a>
+            </div>
+        </div>
+        <div class="card">
+            <figure>
+                <img src="./img/borrar.jpg" >
+            </figure>
+            <div class="contenido">
+                <h3>Borrar Experiencia</h3>
+                <p>Haz click aquí para borrar una experiencia existente en  la tienda</p>
+                <a href="borrarExperiencia.php">Borrar</a>
+            </div>
+
+        </div>
+        </div>
+        </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
+       
 </body>
 </html>

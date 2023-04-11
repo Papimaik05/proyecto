@@ -12,10 +12,12 @@
 </head>
 
 <body>
+
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
     <main>
+    <div class="container">
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -56,6 +58,7 @@
         }
 
         ?>
+        </div>
     </main>
 <?php 
     require('./includes/comun/pie.php');

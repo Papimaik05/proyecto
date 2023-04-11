@@ -24,11 +24,16 @@ INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),
 (1, 'delfin', 5, 9),
 (2, 'megalodon', 10, 19),
-(3, 'poseidon', 20, 100);
+(3, 'poseidon', 20, 1000000);
 
 INSERT INTO `producto` (`nombre`, `id`, `descripcion`, `unidades`, `precio`, `imagen`) VALUES
 ('Snorkel Ultrapower', 1, 'Gafas y snorkel de polietileno y titaneo parar resispar sin parar.', 3, 20, './img/snorkel.jpg'),
-('Submarino el coloso', 2, 'Submarino premium delux ideal para disfrutar de nuestras excursiones con el mayor confort imaginado.\r\nSurca los mares descubriendo sus profundidades gracias a la más última tecnolodia de este navío.', 1, 50000, './img/submarino.jpg');
+('Submarino el coloso', 2, 'Submarino premium delux ideal para disfrutar de nuestras excursiones con el mayor confort imaginado.\r\nSurca los mares descubriendo sus profundidades gracias a la más última tecnolodia de este navío.', 1, 50000, './img/submarino.jpg'),
+('Aletas Coral',3,'Las mejores aletas del mundo para nadar con los animales marinos a toda velocidad!',6,17.99,'./img/aletas.jpg'),
+('Caña Anguila',4,'Con esta caña podrás pescar cualquier animal bajo el mar',8,79.99,'./img/caña.jpg'),
+('Kayak Titán',5,'Kayak titánico para surcar los mares',2,350,'./img/kayak.jpg'),
+('Tabla de surf dragón',6,'Tabla de surf para levitar sobre el agua sin ningún esfurzo',9,277,'./img/surf.jpg'),
+('Bañador Sportacus',7,'Bañador de pinguinos para sumergirte y ser uno más de ellos',33,9.99,'./img/bañador.jpg');
 
 INSERT INTO `experiencias` (`nombre`, `id`, `descripcion`, `precio`, `nivelminimo`, `puntos`, `imagen`) VALUES
 ('Pesca con Iñaki', 1, 'Sumérgete en esta aventura para poder vivir la experiencia de pescar con el inigualable Iñaki Arrizabalaga.', 150, 0, 2, './img/pesca_inaki.jpg'),

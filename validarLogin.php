@@ -16,6 +16,7 @@ require_once './includes/level.php';
             require('./includes/comun/cabecera.php');
         ?>     
 	    <main>
+        <div class="container">
 	        <article>  
                 <?php
                 $sinerrores=true;
@@ -65,10 +66,11 @@ require_once './includes/level.php';
             <br><br><br><br><br>
         </form>
 	        </article>
+            </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
+       
 </body>
 </html>

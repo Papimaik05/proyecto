@@ -15,6 +15,7 @@
         require ('./includes/comun/cabecera.php');
     ?>
     <main>
+    <div class="container">
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -41,11 +42,10 @@
             echo '</form>';
         }        
         ?>
-    <br><br><br><br><br><br><br><br>
+    </div>
     </main>
 <?php 
     require('./includes/comun/pie.php');
 ?>
-
 </body>
 </html>

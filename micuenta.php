@@ -11,7 +11,7 @@ require_once './includes/Usuario.php';
     </head>
 
 <body>
-    
+
             <?php
             require ('./includes/comun/cabecera.php');
             
@@ -35,6 +35,16 @@ require_once './includes/Usuario.php';
             </li>
             </ul>
             Tienes  
+        <div class="container">
+            Nombre de usuario:
+            <br>
+            <input type="text" name="nombre"  readonly value="<?php echo $_SESSION['nombre'] ?>">
+            <br><br>
+            Email:
+            <br>
+            <input type="email" name="nombre" readonly value="<?php echo $_SESSION['email'] ?>">
+            <br><br>
+            Tienes: 
             <?php 
             echo $_SESSION['puntos']." puntos"; 
             ?>
@@ -67,14 +77,13 @@ require_once './includes/Usuario.php';
             </fieldset>
             <br><br>
             <fieldset>
-            <a href="historialpedidos.php" class="button">Historial de pedidos</a>
+            <a id="link" href="historialpedidos.php" class="button">Historial de pedidos</a>
             </fieldset>
+            </div>  
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
-        
         
 </body>
 </html>

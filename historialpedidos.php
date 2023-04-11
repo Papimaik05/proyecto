@@ -14,12 +14,12 @@ require_once './includes/experiencias.php';
     </head>
 
 <body>
-    
             <?php
             require ('./includes/comun/cabecera.php');
             
             ?>
 	    <main>
+        <div class="container">
             <h1>Historial de pedidos</h1>
 <?php
   $pedidos=Pedido::cargaPedidos($_SESSION['nombre']);
@@ -48,13 +48,11 @@ echo "<br>";
     }
 }
 ?>
-
+</div> 
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
-        
-        
+      
 </body>
 </html>

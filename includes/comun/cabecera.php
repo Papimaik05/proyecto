@@ -47,7 +47,7 @@ function reconocerUsuario() {
 
 ?>
 <header class ="header">
-        <div class="container logo-nav-cont" >
+        <div class="cont logo-nav-cont" >
         <a class="logo">Amigos Marinos</a>
         <nav class="navigation">
           <ul>
