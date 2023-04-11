@@ -103,18 +103,21 @@ div.texto{
 }
 
 .header {
-  background-color: #303030;
-  color:#00FFFF;
+  background-color: #eec565;
+  color:#303030;
+  border: 3px solid #303030;
   padding:2rem 0;
+
 }
 .header a{
-  color:#00FFFF;
+  color:#303030;
   text-decoration:none;
 }
 
 .logo{
   letter-spacing: 5px;
   font-size: 3.5em;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-left: 20px;
 }
 
@@ -139,7 +142,7 @@ display: inline-block;
   border-radius: 5px;
 }
 .navigation ul li a:hover{
-  background: #4a4a4a;
+  background: #ffdf93;
 }
 
 .login{
