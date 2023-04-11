@@ -24,7 +24,7 @@ INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),
 (1, 'delfin', 5, 9),
 (2, 'megalodon', 10, 19),
-(3, 'poseidon', 20, 100);
+(3, 'poseidon', 20, 1000000);
 
 INSERT INTO `producto` (`nombre`, `id`, `descripcion`, `unidades`, `precio`, `imagen`) VALUES
 ('Snorkel Ultrapower', 1, 'Gafas y snorkel de polietileno y titaneo parar resispar sin parar.', 3, 20, './img/snorkel.jpg'),

@@ -60,7 +60,7 @@ require_once './includes/Usuario.php';
             <button type="submit" name="contrnuevo">Actualizar contraseña</button>
             <br><br>
             <fieldset>
-            <a href="historialpedidos.php" class="button">Historial de pedidos</a>
+            <a id="link" href="historialpedidos.php" class="button">Historial de pedidos</a>
             </fieldset>
             </div>  
 	    </main> 
