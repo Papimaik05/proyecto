@@ -11,6 +11,8 @@ body{
 .container{
   background-image: linear-gradient(to bottom,#00bbff, #040440);
   border: 3px solid #303030;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 button{
