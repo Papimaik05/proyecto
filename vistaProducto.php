@@ -10,9 +10,11 @@ require_once __DIR__.'/includes/producto.php';
 </head>
 
 <body>
-<div class="container">
 	<?php  
 	require ('./includes/comun/cabecera.php');
+	?>
+<div class="container">
+	<?php
 	$id = $_GET["id"];
 	$producto = Producto::buscaPorId($id);
 	if(isset($_POST['submit'])) {
@@ -71,9 +73,10 @@ document.addEventListener("mouseout", function(event) {
 		?>
 	</form>
 	<br>
+	</div>
     <?php 
 	require("./includes/comun/pie.php");
 	?>
-</div>
+
 </body>
 </html>

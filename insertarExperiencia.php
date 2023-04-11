@@ -12,11 +12,12 @@ require_once './includes/level.php';
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
+		<div class="container">
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } ?>
@@ -49,10 +50,11 @@ require_once './includes/level.php';
         <br><br><br>   
         </form>
 	        </article>
+			</div> 
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-</div>  
+ 
 </body>
 </html>

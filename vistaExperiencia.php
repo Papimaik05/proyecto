@@ -14,9 +14,12 @@ require_once './includes/compraexperiencia.php';
 </head>
 
 <body>
-<div class="container">
+
 	<?php  
 	require ('./includes/comun/cabecera.php');
+	?>
+	<div class="container">
+	<?php
 
 	$id = $_GET["id"];
 	$experiencia = Experiencia::buscaPorId($id);
@@ -56,10 +59,10 @@ require_once './includes/compraexperiencia.php';
 	}
 	?>
 	<br>
-
+	</div>
     <?php 
 	require('./includes/comun/pie.php');
 	?>
-</div>
+
 </body>
 </html>

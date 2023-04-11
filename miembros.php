@@ -9,11 +9,11 @@ require_once './includes/config.php';
 </head>
 
 <body>
-<div class="container">
 	<a id= "principio"></a>
 	<?php
         require ('./includes/comun/cabecera.php');
     ?>
+	<div class="container">
 	<!-- Enlaces directos a los miembros -->	
 	<h2>
 		Enlaces directos a los miembros
@@ -98,9 +98,10 @@ require_once './includes/config.php';
 		que nadie quiere adoptar. Me gusta salir en barco para ver los delfines.</p>
 	<a href="#principio">Ir al principio de la pagina</a>
 	</div>
+	</div>
 	<?php
         require ('./includes/comun/pie.php');
     ?>
-	</div>
+
 </body>
 </html>

@@ -10,17 +10,19 @@ require_once './includes/config.php';
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
             ?>
+            <div class="container">
             <img src="./img/felicitaciones.gif">
             <h2>Gracias por confiar en nosotros</h2>
             <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
+            </div>  
             <?php
             require('./includes/comun/pie.php');
         ?>        
-  </div>      
+    
 </body>
 </html>

@@ -21,11 +21,12 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
+        <div class="container">
 	        <article>  
                 <?php
                  $sinerrores=true;
@@ -106,10 +107,11 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     
                     ?>        
                     </article>
+                    </div>  
                 </main> 
                 <?php
                     require('./includes/comun/pie.php');
                 ?>        
-            </div>     
+              
         </body>
         </html>

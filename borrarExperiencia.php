@@ -11,11 +11,12 @@
 </head>
 
 <body>
-<div class="container">
+
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
     <main>
+    <div class="container">
     <?php
         $experiencias = Experiencia::cargarExperiencias();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -40,13 +41,10 @@
         echo '</form>';
         }
         ?>
-        
-
-    <br><br><br><br><br><br><br><br>
+    </div>
     </main>
 <?php 
     require('./includes/comun/pie.php');
 ?>
-</div>
 </body>
 </html>

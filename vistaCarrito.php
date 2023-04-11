@@ -11,11 +11,11 @@ require_once './includes/compraproducto.php';
 </head>
 
 <body>
-<div class="container">
+
 	<?php  
 	require ('./includes/comun/cabecera.php');	
 	?>
-	
+	<div class="container">
 	<?php
 	$username=$_SESSION["nombre"];
 
@@ -102,9 +102,10 @@ require_once './includes/compraproducto.php';
 
 
 	?>
+	</div>
     <?php 
 	require("./includes/comun/pie.php");
 	?>
-</div>
+
 </body>
 </html>

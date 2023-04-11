@@ -72,7 +72,6 @@ footer{
 	background-color: #303030;
 	color: white;
 	text-align: right;
-  margin-top: 10px;
 }
 
 #icono{
@@ -105,7 +104,6 @@ div.texto{
   background-color: #303030;
   color:#00FFFF;
   padding:2rem 0;
-  margin-bottom: 15px;
 }
 .header a{
   color:#00FFFF;

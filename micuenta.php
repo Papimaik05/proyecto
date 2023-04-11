@@ -11,12 +11,13 @@ require_once './includes/Usuario.php';
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             
             ?>
 	    <main>
+        <div class="container">
             Nombre de usuario:
             <br>
             <input type="text" name="nombre"  readonly value="<?php echo $_SESSION['nombre'] ?>">
@@ -61,12 +62,11 @@ require_once './includes/Usuario.php';
             <fieldset>
             <a href="historialpedidos.php" class="button">Historial de pedidos</a>
             </fieldset>
+            </div>  
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        
-</div>      
         
 </body>
 </html>

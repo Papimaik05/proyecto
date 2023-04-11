@@ -24,11 +24,11 @@ require_once './includes/config.php';
 </head>
 
 <body>
-<div class="container">
+
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
-    
+    <div class="container">
     <h1>Tienda</h1>
     <br>
 <div class="experiencias">
@@ -81,9 +81,10 @@ if(isset($_REQUEST["botonComprar"])){
 }
 ?>
 </div>
+</div>
 <?php
 require('./includes/comun/pie.php');
 ?>
-</div>
+
 </body>
 </html>

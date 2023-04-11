@@ -12,11 +12,12 @@
 </head>
 
 <body>
-<div class="container">
+
     <?php
         require ('./includes/comun/cabecera.php');
     ?>
     <main>
+    <div class="container">
     <?php
         $experiencias = Experiencia::cargarExperiencias();
          if (isset($_GET["mensaje"])) {
@@ -65,10 +66,11 @@
         }
         $esExp=true;
     ?>  
+    </div>
     </main>
 <?php 
     require('./includes/comun/pie.php');
 ?>
-</div>
+
 </body>
 </html>

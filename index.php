@@ -10,12 +10,11 @@ require_once './includes/config.php';
     </head>
 
 <body>
-    <div class="container">
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
-            
+        <div class="container">
 	        <article>  
                 <br>          
                 <img src="./img/logo.jpg" id="logotipo">

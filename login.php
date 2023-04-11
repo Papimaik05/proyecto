@@ -10,11 +10,12 @@ require_once './includes/config.php';
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
+        <div class="container">
 	        <article>  
                 <br><br><br>
             <form action="validarLogin.php" method="post">
@@ -30,10 +31,11 @@ require_once './includes/config.php';
             <br><br><br><br><br>
         </form>
 	        </article>
+            </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-  </div>
+
 </body>
 </html>

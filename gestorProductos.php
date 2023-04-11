@@ -10,11 +10,12 @@ require_once './includes/config.php';
     </head>
 
 <body>
-<div class="container">
+
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
+        <div class="container">
         <button onclick="window.location.href='insertarProducto.php'" type="button" > Insertar Producto</button>
 		<button onclick="window.location.href='borrarProducto.php'" type="button" > Borrar Producto</button>
         <button onclick="window.location.href='modificarProducto.php'" type="button" > Modificar Producto</button>
@@ -26,10 +27,11 @@ require_once './includes/config.php';
         <button onclick="window.location.href='modificarExperiencia.php'" type="button" > Modificar Experiencia</button>
         
     </form>
+    </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
-        </div>
+       
 </body>
 </html>

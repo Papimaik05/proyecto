@@ -17,22 +17,24 @@ session_destroy();
     </head>
 
     <body>
-    <div class="container">
+
 
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
+        <div class="container">
 	        <article>  
                 <h2>Has cerrado la sesión </h2>
                 <br>
                 <h2>Hasta Pronto!</h2>
 	        </article>
+            </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
         ?>        
         
-</div>
+
     </body>
 </html>
