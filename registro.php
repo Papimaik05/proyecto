@@ -21,13 +21,13 @@ require_once './includes/config.php';
             <form action="procesarRegistro.php" method="post">
             <fieldset>
                 <legend>DATOS REGISTRO</legend>
-                Nombre Usuario<br><input type="text" name="nombre" > 
-                <br><br>
-                Email <br><input type="text" name="email" > 
-                <br><br>
-                Contraseña <br><input type="password" name="contr" > 
-                <br><br>
-                Repita Contraseña <br><input type="password" name="contr2" > 
+               <br><input type="text" name="nombre" placeholder="Usuario" > 
+                <br>
+                <br><input type="text" name="email" placeholder="Email" > 
+                <br>
+                <br><input type="password" name="contr" placeholder="Contraseña" > 
+                <br>
+                <br><input type="password" name="contr2"placeholder="Repita Contraseña" > 
         
             </fieldset>
             <br>

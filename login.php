@@ -22,9 +22,9 @@ require_once './includes/config.php';
             <form action="validarLogin.php" method="post">
             <fieldset>
                 <legend>DATOS USUARIO</legend>
-                Usuario <br><input type="text" name="nombre" > 
+               <br><input type="text" name="nombre" placeholder="Usuario" > 
                 <br><br>
-                Contraseña<br><input type="password" name="contr" > 
+                <br><input type="password" name="contr" placeholder="Contraseña" > 
         
             </fieldset>
             <br>
