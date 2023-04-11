@@ -16,10 +16,11 @@ require_once './includes/config.php';
         ?>
 	    <main>
         <div class="container">
+        <h1>Productos</h1>
         <div class="auxgestor">
         <div class="card">
             <figure>
-                <img src="./img/.jpg" >
+                <img src="./img/nuevo.jpg" id="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Insertar Producto</h3>
@@ -29,7 +30,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/.jpg" >
+                <img src="./img/obrera.jpg" id="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Modificar Producto</h3>
@@ -39,7 +40,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/borrar.jpg" >
+                <img src="./img/borrar.png" id="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Borrar Producto</h3>
@@ -47,9 +48,13 @@ require_once './includes/config.php';
                 <a href="borrarProducto.php">Borrar</a>
             </div>
         </div>
+        </div>
+        <br><br>
+        <h1>Experiencias</h1>
+        <div class="auxgestor">
         <div class="card">
             <figure>
-                <img src="./img/.jpg" >
+                <img src="./img/nuevo.jpg" id="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Insertar Experiencia</h3>
@@ -59,7 +64,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/.jpg" >
+                <img src="./img/obrera.jpg" id="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Modificar Experiencia</h3>
@@ -69,7 +74,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/borrar.jpg" >
+                <img src="./img/borrar.png" id="icono_gestor" >
             </figure>
             <div class="contenido">
                 <h3>Borrar Experiencia</h3>
