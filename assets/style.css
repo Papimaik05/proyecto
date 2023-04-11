@@ -95,7 +95,7 @@ footer{
 }
 
 .item:hover{
-  transform: rotate(360deg);
+  transform:rotateY(360deg);
 }
 
 div.texto{
