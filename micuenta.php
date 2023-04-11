@@ -17,6 +17,7 @@ require_once './includes/Usuario.php';
             
             ?>
 	    <main>
+            <div class="container">
             <h1> Datos de sesión </h1>
             <ul class="lista-datos">
             <li class="dato">
@@ -79,7 +80,8 @@ require_once './includes/Usuario.php';
             <fieldset>
             <a id="link" href="historialpedidos.php" class="button">Historial de pedidos</a>
             </fieldset>
-            </div>  
+            </div> 
+</div> 
 	    </main> 
         <?php
             require('./includes/comun/pie.php');

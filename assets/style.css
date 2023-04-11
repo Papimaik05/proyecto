@@ -1,13 +1,19 @@
 body{
-  color: black;
+  color: white;
   background-color:  #00FFFF;
   text-align: center;
   width: 1400px;
   margin: auto;
-  border: 3px solid #303030;
   margin-top: 30px;
   margin-bottom: 30px;
-  }
+}
+
+.container{
+  background-image: linear-gradient(to bottom,#00bbff, #040440);
+  border: 3px solid #303030;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
 
 button{
   background-color: #007bff;
@@ -68,7 +74,6 @@ footer{
 	background-color: #303030;
 	color: white;
 	text-align: right;
-  margin-top: 10px;
 }
 
 #icono{
@@ -82,29 +87,38 @@ footer{
 }
 
 .item{
-  box-shadow:0px 14px 28px #303030;
+  box-shadow:0px 14px 28px white;
   padding: 20px;
   margin-left: 400px;
   margin-right: 400px;
+  transition: all .6s ease-in-out;
 }
+
+.item:hover{
+  transform:rotateY(360deg);
+}
+
 div.texto{
   text-align: center;
 }
 
 .header {
-  background-color: #303030;
-  color:#00FFFF;
+  background-color: #eec565;
+  color:#303030;
+  border: 3px solid #303030;
+  border-bottom: none;
   padding:2rem 0;
-  margin-bottom: 15px;
+
 }
 .header a{
-  color:#00FFFF;
+  color:#303030;
   text-decoration:none;
 }
 
 .logo{
   letter-spacing: 5px;
   font-size: 3.5em;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   margin-left: 20px;
 }
 
@@ -129,7 +143,7 @@ display: inline-block;
   border-radius: 5px;
 }
 .navigation ul li a:hover{
-  background: #4a4a4a;
+  background: #ffdf93;
 }
 
 .login{
@@ -139,29 +153,99 @@ display: inline-block;
 
 .experiencias{
   border-radius: .5rem;
-  border: .1rem solid grey;
-  box-shadow: 0 .5rem 1rem black;
+  border: .1rem solid #303030;
+  box-shadow: 0 .5rem 1rem white;
   margin: 1.5rem;
   padding: 3rem 2rem;
 }
 
 .productos{
   border-radius: .5rem;
-  border: .1rem solid grey;
-  box-shadow: 0 .5rem 1rem black;
+  border: .1rem solid #303030;
+  box-shadow: 0 .5rem 1rem white;
   margin: 1.5rem;
   padding: 3rem 2rem;
 }
 
 .ticket{
   background-color: white;
+  color: #303030;
   border-radius: .5rem;
-  border: .1rem solid grey;
+  border: .1rem solid #303030;
   box-shadow: 0 .5rem 1rem black;
   margin: 1.5rem;
   padding: 3rem 2rem;
   text-align: center;
 }
+
+#logotipo{
+  width:580px;
+  height:480px;
+}
+
+#imgVistaProducto{
+  height: 400px;
+  width: 400px;
+}
+
+#link{
+  color:white;
+  text-decoration: none;
+}
+
+.auxgestor{
+  width: 100;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.card{
+  width: 50;
+  height :50; 
+  margin: 20px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+  cursor: default;
+  transition:all 400ms ease;
+}
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  transform:translateY(-3%)
+}
+.card .contenido{
+  padding: 15px;
+  text-align: center;
+}
+.card .contenido p{
+  line-height: 1.5;
+  color: #6a6a6a;
+}
+.card .contenido h3{
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.card .contenido a{
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  margin-top: 10px;
+  color: #2fb4cc;
+  border: 1px solid #2fb4cc;
+  border-radius: 4px;
+  transition: all 400ms ease;
+}
+.card .contenido a:hover{
+background: #2fb4cc;
+color: #fff;
+}
+
+#icono_gestor{
+  width: 200px;
+  height: 200px;
+}
+
 .lista-datos {
   list-style-type: square;
   margin: 0;
