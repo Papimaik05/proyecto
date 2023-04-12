@@ -22,31 +22,50 @@ require_once './includes/experiencias.php';
         <div class="container">
             <h1>Historial de pedidos</h1>
 <?php
-  $pedidos=Pedido::cargaPedidos($_SESSION['nombre']);
+    $pedidos=Pedido::cargaPedidos($_SESSION['nombre']);
 
-  if($pedidos == false){
-    echo "No hay pedidos realizados";
-}
-else{    
-    foreach($pedidos as $pedido){
-if($pedido->getUnidades()){
-$producto=Producto::buscaPorId($pedido->getIdProducto());
-echo "<img src='". $producto->getImagen() ."'width='100' alt = 'imgProducto' height='100'>";
-echo "<h3>" . $producto->getNombre() ."</h3>";
-echo "<h3>Unidades:" . $pedido->getUnidades() ."</h3>";
-echo "<h3>Total: " . $pedido->getUnidades()*$producto->getPrecio() ." euros</h3>";
-echo "<br>";
-}else{
-    $experiencia=Experiencia::buscaPorId($pedido->getIdProducto());
-    echo "<img src='". $experiencia->getImagen() ."'width='100' alt = 'imgExperiencia' height='100'>";
-    echo "<h3>" . $experiencia->getNombre() ."</h3>";
-    echo "<h3>Total: " . $experiencia->getPrecio() ." euros</h3>";
-    echo "<br>";
-
-}
-
+    if($pedidos == false){
+        echo "No hay pedidos realizados";
     }
-}
+    else{    
+        $prod=0;
+        $exp=0;
+        foreach($pedidos as $pedido){
+    if($pedido->getUnidades()){
+        if($prod==0){
+            echo "<h2>Productos comprados</h2>";
+            $prod++;
+        }
+        ?><div class="recuadro-pedido">
+            <?php
+        $producto=Producto::buscaPorId($pedido->getIdProducto());
+        echo "<img src='". $producto->getImagen() ."' alt = 'imgProducto' id='imagen'>";
+        echo "<h3>" . $producto->getNombre() ."</h3>";
+        echo "<h3>Unidades:" . $pedido->getUnidades() ."</h3>";
+        echo "<h3>Total: " . $pedido->getUnidades()*$producto->getPrecio() ." euros</h3>";
+        ?>
+        </div>
+        <br>
+        <?php
+    }else{
+        if($exp==0){
+            echo "<h2>Experiencias compradas</h2>";
+            $exp++;
+        }
+        ?><div class="recuadro-pedido">
+            <?php
+        $experiencia=Experiencia::buscaPorId($pedido->getIdProducto());
+        echo "<img src='". $experiencia->getImagen() ."' alt = 'imgExperiencia' id='imagen'>";
+        echo "<h3>" . $experiencia->getNombre() ."</h3>";
+        echo "<h3>Total: " . $experiencia->getPrecio() ." euros</h3>";
+        ?>
+        </div>
+        <br>
+        <?php
+    }
+
+        }
+    }
 ?>
 </div> 
 	    </main> 
