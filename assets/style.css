@@ -429,3 +429,28 @@ legend {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+#imagen{
+  height:200px;
+width: 200px;
+border-radius: 20%;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.recuadro-pedido {
+  border: 2px solid #333; 
+  padding: 10px; 
+  width: 300px; 
+  height: 400px; 
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+  box-shadow: 0 0 20px rgba(0, 255, 89, 0.5);
+  transition: background-color 0.5s ease;
+}
+.recuadro-pedido:hover{
+  background-color: #08c143;
+}
+#nombre{
+  text-decoration: underline;
+}
