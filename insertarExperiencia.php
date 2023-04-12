@@ -18,6 +18,7 @@ require_once './includes/level.php';
             ?>
 	    <main>
 		<div class="container">
+		<div class="insertarExp">
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } ?>

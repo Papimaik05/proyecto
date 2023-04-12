@@ -17,6 +17,7 @@ require_once './includes/config.php';
             ?>
 	    <main>
 		<div class="container">
+		<div class="insertarProductos">
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } ?>

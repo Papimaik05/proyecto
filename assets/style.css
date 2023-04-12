@@ -429,3 +429,78 @@ legend {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
+
+.modificarProductos{
+ color:white;
+ list-style: none;
+ text-align: center;
+ box-shadow:0px 14px 28px rgb(39, 206, 197);
+ font-weight:500;
+ font-size: large;
+}
+
+.productos{
+  color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ font-weight:500;
+ display: inline-block;
+}
+
+.insertarProductos{
+  color:white;
+  list-style: none;
+  text-align: center;
+  box-shadow:0px 14px 28px rgb(39, 206, 197);
+  font-weight:500;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.borrarProductos{
+  color:white;
+  list-style: none;
+  text-align: center;
+  box-shadow:0px 14px 28px rgb(39, 206, 197);
+  font-weight:500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.insertarExp{
+  color:white;
+  list-style: none;
+  text-align: center;
+  box-shadow:0px 14px 28px rgb(39, 206, 197);
+  font-weight:500;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.modificarExp{
+  color:white;
+  list-style: none;
+  text-align: center;
+  box-shadow:0px 14px 28px rgb(39, 206, 197);
+  font-weight:500;
+  font-size: large;
+
+}
+
+.exp{
+  color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight:500;
+  display: inline-block;
+}
+
+.borrarExp{
+  color:white;
+  list-style: none;
+  text-align: center;
+  box-shadow:0px 14px 28px rgb(39, 206, 197);
+  font-weight:500;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}

@@ -17,7 +17,7 @@
     ?>
     <main>
     <div class="container">
-    <ul style="list-style: none;">
+    <div class="borrarExp">
     <?php
         $experiencias = Experiencia::cargarExperiencias();?>
         <?php if (isset($_GET["mensaje"])) {

@@ -18,7 +18,8 @@
     ?>
     <main>
     <div class="container">
-    <ul style="list-style: none;">
+    <ul class="modificarExp">
+    <div class="exp">
     <?php
         $experiencias = Experiencia::cargarExperiencias();
          if (isset($_GET["mensaje"])) {

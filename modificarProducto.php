@@ -18,7 +18,9 @@
     ?>
     <main>
     <div class="container">
-    <ul style="list-style: none;">
+    <ul class="modificarProductos">
+    <div class="productos">
+
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -40,7 +42,7 @@
             }
         
             echo '</ul>';
-            echo '<label>Ahora selecciona los valores a modificar</label>';
+            echo '<label>Ahora selecciona los valores a modificar: </label>';
             echo '<fieldset>';
             echo '<label for="nombre">Nombre:</label>';
 		    echo '<input type="text" name="nombre" id="nombre"><br><br>';
@@ -56,9 +58,10 @@
             echo '<input type="submit" value="Enviar">';
             echo '</form>';
         }
-
+        
         ?>
         </div>
+        </ul>
     </main>
 <?php 
     require('./includes/comun/pie.php');

@@ -16,7 +16,8 @@
     ?>
     <main>
     <div class="container">
-    <ul style="list-style: none;">
+    <div class="borrarProductos">
+    
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
