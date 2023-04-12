@@ -14,14 +14,8 @@ require_once './includes/config.php';
             <?php
             require ('./includes/comun/cabecera.php');
             ?>
-	    <main>
+	    <main>  
         <div class="container" id="login">
-        <?php
-        if(isset($_GET["error"])){
-            // echo'<h3>'.$_POST["error"].'</h3>';
-            echo '<h2>maikol</h2>';
-        }
-        ?>
         <div class="formulario">
             <h1>Inicio de sesión</h1>
             <form action="validarLogin.php" method="post">
@@ -32,7 +26,12 @@ require_once './includes/config.php';
                 <div class="username">
                     <input type="password" name="contr" required>
                     <label>Contraseña</label>
-                </div>         
+                </div>  
+                <?php
+                if(isset($_GET["error"])){
+                    echo'<h3>'.$_GET["error"].'</h3>';
+                }
+                ?>       
                 <br>
                 <input type="submit"   name="aceptar" value="Iniciar">
                 <br>
