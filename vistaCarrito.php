@@ -75,15 +75,21 @@ require_once './includes/compraproducto.php';
 		<img src="./img/cabeza_ticket.png" width="750" height="200">	
 		<?php
 		foreach($cantidades as $id => $unidades){
+			?>
+			<div class="productoCarrito">
+			<?php
 			$producto = Producto::buscaPorId($id);
 			echo  "<h1>" . $producto->getNombre() . "</h1>";
-			echo '<img src="' . $producto->getImagen() . '" width="400" height="400">';
+			echo '<img src="' . $producto->getImagen() . '" id="imgVistaProducto">';
 			echo  "<h2>" . $producto->getPrecio() . " € </h2>";
 			echo  "<h2>" . $unidades . " Unidades </h2>";
 			echo "<form method='post' action='vistaCarrito.php'>";
             echo "<input type='hidden' name='id' value='".$id."'>";
             echo "<input type='submit' name='borrar_".$id."' value='Eliminar'>";
 			$total=$total+$producto->getPrecio()*$unidades;
+			?>
+			</div>
+			<?php
 		}
 		?>
 		<h2>El precio total del carrito es: </h2>
