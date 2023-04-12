@@ -18,27 +18,27 @@
     ?>
     <main>
     <div class="container">
+    <ul style="list-style: none;">
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";
 	    } 
-
+    
         if(empty($productos)){
             echo '<h2>No hay productos en la tienda</h2>'; 
         }
         else{
             echo '<form action="validarEdicion.php" method="post">';
-        
             echo '<label>Selecciona el producto que quieres modificar:</label>';
-            echo '<ul>';
+          
             foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
                 echo "<li><input type='radio' name='producto' value='". $id ."
                 '> ". $nombre ."</li>";
             }
-            
+        
             echo '</ul>';
             echo '<label>Ahora selecciona los valores a modificar</label>';
             echo '<fieldset>';

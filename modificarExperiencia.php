@@ -18,6 +18,7 @@
     ?>
     <main>
     <div class="container">
+    <ul style="list-style: none;">
     <?php
         $experiencias = Experiencia::cargarExperiencias();
          if (isset($_GET["mensaje"])) {
@@ -30,7 +31,7 @@
             echo '<form action="validarEdicion.php?esExp=true" method="post">';
         
             echo '<label>Selecciona la experiencia que quieres modificar:</label>';
-            echo '<ul>';
+            
                 foreach($experiencias as $e){
                     $id = $e->getId();
                     $nombre = $e->getNombre();
