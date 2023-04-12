@@ -14,24 +14,36 @@ require_once './includes/config.php';
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
-        <div class="container">
-        <div class="iniciosesion">
+        <div class="container" id="login">
+        <div class="formulario">
+            <h1>Registro</h1>
 	        <article>  
             <form action="procesarRegistro.php" method="post">
-                <br>
-            <fieldset>
-                <legend>DATOS REGISTRO</legend>
-               <br><input type="text" name="nombre" placeholder="Usuario" > 
-                <br>
-                <br><input type="text" name="email" placeholder="Email" > 
-                <br>
-                <br><input type="password" name="contr" placeholder="Contraseña" > 
-                <br>
-                <br><input type="password" name="contr2"placeholder="Repita Contraseña" > 
-        
+                <div class="username">
+                    <input type="text" name="nombre" required>
+                    <label>Nombre de Usuario</label>
+                </div>
+                <div class="username">
+                    <input type="text" name="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="username">
+                    <input type="password" name="contr" required>
+                    <label>Contraseña</label>
+                </div>
+                <div class="username">
+                    <input type="password" name="contr" required>
+                    <label>Repetir contraseña</label>
+                </div> 
+                <?php
+                if(isset($_GET["error"])){
+                    echo'<h3>'.$_GET["error"].'</h3>';
+                }
+                ?>    
             </fieldset>
             <br>
-            <button type="submit" name="registro">Registrar</button>
+                <button type="submit" name="registro">Registrar</button>
+                <br>
         </form>
 	        </article>
             </div>

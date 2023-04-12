@@ -25,7 +25,7 @@ if (! $formEnviado ) {
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
-        <div class="container">
+        <div class="container" id="login">
 	        <article>  
                 <?php
                  $sinerrores=true;
@@ -73,25 +73,33 @@ if (! $formEnviado ) {
                     if($existe){
                         echo '<h3>ERROR: El usuario ya existe <br></h3>';
                     }
-
-                    echo ' <form action="procesarRegistro.php" method="post">';
-                    echo ' <fieldset>';
-                    echo ' <legend>DATOS REGISTRO</legend>';
-                    echo ' Nombre Usuario : <br><input type="text" name="nombre" > ';
-                    echo ' <br>';
-                    echo ' Email :<br><input type="text" name="email" >'; 
-                    echo ' <br>';
-                    echo ' Contraseña :<br><input type="password" name="contr" >'; 
-                    echo ' <br>';
-                    echo ' Repita Contraseña :<br><input type="password" name="contr2" > ';
-    
-                    echo ' </fieldset>';
-                    echo '<br>';
-                    echo ' <button type="submit" name="registro">Registrar</button>';
-                     
-                ?>        
-	        </article>
-            </div> 
+                    ?>
+                    <div class="formulario">
+                        <h1>Registro</h1>
+	                     <article>  
+                        <form action="procesarRegistro.php" method="post">
+                            <div class="username">
+                                <input type="text" name="nombre" required>
+                                <label>Nombre de Usuario</label>
+                    </div>
+                    <div class="username">
+                        <input type="text" name="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="username">
+                        <input type="password" name="contr" required>
+                        <label>Contraseña</label>
+                    </div>
+                    <div class="username">
+                        <input type="password" name="contr" required>
+                        <label>Repetir contraseña</label>
+                    </div> 
+                  
+            </fieldset>
+            <br>
+                <button type="submit" name="registro">Registrar</button>
+                <br>
+        </form>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
