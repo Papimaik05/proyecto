@@ -15,25 +15,33 @@ require_once './includes/config.php';
             require ('./includes/comun/cabecera.php');
             ?>
 	    <main>
-        <div class="container">
-        <div class="iniciosesion">
-	        <article>  
-                <br><br><br>
+        <div class="container" id="login">
+        <?php
+        if(isset($_GET["error"])){
+            // echo'<h3>'.$_POST["error"].'</h3>';
+            echo '<h2>maikol</h2>';
+        }
+        ?>
+        <div class="formulario">
+            <h1>Inicio de sesión</h1>
             <form action="validarLogin.php" method="post">
-            <fieldset>
-                <legend>DATOS USUARIO</legend>
-               <br><input type="text" name="nombre" placeholder="Usuario" > 
-                <br><br>
-                <br><input type="password" name="contr" placeholder="Contraseña" > 
-        
-            </fieldset>
-            <br>
-            <button type="submit" name="aceptar">Login</button>
-            <br><br><br><br><br>
-        </form>
-	        </article>
+                <div class="username">
+                    <input type="text" name="nombre" required>
+                    <label>Nombre de Usuario</label>
+                </div>
+                <div class="username">
+                    <input type="password" name="contr" required>
+                    <label>Contraseña</label>
+                </div>         
+                <br>
+                <input type="submit"   name="aceptar" value="Iniciar">
+                <br>
+                 <div class="registrarse">
+                    Regístrese <a href="registro.php">aqui
+                </div>
+            </form>
         </div>
-            </div>
+        </div>
 	    </main> 
         <?php
             require('./includes/comun/pie.php');

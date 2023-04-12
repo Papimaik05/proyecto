@@ -16,7 +16,7 @@ require_once './includes/level.php';
             require('./includes/comun/cabecera.php');
         ?>     
 	    <main>
-        <div class="container">
+        <div class="container" id="login">
 	        <article>  
                 <?php
                 $sinerrores=true;
@@ -51,21 +51,10 @@ require_once './includes/level.php';
                     }
                 }
                 if($coinciden){
-                    echo "<h3>ERROR: El usuario o password no coinciden <br></h3>";
+                    $error="ERROR: El usuario o password no coinciden";
+                    header('Location:login.php?error='.$error.'');
                 }
-                echo '<form action="validarLogin.php" method="post">';
-                echo '<fieldset>';
-                echo '<legend>DATOS USUARIO</legend>';
-                echo 'Usuario : <br><input type="text" name="nombre" > ';
-                echo '<br>';
-                echo 'Contraseña :<br><input type="password" name="contr" >'; 
-                echo '</fieldset>';
-                echo '<br>';
-                echo '<button type="submit" name="aceptar">Login</button>';                  
                 ?>
-            <br><br><br><br><br>
-        </form>
-	        </article>
             </div>
 	    </main> 
         <?php
