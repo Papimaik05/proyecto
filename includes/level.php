@@ -37,6 +37,22 @@ class level{
         return $rs;
     }
 
+    public static function getMaxPuntos($nombre){
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT maximo FROM nivel U WHERE U.nombre='%s'", $nombre);
+        $rs = $conn->query($query);
+        $fila=$rs->fetch_assoc();
+        return $fila['maximo'];
+    }
+
+    public static function getMinPuntos($nombre){
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT minimo FROM nivel U WHERE U.nombre='%s'", $nombre);
+        $rs = $conn->query($query);
+        $fila=$rs->fetch_assoc();
+        return $fila['minimo'];
+    }
+
 }
 
 ?>

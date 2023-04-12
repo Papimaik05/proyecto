@@ -17,6 +17,7 @@
     ?>
     <main>
     <div class="container">
+    <ul style="list-style: none;">
     <?php
         $experiencias = Experiencia::cargarExperiencias();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -29,7 +30,7 @@
             echo '<form action="validarBorrado.php" method="post">';
         
             echo '<label>Lista de Experiencias:</label>';
-            echo '<ul>';
+            
                 foreach($experiencias as $p){
                     $id = $p->getId();
                     $nombre = $p->getNombre();

@@ -17,8 +17,8 @@ require_once './includes/config.php';
         <div class="container">
         <div class="iniciosesion">
 	        <article>  
-                <br><br><br>
             <form action="procesarRegistro.php" method="post">
+                <br>
             <fieldset>
                 <legend>DATOS REGISTRO</legend>
                <br><input type="text" name="nombre" placeholder="Usuario" > 
@@ -32,7 +32,6 @@ require_once './includes/config.php';
             </fieldset>
             <br>
             <button type="submit" name="registro">Registrar</button>
-            <br><br><br><br><br>
         </form>
 	        </article>
             </div>

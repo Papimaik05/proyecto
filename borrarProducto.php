@@ -16,6 +16,7 @@
     ?>
     <main>
     <div class="container">
+    <ul style="list-style: none;">
     <?php
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
@@ -30,7 +31,7 @@
             echo '<form action="validarBorrado.php" method="post">';
         
             echo '<label>Lista de Productos:</label>';
-            echo '<ul>';        
+                 
             foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
