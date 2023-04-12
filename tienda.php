@@ -58,21 +58,26 @@ if($productos == false){
     echo "No hay productos disponibles a la venta";
 }
 else{ 
+    ?>
+    <div class="catalogo">
+    <?php  
     foreach($productos as $producto){
-        ?>
-        <div class="item">
+    ?>
+        <a class="item" <?php echo "href='vistaProducto.php?id=" . $producto->getId() . "'"; ?>>
             <?php  
             echo "<img src='". $producto->getImagen() ."'id='imagen_producto'>";
             ?>
             <div class="texto">
                 <?php  
-                echo "<h3><a id='link' href='vistaProducto.php?id=" . $producto->getId() . "'> ".$producto->getNombre()."</a></h3>";
+                echo "<h3>".$producto->getNombre()."</h3>";
                 ?>
             </div>
-        </div>    
-        <?php
-        echo "<br><br><br><br>";
+        </a>    
+    <?php
     }
+    ?>
+    </div>    
+    <?php
 }
 
 if(isset($_REQUEST["botonComprar"])){

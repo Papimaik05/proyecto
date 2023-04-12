@@ -37,7 +37,7 @@ require_once './includes/compraexperiencia.php';
 	}
 	
 	echo "<h1>" . $experiencia->getNombre() . "</h1>";
-	echo '<img src="' . $experiencia->getImagen() . '" width="400" height="400">';
+	echo '<img src="' . $experiencia->getImagen() . '" id="imgExperiencia">';
 	echo "<h3>". $experiencia->getDescripcion() ."</h3>";
 	echo "<h3> Nivel minimo requerido: ". ucfirst(level::getNombre($experiencia->getNivelMinimo()))."</h3>";
 	echo "<h2>" . $experiencia->getPrecio() . " € </h2>"; 	
