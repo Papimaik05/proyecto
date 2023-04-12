@@ -7,7 +7,7 @@ require_once './includes/Level.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?v=3415" />
+        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?v=3444" />
         <title>Index</title>
     </head>
 
@@ -46,14 +46,12 @@ require_once './includes/Level.php';
                 </div>
             </li>
             </ul>
-            Tienes  <?php echo $_SESSION['puntos'] ?> puntos (Te quedan <?php echo ($maximo - $_SESSION['puntos']) ?> para el siguiente nivel)
-        <div class="container">
-            <br><br>
+            <h3>Tienes  <?php echo $_SESSION['puntos'] ?> puntos (Te quedan <?php echo ($maximo - $_SESSION['puntos']+1) ?> para el siguiente nivel)</h3>
 	        <form action="procesarDatos.php" method="post">
             <fieldset>
                 <legend><b>Actualizar Email</b></legend>
                 Email :<br><input type="email" name="email" > 
-                <br><br><br>
+                <br><br>
                 <button type="submit" name="emailnuevo">Actualizar email</button>  
             </fieldset>
             <br><br>
@@ -61,18 +59,16 @@ require_once './includes/Level.php';
 	        <form action="procesarDatos.php" method="post">
             <fieldset>
                 <legend><b>Actualizar contraseña</b></legend>
-                Contraseña :<br><input type="password" name="contr" > 
                 <br>
+                Contraseña :<br><input type="password" name="contr" > 
+                <br><br>
                 Repita Contraseña :<br><input type="password" name="contr2" > 
-            <br><br><br>
+            <br><br>
             <button type="submit" name="contrnuevo">Actualizar contraseña</button>
             </fieldset>
-            <br><br>
-            <fieldset>
+            <br>
             <a id="link" href="historialpedidos.php" class="button">Historial de pedidos</a>
-            </fieldset>
             </div> 
-</div> 
 	    </main> 
         <?php
             require('./includes/comun/pie.php');

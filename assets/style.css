@@ -287,6 +287,8 @@ color: #fff;
 }
 
 input[type="text"],
+input[type="email"],
+input::placeholder,
 input[type="password"] {
   background-color: transparent;
   border: none;
@@ -302,4 +304,14 @@ legend {
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
+}
+
+.productoCarrito{
+  border: .1rem solid #303030;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.lista-datos{
+  font-size: 20px;
 }
