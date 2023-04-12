@@ -1,6 +1,7 @@
 <?php
 require_once './includes/config.php';
 require_once './includes/Usuario.php';
+require_once './includes/Level.php';
 ?>
 <!DOCTYPE html>
 
@@ -29,34 +30,24 @@ require_once './includes/Usuario.php';
                 <span class="dato-valor"><?php echo $_SESSION['email'] ?></span>
             </li>
             <li class="dato">
+                <span class="dato-titulo">Nivel:&nbsp</span>
+                <span class="dato-valor"><?php echo ucfirst($_SESSION['level']) ?></span>
+            </li>
+            <li class="dato">
+                <?php 
+                $nivel = ucfirst($_SESSION['level']);
+                $puntos = $_SESSION['puntos'] - level::getMinPuntos($nivel);
+                $maximo = level::getMaxPuntos($nivel);
+                $porcentaje = ($puntos/($maximo - level::getMinPuntos($nivel))) * 100;
+                ?>
                 <span class="dato-titulo">Puntos:&nbsp</span>
                 <div class="barra">
-                    <div class="nivel" style="width: <?php echo $_SESSION['puntos']?>%;"></div>
+                    <div class="nivel" style="width: <?php echo $porcentaje?>%;"></div>
                 </div>
             </li>
             </ul>
-            Tienes  
+            Tienes  <?php echo $_SESSION['puntos'] ?> puntos (Te quedan <?php echo ($maximo - $_SESSION['puntos']) ?> para el siguiente nivel)
         <div class="container">
-            Nombre de usuario:
-            <br>
-            <input type="text" name="nombre"  readonly value="<?php echo $_SESSION['nombre'] ?>">
-            <br><br>
-            Email:
-            <br>
-            <input type="email" name="nombre" readonly value="<?php echo $_SESSION['email'] ?>">
-            <br><br>
-            Tienes: 
-            <?php 
-            echo $_SESSION['puntos']." puntos"; 
-            ?>
-
-            <br><br>
-
-            Nivel:
-            <?php 
-             echo ucfirst($_SESSION['level'])  ;
-            ?>
-
             <br><br>
 	        <form action="procesarDatos.php" method="post">
             <fieldset>
