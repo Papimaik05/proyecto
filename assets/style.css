@@ -161,6 +161,7 @@ flex-grow: 1;
 object-fit: cover;
 opacity: .8;
 transition: .5s ease;
+box-shadow:0px 14px 28px rgb(65, 255, 245);
 }
 
 section img:hover{
@@ -190,15 +191,15 @@ footer{
 }
 
 .item{
-  box-shadow:0px 14px 28px white;
-  padding: 20px;
-  margin-left: 400px;
-  margin-right: 400px;
-  transition: all .6s ease-in-out;
+  padding-top: 15px;
+  box-shadow:0px 14px 28px rgb(65, 255, 245);
+  transition: all .3s ease-in-out;
+  color:white;
+  text-decoration: none;
 }
 
 .item:hover{
-  transform:rotateY(360deg);
+  transform:scale(1.05);
 }
 
 div.texto{
@@ -414,4 +415,16 @@ legend {
 
 .lista-datos{
   font-size: 20px;
+}
+
+#imgExperiencia{
+  width: 600px;
+  height: 400px;
+  box-shadow:0px 14px 28px rgb(65, 255, 245);
+}
+
+.catalogo{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
