@@ -310,6 +310,7 @@ display: inline-block;
   border-radius: 6px;
   overflow: hidden;
   background: white;
+  color: black;
   box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
   cursor: default;
   transition:all 400ms ease;
