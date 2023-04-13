@@ -20,19 +20,19 @@ require_once './includes/config.php';
 	        <article>  
             <form action="procesarRegistro.php" method="post">
                 <div class="username">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="nombre" >
                     <label>Nombre de Usuario</label>
                 </div>
                 <div class="username">
-                    <input type="text" name="email" required>
+                    <input type="text" name="email" >
                     <label>Email</label>
                 </div>
                 <div class="username">
-                    <input type="password" name="contr" required>
+                    <input type="password" name="contr" >
                     <label>Contraseña</label>
                 </div>
                 <div class="username">
-                    <input type="password" name="contr" required>
+                    <input type="password" name="contr2" >
                     <label>Repetir contraseña</label>
                 </div> 
                 <?php

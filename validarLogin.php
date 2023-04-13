@@ -16,11 +16,9 @@ require_once './includes/level.php';
             require('./includes/comun/cabecera.php');
         ?>     
 	    <main>
-        <div class="container" id="login">
-	        <article>  
+        <div class="container" id="login">  
                 <?php
                 $sinerrores=true;
-
 
                 $nombreUsuario = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 if ( ! $nombreUsuario || empty($nombreUsuario=trim($nombreUsuario)) ) {
