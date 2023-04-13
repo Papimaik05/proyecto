@@ -9,7 +9,7 @@ require_once './includes/experiencias.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?id=1" />
         <title>Index</title>
     </head>
 
@@ -39,7 +39,7 @@ require_once './includes/experiencias.php';
         ?><div class="recuadro-pedido">
             <?php
         $producto=Producto::buscaPorId($pedido->getIdProducto());
-        echo "<img src='". $producto->getImagen() ."' alt = 'imgProducto' id='imagen'>";
+        echo "<img src='". $producto->getImagen() ."' alt = 'imgProducto' id='imagen_historial'>";
         echo "<h3>" . $producto->getNombre() ."</h3>";
         echo "<h3>Unidades:" . $pedido->getUnidades() ."</h3>";
         echo "<h3>Total: " . $pedido->getUnidades()*$producto->getPrecio() ." euros</h3>";
@@ -55,7 +55,7 @@ require_once './includes/experiencias.php';
         ?><div class="recuadro-pedido">
             <?php
         $experiencia=Experiencia::buscaPorId($pedido->getIdProducto());
-        echo "<img src='". $experiencia->getImagen() ."' alt = 'imgExperiencia' id='imagen'>";
+        echo "<img src='". $experiencia->getImagen() ."' alt = 'imgExperiencia' id='imagen_historial'>";
         echo "<h3>" . $experiencia->getNombre() ."</h3>";
         echo "<h3>Total: " . $experiencia->getPrecio() ." euros</h3>";
         ?>

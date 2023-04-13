@@ -1,11 +1,10 @@
 body{
   color: white;
-  background-color:  #00FFFF;
+  background-color:  white;
   text-align: center;
-  width: 1400px;
+
   margin: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+
 }
 
 .container{
@@ -503,4 +502,30 @@ legend {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   padding-bottom: 20px;
+}
+
+#imagen_historial{
+  height:200px;
+  width: 200px;
+  border-radius: 20%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+.recuadro-pedido {
+  border: 2px solid #333; /* Grosor y color del borde */
+  padding: 10px; /* Espacio interno alrededor de la imagen */
+  width: 300px; /* Ancho del recuadro */
+  height: 400px; /* Altura del recuadro */
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15%;
+  box-shadow: 0 0 20px rgba(0, 255, 89, 0.5);
+  transition: background-color 0.5s ease;
+}
+.recuadro-pedido:hover{
+  background-color: #08c143;
+}
+#nombre{
+  text-decoration: underline;
 }
