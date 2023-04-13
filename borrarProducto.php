@@ -19,6 +19,7 @@
     <div class="borrar">
     
     <?php
+        $_SESSION["diferenciar"]=true;
         $productos = Producto::cargarProductos();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";

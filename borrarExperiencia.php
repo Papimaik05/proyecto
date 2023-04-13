@@ -19,6 +19,7 @@
     <div class="container">
     <div class="borrar">
     <?php
+        $_SESSION["diferenciar"]=false;
         $experiencias = Experiencia::cargarExperiencias();?>
         <?php if (isset($_GET["mensaje"])) {
 		 echo "<p>" . $_GET["mensaje"] . "</p>";

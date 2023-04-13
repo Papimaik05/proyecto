@@ -3,7 +3,7 @@
     require_once './includes/experiencias.php';    
     $mensaje = "";
     $res=true;
-    if(isset($_POST['productos'])){
+    if($_SESSION["diferenciar"]==true){
         $productosSeleccionados = $_POST['productos'];
         if (!empty($productosSeleccionados)) {
             foreach ($productosSeleccionados as $id) {
@@ -24,7 +24,7 @@
             $mensaje = "Por favor, seleccione al menos un producto.";
         }
         header("Location:borrarProducto.php?mensaje=$mensaje");
-}else{
+}else if($_SESSION["diferenciar"]==false){
     $experienciasSeleccionadas = $_POST['experiencias'];
     if (!empty($experienciasSeleccionadas)) {
         foreach ($experienciasSeleccionadas as $id) {
