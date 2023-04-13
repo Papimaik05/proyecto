@@ -18,7 +18,8 @@ INSERT INTO `rol` (`numero`, `nombre`) VALUES
 -- admin: gestor password:gestorpass
 INSERT INTO `usuario` (`username`, `password`, `email`, `rol`, `puntos`) VALUES
 ('admin', '$2y$10$6JpecvUdOny8.gxnaa4pmusrTX4kPeynEJxaK2b9hgFMk3arvRoKe', 'camore12@ucm.es', 0, 99),
-('gestor', '$2y$10$CRbtcLzhW2RSreauttF7iOkQCMkS7z3taJfl7TA/wBJ34o1EZJcN2', 'gestor@gmail.com', 2, 7);
+('gestor', '$2y$10$CRbtcLzhW2RSreauttF7iOkQCMkS7z3taJfl7TA/wBJ34o1EZJcN2', 'gestor@gmail.com', 2, 7),
+('user', '$2y$10$acRxAvLfMm6zc69p0pOPV.xWqZ7KmKpnZ.CS/38MfLqirSCYDNcP.', 'user@gmail.com', 1, 0);
 
 INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 (0, 'cangrejo', 0, 4),
