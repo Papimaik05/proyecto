@@ -20,11 +20,11 @@ require_once './includes/config.php';
             <h1>Inicio de sesión</h1>
             <form action="validarLogin.php" method="post">
                 <div class="username">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="nombre" >
                     <label>Nombre de Usuario</label>
                 </div>
                 <div class="username">
-                    <input type="password" name="contr" required>
+                    <input type="password" name="contr" >
                     <label>Contraseña</label>
                 </div>  
                 <?php

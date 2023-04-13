@@ -16,28 +16,27 @@ require_once './includes/level.php';
             require('./includes/comun/cabecera.php');
         ?>     
 	    <main>
-        <div class="container" id="login">
-	        <article>  
+        <div class="container" id="login">  
                 <?php
                 $sinerrores=true;
-                $coinciden=false;
 
                 $nombreUsuario = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 if ( ! $nombreUsuario || empty($nombreUsuario=trim($nombreUsuario)) ) {
-                    echo '<h3>ERROR: El nombre de usuario no puede estar vacío <br></h3>';
+                    $errornombre="ERROR: El nombre de usuario no puede estar vacío";
                     $sinerrores=false;
                 }
                 
                 $password = filter_input(INPUT_POST, 'contr', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                 if ( ! $password || empty($password=trim($password)) ) {
-                    echo '<h3>ERROR: El password no puede estar vacío <br></h3>';
+                    $errorpass="ERROR: El password no puede estar vacío";
                     $sinerrores=false;
                 }
 
                 if($sinerrores){
                     $usuario = Usuario::login($nombreUsuario, $password);
                     if (!$usuario) {
-                        $coinciden=true;
+                        $error="ERROR: El usuario o password no coinciden";
+                        header('Location:login.php?error='.$error.'');
                     } else {
                         $_SESSION['login'] = true;
                         $_SESSION['nombre'] = $usuario->getNombreUsuario();
@@ -50,8 +49,8 @@ require_once './includes/level.php';
                         header('Location: index.php');
                     }
                 }
-                if($coinciden){
-                    $error="ERROR: El usuario o password no coinciden";
+                else{
+                    $error=$errornombre.'<br>'.$errorpass;
                     header('Location:login.php?error='.$error.'');
                 }
                 ?>
