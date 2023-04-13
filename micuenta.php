@@ -55,8 +55,13 @@ require_once './includes/Level.php';
                 <button type="submit" name="emailnuevo">Actualizar email</button>  
             </fieldset>
             <br><br>
-
 	        <form action="procesarDatos.php" method="post">
+            
+            <?php
+            if(isset($_GET['mensaje'])){
+                echo'<h3>'.$_GET["mensaje"].'</h3>';
+            }
+            ?>
             <fieldset>
                 <legend><b>Actualizar contraseña</b></legend>
                 <br>

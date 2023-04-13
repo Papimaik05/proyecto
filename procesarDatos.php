@@ -35,20 +35,20 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
 
                     $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     if ( !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                       echo '<h3>ERROR: El email no es valido <br></h3>';
+                       $mensajeemail="ERROR: El email no es valido";
                        $sinerrores=false;
                     }
                  }
                  if($formEnviado2){
                     $password = filter_input(INPUT_POST, 'contr', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     if ( ! $password || empty($password=trim($password)) || mb_strlen($password) < 3 ) {
-                        echo '<h3>ERROR: El password tiene que tener una longitud de al menos 3 caracteres <br></h3>';
+                        $mensaje3="ERROR: El password tiene que tener una longitud de al menos 3 caracteres";
                         $sinerrores=false;
                      }
                  
                      $password2 = filter_input(INPUT_POST, 'contr2', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
                     if ( ! $password2 || empty($password2=trim($password2)) || $password != $password2 ) {
-                        echo '<h3>ERROR: Los password deben coincidir <br></h3>';
+                        $mensajecoincidir="ERROR: Los password deben coincidir";
                         $sinerrores=false;
                     }
                  }
@@ -82,27 +82,10 @@ if (! $formEnviado1 && ! $formEnviado2 ) {
                     $_SESSION['carrito'] = array();
                     header('Location: micuenta.php');
                  }
-
-                echo '<br><br>';
-	            echo '<form action="procesarDatos.php" method="post">';
-                echo '<fieldset>';
-                echo '<legend><b>Actualizar Email</b></legend>';
-                echo 'Email :<br><input type="email" name="email" >'; 
-                echo '</fieldset>';
-                echo '<br>';
-                echo '<button type="submit" name="emailnuevo">Actualizar email</button>';
-                echo '<br><br>';
-	            echo '<form action="procesarDatos.php" method="post">';
-                echo '<fieldset>';
-                echo '<legend><b>Actualizar contraseña</b></legend>';
-                echo 'Contraseña :<br><input type="password" name="contr" >'; 
-                echo '<br>';
-                echo 'Repita Contraseña :<br><input type="password" name="contr2" >'; 
-        
-                echo '</fieldset>';
-                echo '<br>';
-                echo '<button type="submit" name="contrnuevo">Actualizar contraseña</button>';
-                echo '<br><br>';
+                 else{                
+                    $mensaje=$mensajeemail.$mensaje3.'<br>'.$mensajecoincidir.'<br>';
+                    header("Location:micuenta.php?mensaje=$mensaje");
+                 }
             
                     
                     ?>        
