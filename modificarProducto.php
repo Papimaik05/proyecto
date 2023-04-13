@@ -18,8 +18,8 @@
     ?>
     <main>
     <div class="container">
-    <ul class="modificarProductos">
     <div class="productos">
+    <ul class="modificarProductos">
 
     <?php
         $productos = Producto::cargarProductos();?>

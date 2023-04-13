@@ -430,19 +430,54 @@ legend {
   gap: 20px;
 }
 
-.modificarProductos{
- color:white;
- list-style: none;
- text-align: center;
- font-weight:500;
- font-size: large;
-}
+.modificarProductos li{
+  color:white;
+  list-style: none;
+  text-align: center;
+  font-weight:500;
+  font-size: large;
+  display: inline-block;
+ }
+ 
+ .modificarProductos li:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .modificarProductos label {
+   font-size: 18px;
+   font-weight: bold;
+   display: block;
+   margin-bottom: 10px;
+ }
 
 .productos{
   color:white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
- font-weight:500;
- display: inline-block;
+  font-weight:500;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.productos input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.productos textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 .insertarProductos{
@@ -453,6 +488,15 @@ legend {
   display: inline-block;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+
+.insertarProductos label{
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
 
 .borrar li {
   list-style: none;
@@ -477,6 +521,7 @@ legend {
   display: block;
   margin-bottom: 10px;
 }
+
 .insertarExp{
   color:white;
   list-style: none;
@@ -486,19 +531,62 @@ legend {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.modificarExp{
+.insertarExp label{
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.modificarExp li{
   color:white;
   list-style: none;
   text-align: center;
   font-weight:500;
   font-size: large;
-}
+  display: inline-block;
+ }
+ 
+ .modificarExp li:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .modificarExp label {
+   font-size: 18px;
+   font-weight: bold;
+   display: block;
+   margin-bottom: 10px;
+ }
 
 .exp{
   color:white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   font-weight:500;
-  display: inline-block;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.exp input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.exp textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }
 
 #imagen_historial{
