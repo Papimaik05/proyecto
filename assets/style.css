@@ -391,7 +391,7 @@ color: #fff;
 input[type="text"],
 input[type="email"],
 input::placeholder,
-input[type="password"] {
+input[type="password"],textarea,input[type="number"],input[type="password"]{
   background-color: transparent;
   border: none;
   font-size: 25px;
