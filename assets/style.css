@@ -496,6 +496,25 @@ legend {
   margin-bottom: 10px;
 }
 
+.insertarProductos input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.insertarProductos textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
+}
 
 
 .borrar li {
@@ -529,6 +548,7 @@ legend {
   font-weight:500;
   display: inline-block;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ 
 }
 
 .insertarExp label{
@@ -538,6 +558,25 @@ legend {
   margin-bottom: 10px;
 }
 
+.insertarExp input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.insertarExp textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: white;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
+}
 
 .modificarExp li{
   color:white;
