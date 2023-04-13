@@ -5,7 +5,7 @@ require_once './includes/config.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?id=1" />
         <title>Index</title>
     </head>
 
@@ -15,6 +15,7 @@ require_once './includes/config.php';
             require ('./includes/comun/cabecera.php');
             ?>
             <div class="container">
+                <div class="contfelicitaciones">
             <?php
             echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
             ?>
@@ -22,6 +23,7 @@ require_once './includes/config.php';
             <h2>Gracias por confiar en nosotros</h2>
             <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
             </div>  
+            </div>
             <?php
             require('./includes/comun/pie.php');
         ?>        

@@ -6,7 +6,7 @@ require_once './includes/compraproducto.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css?id=1" rel="stylesheet" type="text/css">
     <title>Producto</title>
 </head>
 
@@ -32,7 +32,9 @@ require_once './includes/compraproducto.php';
 			}
 		}
 		$_SESSION['carrito']=array();
+		echo "<div class='contcompra'>";
 		echo "<h2>Compra realizada con éxito !!!</h2>.<img src='./img/compra.gif'<br>";
+		echo "</div>";
     }
 	if(isset($_POST['borrar'])) {
 		$_SESSION['carrito'] = array();
