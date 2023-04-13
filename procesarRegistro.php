@@ -26,6 +26,7 @@ if (! $formEnviado ) {
             ?>
 	    <main>
         <div class="container" id="login">
+        <div class="formulario">
 	        <article>  
                 <?php
                  $sinerrores=true;
@@ -74,9 +75,9 @@ if (! $formEnviado ) {
                         echo '<h3>ERROR: El usuario ya existe <br></h3>';
                     }
                     ?>
-                    <div class="formulario">
+                    
                         <h1>Registro</h1>
-	                     <article>  
+	                <article>  
                         <form action="procesarRegistro.php" method="post">
                             <div class="username">
                                 <input type="text" name="nombre" required>
@@ -91,15 +92,20 @@ if (! $formEnviado ) {
                         <label>Contraseña</label>
                     </div>
                     <div class="username">
-                        <input type="password" name="contr" required>
+                        <input type="password" name="contr2" required>
                         <label>Repetir contraseña</label>
                     </div> 
                   
-            </fieldset>
+            
             <br>
                 <button type="submit" name="registro">Registrar</button>
                 <br>
-        </form>
+                </form>
+                </article>
+                </div>
+                </article> 
+                </div>
+                
 	    </main> 
         <?php
             require('./includes/comun/pie.php');
