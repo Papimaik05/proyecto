@@ -5,7 +5,7 @@ require_once __DIR__.'/includes/producto.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css?id=3" rel="stylesheet" type="text/css">
     <title>Producto</title>
 </head>
 
@@ -13,7 +13,7 @@ require_once __DIR__.'/includes/producto.php';
 	<?php  
 	require ('./includes/comun/cabecera.php');
 	?>
-<div class="container">
+<div class="container" id="cont_prod">
 	<?php
 	$id = $_GET["id"];
 	$producto = Producto::buscaPorId($id);
@@ -28,12 +28,35 @@ require_once __DIR__.'/includes/producto.php';
 		header("Location:vistaCarrito.php");
 
 	}
+	?>
+	<div class="big_caja">
+	<div class="cajafoto">
+	<?php
 	echo  "<h1>" . $producto->getNombre() . "</h1>";
 	echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" id="imgVistaProducto">';
+	?>
+	</div>
+	<div class="cajatexto">
+	<?php
 	echo "<p>" . $producto->getDescripcion() ."</p>";
 	echo  "<h2>" . $producto->getPrecio() . " € </h2>"; 
 	echo "<p> Quedan " . $producto->getUnidades() ." unidades</p>";
-	
+	echo "<form  method='POST'>";
+	$aux=$producto->getUnidades();
+	if($aux>0){
+		echo "<p>Cantidad: <input type=number value=1 name=Unidades id=Unidades min=1 max=$aux></p>";
+		if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){ 
+			?>
+			<input type="submit" name="submit" value="Añadir" id="botoncompra"> 
+			<?php
+		}
+	}
+	?>
+</form>
+<br>
+	</div>
+	</div>
+	<?php
 	?>
 	<script>
 function mostrarZoom(event, src) {
@@ -59,20 +82,6 @@ document.addEventListener("mouseout", function(event) {
   }
 });
 </script>
-	<form  method="POST">
-		<?php
-		$aux=$producto->getUnidades();
-		if($aux>0){
-			echo "<p>Cantidad: <input type=number value=1 name=Unidades id=Unidades min=1 max=$aux></p>";
-			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) ){ 
-				?>
-				<input type="submit" name="submit" value="Añadir"> 
-				<?php
-			}
-		}
-		?>
-	</form>
-	<br>
 	</div>
     <?php 
 	require("./includes/comun/pie.php");

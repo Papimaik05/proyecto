@@ -289,6 +289,7 @@ display: inline-block;
 #imgVistaProducto{
   height: 400px;
   width: 400px;
+  cursor: zoom-in;
 }
 
 #link{
@@ -521,4 +522,43 @@ legend {
 }
 #nombre{
   text-decoration: underline;
+}
+
+.big_caja{
+  border: 3px solid #303030;
+  box-shadow:0px 14px 28px rgb(65, 255, 245);
+  margin-inline: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+
+.cajatexto{
+  text-align: left;
+  margin-right: 150px;
+  padding-left: 20px;
+}
+.cajafoto{
+  text-align: left;
+  margin-left: 150px;
+}
+
+.container#cont_prod{
+  align-items: center;
+}
+
+#botoncompra{
+  background-color: #4CAF50;
+  border: 3px solid white;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#botoncompra:hover{
+  cursor: pointer;
 }
