@@ -44,7 +44,7 @@ require_once './includes/compraexperiencia.php';
 	if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])>=$experiencia->getNivelMinimo())){ 
 		?>
 		<form method="post">
-		<input type="submit" name="submit" value="Comprar">
+		<input type="submit" name="submit" value="Comprar"id="botoncompra">
 		</form> 
 		<?php
 	}

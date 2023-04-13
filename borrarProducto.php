@@ -16,7 +16,7 @@
     ?>
     <main>
     <div class="container">
-    <div class="borrarProductos">
+    <div class="borrar">
     
     <?php
         $productos = Producto::cargarProductos();?>
@@ -28,11 +28,8 @@
             echo '<h2>No hay productos en la tienda</h2>'; 
         }
         else{
-
             echo '<form action="validarBorrado.php" method="post">';
-        
             echo '<label>Lista de Productos:</label>';
-            echo '<br><br>'; 
             foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
@@ -45,6 +42,7 @@
             echo '</form>';
         }        
         ?>
+    </div>
     </div>
     </main>
 <?php 
