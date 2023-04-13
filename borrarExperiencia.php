@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css?id=1" rel="stylesheet" type="text/css">
     <title>Borrar experiencia</title>
 </head>
 
@@ -30,7 +30,7 @@
             echo '<form action="validarBorrado.php" method="post">';
         
             echo '<label>Lista de Experiencias:</label>';
-            
+            echo '<br><br>';
                 foreach($experiencias as $p){
                     $id = $p->getId();
                     $nombre = $p->getNombre();
@@ -38,6 +38,7 @@
                 }
                 
             echo '</ul>';
+            echo '<br>';
             echo '<input type="submit" value="Enviar">';
         echo '</form>';
         }

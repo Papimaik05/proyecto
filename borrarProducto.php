@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css?id=1" rel="stylesheet" type="text/css">
     <title>Borrar producto</title>
 </head>
 
@@ -32,7 +32,7 @@
             echo '<form action="validarBorrado.php" method="post">';
         
             echo '<label>Lista de Productos:</label>';
-                 
+            echo '<br><br>'; 
             foreach($productos as $p){
                 $id = $p->getId();
                 $nombre = $p->getNombre();
@@ -40,6 +40,7 @@
                 '> ". $nombre ."</li>";
             }     
             echo '</ul>';
+            echo '<br>';
             echo '<input type="submit" value="Enviar">';
             echo '</form>';
         }        

@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "http://localhost/proyecto/assets/style.css?id=1" rel="stylesheet" type="text/css">
     <title>Modificar experiencia</title>
 </head>
 

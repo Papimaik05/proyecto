@@ -7,7 +7,7 @@ require_once './includes/level.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?id=1" />
         <title>Inserción de experiencia</title>
     </head>
 
