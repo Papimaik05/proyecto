@@ -183,11 +183,6 @@ footer{
   height: 50px;
 }
 
-#imagen_producto{
-  width: 200px;
-  height: 200px;
-}
-
 .item{
   padding-top: 15px;
   box-shadow:0px 14px 28px rgb(65, 255, 245);
@@ -432,6 +427,11 @@ legend {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.catalogo img{
+  width: 200px;
+  height: 200px;
 }
 
 .modificarProductos li{
