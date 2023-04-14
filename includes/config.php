@@ -6,7 +6,7 @@ date_default_timezone_set('Europe/Madrid');
 
 
 
-define('BD_HOST', 'localhost');
+define('BD_HOST', 'vm13.db.swarm.test');
 define('BD_NAME', 'proyecto');
 define('BD_USER', 'proyecto');
 define('BD_PASS', 'proyecto');
