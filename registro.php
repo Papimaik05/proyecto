@@ -40,7 +40,6 @@ require_once './includes/config.php';
                     echo'<h3>'.$_GET["error"].'</h3>';
                 }
                 ?>    
-            </fieldset>
             <br>
                 <button type="submit" name="registro">Registrar</button>
                 <br>

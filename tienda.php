@@ -40,7 +40,7 @@ require_once './includes/config.php';
         echo "No hay experiencias disponibles a la venta";
     }else{
     foreach($experiencias as $experiencia){
-        echo "<a href='vistaExperiencia.php?id=" . $experiencia->getId() . "'><img src='". $experiencia->getImagen() ."'> </a> ";
+        echo "<a href='vistaExperiencia.php?id=" . urlencode($experiencia->getId()) . "'><img src='". $experiencia->getImagen() ."' alt='imgExperiencia'></a>";
     }
     }
     ?>
@@ -65,7 +65,7 @@ else{
     ?>
         <a class="item" <?php echo "href='vistaProducto.php?id=" . $producto->getId() . "'"; ?>>
             <?php  
-            echo "<img src='". $producto->getImagen() ."'id='imagen_producto'>";
+            echo "<img src='". $producto->getImagen() ."' alt='imgProducto'>";
             ?>
             <div class="texto">
                 <?php  
