@@ -24,27 +24,27 @@
             $mensaje = "Por favor, seleccione al menos un producto.";
         }
         header("Location:borrarProducto.php?mensaje=$mensaje");
-}else if($_SESSION["diferenciar"]==false){
-    $experienciasSeleccionadas = $_POST['experiencias'];
-    if (!empty($experienciasSeleccionadas)) {
-        foreach ($experienciasSeleccionadas as $id) {
-            if(Experiencia::borraPorId($id)){
+    }else if($_SESSION["diferenciar"]==false){
+        $experienciasSeleccionadas = $_POST['experiencias'];
+        if (!empty($experienciasSeleccionadas)) {
+            foreach ($experienciasSeleccionadas as $id) {
+                if(Experiencia::borraPorId($id)){
+                }
+                else{
+                    $res = false;
+                }
+            }
+            if($res==false){
+                $mensaje = "No se han podido eliminar todas las experiencias";
             }
             else{
-                $res = false;
+                $mensaje = "Todos los elementos seleccionados se han borrado con exito";
             }
+        } 
+        else {
+            $mensaje = "Por favor, seleccione al menos una experiencia.";
         }
-        if($res==false){
-            $mensaje = "No se han podido eliminar todas las experiencias";
-        }
-        else{
-            $mensaje = "Todos los elementos seleccionados se han borrado con exito";
-        }
-    } 
-    else {
-        $mensaje = "Por favor, seleccione al menos una experiencia.";
+        header("Location:borrarExperiencia.php?mensaje=$mensaje");
     }
-    header("Location:borrarExperiencia.php?mensaje=$mensaje");
-}
 
 ?>
