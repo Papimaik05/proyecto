@@ -21,7 +21,8 @@
                 <div class="borrar">
                     <?php
                         $_SESSION["diferenciar"]=false;
-                         $experiencias = Experiencia::cargarExperiencias(); 
+                        $experiencias = Experiencia::cargarExperiencias(); 
+                        
                         if (isset($_GET["mensaje"])) {
 		                     echo "<p>" . $_GET["mensaje"] . "</p>";
 	                    } 
@@ -47,7 +48,7 @@
                 </div>
             </div>
         </main>
-        
+
         <?php 
             require('./includes/comun/pie.php');
         ?>
