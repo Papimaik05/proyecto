@@ -9,32 +9,33 @@ require_once './includes/config.php';
         <title>Index</title>
     </head>
 
-<body>
-            <?php
+    <body>
+        <?php
             require ('./includes/comun/cabecera.php');
-            ?>
-	    <main>
+        ?>
+        <main>
             <div class="container">
-	            <article>  
-                <br>          
-                <img src="./img/logo.jpg" id="logotipo" alt="logotipo">
-                <br>
-                <?php
-                if(isset($_SESSION['login'])){
-                    echo '<h2>Bienvenido, ya eres un Amigo Marino!</h2><br>';
-                }
-                else{
-                ?>
-                    <button onclick="window.location.href='login.php'" type="button"  > Inicio de Sesión</button>
-                    <button onclick="window.location.href='registro.php'" type="button" > Registrate</button>
-                <?php
-                }
-                ?>
-	            </article>
-            </div> 
-	    </main> 
+                <article>  
+                    <br>          
+                    <img src="./img/logo.jpg" id="logotipo">
+                    <br>
+                    <?php
+                        if(isset($_SESSION['login'])){
+                            echo '<h2>Bienvenido, ya eres un Amigo Marino!</h2><br>';
+                        }
+                        else{
+                            ?>
+                            <button onclick="window.location.href='login.php'" type="button"  > Inicio de Sesión</button>
+                            <button onclick="window.location.href='registro.php'" type="button" > Registrate</button>
+                            <?php
+                        }
+                    ?>
+                </article>
+            </div>
+        </main> 
         <?php
             require('./includes/comun/pie.php');
-        ?>           
-</body>
+        ?>        
+            
+    </body>
 </html>
