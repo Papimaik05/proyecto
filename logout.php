@@ -12,7 +12,7 @@ session_destroy();
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
         <title>Logout</title>
     </head>
 

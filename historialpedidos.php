@@ -9,7 +9,7 @@ require_once './includes/experiencias.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="http://localhost/proyecto/assets/style.css?id=1" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css" />
         <title>Index</title>
     </head>
 

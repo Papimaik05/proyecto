@@ -9,7 +9,7 @@ require_once './includes/compraexperiencia.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "http://localhost/proyecto/assets/style.css" rel="stylesheet" type="text/css">
+    <link href= "./css/style.css" rel="stylesheet" type="text/css">
     <title>Experiencia</title>
 </head>
 
