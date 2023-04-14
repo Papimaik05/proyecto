@@ -6,7 +6,7 @@ require_once './includes/config.php';
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="./css/style.css" />
-        <title>Index</title>
+        <title>Felicitaciones</title>
     </head>
 
 <body>
@@ -19,7 +19,7 @@ require_once './includes/config.php';
             <?php
             echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
             ?>
-            <img src="./img/felicitaciones.gif" id="imgFelicitaciones">
+            <img src="./img/felicitaciones.gif" id="imgFelicitaciones" alt="imgFelicitaciones">
             <h2>Gracias por confiar en nosotros</h2>
             <button onclick="window.location.href='tienda.php'" type="button" > Tienda/Experiencias</button>
             </div>  

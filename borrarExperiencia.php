@@ -31,6 +31,7 @@
             echo '<form action="validarBorrado.php" method="post">';
         
             echo '<label>Lista de Experiencias:</label>';
+            echo '<ul>';
                 foreach($experiencias as $p){
                     $id = $p->getId();
                     $nombre = $p->getNombre();

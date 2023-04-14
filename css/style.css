@@ -2,7 +2,6 @@ body{
   color: white;
   background-color:  white;
   text-align: center;
-
   margin: auto;
 
 }
@@ -346,7 +345,7 @@ background: #2fb4cc;
 color: #fff;
 }
 
-#icono_gestor{
+.card img{
   width: 200px;
   height: 200px;
 }

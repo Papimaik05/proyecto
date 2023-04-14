@@ -20,7 +20,7 @@ require_once './includes/config.php';
         <div class="auxgestor">
         <div class="card">
             <figure>
-                <img src="./img/nuevo.jpg" id="icono_gestor">
+                <img src="./img/nuevo.jpg"  alt="icono_gestor">
             </figure>
             <div class="contenido">
                 <h3>Insertar Producto</h3>
@@ -30,7 +30,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/obrera.jpg" id="icono_gestor">
+                <img src="./img/obrera.jpg"  alt="icono_gestor2">
             </figure>
             <div class="contenido">
                 <h3>Modificar Producto</h3>
@@ -40,7 +40,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/borrar.png" id="icono_gestor">
+                <img src="./img/borrar.png"  alt="icono_gestor3">
             </figure>
             <div class="contenido">
                 <h3>Borrar Producto</h3>
@@ -54,7 +54,7 @@ require_once './includes/config.php';
         <div class="auxgestor">
         <div class="card">
             <figure>
-                <img src="./img/nuevo.jpg" id="icono_gestor">
+                <img src="./img/nuevo.jpg"  alt="icono_gestor4">
             </figure>
             <div class="contenido">
                 <h3>Insertar Experiencia</h3>
@@ -64,7 +64,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/obrera.jpg" id="icono_gestor">
+                <img src="./img/obrera.jpg"  alt="icono_gestor5">
             </figure>
             <div class="contenido">
                 <h3>Modificar Experiencia</h3>
@@ -74,7 +74,7 @@ require_once './includes/config.php';
         </div>
         <div class="card">
             <figure>
-                <img src="./img/borrar.png" id="icono_gestor" >
+                <img src="./img/borrar.png"  alt="icono_gestor6">
             </figure>
             <div class="contenido">
                 <h3>Borrar Experiencia</h3>
