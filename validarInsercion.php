@@ -30,6 +30,6 @@
         header("Location:insertarExperiencia.php?mensaje=$mensaje");
     }
     else{
-    header("Location:insertarProducto.php?mensaje=$mensaje");
+        header("Location:insertarProducto.php?mensaje=$mensaje");
     }
 ?>
