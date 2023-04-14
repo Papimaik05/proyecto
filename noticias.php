@@ -16,7 +16,7 @@ require_once './includes/config.php';
 	    <main>
         <div class="container">
 	        <h1>Esta página se encuentra en mantenimiento</h1>
-            <img src="./img/mantenimiento.png"  width ="500"  height ="500"  alt="mantenimiento">
+            <img src="./img/mantenimiento.png"  id="imgMantenimiento" alt="mantenimiento">
             <h2>De momento no hay noticias, consulta la web más adelante!</h2>
             </div>
         </main> 

@@ -33,7 +33,7 @@ require_once './includes/compraproducto.php';
 		}
 		$_SESSION['carrito']=array();
 		echo "<div class='contcompra'>";
-		echo "<h2>Compra realizada con éxito !!!</h2>.<img src='./img/compra.gif'<br>";
+		echo "<h2>Compra realizada con éxito !!!</h2><img src='./img/compra.gif' id='imgFelicitaciones'><br>";
 		echo "</div>";
     }
 	if(isset($_POST['borrar'])) {
@@ -74,7 +74,7 @@ require_once './includes/compraproducto.php';
 		}
 		?>
 		<div class="ticket">
-		<img src="./img/cabeza_ticket.png" width="750" height="200">	
+		<img src="./img/cabeza_ticket.png" id="imgCarrito">	
 		<?php
 		foreach($cantidades as $id => $unidades){
 			?>

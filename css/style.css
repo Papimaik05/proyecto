@@ -48,7 +48,7 @@ form .username{
 }
 
 .username input{
-  width: 100;
+  width: 100%;
   padding:0 5px;
   height:40px;
   font-size: 16px;
@@ -84,7 +84,7 @@ form .username{
 }
 .username input:focus ~ span::before,
 .username input:focus ~ span::before{
-  width: 100;
+  width: 100%;
 }
 .formulario input[type="submit"]{
   width:250px;
@@ -125,9 +125,9 @@ button{
 }
 
 img{
-width :580; 
-height :480; 
-border :5;
+width :50px; 
+height :50px; 
+border :5px;
 }
 
 table {
@@ -298,14 +298,14 @@ display: inline-block;
 }
 
 .auxgestor{
-  width: 100;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 .card{
-  width: 50;
-  height :50; 
+  width: 90%;
+  height :90%; 
   margin: 20px;
   border-radius: 6px;
   overflow: hidden;
@@ -412,6 +412,11 @@ legend {
   border: .1rem solid #303030;
   margin-bottom: 10px;
   padding-bottom: 10px;
+}
+
+#imgCarrito{
+  width:750px;
+  height:200px;
 }
 
 .lista-datos{
@@ -699,6 +704,16 @@ legend {
   padding-bottom: 10px;
   margin-right: 25%;
   margin-left: 25%;
+}
+
+#imgFelicitaciones{
+  width:400px;
+  height: 300px;
+}
+
+#imgMantenimiento{
+  width:500px;
+  height: 400px;
 }
 
 .contcompra{
