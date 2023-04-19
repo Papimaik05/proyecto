@@ -49,9 +49,9 @@
                             echo '<label for="descripcion">Descripción:</label>';
                             echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';
                             echo '<label for="unidades">Unidades:</label>';
-                            echo '<input type="number" name="unidades" id="unidades"><br><br>';
+                            echo '<input type="number" name="unidades" id="unidades" min="0"><br><br>';
                             echo '<label for="precio">Precio:</label>';
-                            echo '<input type="number" name="precio" id="precio"><br><br>';
+                            echo '<input type="number" name="precio" id="precio" min="0"><br><br>';
                             echo '<label for="imagen">URL de la imagen:</label>';
                             echo '<input type="text" name="imagen" id="imagen"><br><br>';
                             echo '</fieldset>';
