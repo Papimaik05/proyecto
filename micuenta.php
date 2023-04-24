@@ -42,7 +42,12 @@ require_once './includes/level.php';
                             ?>
                             <span class="dato-titulo">Puntos:&nbsp;</span>
                             <div class="barra">
-                                <div class="nivel" style="width: <?php echo $porcentaje?>%;"></div>
+                                <div class="nivel" style="width: 
+                                <?php 
+
+                                    echo $porcentaje
+                                ?>%;">
+                                </div>
                             </div>
                         </li>
                     </ul>
