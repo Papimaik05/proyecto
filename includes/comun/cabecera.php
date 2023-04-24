@@ -54,7 +54,7 @@ function reconocerUsuario() {
             <li><a href="index.php">Inicio</a></li>
             <li><a href="tienda.php">Tienda/Experiencias</a></li>
             <li><a href="noticias.php">Noticias</a></li>
-            <li><a href="blog.php">Blog</a></li>
+            <li><a href="foro.php">Foro</a></li>
           <?php
           if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
             if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
