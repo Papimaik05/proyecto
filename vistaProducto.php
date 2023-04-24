@@ -33,7 +33,7 @@ require_once __DIR__.'/includes/producto.php';
 		<div class="cajafoto">
 		<?php
 			echo  "<h1>" . $producto->getNombre() . "</h1>";
-			echo '<img src="' . $producto->getImagen() . '"onmouseover="mostrarZoom(event, this.src)" id="imgVistaProducto" alt="imagen">';
+			echo '<img src="' . $producto->getImagen() . '" onmouseover="mostrarZoom(event, this.src)" id="imgVistaProducto" alt="imagen">';
 		?>
 		</div>
 		<div class="cajatexto">

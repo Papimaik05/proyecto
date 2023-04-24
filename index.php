@@ -17,7 +17,7 @@ require_once './includes/config.php';
             <div class="container">
                 <article>  
                     <br>          
-                    <img src="./img/logo.jpg" id="logotipo">
+                    <img src="./img/logo.jpg" id="logotipo" alt="logo">
                     <br>
                     <?php
                         if(isset($_SESSION['login'])){
