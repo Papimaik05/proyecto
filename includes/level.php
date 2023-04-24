@@ -30,6 +30,7 @@ class level{
         $fila=$rs->fetch_assoc();
         return $fila['nombre'];
     }
+    
     public static function getAllLevels(){
         $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("SELECT nombre FROM nivel  ");

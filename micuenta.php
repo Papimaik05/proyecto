@@ -39,19 +39,38 @@ require_once './includes/level.php';
                             $puntos = $_SESSION['puntos'] - level::getMinPuntos($nivel);
                             $maximo = level::getMaxPuntos($nivel);
                             $porcentaje = ($puntos/($maximo - level::getMinPuntos($nivel))) * 100;
+                            $level=level::getLevel($_SESSION["puntos"]);
                             ?>
                             <span class="dato-titulo">Puntos:&nbsp;</span>
                             <div class="barra">
                                 <div class="nivel" style="width: 
                                 <?php 
-
-                                    echo $porcentaje
+                                    if($level==level::poseidon){
+                                        $porcentaje=100;
+                                        echo $porcentaje;
+                                    }
+                                    else{
+                                        echo $porcentaje;
+                                    }
                                 ?>%;">
                                 </div>
                             </div>
                         </li>
                     </ul>
-                    <h3>Tienes  <?php echo $_SESSION['puntos'] ?> puntos (Te quedan <?php echo ($maximo - $_SESSION['puntos']+1) ?> para el siguiente nivel)</h3>
+                    <?php 
+                        if($level==level::poseidon){
+                            echo "<h3>Felicidades, tienes el nivel máximo!</h3>";
+                        }
+                        else{
+                            ?>
+                            <h3>Tienes  
+                                <?php echo $_SESSION['puntos'] ?> 
+                            puntos (Te quedan 
+                                <?php echo ($maximo - $_SESSION['puntos']+1) ?> 
+                            para el siguiente nivel)</h3>
+                            <?php
+                        }
+                    ?>
                     <form action="procesarDatos.php" method="post">
                     <fieldset>
                         <legend><b>Actualizar Email</b></legend>
