@@ -8,6 +8,7 @@ TRUNCATE TABLE `rol`;
 TRUNCATE TABLE `usuario`;
 TRUNCATE TABLE `compraproducto`;
 TRUNCATE TABLE `compraexperiencia`;
+TRUNCATE TABLE `noticia`;
 
 INSERT INTO `rol` (`numero`, `nombre`) VALUES
 (0, 'admin'),
@@ -41,3 +42,6 @@ INSERT INTO `experiencias` (`nombre`, `id`, `descripcion`, `precio`, `nivelminim
 ('Conoce a los pinguinos', 2, 'Adéntrate en esta aventura única en la que podrás relacionarte con los pinguinos y jugar a numerosos juegos entretenidos y originales.', 189, 0, 3, './img/pinguinos_madagascar.jpg'),
 ('Busquemos a Nemo', 3, 'Revive la experiencia de nuevo viviendo en primera persona la inigualable historia de buscando a Nemo.', 250, 1, 5, './img/nemo.jpg'),
 ('Nada entre tiburones', 4, 'Atrévete a disfrutar la máxima experiencia de esta tienda ¡NADAR ENTRE TIBURONES! SERÁ INOLVIDABLE.', 379, 2, 10, './img/jaula_tiburones.jpg');
+
+INSERT INTO `noticia` (`id`, `imagen`, `descripción`, `fecha`, `titulo`) VALUES
+(1, './img/noticia1.jpg', 'El tráfico naval está creciendo y repercute sobre el transporte global, la cadena alimenticia, la defensa nacional e incluso el tiempo libre. Más de 100 000 buques comerciales y 25 000 buques militares operan en todo el mundo. En la actualidad, el 80 % de toda la carga pasa por los puertos, lo que los convierte en los centros de distribución de mercancías a granel más activos del mundo.\r\n\r\nMira a tu alrededor en un buque moderno y verás que Danfoss está dándolo todo para reducir los costes de energía y las emisiones, tanto en la sala de máquinas como en otras áreas.\r\n\r\n \r\n\r\nTanto en buques comerciales como navales, desde cruceros hasta cargueros y portacontenedores, obtendrás ventajas significativas en cuestión de seguridad, velocidad, logística y eficiencia, así como en la reducción de las emisiones al mínimo absoluto. Elige entre una amplia gama de soluciones marinas de Danfoss para la seguridad contra incendios, la obtención de agua limpia a bordo, la supervisión minuciosa de todas las funciones del motor y un control preciso y flexible de la conversión de potencia, a fin de satisfacer las necesidades de todos los procesos tanto a bordo como en tierra.', '2023-04-26', 'Aumentan nuestras instalaciones');

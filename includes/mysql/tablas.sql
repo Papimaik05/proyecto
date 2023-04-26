@@ -79,6 +79,15 @@ CREATE TABLE IF NOT EXISTS `producto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `noticia` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `imagen` text NOT NULL,
+  `descripción` text NOT NULL,
+  `fecha` date NOT NULL,
+  `titulo` text NOT NULL,
+   PRIMARY KEY(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Estructura de tabla para la tabla `rol`
