@@ -683,6 +683,21 @@ legend {
   align-items: center;
 }
 
+.noticias{
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-size: 16px;
+  margin-bottom: 40px;
+  
+}
+
+#imgNoticia{
+  width:400px;
+  height: 300px;
+}
+
 #botoncompra{
   background-color: #4CAF50;
   border: 3px solid white;
@@ -721,4 +736,41 @@ legend {
   padding-bottom: 10px;
   margin-right: 25%;
   margin-left: 25%;
+}
+
+.insertarNoticia{
+  color:white;
+  list-style: none;
+  text-align: center;
+  font-weight:500;
+  display: inline-block;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ 
+}
+
+.insertarNoticia label{
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.insertarNoticia input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.insertarNoticia textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: black;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
 }

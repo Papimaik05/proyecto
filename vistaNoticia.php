@@ -16,6 +16,8 @@ require_once __DIR__.'/includes/noticia.php';
 			require ('./includes/comun/cabecera.php');
 		?>
 		<div class="container">
+		<div class="noticias">
+		
         <?php
         $id = $_GET["id"];
         $noticia = Noticia::buscaPorId($id);
