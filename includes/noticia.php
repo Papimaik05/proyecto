@@ -8,7 +8,7 @@ private $descripcion;
 private $fecha;
 private $imagen;
 
-public function __construct($id,$titulo,$descripcion,$fecha,$imagen){
+public function __construct($id=null,$titulo,$descripcion,$fecha,$imagen){
 $this->id=$id;
 $this->titulo=$titulo;
 $this->descripcion=$descripcion;
@@ -76,6 +76,58 @@ public static function buscaPorId($idNoticia){
 
 
 }
+
+    private static function inserta($noticia)
+    {
+        $result = false;
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query=sprintf("INSERT INTO noticia(titulo,descripción,fecha, imagen) VALUES ('%s', '%s', '%s', '%s')"
+            , $conn->real_escape_string($noticia->titulo)
+            , $conn->real_escape_string($noticia->descripcion)
+            , $noticia->fecha            
+            , $conn->real_escape_string($noticia->imagen)
+        );
+        if ( $conn->query($query) ) {
+            $noticia->id = $conn->insert_id;
+            $result=true;
+        } else {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+        }
+        return $result;
+    }
+
+    public function guarda()
+    {
+       
+        return self::inserta($this);
+    }
+    public static function crea($titulo, $descripcion, $fecha, $imagen)
+    {
+        $noticia = new Noticia(null,$titulo,$descripcion, $fecha, $imagen);
+        return $noticia->guarda();
+    }
+
+    
+    public static function borraPorId($idNoticia)
+    {
+        if (!$idNoticia) {
+            return false;
+        } 
+        /* Los roles se borran en cascada por la FK
+         * $result = self::borraRoles($usuario) !== false;
+         */
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("DELETE FROM noticia WHERE id = '%d'"
+            , $idNoticia
+        );
+        if ( ! $conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        return true;
+    }
+
+
 
 
 }

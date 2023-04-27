@@ -60,6 +60,7 @@ function reconocerUsuario() {
             if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
               ?>
               <li><a href="gestorProductos.php">GestorContenido</a></li>
+              <li><a href="gestorNoticias.php">GestorNoticias</a></li>
               <?php
             }
             ?>
