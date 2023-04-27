@@ -35,7 +35,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Maria"></a>
 	<h3>1.María Magdalena Miralles Reyes</h3>
-	<img src="./img/fotoMaria.jpg" alt="imagenMaria" height="341">
+	<img src="./img/fotoMaria.jpg" alt="imagenMaria" id="img_miembros">
 	<br>
 	<p>Correo:mmiralle@ucm.es</p>
 	<p>En mi tiempo libre me gusta jugar al padel con mis amigos,<br />
@@ -46,7 +46,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Elías"></a>
 	<h3>2.Elías Janer Madiba</h3>
-	<img src="./img/fotoElias.jpg" alt="fotoElias" height="341">
+	<img src="./img/fotoElias.jpg" alt="fotoElias" id="img_miembros">
 	<br>
 	<p>Correo:eliasjan@ucm.es</p>
 	<p>Me gusta mucho irme de viaje por Europa con mi familia y amigos<br />
@@ -57,7 +57,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Miguel"></a>
 	<h3>3.Miguel Mateos Matias</h3>
-	<img src="./img/fotoMiguel.jpg" alt="fotoMiguel" height="341">
+	<img src="./img/fotoMiguel.jpg" alt="fotoMiguel" id="img_miembros">
 	<br>
 	<p>Correo:migmat05@ucm.es</p>
 	<p>Me gusta ir al gimnasio cuando tengo un rato libre,<br />
@@ -68,7 +68,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Alberto"></a>
 	<h3>4.Alberto Dominguez Sierra</h3>
-	<img src="./img/fotoAlberto.jpg" alt="fotoAlberto" height="341">
+	<img src="./img/fotoAlberto.jpg" alt="fotoAlberto" id="img_miembros">
 	<br>
 	<p>Correo:domingus@ucm.es</p>
 	<p>Veo los partidos de futbol, y tambien juego con los amigos<br />
@@ -79,7 +79,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Carlos"></a>
 	<h3>5.Carlos Moreno Pérez</h3>
-	<img src="./img/fotoCarlos.jpg" alt="fotoCarlos" height="341">
+	<img src="./img/fotoCarlos.jpg" alt="fotoCarlos" id="img_miembros">
 	<br>
 	<p>Correo:camore12@ucm.es</p>
 	<p>Al ser aficionado del real madrid me gusta mucho ver los partidos<br />
@@ -90,7 +90,7 @@ require_once './includes/config.php';
 	<div>
 	<a id= "Yasser"></a>
 	<h3>6.Yasser Takfa Ghazal</h3>
-	<img src="./img/fotoYasser.jpg" alt="fotoYasser" height="341">
+	<img src="./img/fotoYasser.jpg" alt="fotoYasser" id="img_miembros">
 	<br>
 	<p>Correo:yastakfa@ucm.es</p>
 	<p>Me gusta salir de fiesta con los amigos los fines de semana y a parte de<br />

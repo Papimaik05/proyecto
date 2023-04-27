@@ -43,7 +43,6 @@ form .username{
   position: relative;
   border-bottom: 2px solid #adadad;
   margin:30px 0;
-
 }
 
 .username input{
@@ -721,4 +720,9 @@ legend {
   padding-bottom: 10px;
   margin-right: 25%;
   margin-left: 25%;
+}
+
+#img_miembros{
+  width: 10%;
+  height: 10%;
 }
