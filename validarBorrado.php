@@ -1,6 +1,7 @@
 <?php
     require_once './includes/producto.php';
-    require_once './includes/experiencias.php';    
+    require_once './includes/experiencias.php';   
+    require_once './includes/Usuario.php'; 
     $mensaje = "";
     $res=true;
     if($_SESSION["diferenciar"]=="Producto"){
@@ -66,7 +67,7 @@
         else {
             $mensaje = "Por favor, seleccione al menos un usuario.";
         }
-        header("Location:borrarUsuarios.php?mensaje=$mensaje");
+        header("Location:borrarUsuario.php?mensaje=$mensaje");
     }
 
 ?>
