@@ -20,7 +20,7 @@
                 <div class="auxgestor">
                     <div class="card">
                         <figure>
-                            <img src="./img/nuevo.jpg"  alt="icono_gestor">
+                            <img src="./img/Tick.png"  alt="icono_gestor">
                         </figure>
 
                         <div class="contenido">
@@ -34,7 +34,7 @@
 
                     <div class="card">
                         <figure>
-                            <img src="./img/borrar.png"  alt="icono_gestor3">
+                            <img src="./img/cruzroja.jpg"  alt="icono_gestor3">
                         </figure>
                         <div class="contenido">
                             <h3>Borrar Noticia</h3>

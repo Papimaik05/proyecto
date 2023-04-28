@@ -30,7 +30,7 @@
                                     echo '<h2>No hay experiencias en la tienda</h2>'; 
                                 }
                                 else{
-                                    echo '<form action="validarEdicion.php?esExp=true" method="post">';
+                                    echo '<form action="validarEdicion.php?es=experiencia" method="post">';
                                 
                                     echo '<label>Selecciona la experiencia que quieres modificar:</label>';
                                     
@@ -67,7 +67,6 @@
                                     echo '<input type="submit" value="Enviar">';
                                     echo '</form>';
                                 }
-                                $esExp=true;
                         ?> 
                     </div> 
                 </div>

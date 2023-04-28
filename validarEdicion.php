@@ -2,6 +2,8 @@
     require_once './includes/producto.php';
     require_once './includes/experiencias.php';  
     require_once './includes/level.php';  
+    require_once './includes/Usuario.php'; 
+    require_once './includes/rol.php'; 
     $mensaje = "";
     $res=true;
     
@@ -49,10 +51,39 @@
         $experiencia->guarda();
         $mensaje =  "Experiencia modificada con exito";
     }
+    elseif(isset($_POST['usuario'])){
+        $nombreusuario=$_POST['usuario'];
+        $usuario=Usuario::buscaUsuario($nombreusuario);
+        if(!empty($_POST["email"])){
+            $email=$_POST['email'];
+        }
+        else{
+            $email=$usuario->getEmail();
+        }
+        if(!empty($_POST['rol'])){
+            $rol=rol::getNumero($_POST['rol']);
+        }
+        else{
+            $rol=$usuario->getRol();
+        }
+        if(!empty($_POST['puntos'])){
+            $puntos=$_POST['puntos'];
+        }
+        else{
+            $puntos=$usuario->getPuntos();
+        }
+        Usuario::cambioDatos($nombreusuario,$usuario->getContr(),$email,$rol,$puntos);
+        $mensaje =  "Usuario modificado con exito";
+    }
     
-    if(isset($_GET['esExp'])){
+    if($_GET['es']=="experiencia"){
+
         header("Location:modificarExperiencia.php?mensaje=$mensaje");
-    }else{
+    }
+    else if($_GET['es']=="producto"){
     header("Location:modificarProducto.php?mensaje=$mensaje");
-}
+    }
+    else if($_GET['es']=="usuario"){
+        header("Location:modificarUsuario.php?mensaje=$mensaje");
+    }
 ?>
