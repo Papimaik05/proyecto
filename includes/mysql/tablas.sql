@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2023 a las 12:34:50
+-- Tiempo de generación: 28-04-2023 a las 18:06:59
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -29,15 +29,17 @@ SET time_zone = "+00:00";
 
 DROP TABLE IF EXISTS `comentario`;
 CREATE TABLE IF NOT EXISTS `comentario` (
-  `Id` int(11) NOT NULL AUTO_INCREMENT,
-  `Usuario` varchar(15) NOT NULL,
-  `Padre` int(11) NOT NULL,
-  `Contenido` text NOT NULL,
-  `Fecha de creación` date NOT NULL,
-  `Me gusta` int(11) NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `Usuario` (`Usuario`),
-  KEY `Padre` (`Padre`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(20) NOT NULL,
+  `usuario` varchar(15) NOT NULL,
+  `padre` int(11) NOT NULL,
+  `contenido` text NOT NULL,
+  `fecha_de_creacion` date NOT NULL,
+  `me_gusta` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `Titulo` (`titulo`),
+  KEY `Usuario` (`usuario`),
+  KEY `Padre` (`padre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------

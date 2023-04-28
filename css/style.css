@@ -825,3 +825,52 @@ legend {
   padding: 5px;
   cursor: pointer;
 }
+
+.comment-box {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Estilos para el nombre de usuario */
+.user-name {
+  font-weight: bold;
+}
+
+/* Estilos para la fecha de creación */
+.created-at {
+  font-style: italic;
+  font-size: 0.8em;
+  color: #999;
+}
+
+/* Estilos para el botón de respuesta */
+.reply-btn {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+/* Estilos para el botón de respuesta al pasar el ratón */
+.reply-btn:hover {
+  background-color: #f7f7f7;
+  border-color: #aaa;
+}
+
+.like-btn {
+  background-color: #1c1a1a;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
