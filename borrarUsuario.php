@@ -34,7 +34,7 @@
                             echo '<label>Lista de Usuarios:</label>';
                             echo '<ul>';
                             foreach($usuarios as $u){
-                                $nombre = $u->getNombre();
+                                $nombre = $u->getNombreUsuario();
                                 echo "<li><input type='checkbox' name='usuarios[]' value='". $nombre ."'> ". $nombre ."</li>";
                             }
                 
