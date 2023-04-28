@@ -31,7 +31,7 @@
                                 echo '<h2>No hay productos en la tienda</h2>'; 
                             }
                             else{
-                                echo '<form action="validarEdicion.php" method="post">';
+                                echo '<form action="validarEdicion.php?es=producto" method="post">';
                                 echo '<label>Selecciona el producto que quieres modificar:</label>';
                             
                                 foreach($productos as $p){

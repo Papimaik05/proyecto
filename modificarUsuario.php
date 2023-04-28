@@ -32,7 +32,7 @@
                                 echo '<h2>No hay usuarios en la Base de Datos</h2>'; 
                             }
                             else{
-                                echo '<form action="validarEdicion.php" method="post">';
+                                echo '<form action="validarEdicion.php?es=usuario" method="post">';
                                 echo '<label>Selecciona el usuario que quieres modificar:</label>';
                                 echo '<br><br>';
                                 foreach($usuarios as $u){
