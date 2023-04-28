@@ -33,7 +33,7 @@ class Usuario{
         }        
         $conn=Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("DELETE FROM usuario WHERE username = '%s'"
-            , $conn->real_escape_string($username)
+            , $conn->real_escape_string($nombre)
         );
         if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
