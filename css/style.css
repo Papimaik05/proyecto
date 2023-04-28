@@ -454,6 +454,56 @@ legend {
    margin-bottom: 10px;
  }
 
+ .usu{
+  color:white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight:500;
+  font-size: 18px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.usu input{
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+  background: white;
+  cursor: pointer;
+}
+
+.usu textarea{
+  background: white;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: black;
+  font-size: 12px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+ .modificarUsuarios li{
+  color:white;
+  list-style: none;
+  text-align: center;
+  font-weight:500;
+  font-size: large;
+  display: inline-block;
+ }
+ 
+ .modificarUsuarios li:hover {
+   transform: translateY(-5px);
+   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .modificarUsuarioslabel {
+   font-size: 18px;
+   font-weight: bold;
+   display: block;
+   margin-bottom: 10px;
+ }
+
 .productos{
   color:white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -630,6 +680,8 @@ legend {
   padding: 5px;
   cursor: pointer;
 }
+
+
 
 #imagen_historial{
   height:200px;
