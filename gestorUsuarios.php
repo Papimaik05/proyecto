@@ -29,6 +29,16 @@
                     </div>
                     <div class="card">
                         <figure>
+                            <img src="./img/modificar_usuario.jpg"  alt="icono_gestor2">
+                        </figure>
+                        <div class="contenido">
+                            <h3>Modificar Usuario</h3>
+                            <p>Haz click aquí para modificar un usuario existente</p>
+                            <a href="modificarUsuario.php">Borrar</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <figure>
                             <img src="./img/borrar.png"  alt="icono_gestor3">
                         </figure>
                         <div class="contenido">
