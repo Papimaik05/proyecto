@@ -26,7 +26,10 @@
                         if (isset($_GET["mensaje"])) {
 		                     echo "<p>" . $_GET["mensaje"] . "</p>";
 	                    } 
-                        if(empty($usuarios)){
+                        foreach($usuarios as $u){
+                            $nombreaux = $u->getNombreUsuario();
+                        }
+                        if(empty($usuarios)||$_SESSION["nombre"]==$nombreaux){
                              echo '<h2>No hay usuarios en la Base de Datos</h2>'; 
                         }
                         else{
@@ -35,7 +38,9 @@
                             echo '<ul>';
                             foreach($usuarios as $u){
                                 $nombre = $u->getNombreUsuario();
-                                echo "<li><input type='checkbox' name='usuarios[]' value='". $nombre ."'> ". $nombre ."</li>";
+                                if($_SESSION["nombre"]!=$nombre){
+                                    echo "<li><input type='checkbox' name='usuarios[]' value='". $nombre ."'> ". $nombre ."</li>";
+                                }
                             }
                 
                             echo '</ul>';
