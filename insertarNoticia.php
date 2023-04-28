@@ -22,7 +22,7 @@ require_once './includes/config.php';
 						<?php if (isset($_GET["mensaje"])) {
 							echo "<p>" . $_GET["mensaje"] . "</p>";
 						} ?>
-						<form action="validarInsercionNoticia.php" method="POST">
+						<form action="validarInsercion.php?esNoticia=true" method="POST">
 							<fieldset>
 								<legend>Datos de la noticia </legend>
 								<label for="titulo">Titulo:</label>

@@ -3,6 +3,7 @@
     require_once './includes/experiencias.php';
     require_once './includes/level.php';
     require_once './includes/Usuario.php';
+    require_once './includes/noticia.php';
     $mensaje = "";
     $ret=false;
     $error_pass=true;
@@ -42,6 +43,13 @@
             }
         }           
     }
+    else if(isset($_POST["titulo"],$_POST["descripcion"],$_POST["fecha"],$_POST["imagen"])&&$_POST["titulo"]!=''&&$_POST["descripcion"]!=''&&$_POST["fecha"]!=''&&$_POST["imagen"]!=''){
+        $titulo = $_POST["titulo"];
+        $descripcion = $_POST['descripcion'];
+        $fecha = $_POST['fecha'];
+        $imagen = $_POST['imagen'];
+        $ret = Noticia::crea($titulo,$descripcion,$fecha,$imagen);
+    }
     if($ret==true){
         $mensaje =  "Su inserción se ha realizado con éxito";
     }
@@ -59,6 +67,9 @@
     }
     else if(isset($_GET['esUs'])){
         header("Location:insertarUsuario.php?mensaje=$mensaje");
+    }
+    else if(isset($_GET['esNoticia'])){
+        header("Location:insertarNoticia.php?mensaje=$mensaje");
     }
     else{
         header("Location:insertarProducto.php?mensaje=$mensaje");
