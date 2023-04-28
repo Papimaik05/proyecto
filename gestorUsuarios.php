@@ -19,7 +19,7 @@
                 <div class="auxgestor">
                     <div class="card">
                         <figure>
-                            <img src="./img/nuevo.jpg"  alt="icono_gestor">
+                            <img src="./img/anadir_usuario.jpg"  alt="icono_gestor">
                         </figure>
                         <div class="contenido">
                             <h3>Insertar Usuario</h3>
@@ -39,7 +39,7 @@
                     </div>
                     <div class="card">
                         <figure>
-                            <img src="./img/borrar.png"  alt="icono_gestor3">
+                            <img src="./img/eliminar_usuario.png"  alt="icono_gestor3">
                         </figure>
                         <div class="contenido">
                             <h3>Borrar Usuario</h3>
