@@ -20,7 +20,7 @@
                 <div class="borrar">
     
                     <?php
-                        $_SESSION["diferenciar"]=true;
+                        $_SESSION["diferenciar"]="Producto";
                         $productos = Producto::cargarProductos();
                         if (isset($_GET["mensaje"])) {
 		                    echo "<p>" . $_GET["mensaje"] . "</p>";

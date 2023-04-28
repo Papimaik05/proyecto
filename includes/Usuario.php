@@ -26,7 +26,21 @@ class Usuario{
         }
         return false;
     }
-
+    public static function borrarUsuario($nombre)
+    {
+        if (!$nombre) {
+            return false;
+        }        
+        $conn=Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("DELETE FROM usuario WHERE username = '%s'"
+            , $conn->real_escape_string($username)
+        );
+        if (!$conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        return true;
+    }
     public static function cargarUsuarios(){
         $usuarios = [];
         $conn = Aplicacion::getInstance()->getConexionBd();
