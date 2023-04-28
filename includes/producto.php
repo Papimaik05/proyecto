@@ -41,6 +41,7 @@ class Producto {
             return false;
         }
     }
+    
     private static function inserta($producto)
     {
         $result = false;

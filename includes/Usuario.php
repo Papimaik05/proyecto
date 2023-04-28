@@ -26,6 +26,28 @@ class Usuario{
         }
         return false;
     }
+
+    public static function cargarUsuarios(){
+        $usuarios = [];
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        if(!$conn){
+            exit("Fallo en la conexion");
+        }
+        $query = "SELECT * FROM usuario";
+        $resultado = mysqli_query($conn, $query);
+        if(mysqli_num_rows($resultado) > 0){
+            $i = 0;
+            while($fila = $resultado->fetch_assoc()){
+                $usuarios[$i] = new Usuario($fila["username"], $fila["password"], $fila["email"], $fila["rol"], $fila["puntos"]);
+                $i++;
+            }
+            $resultado->free();
+            return $usuarios; 
+        }
+        else{
+            return false;
+        }
+    }
       public static function cambioDatos($username, $password, $email,$rol,$puntos)
     {
         $user=self::buscaUsuario($username);

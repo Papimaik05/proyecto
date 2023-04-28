@@ -34,7 +34,7 @@
                         <div class="contenido">
                             <h3>Modificar Usuario</h3>
                             <p>Haz click aquí para modificar un usuario existente</p>
-                            <a href="modificarUsuario.php">Borrar</a>
+                            <a href="modificarUsuario.php">Modificar</a>
                         </div>
                     </div>
                     <div class="card">
