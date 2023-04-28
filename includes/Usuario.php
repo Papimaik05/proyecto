@@ -36,13 +36,23 @@ class Usuario{
         self::actualiza($user);
     }
 
-    public static function crea($username, $password, $email)
+    /*public static function crea($username, $password, $email)
     {
         $user = self::buscaUsuario($username);
         if ($user) {
             return false;
         }
         $user = new Usuario($username,self::hashPassword($password),$email,1,0);
+        return self::inserta($user);
+    }*/
+
+    public static function crea($username, $password, $email, $rol, $puntos)
+    {
+        $user = self::buscaUsuario($username);
+        if ($user) {
+            return false;
+        }
+        $user = new Usuario($username,self::hashPassword($password),$email,$rol,$puntos);
         return self::inserta($user);
     }
     

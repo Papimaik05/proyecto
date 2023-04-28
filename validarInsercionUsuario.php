@@ -50,20 +50,12 @@ if (! $formEnviado ) {
          $sinerrores=false;
       }
       if($sinerrores){
-         $usuario = Usuario::crea($username, $password, $email,1,0);
+        $rol = filter_input(INPUT_POST, 'rol', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $puntos = filter_input(INPUT_POST, 'puntos', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+         $usuario = Usuario::inserta($username, $password, $email,$rol,$puntos);
          if (!$usuario) {
             $error="ERROR: El usuario ya existe";
             header('Location:registro.php?error='.$error.'');
-         } else {
-            $_SESSION['login'] = true;
-            $_SESSION['nombre'] = $usuario->getNombreUsuario();
-            $_SESSION['puntos'] = $usuario->getPuntos();
-            $_SESSION['rol'] = $usuario->getRol();
-            $_SESSION['email'] = $usuario->getEmail();
-            $_SESSION['contr'] = $usuario->getContr();
-            $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
-            $_SESSION['carrito'] = array();
-            header('Location: index.php');
          }
       }
       else{
