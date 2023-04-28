@@ -53,7 +53,7 @@
     }
     elseif(isset($_POST['usuario'])){
         $nombreusuario=$_POST['usuario'];
-        $usuario=Usuario::buscaUsuario($nombreusuario);
+        $usuario=Usuario::buscaUsuario(trim($nombreusuario));
         if(!empty($_POST["email"])){
             $email=$_POST['email'];
         }
@@ -72,7 +72,8 @@
         else{
             $puntos=$usuario->getPuntos();
         }
-        Usuario::cambioDatos($nombreusuario,$usuario->getContr(),$email,$rol,$puntos);
+        $contr=$usuario->getContr();
+        Usuario::cambioDatos(trim($nombreusuario),$usuario->getContr(),$email,$rol,$puntos);
         $mensaje =  "Usuario modificado con exito";
     }
     
