@@ -2,6 +2,7 @@
     require_once './includes/producto.php';
     require_once './includes/experiencias.php';   
     require_once './includes/Usuario.php'; 
+    require_once './includes/noticia.php';  
     $mensaje = "";
     $res=true;
     if($_SESSION["diferenciar"]=="Producto"){
@@ -68,6 +69,27 @@
             $mensaje = "Por favor, seleccione al menos un usuario.";
         }
         header("Location:borrarUsuario.php?mensaje=$mensaje");
+    } else if($_SESSION["diferenciar"]=="Noticia"){
+        $noticasSeleccionadas = $_POST['noticias'];
+        if (!empty($noticasSeleccionadas)) {
+            foreach ($noticasSeleccionadas as $id) {
+                if(Noticia::borraPorId($id)){
+                }
+                else{
+                    $res = false;
+                }
+            }
+            if($res==false){
+                $mensaje = "No se han podido eliminar todas las noticias";
+            }
+            else{
+                $mensaje = "Todos los elementos seleccionados se han borrado con exito";
+            }
+        } 
+        else {
+            $mensaje = "Por favor, seleccione al menos una noticia.";
+        }
+        header("Location:borrarNoticia.php?mensaje=$mensaje");
     }
 
 ?>

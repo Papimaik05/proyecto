@@ -20,7 +20,7 @@
                 <div class="borrar">
     
                     <?php
-                        $_SESSION["diferenciar"]=true;
+                        $_SESSION["diferenciar"]="Noticia";
                         $noticias = Noticia::cargarNoticias();
                         if (isset($_GET["mensaje"])) {
 		                    echo "<p>" . $_GET["mensaje"] . "</p>";
@@ -30,7 +30,7 @@
                             echo '<h2>No hay noticias todavía</h2>'; 
                         }
                         else{
-                            echo '<form action="validarBorradoNoticia.php" method="post">';
+                            echo '<form action="validarBorrado.php" method="post">';
                             echo '<label>Lista de Noticias:</label>';
                             echo '<ul>';
                             foreach($noticias as $n){
