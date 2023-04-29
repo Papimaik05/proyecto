@@ -120,10 +120,10 @@ public static function buscaPorId($idComentario){
     {
         return self::inserta($this);
     }
-    public static function crea($usuario,$padre,$contenido,$fecha_de_creacion, $meGusta)
+    public static function crea($titulo,$usuario,$padre,$contenido,$fecha_de_creacion, $meGusta)
     {
-        $noticia = new comentario(null,$usuario,$padre,$contenido,$fecha_de_creacion, $meGusta);
-        return $noticia->guarda();
+        $comentario = new comentario(null,$titulo,$usuario,$padre,$contenido,$fecha_de_creacion, $meGusta);
+        return $comentario->guarda();
     }
 
     
