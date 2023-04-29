@@ -72,9 +72,15 @@
         else{
             $puntos=$usuario->getPuntos();
         }
-        $contr=$usuario->getContr();
-        Usuario::cambioDatos(trim($nombreusuario),$usuario->getContr(),$email,$rol,$puntos);
-        $mensaje =  "Usuario modificado con exito";
+        if( !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $mensaje="ERROR: El email no es valido";
+            $sinerrores=false;
+        }
+        if($sinerrores){
+            $contr=$usuario->getContr();
+            Usuario::cambioDatos(trim($nombreusuario),$usuario->getContr(),$email,$rol,$puntos);
+            $mensaje =  "Usuario modificado con exito";
+        } 
     }
     
     if($_GET['es']=="experiencia"){
