@@ -47,7 +47,7 @@
                                     }
                                 }
                         
-                    echo '</ul>';
+                            echo '</ul>';
                             echo '<label>Ahora selecciona los valores a modificar: </label>';
                             echo '<fieldset>';
                             echo '<label for="email">Email:</label>';

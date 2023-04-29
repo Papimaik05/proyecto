@@ -54,6 +54,7 @@
     elseif(isset($_POST['usuario'])){
         $nombreusuario=$_POST['usuario'];
         $usuario=Usuario::buscaUsuario(trim($nombreusuario));
+        $sinerrores=true;
         if(!empty($_POST["email"])){
             $email=$_POST['email'];
         }
