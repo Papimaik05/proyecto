@@ -39,9 +39,11 @@
                                 echo '<br><br>';
                                 foreach($usuarios as $u){
                                     $nombre = $u->getNombreUsuario();
+                                    $email=$u->getEmail();
+                                    $rol=$u->getRol();
+                                    $puntos=$u->getPuntos();
                                     if($_SESSION["nombre"]!=$nombre){
-                                        echo "<li><input type='radio' name='usuario' value='". $nombre ."
-                                    '> ". $nombre ."</li>";
+                                        echo "<li><input type='radio' name='usuario' value='". $nombre ."' data-email='". $email ."' data-puntos='". $puntos ."' > ". $nombre ."</li>";
                                     }
                                 }
                         
@@ -66,6 +68,15 @@
                             }
                         
                         ?>
+                        <script>
+                            var radios = document.querySelectorAll('input[type="radio"][name="usuario"]');
+                            radios.forEach(function(radio){
+                                radio.addEventListener('click', function(){
+                                    document.getElementById("email").value = this.getAttribute("data-email");
+                                    document.getElementById("puntos").value = this.getAttribute("data-puntos");
+                                });
+                            });
+                        </script>
                 </div>
             </div>
                    
