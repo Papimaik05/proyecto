@@ -28,8 +28,12 @@
             $error_pass=false;
         }
         if($_POST["contr"]!=$_POST["contr2"]){
-            $mensaje3 = "Las contraseñas no coinciden";
+            $mensaje3 = "ERROR: Las contraseñas no coinciden";
             $error_pass=false; 
+        }
+        if( !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            $mensaje4="ERROR: El email no es valido";
+            $error_pass=false;
         }
         if($error_pass){
             $nombre = $_POST['nombre'];
@@ -56,7 +60,7 @@
     else{
         if(isset($_GET['esUs'])){
             $mensaje0 = "Error en la inserción, vuelva a intentarlo";
-            $mensaje=$mensaje0.'<br>'.$mensaje1.'<br>'.$mensaje2.'<br>'.$mensaje3;
+            $mensaje=$mensaje0.'<br>'.$mensaje1.'<br>'.$mensaje2.'<br>'.$mensaje3.'<br>'.$mensaje4;
         }else{
             $mensaje = "Error en la inserción, vuelva a intentarlo";
         }
