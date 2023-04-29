@@ -36,9 +36,13 @@
                                     
                                         foreach($experiencias as $e){
                                             $id = $e->getId();
-                                            $nombre = $e->getNombre();
-                                            echo "<li><input type='radio' name='experiencia' value='". $id ."
-                                            '> ". $nombre ."</li>";
+                                    $nombre = $e->getNombre();
+                                    $descripcion = $e->getDescripcion();
+                                    $precio = $e->getPrecio();
+                                    $puntos=$e->getPuntos();
+                                    $imagen = $e->getImagen();
+                                    echo "<li><input type='radio' name='experiencia' value='". $id ."' data-nombre='". $nombre ."' data-descripcion='". $descripcion ."' data-precio='". $precio ."' data-imagen='". $imagen ."'data-puntos='". $puntos ."'> ". $nombre ."</li>";
+
                                         }
                                         
                         echo '</ul>';
@@ -55,10 +59,9 @@
                                     
                                     $result=level::getAllLevels();
                                     while($row=mysqli_fetch_object($result)){
-                                        echo "<option>$row->nombre</option>";
+                                        echo "<option value=$nivelminimo>$row->nombre</option>";
                                     }
                                     echo'</select> <br><br>';
-
                                     echo '<label for="puntos">Puntos:</label>';
                                     echo '<input type="number" name="puntos" id="puntos"><br><br>';
                                     echo '<label for="imagen">URL de la imagen:</label>';
@@ -68,6 +71,19 @@
                                     echo '</form>';
                                 }
                         ?> 
+                        <script>
+                            
+    var radios = document.querySelectorAll('input[type="radio"][name="experiencia"]');
+    radios.forEach(function(radio){
+        radio.addEventListener('click', function(){
+            document.getElementById("nombre").value = this.getAttribute("data-nombre");
+            document.getElementById("descripcion").value = this.getAttribute("data-descripcion");
+            document.getElementById("puntos").value = this.getAttribute("data-puntos");
+            document.getElementById("precio").value = this.getAttribute("data-precio");
+            document.getElementById("imagen").value = this.getAttribute("data-imagen");
+        });
+    });
+</script>
                     </div> 
                 </div>
                 
