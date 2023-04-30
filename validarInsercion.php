@@ -53,11 +53,14 @@
             }
         }           
     }
-    else if(isset($_POST["titulo"],$_POST["descripcion"],$_POST["fecha"],$_POST["imagen"])&&$_POST["titulo"]!=''&&$_POST["descripcion"]!=''&&$_POST["fecha"]!=''&&$_POST["imagen"]!=''){
+    else if(isset($_POST["titulo"],$_POST["descripcion"],$_POST["fecha"],$_FILES['imagen'])&&$_POST["titulo"]!=''&&$_POST["descripcion"]!=''&&$_POST["fecha"]!=''&&is_uploaded_file($_FILES['imagen']['tmp_name'])){
         $titulo = $_POST["titulo"];
         $descripcion = $_POST['descripcion'];
         $fecha = $_POST['fecha'];
-        $imagen = $_POST['imagen'];
+        $nombre_img=$_FILES['imagen']['name'];         
+        $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
+        move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
+        $imagen = "./img/".$nombre_img;
         $ret = Noticia::crea($titulo,$descripcion,$fecha,$imagen);
     }
     if($ret==true){
