@@ -31,7 +31,7 @@
                                 echo '<h2>No hay productos en la tienda</h2>'; 
                             }
                             else{
-                                echo '<form action="validarEdicion.php?es=producto" method="post">';
+                                echo '<form action="validarEdicion.php?es=producto" method="post" enctype="multipart/form-data">';
                                 echo '<label>Selecciona el producto que quieres modificar:</label>';
                             
                                 foreach($productos as $p){
@@ -54,8 +54,8 @@
                                 echo '<input type="number" name="unidades" id="unidades" min="0"><br><br>';
                                 echo '<label for="precio">Precio:</label>';
                                 echo '<input type="number" name="precio" id="precio" min="0"><br><br>';
-                                echo '<label for="imagen">URL de la imagen:</label>';
-                                echo '<input type="text" name="imagen" id="imagen"><br><br>';
+                                echo '<label for="imagen">Selecciona una imagen:</label>';
+                                echo '<input type="file" name="imagen" id="imagen"><br><br>';
                                 echo '</fieldset>';
                                 echo '<input type="submit" value="Enviar">';
                                 echo '</form>';

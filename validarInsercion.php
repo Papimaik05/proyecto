@@ -7,19 +7,25 @@
     $mensaje = "";
     $ret=false;
     $error_pass=true;
-    if(isset($_POST["nombre"],$_POST["descripcion"],$_POST["unidades"],$_POST["precio"],$_POST["imagen"])&&$_POST["nombre"]!=''&&$_POST["descripcion"]!=''&&$_POST["precio"]!=''&&$_POST["imagen"]!=''&&$_POST["unidades"]!=''){
+    if(isset($_POST["nombre"],$_POST["descripcion"],$_POST["unidades"],$_POST["precio"],$_FILES['imagen'])&&$_POST["nombre"]!=''&&$_POST["descripcion"]!=''&&$_POST["precio"]!=''&&is_uploaded_file($_FILES['imagen']['tmp_name'])&&$_POST["unidades"]!=''){
         $nombre = $_POST["nombre"];
         $descripcion = $_POST['descripcion'];
         $unidades = $_POST['unidades'];
         $precio = $_POST['precio'];
-        $imagen = $_POST['imagen'];
+        $nombre_img=$_FILES['imagen']['name'];         
+        $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
+        move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
+        $imagen = "./img/".$nombre_img;
         $ret = Producto::crea($nombre,$descripcion,$unidades,$precio,$imagen);
-    }else if(isset($_POST["nombre"],$_POST["descripcion"],$_POST["precio"],$_POST["imagen"],$_POST["puntos"],$_POST["nivelminimo"])&&$_POST["nombre"]!=''&&$_POST["descripcion"]!=''&&$_POST["precio"]!=''&&$_POST["imagen"]!=''&&$_POST["puntos"]!=''){
+    }else if(isset($_POST["nombre"],$_POST["descripcion"],$_POST["precio"],$_FILES['imagen'],$_POST["puntos"],$_POST["nivelminimo"])&&$_POST["nombre"]!=''&&$_POST["descripcion"]!=''&&$_POST["precio"]!=''&&is_uploaded_file($_FILES['imagen']['tmp_name'])&&$_POST["puntos"]!=''){
         $nombre = $_POST["nombre"];
         $descripcion = $_POST['descripcion'];
         $puntos = $_POST['puntos'];
         $precio = $_POST['precio'];
-        $imagen = $_POST['imagen'];
+        $nombre_img=$_FILES['imagen']['name'];         
+        $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
+        move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
+        $imagen = "./img/".$nombre_img;
         $nivelminimo = level::getNumero($_POST['nivelminimo']);
         $ret = Experiencia::crea($nombre,$descripcion,$precio,$nivelminimo,$puntos,$imagen);
     }else if(isset($_POST["nombre"],$_POST["email"],$_POST["contr"],$_POST["contr2"],$_POST["rol"],$_POST["puntos"])&&$_POST["nombre"]!=''&&$_POST["email"]!=''&&$_POST["contr"]!=''&&$_POST["contr2"]!=''&&$_POST["rol"]!=''&&$_POST["puntos"]!=''){

@@ -22,7 +22,7 @@ require_once './includes/level.php';
 						<?php if (isset($_GET["mensaje"])) {
 							echo "<p>" . $_GET["mensaje"] . "</p>";
 						} ?>
-						<form action="validarInsercion.php?esExp=true" method="POST">
+						<form action="validarInsercion.php?esExp=true" method="POST" enctype="multipart/form-data">
 							<fieldset>
 								<legend>Datos de la experiencia </legend>
 								<label for="nombre">Nombre:</label>
@@ -43,8 +43,8 @@ require_once './includes/level.php';
 								<br><br>
 								<label for="puntos">Puntos:</label>
 								<input type="number" name="puntos" id="puntos"><br><br>
-								<label for="imagen">URL de la imagen:</label>
-								<input type="text" name="imagen" id="imagen"><br><br>
+                                <label for="imagen">Selecciona una imagen:</label>
+                                <input type="file" name="imagen" id="imagen"><br><br>
 								<input type="submit" value="Insertar experiencia">
 							</fieldset>
 							<br><br><br>   

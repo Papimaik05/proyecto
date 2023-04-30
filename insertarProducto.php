@@ -22,7 +22,7 @@ require_once './includes/config.php';
 						<?php if (isset($_GET["mensaje"])) {
 							echo "<p>" . $_GET["mensaje"] . "</p>";
 						} ?>
-						<form action="validarInsercion.php" method="POST">
+						<form action="validarInsercion.php" method="POST" enctype="multipart/form-data">
 							<fieldset>
 								<legend>Datos del producto </legend>
 								<label for="nombre">Nombre:</label>
@@ -33,8 +33,8 @@ require_once './includes/config.php';
 								<input type="number" name="unidades" id="unidades" min="0"><br><br>
 								<label for="precio">Precio:</label>
 								<input type="number" name="precio" id="precio" min="0"><br><br>
-								<label for="imagen">URL de la imagen:</label>
-								<input type="text" name="imagen" id="imagen"><br><br>
+                                <label for="imagen">Selecciona una imagen:</label>
+                                <input type="file" name="imagen" id="imagen"><br><br>
 								<input type="submit" value="Insertar producto">
 							</fieldset>
 							<br><br><br>   

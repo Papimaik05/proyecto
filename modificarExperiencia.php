@@ -30,7 +30,7 @@
                                     echo '<h2>No hay experiencias en la tienda</h2>'; 
                                 }
                                 else{
-                                    echo '<form action="validarEdicion.php?es=experiencia" method="post">';
+                                    echo '<form action="validarEdicion.php?es=experiencia" method="post"  enctype="multipart/form-data">';
                                 
                                     echo '<label>Selecciona la experiencia que quieres modificar:</label>';
                                     
@@ -64,8 +64,8 @@
                                     echo'</select> <br><br>';
                                     echo '<label for="puntos">Puntos:</label>';
                                     echo '<input type="number" name="puntos" id="puntos"><br><br>';
-                                    echo '<label for="imagen">URL de la imagen:</label>';
-                                    echo '<input type="text" name="imagen" id="imagen"><br><br>';
+                                    echo '<label for="imagen">Selecciona una imagen:</label>';
+                                    echo '<input type="file" name="imagen" id="imagen"><br><br>';
                                     echo '</fieldset>';
                                     echo '<input type="submit" value="Enviar">';
                                     echo '</form>';

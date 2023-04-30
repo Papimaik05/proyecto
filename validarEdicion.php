@@ -22,8 +22,14 @@
         if(!empty($_POST['precio'])){
             $producto->setPrecio($_POST['precio']);
         }
-        if(!empty($_POST['imagen'])){
-            $producto->setImagen($_POST['imagen']);
+        if(isset($_FILES['imagen']) && is_uploaded_file($_FILES['imagen']['tmp_name'])){
+
+            $nombre_img=$_FILES['imagen']['name'];         
+            $tipo_img=$_FILES['imagen']['type'];
+            $tamagno_img=$_FILES['imagen']['size'];
+            $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
+            move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
+            $producto->setImagen("./img/".$nombre_img);
         }
         $producto->guarda();
         $mensaje =  "Producto modificado con exito";
@@ -45,8 +51,13 @@
         if(!empty($_POST['precio'])){
             $experiencia->setPrecio($_POST['precio']);
         }
-        if(!empty($_POST['imagen'])){
-            $experiencia->setImagen($_POST['imagen']);
+        if(isset($_FILES['imagen']) && is_uploaded_file($_FILES['imagen']['tmp_name'])){
+            $nombre_img=$_FILES['imagen']['name'];         
+            $tipo_img=$_FILES['imagen']['type'];
+            $tamagno_img=$_FILES['imagen']['size'];
+            $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
+            move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
+            $experiencia->setImagen("./img/".$nombre_img);
         }
         $experiencia->guarda();
         $mensaje =  "Experiencia modificada con exito";
