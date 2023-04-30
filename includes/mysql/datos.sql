@@ -86,7 +86,7 @@ INSERT INTO `rol` (`numero`, `nombre`) VALUES
 INSERT INTO `usuario` (`username`, `password`, `email`, `rol`, `puntos`) VALUES
 ('admin', '$2y$10$6JpecvUdOny8.gxnaa4pmusrTX4kPeynEJxaK2b9hgFMk3arvRoKe', 'camore12@ucm.es', 0, 99),
 ('gestor', '$2y$10$CRbtcLzhW2RSreauttF7iOkQCMkS7z3taJfl7TA/wBJ34o1EZJcN2', 'gestor@gmail.com', 2, 7),
-('moderador', '$2y$10$oH6cYF42VokJa60raKAmEuCpDQRNx8AVxjNOU9P61wCQBP3cK549S', 'moderador@gmail.com', 0, 10),
+('moderador', '$2y$10$oH6cYF42VokJa60raKAmEuCpDQRNx8AVxjNOU9P61wCQBP3cK549S', 'moderador@gmail.com', 3, 10),
 ('user', '$2y$10$acRxAvLfMm6zc69p0pOPV.xWqZ7KmKpnZ.CS/38MfLqirSCYDNcP.', 'user@gmail.com', 1, 0);
 COMMIT;
 

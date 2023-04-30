@@ -22,7 +22,7 @@
                 <?php
                     $comentarios = comentario::cargarComentarios();
                     if($comentarios == false){
-                        echo "No hay comentariosen este foro";
+                        echo "No hay comentarios en este foro";
                     }
                     foreach($comentarios as $comentario){
 

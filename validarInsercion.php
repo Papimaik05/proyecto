@@ -4,6 +4,7 @@
     require_once './includes/level.php';
     require_once './includes/Usuario.php';
     require_once './includes/noticia.php';
+    require_once './includes/rol.php';
     $mensaje = "";
     $ret=false;
     $error_pass=true;
@@ -46,7 +47,7 @@
             $email = $_POST['email'];
             $contr = $_POST['contr'];
             $puntos = $_POST['puntos'];
-            $rol = level::getNumero($_POST['rol']);
+            $rol = rol::getNumero($_POST['rol']);
             $ret = Usuario::crea($nombre,$contr,$email,$rol,$puntos);
             if($ret==false){
                 $mensaje1 = "El usuario ya existe";
