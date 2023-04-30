@@ -34,8 +34,19 @@
                             <h3 class="title"><?php $comentario->getTitulo()?></h3>
                             <p><?php $comentario->getContenido()?></p>
                             <p class="created-at"><?php $comentario->getFecha()?></p>
-                            <a href="#" class="reply-btn">Responder</a>
+                            <button onclick="mostrarFormRespuesta()">Responder</button>
                             <button class="like-btn">Me gusta</button>
+                            <form id="formRespuesta" style="display:none;">
+                                <h3>Responder al comentario:</h3>
+                                <label for="titulo">Titulo:</label>
+                                <input type="text" id="titulo" name="titulo" required>
+                                <br>
+                                <label for="contenido">Comentario:</label>
+                                <br>
+                                <textarea id="contenido" name="contenido" required></textarea>
+                                <br>
+                                <button type="submit">Enviar</button>
+                            </form>
                             <span class="like-count"><?php $comentario->getMeGusta()?></span>
                     </section>
                 <?php
@@ -63,5 +74,10 @@
         <?php
             require('./includes/comun/pie.php');
         ?> 
-
+        <script>
+            function mostrarFormRespuesta(){
+                var formulario = document.getElementById("formRespuesta");
+                formulario.style.display = "block";
+            }
+        </script>
 </html>

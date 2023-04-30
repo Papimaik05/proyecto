@@ -57,17 +57,25 @@ function reconocerUsuario() {
             <li><a href="foro.php">Foro</a></li>
           <?php
           if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
-            if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2"){
-              ?>
-              <li><a href="gestorProductos.php">Gestor Contenido</a></li>
-              <li><a href="gestorNoticias.php">Gestor Noticias</a></li>
-              <?php
-                if($_SESSION["rol"] == "0"){
-                  ?>
-                  <li><a href="gestorUsuarios.php">Gestor Usuarios</a></li>
-
-                  <?php
-                }
+            if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2" || $_SESSION["rol"] == "3"){
+              if($_SESSION["rol"] == "2"){
+                ?>
+                <li><a href="gestorProductos.php">Gestor Contenido</a></li>
+                <li><a href="gestorNoticias.php">Gestor Noticias</a></li>
+                <?php
+              }
+              else if($_SESSION["rol"] == "3"){
+                ?>
+                  <li><a href="moderador.php">Moderador</a></li>
+                <?php
+              }
+              else{?>
+                <li><a href="gestorProductos.php">Gestor Contenido</a></li>
+                <li><a href="gestorNoticias.php">Gestor Noticias</a></li>
+                <li><a href="gestorUsuarios.php">Gestor Usuarios</a></li>
+                <li><a href="moderador.php">Moderador</a></li>
+                <?php
+              }
             }
             ?>
             <li><a href="vistaCarrito.php">Carrito</a></li>
