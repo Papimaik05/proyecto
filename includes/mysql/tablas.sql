@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2023 a las 18:06:59
+-- Tiempo de generación: 30-04-2023 a las 12:47:32
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -26,26 +26,30 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `comentario`
 --
+-- Creación: 30-04-2023 a las 10:43:31
+-- Última actualización: 30-04-2023 a las 10:42:49
+--
 
 DROP TABLE IF EXISTS `comentario`;
 CREATE TABLE IF NOT EXISTS `comentario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `titulo` varchar(20) NOT NULL,
   `usuario` varchar(15) NOT NULL,
-  `padre` int(11) NOT NULL,
+  `padre` int(11) DEFAULT NULL,
   `contenido` text NOT NULL,
   `fecha_de_creacion` date NOT NULL,
   `me_gusta` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Titulo` (`titulo`),
-  KEY `Usuario` (`usuario`),
-  KEY `Padre` (`padre`)
+  KEY `Usuario` (`usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `compraexperiencia`
+--
+-- Creación: 30-04-2023 a las 10:21:10
 --
 
 DROP TABLE IF EXISTS `compraexperiencia`;
@@ -61,6 +65,8 @@ CREATE TABLE IF NOT EXISTS `compraexperiencia` (
 --
 -- Estructura de tabla para la tabla `compraproducto`
 --
+-- Creación: 30-04-2023 a las 10:21:10
+--
 
 DROP TABLE IF EXISTS `compraproducto`;
 CREATE TABLE IF NOT EXISTS `compraproducto` (
@@ -75,6 +81,8 @@ CREATE TABLE IF NOT EXISTS `compraproducto` (
 
 --
 -- Estructura de tabla para la tabla `experiencias`
+--
+-- Creación: 30-04-2023 a las 10:21:10
 --
 
 DROP TABLE IF EXISTS `experiencias`;
@@ -95,6 +103,8 @@ CREATE TABLE IF NOT EXISTS `experiencias` (
 --
 -- Estructura de tabla para la tabla `nivel`
 --
+-- Creación: 30-04-2023 a las 10:21:10
+--
 
 DROP TABLE IF EXISTS `nivel`;
 CREATE TABLE IF NOT EXISTS `nivel` (
@@ -109,6 +119,8 @@ CREATE TABLE IF NOT EXISTS `nivel` (
 
 --
 -- Estructura de tabla para la tabla `noticia`
+--
+-- Creación: 30-04-2023 a las 10:21:10
 --
 
 DROP TABLE IF EXISTS `noticia`;
@@ -125,6 +137,8 @@ CREATE TABLE IF NOT EXISTS `noticia` (
 
 --
 -- Estructura de tabla para la tabla `producto`
+--
+-- Creación: 30-04-2023 a las 10:21:10
 --
 
 DROP TABLE IF EXISTS `producto`;
@@ -143,6 +157,9 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 -- Estructura de tabla para la tabla `rol`
 --
+-- Creación: 30-04-2023 a las 10:21:10
+-- Última actualización: 30-04-2023 a las 10:44:47
+--
 
 DROP TABLE IF EXISTS `rol`;
 CREATE TABLE IF NOT EXISTS `rol` (
@@ -155,6 +172,9 @@ CREATE TABLE IF NOT EXISTS `rol` (
 
 --
 -- Estructura de tabla para la tabla `usuario`
+--
+-- Creación: 30-04-2023 a las 10:21:10
+-- Última actualización: 30-04-2023 a las 10:45:47
 --
 
 DROP TABLE IF EXISTS `usuario`;
@@ -176,8 +196,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Filtros para la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`Padre`) REFERENCES `comentario` (`Id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`Usuario`) REFERENCES `usuario` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `compraexperiencia`

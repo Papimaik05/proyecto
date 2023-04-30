@@ -41,17 +41,23 @@
                 <?php
                     }
                 ?>
-                <form action="añadirComentario.php" method="POST">
-                    <h3>Añadir un comentario:</h3>
-                    <label for="titulo">Titulo:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    <br><br>
-                    <label for="contenido">Comentario:</label>
-                    <br>
-                    <textarea id="contenido" name="contenido" required></textarea>
-                    <br>
-                    <button type="submit">Enviar</button>
-                </form>
+                <?php
+                if(isset($_SESSION['login'])){
+                    ?>
+                    <form action="añadirComentario.php" method="POST">
+                        <h3>Añadir un comentario:</h3>
+                        <label for="titulo">Titulo:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                        <br><br>
+                        <label for="contenido">Comentario:</label>
+                        <br>
+                        <textarea id="contenido" name="contenido" required></textarea>
+                        <br>
+                        <button type="submit">Enviar</button>
+                    </form>
+                    <?php
+                }
+                ?>
             </div>
         </main>
         <?php
