@@ -143,6 +143,26 @@ public static function buscaPorId($idComentario){
         return true;
     }
 
+
+    public function cargarRespuestas(){
+        $comentarios = [];
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("SELECT * FROM comentario WHERE padre='%d'", $this->id);
+        $rs = $conn->query($query);
+        $i = 0;
+        if(mysqli_num_rows($rs) > 0){
+            while($fila = $rs->fetch_assoc()){
+                $comentarios[$i] = new comentario($fila["id"], $fila["titulo"], $fila["usuario"], $fila["padre"], $fila["contenido"], $fila["fecha_de_creacion"], $fila["me_gusta"]);
+                $i++;
+            }
+            $rs->free();
+            return $comentarios;
+        }
+        else{
+            return false;
+        }
+        
+    }
 }
 
 

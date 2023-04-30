@@ -2,7 +2,45 @@
     require_once './includes/config.php';
     require_once './includes/comentario.php';
 ?>
-
+<?php
+    function mostrarComentario($comentario){
+        ?>
+            <div class="comment-box">
+                <?php
+                echo $comentario->getUsuario();
+                echo '<h3><'. $comentario->getUsuario() .'</h3>';?>
+                <h3 class="title"><?php $comentario->getTitulo()?></h3>
+                <p><?php $comentario->getContenido()?></p>
+                <p class="created-at"><?php $comentario->getFecha()?></p>
+                <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
+                <button class="like-btn">Me gusta</button>
+                <?php
+                echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
+                    ?>
+                    <h3>Responder al comentario:</h3>
+                    <label for="titulo">Titulo:</label>
+                    <input type="text" id="titulo" name="titulo" required>
+                    <br>
+                    <label for="contenido">Comentario:</label>
+                    <br>
+                    <textarea id="contenido" name="contenido" required></textarea>
+                    <br>
+                    <button type="submit">Enviar</button>
+                </form>
+                <span class="like-count"><?php $comentario->getMeGusta()?></span>
+            </div>
+            <div class="respuestas">
+                <?php
+                $respuestas = $comentario->cargarRespuestas();
+                if($respuestas!=false){
+                    foreach($respuestas as $respuesta){
+                        mostrarComentario($respuesta);
+                    }
+                }?>
+            </div>
+        <?php
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -24,35 +62,14 @@
                     if($comentarios == false){
                         echo "No hay comentarios en este foro";
                     }
-                    foreach($comentarios as $comentario){
-
-                ?>
-                        <section class="comment-box">
-                            <?php
-                            echo $comentario->getUsuario();
-                            echo '<h3><'. $comentario->getUsuario() .'</h3>';?>
-                            <h3 class="title"><?php $comentario->getTitulo()?></h3>
-                            <p><?php $comentario->getContenido()?></p>
-                            <p class="created-at"><?php $comentario->getFecha()?></p>
-                            <button onclick="mostrarFormRespuesta()">Responder</button>
-                            <button class="like-btn">Me gusta</button>
-                            <form id="formRespuesta" style="display:none;">
-                                <h3>Responder al comentario:</h3>
-                                <label for="titulo">Titulo:</label>
-                                <input type="text" id="titulo" name="titulo" required>
-                                <br>
-                                <label for="contenido">Comentario:</label>
-                                <br>
-                                <textarea id="contenido" name="contenido" required></textarea>
-                                <br>
-                                <button type="submit">Enviar</button>
-                            </form>
-                            <span class="like-count"><?php $comentario->getMeGusta()?></span>
-                    </section>
-                <?php
+                    foreach($comentarios as $comentario)
+                    {
+                        if($comentario->getPadre() == 0)
+                        {
+                            mostrarComentario($comentario);
+                        }
                     }
-                ?>
-                <?php
+                
                 if(isset($_SESSION['login'])){
                     ?>
                     <form action="añadirComentario.php" method="POST">
@@ -75,8 +92,8 @@
             require('./includes/comun/pie.php');
         ?> 
         <script>
-            function mostrarFormRespuesta(){
-                var formulario = document.getElementById("formRespuesta");
+            function mostrarFormRespuesta(id){
+                var formulario = document.getElementById("formRespuesta" + id);
                 formulario.style.display = "block";
             }
         </script>
