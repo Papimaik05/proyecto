@@ -4,19 +4,22 @@
 ?>
 <?php
     function mostrarComentario($comentario){
-        ?>
+        ?>  
+            <div class="container">
             <div class="comment-box">
-                <?php
-                echo $comentario->getUsuario();
-                echo '<h3><'. $comentario->getUsuario() .'</h3>';?>
-                <h3 class="title"><?php $comentario->getTitulo()?></h3>
-                <p><?php $comentario->getContenido()?></p>
-                <p class="created-at"><?php $comentario->getFecha()?></p>
+                <p class="user-name"><?php echo $comentario->getUsuario();
+                echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
+                <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
+                <p class="comment-text"><?php echo $comentario->getContenido()?></p>
+                <p class="created-at"><?php echo $comentario->getFecha()?></p>
+           
                 <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
                 <button class="like-btn">Me gusta</button>
+            </div>
                 <?php
                 echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
                     ?>
+                    
                     <h3>Responder al comentario:</h3>
                     <label for="titulo">Titulo:</label>
                     <input type="text" id="titulo" name="titulo" required>
@@ -28,6 +31,7 @@
                     <button type="submit">Enviar</button>
                 </form>
                 <span class="like-count"><?php $comentario->getMeGusta()?></span>
+            
             </div>
             <div class="respuestas">
                 <?php

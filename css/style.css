@@ -830,13 +830,24 @@ legend {
 }
 
 .comment-box {
+  width: 2500px;
+  height: 150px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-family: sans-serif;
+  font-size: 14px;
   padding: 10px;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 10px;
 }
 
 /* Estilos para el nombre de usuario */
 .user-name {
   font-weight: bold;
+  font-size: 14px;
+  color:black;
+  text-align: left;
 }
 
 /* Estilos para la fecha de creación */
@@ -844,6 +855,7 @@ legend {
   font-style: italic;
   font-size: 0.8em;
   color: #999;
+  text-align: right;
 }
 
 /* Estilos para el botón de respuesta */
@@ -877,3 +889,14 @@ legend {
   justify-content: center;
 }
 
+
+
+.comment-text{
+  color:black;
+}
+
+.comment-title{
+  color:black;
+  font-size: 20px;
+
+}
