@@ -22,8 +22,8 @@ require_once __DIR__.'/includes/producto.php';
 				$_SESSION['carrito'][] = array(
 					'id'=>$id,
 					'unidades'=> $unidades,
-					'precio'=> $producto->getPrecio()*$unidades
-
+					'precio'=> $producto->getPrecio()*$unidades,
+					'tipo'=> 'producto'
 				);
 				header("Location:vistaCarrito.php");
 

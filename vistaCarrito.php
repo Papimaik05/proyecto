@@ -1,7 +1,32 @@
 <?php
 require_once __DIR__.'/includes/config.php';
 require_once __DIR__.'/includes/producto.php';
+require_once __DIR__.'/includes/experiencias.php';
 require_once './includes/compraproducto.php';
+require_once './includes/compraexperiencia.php';
+?>
+<?php
+function eliminar($cantidades, $tipo){
+	foreach($cantidades as $id => $unidades){
+
+		if(isset($_POST['borrar_'.$id.'_'.$tipo])){
+			$i=0;
+			$carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : array();
+			foreach($carrito as $index => $producto){
+				if($producto['id'] == $id && $producto['tipo'] == $tipo){
+					$i=$index;
+				}
+			}
+			if (isset($carrito[$i])) {
+				unset($carrito[$i]);
+			}
+			$_SESSION['carrito'] = $carrito;
+			header("Location: vistaCarrito.php");
+			exit();
+		}
+	}
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,6 +34,7 @@ require_once './includes/compraproducto.php';
 		<link href= "./css/style.css" rel="stylesheet" type="text/css">
 		<title>Producto</title>
 	</head>
+
 
 	<body>
 
@@ -19,67 +45,66 @@ require_once './includes/compraproducto.php';
 		<?php
 			$username=$_SESSION["nombre"];
 
-			
 			if(isset($_POST['submit'])) {
 
 				foreach ($_SESSION['carrito'] as $carrito) {
-					
-					$producto = Producto::buscaPorId($carrito['id']);
-					$auxunidades=$producto->getUnidades();
-					$auxunidades=$auxunidades-$carrito['unidades'];
-					if($auxunidades >= 0){
-						compraproducto::compraPro($username,$carrito['id'],$auxunidades,$carrito['unidades']);
+
+					if($carrito['tipo'] == 'producto'){
+						$producto = Producto::buscaPorId($carrito['id']);
+						$auxunidades=$producto->getUnidades();
+						$auxunidades=$auxunidades-$carrito['unidades'];
+						if($auxunidades >= 0){
+							compraproducto::compraPro($username,$carrito['id'],$auxunidades,$carrito['unidades']);
+						}
 					}
+					else if($carrito['tipo'] == 'experiencia'){
+						$experiencia = Experiencia::buscaPorId($carrito['id']);
+						$auxpuntos = $experiencia->getPuntos();
+						compraexperiencia::compraExp($username,$carrito['id'],$auxpuntos);
+					}
+				
 				}
 				$_SESSION['carrito']=array();
 				echo "<div class='contcompra'>";
 				echo "<h2>Compra realizada con éxito !!!</h2><img src='./img/compra.gif' id='imgFelicitaciones' alt='imgFelicitaciones'><br>";
 				echo "</div>";
 			}
+			
 			if(isset($_POST['borrar'])) {
 				$_SESSION['carrito'] = array();
 			}
 			if ($_SESSION['carrito']) {
-				$id = 0;
-				foreach($_SESSION["carrito"] as $carrito){
-					if(isset($_POST['borrar_'.$carrito['id'].''])){
-						$id = $carrito['id'];
-					}
-				}
-				if($id != 0){
-					$i=0;
-					$carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : array();
-					foreach($carrito as $index => $producto){
-						if($producto['id'] == $id){
-							$i=$index;
-						}
-					}
-					if (isset($carrito[$i])) {
-						unset($carrito[$i]);
-					}
-					$_SESSION['carrito'] = $carrito;
-					header("Location: vistaCarrito.php");
-					exit();
-				}	
-				$total=0;
-				$cantidades = array();
+				$cantidadesExp = array();
+				$cantidadesProducto = array();
 				foreach ($_SESSION['carrito'] as $carrito) {
 					$id = $carrito['id'];
-					if(!isset($cantidades[$id])){
-						$cantidades[$id] = $carrito['unidades'];
+					$tipo = $carrito['tipo'];
+					if($tipo == 'producto'){
+					if(!isset($cantidadesProducto[$id])){
+						$cantidadesProducto[$id] = $carrito['unidades'];
 					}
 					else{
-						$cantidades[$id] = $cantidades[$id] + $carrito['unidades'];
+						$cantidadesProducto[$id] = $cantidadesProducto[$id] + $carrito['unidades'];
+					}
+					}
+					elseif($tipo == 'experiencia'){
+						$cantidadesExp[$id] = 1;
 					}
 				}
+				eliminar($cantidadesProducto, 'producto');
+				eliminar($cantidadesExp, 'experiencia');
+			
+			
 			?>
 			<div class="ticket">
 			<img src="./img/cabeza_ticket.png" id="imgCarrito" alt="ticket">	
 			<?php
-				foreach($cantidades as $id => $unidades){
+				$total = 0;
+				foreach($cantidadesProducto as $id => $unidades){
 			?>
 			<div class="productoCarrito">
 			<?php
+			
 				$producto = Producto::buscaPorId($id);
 				echo  "<h1>" . $producto->getNombre() . "</h1>";
 				echo '<img src="' . $producto->getImagen() . '" id="imgVistaProducto" alt="producto">';
@@ -87,9 +112,28 @@ require_once './includes/compraproducto.php';
 				echo  "<h2>" . $unidades . " Unidades </h2>";
 				echo "<form method='post' action='vistaCarrito.php'>";
 				echo "<input type='hidden' name='id' value='".$id."'>";
-				echo "<input type='submit' name='borrar_".$id."' value='Eliminar'>";
+				echo "<input type='submit' name='borrar_".$id."_producto' value='Eliminar'>";;
 				$total=$total+$producto->getPrecio()*$unidades;
+				
 			?>
+			</div>
+			<?php
+				}
+			?>
+			<?php
+				foreach($cantidadesExp as $id => $unidades){
+			?>
+			<div class="experienciaCarrito">
+				<?php 
+					$experiencia = Experiencia::buscaPorId($id);
+					echo  "<h1>" . $experiencia->getNombre() . "</h1>";
+					echo '<img src="' . $experiencia->getImagen() . '" id="imgVistaProducto" alt="producto">';
+					echo  "<h2>" . $experiencia->getPrecio() . " € </h2>";
+					echo "<form method='post' action='vistaCarrito.php'>";
+					echo "<input type='hidden' name='id' value='".$id."'>";
+					echo "<input type='submit' name='borrar_".$id."_experiencia' value='Eliminar'>";
+					$total=$total+$experiencia->getPrecio();
+				?>
 			</div>
 			<?php
 				}
