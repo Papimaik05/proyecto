@@ -30,15 +30,26 @@ require_once './includes/compraexperiencia.php';
 
 				if(isset($_POST['submit'])) {
 					//compraexperiencia::compraExp($username,$id,$puntos);
-					$_SESSION["puntos"]=$puntos;
 					
-					$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
-					$_SESSION['carrito'][] = array(
-						'id'=>$id,
-						'unidades'=> 1,
-						'precio'=> $experiencia->getPrecio(),
-						'tipo'=> 'experiencia'
-					);
+					$encontrado = false;
+					foreach ($_SESSION['carrito'] as $key => $producto) {
+						if ($producto['id'] == $id) {
+							// Si se encuentra el elemento, se actualizan sus valores							
+							$encontrado = true;
+							break;
+						}
+					}
+
+					// Si no se encuentra el elemento con $id, se agrega como un nuevo elemento
+					if (!$encontrado) {
+						$_SESSION['carrito'][] = array(
+							'id' => $id,
+							'unidades' => 1,
+							'precio' => $experiencia->getPrecio(),
+							'tipo' => 'experiencia'
+						);
+					}
+				
 					header("Location:vistaCarrito.php");
 					//header("Location:felicitaciones.php");
 				}

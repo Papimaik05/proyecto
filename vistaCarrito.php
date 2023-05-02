@@ -61,6 +61,8 @@ function eliminar($cantidades, $tipo){
 						$experiencia = Experiencia::buscaPorId($carrito['id']);
 						$auxpuntos = $experiencia->getPuntos();
 						compraexperiencia::compraExp($username,$carrito['id'],$auxpuntos);
+						$_SESSION["puntos"]+=$auxpuntos;					
+						$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
 					}
 				
 				}

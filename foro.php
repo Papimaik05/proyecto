@@ -95,10 +95,7 @@
         <?php
             require('./includes/comun/pie.php');
         ?> 
-        <script>
-            function mostrarFormRespuesta(id){
-                var formulario = document.getElementById("formRespuesta" + id);
-                formulario.style.display = "block";
-            }
+        <script src="./js/foro.js">
+           
         </script>
 </html>
