@@ -68,14 +68,8 @@
                             }
                         
                         ?>
-                        <script>
-                            var radios = document.querySelectorAll('input[type="radio"][name="usuario"]');
-                            radios.forEach(function(radio){
-                                radio.addEventListener('click', function(){
-                                    document.getElementById("email").value = this.getAttribute("data-email");
-                                    document.getElementById("puntos").value = this.getAttribute("data-puntos");
-                                });
-                            });
+                        <script src="./js/listenerModificar.js">
+                           
                         </script>
                 </div>
             </div>

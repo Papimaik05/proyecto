@@ -71,19 +71,8 @@
                                     echo '</form>';
                                 }
                         ?> 
-                        <script>
-                            
-    var radios = document.querySelectorAll('input[type="radio"][name="experiencia"]');
-    radios.forEach(function(radio){
-        radio.addEventListener('click', function(){
-            document.getElementById("nombre").value = this.getAttribute("data-nombre");
-            document.getElementById("descripcion").value = this.getAttribute("data-descripcion");
-            document.getElementById("puntos").value = this.getAttribute("data-puntos");
-            document.getElementById("precio").value = this.getAttribute("data-precio");
-            document.getElementById("imagen").value = this.getAttribute("data-imagen");
-        });
-    });
-</script>
+                        <script src="./js/listenerModificar.js">                      
+                        </script>
                     </div> 
                 </div>
                 
