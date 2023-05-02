@@ -5,7 +5,7 @@
 <?php
     function mostrarComentario($comentario){
         ?>  
-            <div class="container">
+            <div class="container_foro">
             <div class="comment-box">
                 <p class="user-name"><?php echo $comentario->getUsuario();
                 echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
@@ -38,7 +38,13 @@
                 $respuestas = $comentario->cargarRespuestas();
                 if($respuestas!=false){
                     foreach($respuestas as $respuesta){
+                        ?>
+                        <div class="container_respuesta">
+                        <?php
                         mostrarComentario($respuesta);
+                        ?>
+                        </div>
+                        <?php
                     }
                 }?>
             </div>
@@ -70,7 +76,9 @@
                     {
                         if($comentario->getPadre() == 0)
                         {
+                            
                             mostrarComentario($comentario);
+                            
                         }
                     }
                 
