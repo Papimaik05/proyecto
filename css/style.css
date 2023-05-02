@@ -230,7 +230,7 @@ padding: 0;
 list-style: none;
 }
 .navigation ul li{
-display: inline-block;
+display:inline-block;
 }
 .navigation ul li a{
   display: block;
@@ -897,4 +897,39 @@ legend {
   color:black;
   font-size: 20px;
 
+}
+
+
+
+.nav__link{
+  color: #303440;
+  padding: 15px 0;
+}
+
+.nav__link--inside{
+  border-radius: 6px ;
+  padding-left: 20px;
+  text-align: center;
+}
+
+.list__item{
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  text-align: center;
+}
+
+#header_button{
+  border: 2px solid #303030;
+}
+
+.list__item--click{
+  cursor: pointer;
+}
+
+.list__show{
+  width: 100%;
+  transition: height .4s;
+  height: 0;
+  text-align: center;
 }
