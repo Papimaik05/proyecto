@@ -61,6 +61,8 @@ function eliminar($cantidades, $tipo){
 						$experiencia = Experiencia::buscaPorId($carrito['id']);
 						$auxpuntos = $experiencia->getPuntos();
 						compraexperiencia::compraExp($username,$carrito['id'],$auxpuntos);
+						$_SESSION["puntos"]+=$auxpuntos;					
+						$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
 					}
 				
 				}
@@ -78,12 +80,12 @@ function eliminar($cantidades, $tipo){
 					$id = $carrito['id'];
 					$tipo = $carrito['tipo'];
 					if($tipo == 'producto'){
-					if(!isset($cantidadesProducto[$id])){
-						$cantidadesProducto[$id] = $carrito['unidades'];
-					}
-					else{
-						$cantidadesProducto[$id] = $cantidadesProducto[$id] + $carrito['unidades'];
-					}
+						if(!isset($cantidadesProducto[$id])){
+							$cantidadesProducto[$id] = $carrito['unidades'];
+						}
+						else{
+							$cantidadesProducto[$id] = $cantidadesProducto[$id] + $carrito['unidades'];
+						}
 					}
 					elseif($tipo == 'experiencia'){
 						$cantidadesExp[$id] = 1;

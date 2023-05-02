@@ -38,7 +38,13 @@
                 $respuestas = $comentario->cargarRespuestas();
                 if($respuestas!=false){
                     foreach($respuestas as $respuesta){
+                        ?>
+                        <div class="container_respuesta">
+                        <?php
                         mostrarComentario($respuesta);
+                        ?>
+                        </div>
+                        <?php
                     }
                 }?>
             </div>
@@ -70,7 +76,9 @@
                     {
                         if($comentario->getPadre() == 0)
                         {
+                            
                             mostrarComentario($comentario);
+                            
                         }
                     }
                 
@@ -95,26 +103,7 @@
         <?php
             require('./includes/comun/pie.php');
         ?> 
-        <script>
-            function mostrarFormRespuesta(id){
-                var formulario = document.getElementById("formRespuesta" + id);
-                formulario.style.display = "block";
-            }
-            function darMeGusta(idComentario) {
-                var xhr = new XMLHttpRequest();
-                xhr.open("POST", "actualizarMeGusta.php", true);
-                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                    var respuesta = xhr.responseText;
-                    var meGusta = parseInt(respuesta);
-                    console.log(respuesta);
-                    document.getElementById("contador-me-gusta-" + idComentario).innerHTML = meGusta;
-                    }
-                };
-                
-                xhr.send("idComentario=" + idComentario);
-            }
-
+        <script src="./js/foro.js">
+           
         </script>
 </html>
