@@ -32,7 +32,7 @@ function eliminar($cantidades, $tipo){
 <html>
 	<head>
 		<link href= "./css/style.css" rel="stylesheet" type="text/css">
-		<title>Producto</title>
+		<title>Carrito</title>
 	</head>
 
 
