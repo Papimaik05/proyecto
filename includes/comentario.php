@@ -163,6 +163,18 @@ public static function buscaPorId($idComentario){
         }
         
     }
+
+    public function actualizarMeGustas(){
+        $this->meGusta += 1;
+        $conn = Aplicacion::getInstance()->getConexionBd();
+        $query = sprintf("UPDATE comentario SET me_gusta = '%d' WHERE comentario.id = '%d'",$this->meGusta,$this->id);
+        if ( ! $conn->query($query) ) {
+            error_log("Error BD ({$conn->errno}): {$conn->error}");
+            return false;
+        }
+        
+        return true;
+    }
 }
 
 

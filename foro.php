@@ -6,20 +6,20 @@
     function mostrarComentario($comentario){
         ?>  
             <div class="container">
-            <div class="comment-box">
-                <p class="user-name"><?php echo $comentario->getUsuario();
-                echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
-                <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
-                <p class="comment-text"><?php echo $comentario->getContenido()?></p>
-                <p class="created-at"><?php echo $comentario->getFecha()?></p>
-           
-                <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
-                <button class="like-btn">Me gusta</button>
-            </div>
+                <div class="comment-box">
+                    <p class="user-name"><?php echo $comentario->getUsuario();
+                    echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
+                    <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
+                    <p class="comment-text"><?php echo $comentario->getContenido()?></p>
+                    <p class="created-at"><?php echo $comentario->getFecha()?></p>
+                    <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
+                    <button class="like-btn" onclick="darMeGusta('<?php echo $comentario->getId();?>')">Me gusta</button>
+                    <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
+
+                </div>
                 <?php
                 echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
                     ?>
-                    
                     <h3>Responder al comentario:</h3>
                     <label for="titulo">Titulo:</label>
                     <input type="text" id="titulo" name="titulo" required>
@@ -100,5 +100,21 @@
                 var formulario = document.getElementById("formRespuesta" + id);
                 formulario.style.display = "block";
             }
+            function darMeGusta(idComentario) {
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "actualizarMeGusta.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                    var respuesta = xhr.responseText;
+                    var meGusta = parseInt(respuesta);
+                    console.log(respuesta);
+                    document.getElementById("contador-me-gusta-" + idComentario).innerHTML = meGusta;
+                    }
+                };
+                
+                xhr.send("idComentario=" + idComentario);
+            }
+
         </script>
 </html>
