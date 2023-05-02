@@ -3,9 +3,6 @@ require_once './includes/level.php';
 require_once './includes/Usuario.php';
 function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
-    // echo '<form method="post" action="vistaCarrito.php">
-    //   <input type="image" src="./img/logo_carrito.png" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
-    //   </form>';
     echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
     if($level == level::cangrejo){
@@ -47,44 +44,89 @@ function reconocerUsuario() {
 
 ?>
 <header class ="header">
-        <div class="cont logo-nav-cont" >
-        <a class="logo">Amigos Marinos</a>
-        <nav class="navigation">
+  <div class="cont logo-nav-cont" >
+    <a class="logo">Amigos Marinos</a>
+    <nav class="navigation">
           <ul>
-            <li><a href="index.php">Inicio</a></li>
+            <li><a href="index.php ">Inicio</a></li>
             <li><a href="tienda.php">Tienda/Experiencias</a></li>
             <li><a href="mostrarnoticias.php">Noticias</a></li>
             <li><a href="foro.php">Foro</a></li>
-          <?php
-          if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
-            if($_SESSION["rol"] == "0" || $_SESSION["rol"] == "2" || $_SESSION["rol"] == "3"){
-              if($_SESSION["rol"] == "2"){
+            <?php
+            if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
+              ?>
+              <li><a href="vistaCarrito.php">Carrito</a></li>
+              <br>
+                <?php
+                if($_SESSION["rol"] == "0"||$_SESSION["rol"] == "2"){
+                  ?>
+                  <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                      <a href="#" class="nav__link" id="header_button">Menu Gestor</a>
+                    </div>
+                    <ul class="list__show">
+                      <li class="list__inside">
+                      <a href="gestorProductos.php" class="nav__link nav__link--inside">Gestor Contenido</a>
+                      </li>
+                      <br>
+                      <li class="list__inside">
+                      <a href="gestorNoticias.php" class="nav__link nav__link--inside">Gestor Noticias</a>
+                      </li>
+                      <br>
+                      <?php
+                          if($_SESSION["rol"] == "0"){
+                          ?>
+                            <li class="list__inside">
+                            <a  href="gestorUsuarios.php" class="nav__link nav__link--inside">Gestor Usuarios</a>
+                            </li>
+                            <br>
+                            <li class="list__inside">
+                            <a  href="moderador.php" class="nav__link nav__link--inside">Gestor Moderador</a>
+                            </li>
+                            <?php
+                          }
+                          ?>
+                      </ul>
+              </li>
+          </ul>
+                <?php
+                }
+                elseif($_SESSION["rol"] == "3"){
                 ?>
-                <li><a href="gestorProductos.php">Gestor Contenido</a></li>
-                <li><a href="gestorNoticias.php">Gestor Noticias</a></li>
-                <?php
-              }
-              else if($_SESSION["rol"] == "3"){
-                ?>
-                  <li><a href="moderador.php">Moderador</a></li>
-                <?php
-              }
-              else{?>
-                <li><a href="gestorProductos.php">Gestor Contenido</a></li>
-                <li><a href="gestorNoticias.php">Gestor Noticias</a></li>
-                <li><a href="gestorUsuarios.php">Gestor Usuarios</a></li>
-                <li><a href="moderador.php">Moderador</a></li>
-                <?php
+                  <li class="list__item list__item--click">
+                    <div class="list__button list__button--click">
+                      <a href="#" class="nav__link" id="header_button">Menu Gestor</a>
+                    </div>
+                    <ul class="list__show">
+                      <li class="list__inside">
+                      <a href="moderador.php" class="nav__link nav__link--inside">Gestor Moderador</a>
+                      </li>
+                      <br>
+                    </ul>
+                  </li>
+                </ul>
+              <?php
               }
             }
-            ?>
-            <li><a href="vistaCarrito.php">Carrito</a></li>
-            <?php
-          }
           ?>
-          </ul>
-        </nav>
-       </div>
+      </nav>
+      <script>let listElements = document.querySelectorAll('.list__button--click');
+              listElements.forEach(listElement => {
+              listElement.addEventListener('click', ()=>{
+                                  
+                listElement.classList.toggle('arrow');
+
+                let height = 0;
+                let menu = listElement.nextElementSibling;
+                if(menu.clientHeight == "0"){
+                  height=menu.scrollHeight;
+                }
+
+                menu.style.height = `${height}px`;
+
+              })
+              });</script>
+    </div>
        
 		<div class="login" >
 		 <?php 
