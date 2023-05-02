@@ -3,7 +3,8 @@
     require_once './includes/config.php';
     require_once './includes/level.php';
 ?>
-
+ <script src="./js/listenerModificar.js"></script>                      
+                        
 <!DOCTYPE html>
 <html>
     <head>
@@ -71,8 +72,7 @@
                                     echo '</form>';
                                 }
                         ?> 
-                        <script src="./js/listenerModificar.js">                      
-                        </script>
+                       
                     </div> 
                 </div>
                 

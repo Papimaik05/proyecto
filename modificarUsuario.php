@@ -4,6 +4,8 @@
     require_once './includes/config.php';
 ?>
 
+<script src="./js/listenerModificar.js"></script>                         
+                           
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,9 +70,6 @@
                             }
                         
                         ?>
-                        <script src="./js/listenerModificar.js">
-                           
-                        </script>
                 </div>
             </div>
                    
