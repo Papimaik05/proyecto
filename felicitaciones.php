@@ -16,6 +16,7 @@
 
             <div class="container">
                 <div class="contfelicitaciones">
+                    <h2>Compra realizada con éxito!!!</h2>
                     <?php
                         echo"<h2> Ahora tienes: ". $_SESSION['puntos']." puntos</h2>";
                     ?>

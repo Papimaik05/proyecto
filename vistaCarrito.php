@@ -65,9 +65,7 @@ function eliminar($cantidades, $tipo){
 				
 				}
 				$_SESSION['carrito']=array();
-				echo "<div class='contcompra'>";
-				echo "<h2>Compra realizada con éxito !!!</h2><img src='./img/compra.gif' id='imgFelicitaciones' alt='imgFelicitaciones'><br>";
-				echo "</div>";
+				header("Location:felicitaciones.php");
 			}
 			
 			if(isset($_POST['borrar'])) {
@@ -129,6 +127,7 @@ function eliminar($cantidades, $tipo){
 					echo  "<h1>" . $experiencia->getNombre() . "</h1>";
 					echo '<img src="' . $experiencia->getImagen() . '" id="imgVistaProducto" alt="producto">';
 					echo  "<h2>" . $experiencia->getPrecio() . " € </h2>";
+					echo  "<h2>Esta experiencia otorga : " . $experiencia->getPuntos() . " Puntos </h2>";
 					echo "<form method='post' action='vistaCarrito.php'>";
 					echo "<input type='hidden' name='id' value='".$id."'>";
 					echo "<input type='submit' name='borrar_".$id."_experiencia' value='Eliminar'>";
