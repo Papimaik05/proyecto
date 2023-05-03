@@ -31,6 +31,7 @@ require_once './includes/config.php';
         <br>
         <div class="experiencias">
             <h2>Experiencias</h2>
+            <div class="carrusel">
             <section>
             <?php
             $experiencias=Experiencia::cargarExperiencias();
@@ -38,11 +39,12 @@ require_once './includes/config.php';
                 echo "No hay experiencias disponibles a la venta";
             }else{
             foreach($experiencias as $experiencia){
-                echo "<a href='vistaExperiencia.php?id=" . urlencode($experiencia->getId()) . "'><img src='". $experiencia->getImagen() ."' alt='imgExperiencia'></a>";
+                echo "<a href='vistaExperiencia.php?id=" . urlencode($experiencia->getId()) . "'><img src='". $experiencia->getImagen() ."' alt='imgExperiencia' id='img_carrusel'></a>";
             }
             }
             ?>
         </section>
+        </div>
         </div>
         <br><br><br><br>
 
