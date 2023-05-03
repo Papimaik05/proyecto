@@ -56,8 +56,8 @@ INSERT INTO `nivel` (`numero`, `nombre`, `minimo`, `maximo`) VALUES
 --
 
 INSERT INTO `noticia` (`id`, `imagen`, `descripción`, `fecha`, `titulo`) VALUES
-(1, './img/noticia1.jpg', 'El tráfico naval está creciendo y repercute sobre el transporte global, la cadena alimenticia, la defensa nacional e incluso el tiempo libre. Más de 100.000 buques comerciales y 25 000 buques militares operan en todo el mundo. En la actualidad, el 80 % de toda la carga pasa por los puertos, lo que los convierte en los centros de distribución de mercancías a granel más activos del mundo.\r\n\r\nMira a tu alrededor en un buque moderno y verás que Danfoss está dándolo todo para reducir los costes de energía y las emisiones, tanto en la sala de máquinas como en otras áreas.\r\n\r\n \r\n\r\nTanto en buques comerciales como navales, desde cruceros hasta cargueros y portacontenedores, obtendrás ventajas significativas en cuestión de seguridad, velocidad, logística y eficiencia, así como en la reducción de las emisiones al mínimo absoluto. Elige entre una amplia gama de soluciones marinas de Danfoss para la seguridad contra incendios, la obtención de agua limpia a bordo, la supervisión minuciosa de todas las funciones del motor y un control preciso y flexible de la conversión de potencia, a fin de satisfacer las necesidades de todos los procesos tanto a bordo como en tierra.', '2023-04-26', 'Aumentan nuestras instalaciones');
-
+(1, './img/noticia1.jpg', 'Nuestra empresa crece, y amigos marinos abre una nueva sede en Cantabria. Contamos con un nuevo aquario con las especies marinas más alucinantes. Dentro de poco abriremos nuevas experiencias para que sigais disfrutando del océano!', '2023-04-26', 'Aumentan nuestras instalaciones'),
+(2, './img/atlantida.jpg', 'Disfruta de nuestra nueva experiencia: ¡VISITA LA ATLANTIDA! Cómprala ya y disfrútala con tus mejores amigos', '2023-05-03', 'Nueva Experiencia');
 --
 -- Volcado de datos para la tabla `producto`
 --
