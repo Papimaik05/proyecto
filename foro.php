@@ -5,8 +5,8 @@
 <?php
     function mostrarComentario($comentario, $nivel){
         ?>  
-            <div class="container">
-                <div class="comment-box" style="margin-left: <?php echo $nivel * 20 ?>px">
+            <div class="hilo">
+                <div class="comment-box">
                     <p class="user-name"><?php echo $comentario->getUsuario();
                     echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
                     <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
@@ -17,6 +17,7 @@
                     <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
 
                 </div>
+                <div class="form_respuesta">
                 <?php
                 echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
                     ?>
@@ -27,9 +28,10 @@
                     <label for="contenido">Comentario:</label>
                     <br>
                     <textarea id="contenido" name="contenido" required></textarea>
-                    <br>
-                    <button type="submit">Enviar</button>
+                    <br><br>
+                    <button type="submit" id="aux_padbot">Enviar</button>
                 </form>
+                </div>
                 <span class="like-count"><?php $comentario->getMeGusta()?></span>
             
             </div>
@@ -49,6 +51,7 @@
                     }
                 }?>
             </div>
+       
         <?php
     }
 ?>
@@ -67,7 +70,7 @@
         <main>
             <div class="container">
 
-                <h2>Título del hilo de discusión</h2>
+                <h1>Comparte tu experiencia!</h1>
                 <?php
                     $comentarios = comentario::cargarComentarios();
                     if($comentarios == false){
@@ -77,9 +80,9 @@
                     {
                         if($comentario->getPadre() == 0)
                         {
-                            
+                            echo "<div class='conversacion'>";
                             mostrarComentario($comentario, 0);
-                            
+                            echo "</div>";
                         }
                     }
                 
