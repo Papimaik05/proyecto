@@ -30,6 +30,7 @@ require_once __DIR__.'/includes/noticia.php';
         ?>
 		<br>
 		</div>
+		</div>
 		<?php 
 		require('./includes/comun/pie.php');
 		?>
