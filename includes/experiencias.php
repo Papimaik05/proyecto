@@ -26,7 +26,7 @@ class Experiencia {
         if(!$conn){
             exit("Fallo en la conexion");
         }
-        $query = "SELECT * FROM experiencias";
+        $query = "SELECT * FROM experiencias ORDER BY nivelminimo";
         $resultado = mysqli_query($conn, $query);
         if(mysqli_num_rows($resultado) > 0){
             $i = 0;
