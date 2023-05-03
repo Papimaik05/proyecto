@@ -1,83 +1,83 @@
 <?php
-    require_once __DIR__.'/includes/comentario.php';
     require_once './includes/config.php';
+    require_once './includes/comentario.php';
 ?>
-
+<?php
+    function mostrarComentario($comentario){
+        ?>  
+            <div class="container">
+                <div class="comment-box">
+                    <p class="user-name"><?php echo $comentario->getUsuario();
+                    echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
+                    <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
+                    <p class="comment-text"><?php echo $comentario->getContenido()?></p>
+                    <p class="created-at"><?php echo $comentario->getFecha()?></p>
+                    <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
+                    <?php echo "<li><input type='checkbox' name='comentarios[]' value='". $comentario->getId() ."
+                                '></li>";?>
+                </div>
+            </div>
+            <div class="respuestas">
+                <?php
+                $respuestas = $comentario->cargarRespuestas();
+                if($respuestas!=false){
+                    foreach($respuestas as $respuesta){
+                        ?>
+                        <div class="container_respuesta">
+                        <?php
+                        mostrarComentario($respuesta);
+                        ?>
+                        </div>
+                        <?php
+                    }
+                }?>
+            </div>
+        <?php
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
-    
-        <link href= "./css/style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css"/>
         <title>Moderador</title>
     </head>
 
     <body>
-            <?php
-                require ('./includes/comun/cabecera.php');
-            ?>
-            <main>
-            <div class="container">
-                <div class="comentarios">
-                    <?php
-                        $productos = comentario::cargarComentarios();
-                        if (isset($_GET["mensaje"])) {
-                        echo "<p>" . $_GET["mensaje"] . "</p>";
-                        } 
-                    
-                        if(empty($productos)){
-                            echo '<h2>No hay productos en la tienda</h2>'; 
-                        }
-                        else{
-                            echo '<form action="validarEdicion.php?es=producto" method="post" enctype="multipart/form-data">';
-                            echo '<label>Selecciona el producto que quieres modificar:</label>';
-                        
-                            foreach($productos as $p){
-                                $id = $p->getId();
-                                $nombre = $p->getNombre();
-                                $descripcion = $p->getDescripcion();
-                                $unidades = $p->getUnidades();
-                                $precio = $p->getPrecio();
-                                $imagen = $p->getImagen();
-                                echo "<li><input type='radio' name='producto' value='". $id ."' data-nombre='". $nombre ."' data-descripcion='". $descripcion ."' data-unidades='". $unidades ."' data-precio='". $precio ."' data-imagen='". $imagen ."'> ". $nombre ."</li>";
-                            }
-                            echo '</ul>';
-                            echo '<label>Ahora selecciona los valores a modificar: </label>';
-                            echo '<fieldset>';
-                            echo '<label for="nombre">Nombre:</label>';
-                            echo '<input type="text" name="nombre" id="nombre"><br><br>';
-                            echo '<label for="descripcion">Descripción:</label>';
-                            echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';
-                            echo '<label for="unidades">Unidades:</label>';
-                            echo '<input type="number" name="unidades" id="unidades" min="0"><br><br>';
-                            echo '<label for="precio">Precio:</label>';
-                            echo '<input type="number" name="precio" id="precio" min="0"><br><br>';
-                            echo '<label for="imagen">Selecciona una imagen:</label>';
-                            echo '<input type="file" name="imagen" id="imagen"><br><br>';
-                            echo '</fieldset>';
-                            echo '<input type="submit" value="Enviar">';
-                            echo '</form>';
-                        }
-                    
-                    ?>
-                    <script>
-                        var radios = document.querySelectorAll('input[type="radio"][name="producto"]');
-                        radios.forEach(function(radio){
-                            radio.addEventListener('click', function(){
-                                document.getElementById("nombre").value = this.getAttribute("data-nombre");
-                                document.getElementById("descripcion").value = this.getAttribute("data-descripcion");
-                                document.getElementById("unidades").value = this.getAttribute("data-unidades");
-                                document.getElementById("precio").value = this.getAttribute("data-precio");
-                                document.getElementById("imagen").value = this.getAttribute("data-imagen");
-                            });
-                        });
-                    </script>
-                </div>
-            </div>
-                   
-            
-        <?php 
-            require('./includes/comun/pie.php');
+        <?php
+            require ('./includes/comun/cabecera.php');
         ?>
+
+        <main>
+            <div class="container">
+                <?php
+                    $comentarios = comentario::cargarComentarios();
+                    $_SESSION["diferenciar"]="Comentario";
+                    if (isset($_GET["mensaje"])) {
+		                echo "<p>" . $_GET["mensaje"] . "</p>";
+	                }
+                    if($comentarios == false){
+                        echo "No hay comentarios en este foro";
+                    }
+                    else{
+                        echo '<form action="validarBorrado.php" method="post">';
+                        echo '<h2>Lista de comentarios, seleccione los comentarios a borrar</h2>';
+                        foreach($comentarios as $comentario)
+                        {
+                            if($comentario->getPadre() == 0)
+                            {
+                                mostrarComentario($comentario);                            
+                            }
+                        }
+                        echo '<input type="submit" value="Eliminar">';
+                        echo '</form>';
+                    }
+                ?>
+            </div>
         </main>
-    </body>
+        <?php
+            require('./includes/comun/pie.php');
+        ?> 
+        <script src="./js/foro.js">
+           
+        </script>
 </html>
