@@ -19,7 +19,7 @@ require_once './includes/config.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "./css/style.css" rel="stylesheet" type="text/css">
+    <link href= "./css/style.css?id=1" rel="stylesheet" type="text/css">
     <title>Tienda</title>
 </head>
 <body>
@@ -29,21 +29,32 @@ require_once './includes/config.php';
     <div class="container">
         <h1>Tienda</h1>
         <br>
-        <div class="experiencias">
+        <div class="productos">
             <h2>Experiencias</h2>
-            <div class="carrusel">
-            <section>
             <?php
             $experiencias=Experiencia::cargarExperiencias();
             if($experiencias==false){
                 echo "No hay experiencias disponibles a la venta";
             }else{
-            foreach($experiencias as $experiencia){
-                echo "<a href='vistaExperiencia.php?id=" . urlencode($experiencia->getId()) . "'><img src='". $experiencia->getImagen() ."' alt='imgExperiencia' id='img_carrusel'></a>";
-            }
+                ?>
+                <div class="catalogo">
+                <?php
+                foreach($experiencias as $experiencia){
+                ?>
+                    <a class="item" <?php echo "href='vistaExperiencia.php?id=" . $experiencia->getId() . "'"; ?>>
+                        <?php  
+                        echo "<img src='". $experiencia->getImagen() ."' alt='imgProducto' id='img_exp'>";
+                        ?>
+                        <div class="texto">
+                            <?php  
+                            echo "<h3>".$experiencia->getNombre()."</h3>";
+                            ?>
+                        </div>
+                    </a>    
+                <?php
+                }
             }
             ?>
-        </section>
         </div>
         </div>
         <br><br><br><br>
