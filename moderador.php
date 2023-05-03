@@ -5,7 +5,7 @@
 <?php
     function mostrarComentario($comentario){
         ?>  
-            <div class="container">
+            <div class="hilo">
                 <div class="comment-box">
                     <p class="user-name"><?php echo $comentario->getUsuario();
                     echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
@@ -13,8 +13,7 @@
                     <p class="comment-text"><?php echo $comentario->getContenido()?></p>
                     <p class="created-at"><?php echo $comentario->getFecha()?></p>
                     <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
-                    <?php echo "<li><input type='checkbox' name='comentarios[]' value='". $comentario->getId() ."
-                                '></li>";?>
+                    <?php echo "<li><input type='checkbox' name='comentarios[]' value='". $comentario->getId() ."'></li>";?>
                 </div>
             </div>
             <div class="respuestas">
@@ -65,7 +64,9 @@
                         {
                             if($comentario->getPadre() == 0)
                             {
-                                mostrarComentario($comentario);                            
+                                echo "<div class='conversacion'>";
+                                mostrarComentario($comentario); 
+                                echo "</div>";                           
                             }
                         }
                         echo '<input type="submit" value="Eliminar">';
