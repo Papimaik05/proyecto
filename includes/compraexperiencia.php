@@ -13,7 +13,7 @@ class compraexperiencia{
 
         //AÑADIR PUNTOS
 
-        $query = sprintf("UPDATE usuario U SET  puntos='%d' WHERE U.username='%s'"
+        $query = sprintf("UPDATE usuario U SET  U.puntos=puntos + %d WHERE U.username='%s'"
         , $puntos
         ,$conn->real_escape_string($username));
 

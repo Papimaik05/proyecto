@@ -25,7 +25,7 @@ class Usuario{
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
         return false;
-    }
+    }  
     public static function borrarUsuario($nombre)
     {
         if (!$nombre) {
