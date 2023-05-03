@@ -26,9 +26,9 @@ SET time_zone = "+00:00";
 --
 
 INSERT INTO `comentario` (`id`, `titulo`, `usuario`, `padre`, `contenido`, `fecha_de_creacion`, `me_gusta`) VALUES
-(1, 'Gafas molonas', 'admin', 1, 'Las gafas que se venden en la tienda son super molonas, he salido con mi familia a bucear, y vaya si se ve todo debajo del agua, mi amigo me hizo la bromilla típica por debajo del agua, y lo vi todo!!', '2023-04-28', 10),
-(12, 'asere', 'gestor', 0, 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq', '2023-04-30', 0);
-
+(26, 'Hice con mis hijos Buscando a Nemo', 'admin', 0, 'Que experiencia mas divertida. Mis hijos salieron encantados. Ideal para pasarlo en grande en familia. Recomiendo llevar bocatas sumergibles, puede entrar el hambre bajo el mar y no hay  muchos Mercadonas por allí abajo. Repetiremos encantados', '2023-05-03', 0),
+(27, 'Genial', 'admin', 26, 'Estaba dudando si ir con mi abuela de 60 años, ahora tengo claro que es una idea nefasta, muchas gracias', '2023-05-03', 0),
+(28, 'Las aletas van genial', 'admin', 0, 'Compre las aletas de la tienda y estoy encantado, que maravilla. Voy nadando al trabajo y llego enseguida. Que gran producto', '2023-05-03', 0);
 --
 -- Volcado de datos para la tabla `experiencias`
 --
