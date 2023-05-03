@@ -3,6 +3,27 @@
     require_once './includes/experiencias.php';   
     require_once './includes/Usuario.php'; 
     require_once './includes/noticia.php';  
+    require_once './includes/comentario.php';  
+    
+    
+    function eliminarConHijos($idComentario){
+        $res = true;
+        $aBorrar = comentario::buscaPorId($idComentario);
+        $respuestas = $aBorrar->cargarRespuestas();
+        if($respuestas != false){
+            foreach($respuestas as $respuesta){
+                eliminarConHijos($respuesta->getId());
+            }
+        }
+        if(comentario::borraPorId($idComentario)){
+        }
+        else{
+            $res = false;
+        }
+        return $res;
+    }
+    
+    
     $mensaje = "";
     $res=true;
     if($_SESSION["diferenciar"]=="Producto"){
@@ -90,6 +111,23 @@
             $mensaje = "Por favor, seleccione al menos una noticia.";
         }
         header("Location:borrarNoticia.php?mensaje=$mensaje");
+    } else if($_SESSION["diferenciar"] == "Comentario"){
+        $comentariosSeleccionados = $_POST['comentarios'];
+        if (!empty($comentariosSeleccionados)) {
+            foreach ($comentariosSeleccionados as $id) {
+                eliminarConHijos($id); 
+            }
+            if($res==false){
+                $mensaje = "No se han podido eliminar todos los comentarios";
+            }
+            else{
+                $mensaje = "Todos los elementos seleccionados se han borrado con exito";
+            }
+        } 
+        else {
+            $mensaje = "Por favor, seleccione al menos un comentario.";
+        }
+        header("Location:moderador.php?mensaje=$mensaje");
     }
 
 ?>

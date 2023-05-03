@@ -3,10 +3,10 @@
     require_once './includes/comentario.php';
 ?>
 <?php
-    function mostrarComentario($comentario){
+    function mostrarComentario($comentario, $nivel){
         ?>  
             <div class="container">
-                <div class="comment-box">
+                <div class="comment-box" style="margin-left: <?php echo $nivel * 20 ?>px">
                     <p class="user-name"><?php echo $comentario->getUsuario();
                     echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
                     <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
@@ -41,7 +41,8 @@
                         ?>
                         <div class="container_respuesta">
                         <?php
-                        mostrarComentario($respuesta);
+                        $nivNuevo = $nivel + 1;
+                        mostrarComentario($respuesta, $nivNuevo);
                         ?>
                         </div>
                         <?php
@@ -77,7 +78,7 @@
                         if($comentario->getPadre() == 0)
                         {
                             
-                            mostrarComentario($comentario);
+                            mostrarComentario($comentario, 0);
                             
                         }
                     }
