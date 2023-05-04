@@ -33,7 +33,7 @@ SET time_zone = "+00:00";
 DROP TABLE IF EXISTS `comentario`;
 CREATE TABLE IF NOT EXISTS `comentario` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` varchar(20) NOT NULL,
+  `titulo` varchar(40) NOT NULL,
   `usuario` varchar(15) NOT NULL,
   `padre` int(11) DEFAULT NULL,
   `contenido` text NOT NULL,

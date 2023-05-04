@@ -18,3 +18,10 @@ function darMeGusta(idComentario) {
     
     xhr.send("idComentario=" + idComentario);
 }
+
+let imgchange = document.getElementById("imgchange");
+let siLike = document.getElementById("imgchange");
+siLike.onclick = function() {
+
+    imgchange.src = "./img/like.jpg";
+}
