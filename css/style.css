@@ -890,12 +890,8 @@ legend {
 }
 
 .like-btn {
-  background-color: #1c1a1a;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  font-size: 1em;
-  padding: 0.5em 1em;
+  background-color: white;
+  border: solid white;
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
