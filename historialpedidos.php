@@ -1,9 +1,9 @@
 <?php
 require_once './includes/config.php';
 require_once './includes/Usuario.php';
-require_once './includes/pedido.php';
-require_once './includes/producto.php';
-require_once './includes/experiencias.php';
+require_once './includes/Pedido.php';
+require_once './includes/Producto.php';
+require_once './includes/Experiencia.php';
 ?>
 <!DOCTYPE html>
 
