@@ -3,6 +3,8 @@ function mostrarFormRespuesta(id){
     formulario.style.display = "block";
 }
 function darMeGusta(idComentario) {
+    var botonMeGusta = document.getElementById("boton-me-gusta-" + idComentario);
+    botonMeGusta.disabled = true;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "actualizarMeGusta.php", true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -10,7 +12,6 @@ function darMeGusta(idComentario) {
         if (xhr.readyState === 4 && xhr.status === 200) {
         var respuesta = xhr.responseText;
         var meGusta = parseInt(respuesta);
-        console.log(respuesta);
         document.getElementById("contador-me-gusta-" + idComentario).innerHTML = meGusta;
         }
     };
