@@ -73,8 +73,8 @@ INSERT INTO `producto` (`nombre`, `id`, `descripcion`, `unidades`, `precio`, `im
 ('Bombona de oxígeno', 8, 'Este mini tanque de buceo tiene una capacidad de 0,5 l y puede respirar bajo el agua durante 5-10 minutos. Al mismo tiempo, el botella de buceo tiene un dispositivo de filtración de tres capas, que evita de manera efectiva la entrada de polvo e impurezas, lo que hace que el gas inhalado sea más limpio. (Atención: la profundidad de buceo, la temperatura y la frecuencia respiratoria afectarán el tiempo de uso del tanque de buceo)', 12, 129, './img/bombona.jpg'),
 ('Bañador Sportacus Mujer', 9, 'Bañador de pinguinos femenino para sumergirte y ser uno más de ellos.', 45, 14, './img/banadorm.jpg'),
 ('Sombrilla H2O',10, 'Sobrilla perfecta para protegerte de los rayos solares malignos.', 7, 46, './img/sombrilla.jpg'),
-('Lancha',11, 'Lancha todoterreno con cuatro modos de velocidad que se adaptan según tus gustos, no te lo pierdas y pruébala!  ', 3, 5000, './img/lancha.jpg'),
-('Crocs',12, 'Crocs cómodas para caminar de la manera más cómoda por la arena de la playa.', 26, 50, './img/crocs.jpg');
+('Lancha Morsa',11, 'Lancha todoterreno con cuatro modos de velocidad que se adaptan según tus gustos, no te lo pierdas y pruébala!', 3, 5000, './img/lancha.jpg'),
+('Crocs Boreales',12, 'Crocs cómodas para caminar de la manera más cómoda por la arena de la playa.', 26, 50, './img/crocs.jpg');
 
 
 --
