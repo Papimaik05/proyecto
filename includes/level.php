@@ -10,6 +10,7 @@ class level{
         $query = sprintf("SELECT numero FROM nivel U WHERE $puntos<=U.maximo AND $puntos>=U.minimo");
         $rs = $conn->query($query);
         $fila=$rs->fetch_assoc();
+        $rs->free();
         return $fila['numero'];
     }
 
@@ -20,6 +21,7 @@ class level{
         );      
         $rs = $conn->query($query);
         $fila=mysqli_fetch_assoc($rs);
+        $rs->free();
         return $fila['numero'];
     }
 
@@ -28,14 +30,25 @@ class level{
         $query = sprintf("SELECT nombre FROM nivel U WHERE U.numero=$numero");
         $rs = $conn->query($query);
         $fila=$rs->fetch_assoc();
+        $rs->free();
         return $fila['nombre'];
     }
     
     public static function getAllLevels(){
+        $levels=[];
         $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("SELECT nombre FROM nivel  ");
         $rs = $conn->query($query);
-        return $rs;
+        if(mysqli_num_rows($rs) > 0){
+            $i = 0;
+            while($fila = $rs->fetch_assoc()){
+                $levels[$i] = $fila["nombre"];
+                $i++;
+            }
+            $rs->free();
+            return $levels;
+        }
+       return false;
     }
 
     public static function getMaxPuntos($nombre){
@@ -43,6 +56,7 @@ class level{
         $query = sprintf("SELECT maximo FROM nivel U WHERE U.nombre='%s'", $nombre);
         $rs = $conn->query($query);
         $fila=$rs->fetch_assoc();
+        $rs->free();
         return $fila['maximo'];
     }
 
@@ -51,6 +65,7 @@ class level{
         $query = sprintf("SELECT minimo FROM nivel U WHERE U.nombre='%s'", $nombre);
         $rs = $conn->query($query);
         $fila=$rs->fetch_assoc();
+        $rs->free();
         return $fila['minimo'];
     }
 
