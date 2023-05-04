@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 		// validación html5, porque el campo es <input type="email" ...>
 		const esCorreoValido = campo[0].checkValidity();
-		 if (esCorreoValido && correoValidoComplu(campo.val())) {
+		 if (esCorreoValido && (correoValidoComplu(campo.val())||correoValidoGmail(campo.val())||correoValidoMarinos(campo.val()))) {
 			// el correo es válido y acaba por @ucm.es: marcamos y limpiamos quejas
 		
 			// tu código aquí: coloca la marca correcta
@@ -38,6 +38,26 @@ $(document).ready(function() {
 
   function correoValidoComplu(correo) {
 	const dominio = "@ucm.es";
+	const index = correo.indexOf(dominio);
+	if (index === -1) {
+	  return false; // el dominio no está presente en el correo
+	}
+	const subcadena = correo.substring(0, index); // extrae la subcadena antes del dominio
+	return subcadena.length > 0; // devuelve true si la subcadena tiene longitud mayor que cero
+  }
+
+  function correoValidoGmail(correo) {
+	const dominio = "@gmail.com";
+	const index = correo.indexOf(dominio);
+	if (index === -1) {
+	  return false; // el dominio no está presente en el correo
+	}
+	const subcadena = correo.substring(0, index); // extrae la subcadena antes del dominio
+	return subcadena.length > 0; // devuelve true si la subcadena tiene longitud mayor que cero
+  }
+
+  function correoValidoMarinos(correo) {
+	const dominio = "@marinos.com";
 	const index = correo.indexOf(dominio);
 	if (index === -1) {
 	  return false; // el dominio no está presente en el correo
