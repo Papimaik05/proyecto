@@ -12,7 +12,7 @@ function darMeGusta(idComentario) {
         if (xhr.readyState === 4 && xhr.status === 200) {
         var respuesta = xhr.responseText;
         var meGusta = parseInt(respuesta);
-        document.getElementById("contador-me-gusta-" + idComentario).innerHTML = meGusta;
+        document.getElementById("contador-me-gusta-" + idComentario).innerHTML = (meGusta + " me gusta");
         }
     };
     

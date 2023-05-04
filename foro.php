@@ -14,7 +14,9 @@
                     <p class="created-at"><?php echo $comentario->getFecha()?></p>
                     <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
                     <?php echo '<button id="boton-me-gusta-'.$comentario->getId().'" class="like-btn" onclick="darMeGusta('.$comentario->getId().')">Me gusta</button>'?>
-                    <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
+                    <div class="contador-me-gusta">
+                        <?php echo '<p id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().' me gusta</p>'?>
+                    </div>
                 </div>
                 <div class="form_respuesta">
                 <?php
