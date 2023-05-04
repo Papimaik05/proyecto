@@ -1,6 +1,6 @@
 <?php 
 require_once __DIR__.'/includes/config.php';
-require_once __DIR__.'/includes/experiencias.php';
+require_once __DIR__.'/includes/Experiencia.php';
 require_once __DIR__.'/includes/level.php';
 require_once './includes/Usuario.php';
 require_once './includes/compraexperiencia.php';

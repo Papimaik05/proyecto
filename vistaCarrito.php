@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/includes/config.php';
-require_once __DIR__.'/includes/producto.php';
-require_once __DIR__.'/includes/experiencias.php';
+require_once __DIR__.'/includes/Producto.php';
+require_once __DIR__.'/includes/Experiencia.php';
 require_once './includes/compraproducto.php';
 require_once './includes/compraexperiencia.php';
 ?>

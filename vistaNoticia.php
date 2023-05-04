@@ -1,6 +1,6 @@
 <?php
 require_once __DIR__.'/includes/config.php';
-require_once __DIR__.'/includes/noticia.php';
+require_once __DIR__.'/includes/Noticia.php';
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
-    require_once './includes/producto.php';
-    require_once './includes/experiencias.php';  
+    require_once './includes/Producto.php';
+    require_once './includes/Experiencia.php';  
     require_once './includes/level.php';  
     require_once './includes/Usuario.php'; 
     require_once './includes/rol.php'; 
