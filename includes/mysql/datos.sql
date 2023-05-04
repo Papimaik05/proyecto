@@ -63,13 +63,19 @@ INSERT INTO `noticia` (`id`, `imagen`, `descripción`, `fecha`, `titulo`) VALUES
 --
 
 INSERT INTO `producto` (`nombre`, `id`, `descripcion`, `unidades`, `precio`, `imagen`) VALUES
-('Snorkel Ultrapower', 1, 'Gafas y snorkel de polietileno y titaneo parar resispar sin parar.', 3, 20, './img/snorkel.jpg'),
+('Snorkel Ultrapower', 1, 'Gafas y snorkel de polietileno y titaneo parar respirar sin parar.', 3, 20, './img/snorkel.jpg'),
 ('Submarino el coloso', 2, 'Submarino premium delux ideal para disfrutar de nuestras excursiones con el mayor confort imaginado.\r\nSurca los mares descubriendo sus profundidades gracias a la más última tecnolodia de este navío.', 1, 50000, './img/submarino.jpg'),
 ('Aletas Coral', 3, 'Las mejores aletas del mundo para nadar con los animales marinos a toda velocidad!', 6, 17.99, './img/aletas.jpg'),
 ('Caña Anguila', 4, 'Con esta caña podrás pescar cualquier animal bajo el mar.', 8, 79.99, './img/cana.jpg'),
 ('Kayak Titán', 5, 'Kayak titánico para surcar los mares.', 2, 350, './img/kayak.jpg'),
 ('Tabla de surf dragón', 6, 'Tabla de surf para levitar sobre el agua sin ningún esfuerzo.', 9, 277, './img/surf.jpg'),
-('Bañador Sportacus', 7, 'Bañador de pinguinos para sumergirte y ser uno más de ellos.', 33, 9.99, './img/banador.jpg');
+('Bañador Sportacus Hombre', 7, 'Bañador de pinguinos masculino para sumergirte y ser uno más de ellos.', 33, 9.99, './img/banador.jpg'),
+('Bombona de oxígeno', 8, 'Este mini tanque de buceo tiene una capacidad de 0,5 l y puede respirar bajo el agua durante 5-10 minutos. Al mismo tiempo, el botella de buceo tiene un dispositivo de filtración de tres capas, que evita de manera efectiva la entrada de polvo e impurezas, lo que hace que el gas inhalado sea más limpio. (Atención: la profundidad de buceo, la temperatura y la frecuencia respiratoria afectarán el tiempo de uso del tanque de buceo)', 12, 129, './img/bombona.jpg'),
+('Bañador Sportacus Mujer', 9, 'Bañador de pinguinos femenino para sumergirte y ser uno más de ellos.', 45, 14, './img/banadorm.jpg'),
+('Sombrilla H2O',10, 'Sobrilla perfecta para protegerte de los rayos solares malignos.', 7, 46, './img/sombrilla.jpg'),
+('Lancha',11, 'Lancha todoterreno con cuatro modos de velocidad que se adaptan según tus gustos, no te lo pierdas y pruébala!  ', 3, 5000, './img/lancha.jpg'),
+('Crocs',12, 'Crocs cómodas para caminar de la manera más cómoda por la arena de la playa.', 26, 50, './img/crocs.jpg');
+
 
 --
 -- Volcado de datos para la tabla `rol`
