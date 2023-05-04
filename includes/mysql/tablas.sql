@@ -202,15 +202,15 @@ ALTER TABLE `comentario`
 -- Filtros para la tabla `compraexperiencia`
 --
 ALTER TABLE `compraexperiencia`
-  ADD CONSTRAINT `compraexperiencia_ibfk_1` FOREIGN KEY (`id_experiencia`) REFERENCES `experiencias` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  ADD CONSTRAINT `compraexperiencia_ibfk_2` FOREIGN KEY (`nombre_usuario`) REFERENCES `usuario` (`username`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `compraexperiencia_ibfk_1` FOREIGN KEY (`id_experiencia`) REFERENCES `experiencias` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `compraexperiencia_ibfk_2` FOREIGN KEY (`nombre_usuario`) REFERENCES `usuario` (`username`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `compraproducto`
 --
 ALTER TABLE `compraproducto`
-  ADD CONSTRAINT `compraproducto_ibfk_1` FOREIGN KEY (`nombre_usuario`) REFERENCES `usuario` (`username`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `compraproducto_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+  ADD CONSTRAINT `compraproducto_ibfk_1` FOREIGN KEY (`nombre_usuario`) REFERENCES `usuario` (`username`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `compraproducto_ibfk_2` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `experiencias`
