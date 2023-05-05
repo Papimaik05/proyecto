@@ -38,7 +38,7 @@ class rol{
         $rs = $conn->query($query);
         if(mysqli_num_rows($rs) > 0){
             $i = 0;
-            while($fila = $resultado->fetch_assoc()){
+            while($fila = $rs->fetch_assoc()){
                 $rols[$i] = new rol($fila['numero'], $fila['nombre']);
                 $i++;
             }
@@ -47,6 +47,7 @@ class rol{
         }
        return false;
     }
+
 
 
     public function getNombre(){

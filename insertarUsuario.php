@@ -33,15 +33,15 @@ require ('./includes/comun/cabecera.php');
 					<div><label>Contraseña:</label> <input required type="password" name="contr" /><br /></div>
                     <div><label>Repita Contraseña:</label> <input required type="password" name="contr2" /><br /></div>                        
                     <label for="rol">Rol:</label>
-						<select name ="rol" id="rol"> 
-							<?php						
+						<select name ="rol" id="rol">  
+							<?php					
 								$rols=rol::getAllRols();
 								foreach($rols as $rol){
 								$nombre = $rol->getNombre();
 								echo "<option>$nombre</option>";
 								}
 							?>
-						</select>
+						</select> 
 					<br><br>
                     <label for="puntos">Puntos:</label>
                     <input type="number" name="puntos" id="puntos" min="0"><br><br>
