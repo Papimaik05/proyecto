@@ -265,9 +265,9 @@ display:inline-block;
 }
 
 #imgVistaProducto{
-  height: 400px;
+  width: fit-content;
   max-width: 100%;
-  width: 400px;
+  height: auto;
   cursor: zoom-in;
 }
 
