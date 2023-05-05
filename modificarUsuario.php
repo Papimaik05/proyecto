@@ -20,7 +20,6 @@
             <main>
             <div class="container">
                 <div class="usu">
-                    <ul class="modificarUsuarios">
 
                         <?php
                             $usuarios = Usuario::cargarUsuarios();
@@ -36,7 +35,7 @@
                             else{
                                 echo '<form action="validarEdicion.php?es=usuario" method="post">';
                                 echo '<label>Selecciona el usuario que quieres modificar:</label>';
-                                echo '<br><br>';
+                                echo '<ul class="modificarUsuarios">';
                                 foreach($usuarios as $u){
                                     $nombre = $u->getNombreUsuario();
                                     $email=$u->getEmail();

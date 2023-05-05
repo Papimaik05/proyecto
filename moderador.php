@@ -7,13 +7,14 @@
         ?>  
             <div class="hilo">
                 <div class="comment-box">
-                    <p class="user-name"><?php echo $comentario->getUsuario();
-                    echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
+                    <p class="user-name"><?php echo $comentario->getUsuario();?></p>
                     <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
                     <p class="comment-text"><?php echo $comentario->getContenido()?></p>
                     <p class="created-at"><?php echo $comentario->getFecha()?></p>
                     <?php echo '<span id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().'</span>'?>
+                    <ul>
                     <?php echo "<li><input type='checkbox' name='comentarios[]' value='". $comentario->getId() ."'></li>";?>
+                    </ul>
                 </div>
             </div>
             <div class="respuestas">

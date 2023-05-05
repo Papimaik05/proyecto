@@ -687,7 +687,7 @@ legend {
 
 
 
-#imagen_historial{
+.imagen_historial{
   height:200px;
   width: 200px;
   border-radius: 20%;
@@ -896,7 +896,7 @@ legend {
   border-color: #aaa;
 }
 
-#like-btn {
+.like-btn {
   background-color: blue;
   border: solid white;
   text-decoration: none;
@@ -991,4 +991,11 @@ legend {
 
 #del_unidades{
   color:black;
+}
+
+.exp_carrito{
+  width: 400px;
+  height: 400px;
+  max-width: 70%;
+  max-height: 70%;
 }
