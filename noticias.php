@@ -30,7 +30,7 @@ require_once __DIR__.'/includes/Noticia.php';
                                 <?php
                                 echo "<h2>".$noticia->getTitulo()."<h2>";
                                 echo "<h2>".$noticia->getFecha()."<h2>";
-                                echo "<a href='vistaNoticia.php?id=" . urlencode($noticia->getId()) . "'><img src='". $noticia->getImagen() ."'id='icono_noticia'></a>";
+                                echo "<a href='vistaNoticia.php?id=" . urlencode($noticia->getId()) . "'><img src='". $noticia->getImagen() ."'class='icono_noticia' alt='imagen_noticia'></a>";
                                 echo "<h3>Clickea en la imagen para ver la noticia</h3>";
                                 echo "<br><br>";
                                 ?>
