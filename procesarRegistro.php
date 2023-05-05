@@ -61,7 +61,8 @@ if (! $formEnviado ) {
             $_SESSION['rol'] = $usuario->getRol();
             $_SESSION['email'] = $usuario->getEmail();
             $_SESSION['contr'] = $usuario->getContr();
-            $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
+            $level = level::getLevel($_SESSION["puntos"]);
+            $_SESSION['level'] = $level->getNombre();
             $_SESSION['carrito'] = array();
             header('Location: index.php');
          }

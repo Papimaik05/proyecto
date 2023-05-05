@@ -5,28 +5,28 @@ function reconocerUsuario() {
   if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){ 
     echo'Rol: '.Usuario::getNombreRol($_SESSION['rol']);
     $level=level::getLevel($_SESSION["puntos"]);
-    if($level == level::cangrejo){
+    if($level->getNumero() == level::cangrejo){
       echo '<form method="post" action="micuenta.php">
       <input type="image" src="./img/cangrejo.jpg" name="boton" width="50" alt="Botón icono cangrejo"  height="50" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
-    else if($level == level::delfin){
+    else if($level->getNumero() == level::delfin){
       echo '<form method="post" action="micuenta.php">
       <input type="image" src="./img/delfin.jpg" name="boton" width="50" alt="Botón icono delfin"  height="50" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
-    else if($level == level::megalodon){
+    else if($level->getNumero() == level::megalodon){
       echo '<form method="post" action="micuenta.php">
       <input type="image" src="./img/tiburon.jpg" name="boton" width="50" alt="Botón icono tiburon"  height="50" />
       </form>';
       echo 'Bienvenido ' . $_SESSION['nombre'] . '! ';
       echo '<a href="logout.php">(salir)</a>';
     }
-    else if($level == level::poseidon){
+    else if($level->getNumero() == level::poseidon){
       echo '<form method="post" action="micuenta.php">
       <input type="image" src="./img/poseidon.jpg" name="boton" width="50" alt="Botón icono poseidon"  height="50" />
       </form>';

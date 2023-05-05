@@ -55,10 +55,10 @@ require_once './includes/compraexperiencia.php';
 			echo "<h1>" . $experiencia->getNombre() . "</h1>";
 			echo '<img  src="' . $experiencia->getImagen() . ' " id="imgExperiencia" alt="experiencia" >';
 			echo "<h3>". $experiencia->getDescripcion() ."</h3>";
-			echo "<h3> Nivel minimo requerido: ". ucfirst(level::getNombre($experiencia->getNivelMinimo()))."</h3>";
+			echo "<h3> Nivel minimo requerido: ". ucfirst(level::getLevelByNumero($experiencia->getNivelMinimo())->getNombre())."</h3>";
 			echo "<h2>" . $experiencia->getPrecio() . " € </h2>"; 
 			echo "<h3>Esta experiencia otorga: "  . $experiencia->getPuntos() . " Puntos </h3>";
-			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])>=$experiencia->getNivelMinimo())){ 
+			if (isset($_SESSION["login"]) && ($_SESSION["login"]===true) && (level::getLevel($_SESSION["puntos"])->getNumero()>=$experiencia->getNivelMinimo())){ 
 				?>
 				<form method="post">
 				<input type="submit" name="submit" value="Comprar"id="botoncompra">

@@ -43,7 +43,8 @@
             $experiencia->setDescripcion($_POST['descripcion']);
         }
         if(!empty($_POST['nivelminimo'])){
-            $experiencia->setNivelMinimo(level::getNumero($_POST['nivelminimo']));
+            $level = level::getLevelByNombre($_POST['nivelminimo']);
+            $experiencia->setNivelMinimo($level->getNumero());
         }
         if(!empty($_POST['puntos'])){
             $experiencia->setPuntos($_POST['puntos']);
