@@ -44,7 +44,8 @@
             $email = $_POST['email'];
             $contr = $_POST['contr'];
             $puntos = $_POST['puntos'];
-            $rol = rol::getNumero($_POST['rol']);
+            $auxrol = rol::getRolByNombre($_POST['rol']);
+            $rol=$auxrol->getNumero();
             $ret = Usuario::crea($nombre,$contr,$email,$rol,$puntos);
             if($ret==false){
                 $mensaje1 = "El usuario ya existe";

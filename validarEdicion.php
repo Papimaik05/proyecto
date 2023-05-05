@@ -74,7 +74,8 @@
             $email=$usuario->getEmail();
         }
         if(!empty($_POST['rol'])){
-            $rol=rol::getNumero($_POST['rol']);
+            $auxrol=rol::getRolByNombre($_POST['rol']);
+            $rol=$auxrol->getNumero();
         }
         else{
             $rol=$usuario->getRol();
