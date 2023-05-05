@@ -20,7 +20,7 @@
                 </div>
                 <div class="form_respuesta">
                     <?php
-                    echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
+                    echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="anadirComentario.php?id='.$comentario->getId().'">';
                         ?>
                         <h3>Responder al comentario:</h3>
                         <label for="titulo">Titulo:</label>
