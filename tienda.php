@@ -19,7 +19,7 @@ require_once './includes/config.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <link href= "./css/style.css?id=1" rel="stylesheet" type="text/css">
+    <link href= "./css/style.css" rel="stylesheet" type="text/css">
     <title>Tienda</title>
 </head>
 <body>

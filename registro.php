@@ -19,7 +19,7 @@ require ('./includes/comun/cabecera.php');
         <h1>Registro</h1>
         <article>  
         <form action="procesarRegistro.php" method="post">
-            <fieldset>
+            <fieldset id="reg">
                     <div><label>Usuario:</label> <input required type="text" name="nombre" id="campoUser" />
 						<span id="validUser"></span> </div>
 					<div><label>Correo:</label> <input required type="email" name="email" id="campoEmail" />
