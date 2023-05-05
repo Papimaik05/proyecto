@@ -3,6 +3,7 @@ function mostrarFormRespuesta(id){
     formulario.style.display = "block";
 }
 function darMeGusta(idComentario) {
+    boton.classList.add("like-clicked");
     var botonMeGusta = document.getElementById("boton-me-gusta-" + idComentario);
     botonMeGusta.disabled = true;
     var xhr = new XMLHttpRequest();
@@ -17,10 +18,4 @@ function darMeGusta(idComentario) {
     };
     
     xhr.send("idComentario=" + idComentario);
-}
-
-let imgchange = document.getElementById("like-btn");
-let siLike = document.getElementById("like-btn");
-siLike.onclick = function() {
-    imgchange.src = "./img/like.jpg";
 }

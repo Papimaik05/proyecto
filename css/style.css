@@ -896,13 +896,18 @@ legend {
 }
 
 #like-btn {
-  background-color: blue;
+  background-color: green;
   border: solid white;
   text-decoration: none;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+#like-btn.like-clicked {
+  background-color: red;
+  color: white;
 }
 
 .comment-text{
