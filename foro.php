@@ -7,13 +7,12 @@
         ?>  
             <div class="hilo">
                 <div class="comment-box">
-                    <p class="user-name"><?php echo $comentario->getUsuario();
-                    echo '<h3><'. $comentario->getUsuario() .'</h3>';?></p>
+                    <p class="user-name"><?php echo $comentario->getUsuario();?></p>
                     <h3 class="comment-title"><?php echo $comentario->getTitulo()?></h3>
                     <p class="comment-text"><?php echo $comentario->getContenido()?></p>
                     <p class="created-at"><?php echo $comentario->getFecha()?></p>
                     <button onclick="mostrarFormRespuesta('<?php echo $comentario->getId(); ?>')">Responder</button>
-                    <?php echo '<button id="boton-me-gusta-'.$comentario->getId().'" id="like-btn" onclick="darMeGusta('.$comentario->getId().')">Me gusta</button>'?>
+                    <?php echo '<button id="boton-me-gusta-'.$comentario->getId().'" class="like-btn" onclick="darMeGusta('.$comentario->getId().')">Me gusta</button>'?>
                     <div class="contador-me-gusta">
                         <?php echo '<p id="contador-me-gusta-'.$comentario->getId().'">'.$comentario->getMeGusta().' me gusta</p>'?>
                     </div>
@@ -24,13 +23,13 @@
                         ?>
                         <h3>Responder al comentario:</h3>
                         <label for="titulo">Titulo:</label>
-                        <input type="text" id="titulo" name="titulo" required>
+                        <input type="text" class="titulo" name="titulo" required>
                         <br>
                         <label for="contenido">Comentario:</label>
                         <br>
-                        <textarea id="contenido" name="contenido" required></textarea>
+                        <textarea class="contenido" name="contenido" required></textarea>
                         <br><br>
-                        <button type="submit" id="aux_padbot">Enviar</button>
+                        <button type="submit" class="aux_padbot">Enviar</button>
                     </form>
                 </div>
                 <span class="like-count"><?php $comentario->getMeGusta()?></span>

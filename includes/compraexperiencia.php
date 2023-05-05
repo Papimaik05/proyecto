@@ -7,7 +7,7 @@ class compraexperiencia{
         , $conn->real_escape_string($username)
         ,$id);
 
-        if ( $conn->query($query) ) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         } 
 
@@ -17,7 +17,7 @@ class compraexperiencia{
         , $puntos
         ,$conn->real_escape_string($username));
 
-        if ( $conn->query($query) ) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
         

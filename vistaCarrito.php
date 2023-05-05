@@ -17,7 +17,7 @@ function eliminar($cantidades, $tipo){
 			foreach($carrito as $index => $producto){
 				if($producto['id'] == $id && $producto['tipo'] == $tipo){
 					$i=$index;
-					$units=$_POST["unidades_a_borrar"];
+					$units=$_POST["unidades_a_borrar_".$id.""];
 				}
 			}
 			if (isset($carrito[$i])) {
@@ -122,8 +122,8 @@ function eliminar($cantidades, $tipo){
 				echo "<form method='post' action='vistaCarrito.php'>";
 				echo "<input type='hidden' name='id' value='".$id."'>";
 				echo '<h3>*Seleccione las unidades con las que se desea quedar, por ejemplo, con 0 unidades, se elimina el producto</h3>';
-				echo '<label for="del_unidades">Unidades:</label>';
-                echo '<input type="number" name="unidades_a_borrar" id="del_unidades" min="0" max='.$unidades.'><br><br>';
+				echo '<label for="del_unidades_'.$id.'">Unidades:</label>';
+                echo '<input type="number" name="unidades_a_borrar_'.$id.'" id="del_unidades_'.$id.'" min="0" max='.$unidades.'><br><br>';
 				echo "<input type='submit' name='borrar_".$id."_producto' value='Actualizar'>";
 				$total=$total+$producto->getPrecio()*$unidades;
 				
@@ -139,7 +139,7 @@ function eliminar($cantidades, $tipo){
 				<?php 
 					$experiencia = Experiencia::buscaPorId($id);
 					echo  "<h1>" . $experiencia->getNombre() . "</h1>";
-					echo '<img src="' . $experiencia->getImagen() . '" id="imgVistaProducto" alt="producto">';
+					echo '<img src="' . $experiencia->getImagen() . '" class="exp_carrito" alt="producto">';
 					echo  "<h2>" . $experiencia->getPrecio() . " € </h2>";
 					echo  "<h2>Esta experiencia otorga : " . $experiencia->getPuntos() . " Puntos </h2>";
 					echo "<form method='post' action='vistaCarrito.php'>";

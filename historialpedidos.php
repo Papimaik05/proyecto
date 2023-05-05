@@ -39,7 +39,7 @@ require_once './includes/Experiencia.php';
                                 <div class="recuadro-pedido">
                                     <?php
                                         $producto=Producto::buscaPorId($pedido->getIdProducto());
-                                        echo "<img src='". $producto->getImagen() ."' alt = 'imgProducto' id='imagen_historial'>";
+                                        echo "<img src='". $producto->getImagen() ."' alt = 'imgProducto' class='imagen_historial'>";
                                         echo "<h3>" . $producto->getNombre() ."</h3>";
                                         echo "<h3>Unidades:" . $pedido->getUnidades() ."</h3>";
                                         echo "<h3>Total: " . $pedido->getUnidades()*$producto->getPrecio() ." euros</h3>";
@@ -57,7 +57,7 @@ require_once './includes/Experiencia.php';
                                 <div class="recuadro-pedido">
                                     <?php
                                         $experiencia=Experiencia::buscaPorId($pedido->getIdProducto());
-                                        echo "<img src='". $experiencia->getImagen() ."' alt = 'imgExperiencia' id='imagen_historial'>";
+                                        echo "<img src='". $experiencia->getImagen() ."' alt = 'imgExperiencia' class='imagen_historial'>";
                                         echo "<h3>" . $experiencia->getNombre() ."</h3>";
                                         echo "<h3>Total: " . $experiencia->getPrecio() ." euros</h3>";
                                     ?>

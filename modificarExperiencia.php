@@ -19,7 +19,6 @@
         <main>
                 <div class="container">
                     <div class="exp">
-                        <ul class="modificarExp">
                         
                             <?php
                                 $experiencias = Experiencia::cargarExperiencias();
@@ -31,10 +30,10 @@
                                 }
                                 else{
                                     echo '<form action="validarEdicion.php?es=experiencia" method="post"  enctype="multipart/form-data">';
-                                
                                     echo '<label>Selecciona la experiencia que quieres modificar:</label>';
+                                    echo '<ul class="modificarExp">';
                                     
-                                        foreach($experiencias as $e){
+                                    foreach($experiencias as $e){
                                             $id = $e->getId();
                                     $nombre = $e->getNombre();
                                     $descripcion = $e->getDescripcion();
