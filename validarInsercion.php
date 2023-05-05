@@ -38,10 +38,6 @@
             $mensaje3 = "ERROR: Las contraseñas no coinciden";
             $error_pass=false; 
         }
-        if( !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-            $mensaje4="ERROR: El email no es valido";
-            $error_pass=false;
-        }
         if($error_pass){
             $nombre = $_POST['nombre'];
             $email = $_POST['email'];

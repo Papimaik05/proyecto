@@ -39,8 +39,7 @@ class level{
         $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("SELECT nombre FROM nivel  ");
         $rs = $conn->query($query);
-        if(mysqli_num_rows($rs) > 0){
-           
+        if(mysqli_num_rows($rs) > 0){          
             
             return $rs;
         }

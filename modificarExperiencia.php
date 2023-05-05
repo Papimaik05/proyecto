@@ -53,7 +53,7 @@
                                     echo '<label for="descripcion">Descripción:</label>';
                                     echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';		
                                     echo '<label for="precio">Precio:</label>';
-                                    echo '<input type="number" name="precio" id="precio"><br><br>';
+                                    echo '<input type="number"  inputmode="decimal" name="precio" id="precio" step="0.01" min="0"><br><br>';
                                     echo '<label for="nivelminimo">Nivel mínimo:</label>';
                                     echo '<select name ="nivelminimo" id="nivelminimo">';
                                     
