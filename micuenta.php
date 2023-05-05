@@ -74,7 +74,9 @@ require_once './includes/level.php';
                     <form action="procesarDatos.php" method="post">
                     <fieldset>
                         <legend><b>Actualizar Email</b></legend>
-                        Email :<br><input type="email" name="email" > 
+                        <br>
+                        <div><label>Correo:</label> <input required type="email" name="email" id="campoEmail" />
+						<span id="validEmail"></span></div>	
                         <br><br>
                         <button type="submit" name="emailnuevo">Actualizar email</button>  
                     </fieldset>
@@ -101,7 +103,9 @@ require_once './includes/level.php';
             </main> 
             <?php
                 require('./includes/comun/pie.php');
-            ?>        
+            ?>   
+            <script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+            <script type="text/javascript" src="js/registro.js"></script>      
             
     </body>
 </html>
