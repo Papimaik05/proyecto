@@ -40,13 +40,9 @@ class level{
         $query = sprintf("SELECT nombre FROM nivel  ");
         $rs = $conn->query($query);
         if(mysqli_num_rows($rs) > 0){
-            $i = 0;
-            while($fila = $rs->fetch_assoc()){
-                $levels[$i] = $fila["nombre"];
-                $i++;
-            }
-            $rs->free();
-            return $levels;
+           
+            
+            return $rs;
         }
        return false;
     }
