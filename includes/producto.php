@@ -46,7 +46,7 @@ class Producto {
     {
         $result = false;
         $conn = Aplicacion::getInstance()->getConexionBd();
-        $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%d', '%d', '%s')"
+        $query=sprintf("INSERT INTO producto(nombre,descripcion, unidades, precio, imagen) VALUES ('%s', '%s', '%d', '%f', '%s')"
             , $conn->real_escape_string($producto->nombre)
             , $conn->real_escape_string($producto->descripcion)
             , $producto->unidades
