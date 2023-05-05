@@ -85,8 +85,14 @@
             $puntos=$usuario->getPuntos();
         }
         if( !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $mensaje="ERROR: El email no es valido";
-            $sinerrores=false;
+
+            if(correoValidoComplu($email) ||correoValidoGmail($email)||correoValidoMarinos($email)){
+                $sinerrores=true;
+            }
+            else{
+                $mensaje="ERROR: El email debe acabar en @ucm.es // @gmail.com // @marinos.com";
+                $sinerrores=false;
+            }
         }
         if($sinerrores){
             $contr=$usuario->getContr();
@@ -105,4 +111,37 @@
     else if($_GET['es']=="usuario"){
         header("Location:modificarUsuario.php?mensaje=$mensaje");
     }
+
+    function correoValidoComplu($correo) {
+        $dominio = "@ucm.es";
+        $index = strpos($correo, $dominio);
+        if ($index === -1) {
+          return false; // el dominio no está presente en el correo
+        }
+        $subcadena =substr($correo, 0, $index); // extrae la subcadena antes del dominio
+        return strlen($subcadena) > 0; // devuelve true si la subcadena tiene longitud mayor que cero
+    }
+    
+    function correoValidoGmail($correo) {
+        $dominio = "@gmail.com";
+        $index = strpos($correo, $dominio);
+        if ($index === -1) {
+          return false; // el dominio no está presente en el correo
+        }
+        $subcadena = substr($correo, 0, $index); // extrae la subcadena antes del dominio
+        return strlen($subcadena) > 0; // devuelve true si la subcadena tiene longitud mayor que cero
+    }
+    
+    function correoValidoMarinos($correo) {
+        $dominio = "@marinos.com";
+        $index = strpos($correo, $dominio);
+        if ($index === -1) {
+          return false; // el dominio no está presente en el correo
+        }
+        $subcadena = substr($correo, 0, $index); // extrae la subcadena antes del dominio
+        return strlen($subcadena) > 0; // devuelve true si la subcadena tiene longitud mayor que cero
+      }
+
+    
+
 ?>
