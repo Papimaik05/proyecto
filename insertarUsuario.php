@@ -25,29 +25,25 @@ require ('./includes/comun/cabecera.php');
 		<article>
 			<form action="validarInsercion.php?esUs=true" method="POST">
 			<fieldset>
-				<legend>Datos del producto </legend>
-				<label for="nombre">Nombre:</label>
-				<input type="text" name="nombre" id="nombre"><br><br>
-                <label for="email">Email:</label>
-			    <input type="text" name="email" id="email"><br><br>
-                <label for="contr">Contraseña:</label>
-				<input type="password" name="contr" id="contr"><br><br>
-                <label for="contr2">Repita Contraseña:</label>
-				<input type="password" name="contr2" id="contr2"><br><br>
-                              
-                <label for="rol">Rol:</label>
-                <select name ="rol" id="rol">
-                <?php
-                    $result=rol::getAllRols();
-                    while($row=mysqli_fetch_object($result)){
-                    echo "<option>$row->nombre</option>";
-                    }
-                ?>
-                </select> <br><br>
-
-                <label for="puntos">Puntos:</label>
-				<input type="number" name="puntos" id="puntos" min="0"><br><br>
-                <input type="submit" value="Insertar Usuario">
+                    <legend>Datos del usuario</legend>
+                    <div><label>Usuario:</label> <input required type="text" name="nombre" id="campoUser" />
+						<span id="validUser"></span> </div>
+					<div><label>Correo:</label> <input required type="email" name="email" id="campoEmail" />
+						<span id="validEmail"></span></div>	
+					<div><label>Contraseña:</label> <input required type="password" name="contr" /><br /></div>
+                    <div><label>Repita Contraseña:</label> <input required type="password" name="contr2" /><br /></div>                        
+                    <label for="rol">Rol:</label>
+                    <select name ="rol" id="rol">
+                    <?php
+                        $result=rol::getAllRols();
+                        while($row=mysqli_fetch_object($result)){
+                        echo "<option>$row->nombre</option>";
+                        }
+                    ?>
+                    </select> <br><br>
+                    <label for="puntos">Puntos:</label>
+                    <input type="number" name="puntos" id="puntos" min="0"><br><br>
+                    <input type="submit" value="Insertar Usuario">
 			</fieldset>
 			<br><br><br>   
 			</form>
@@ -57,6 +53,8 @@ require ('./includes/comun/cabecera.php');
 </main> 
 <?php
     require('./includes/comun/pie.php');
-?>            
+?>
+<script type="text/javascript" src="js/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="js/registro.js"></script>            
 </body>
 </html>
