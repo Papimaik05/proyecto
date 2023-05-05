@@ -25,10 +25,6 @@
             <p>Copyright 2023©</p>
             <p>Todos los derechos reservados</p>
         </div>
-
-        <div id="sobre-nosotros">
-            <p><a id="link" href="miembros.php">Sobre nosotros</a></p>    
-        </div>
     </div>
 </div>
 </footer>

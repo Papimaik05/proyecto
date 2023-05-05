@@ -43,7 +43,7 @@ require_once './includes/config.php';
                 ?>
                     <a class="item" <?php echo "href='vistaExperiencia.php?id=" . $experiencia->getId() . "'"; ?>>
                         <?php  
-                        echo "<img src='". $experiencia->getImagen() ."' alt='imgProducto' id='img_exp'>";
+                        echo "<img src='". $experiencia->getImagen() ."' alt='imgProducto' class='img_exp'>";
                         ?>
                         <div class="texto">
                             <?php  

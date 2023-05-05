@@ -116,13 +116,13 @@ function eliminar($cantidades, $tipo){
 			
 				$producto = Producto::buscaPorId($id);
 				echo  "<h1>" . $producto->getNombre() . "</h1>";
-				echo '<img src="' . $producto->getImagen() . '" id="imgVistaProducto" alt="producto">';
+				echo '<img src="' . $producto->getImagen() . '" class="imgVistaProducto" alt="producto">';
 				echo  "<h2>" . $producto->getPrecio() . " € </h2>";
 				echo  "<h2>" . $unidades . " Unidades </h2>";
 				echo "<form method='post' action='vistaCarrito.php'>";
 				echo "<input type='hidden' name='id' value='".$id."'>";
 				echo '<h3>*Seleccione las unidades con las que se desea quedar, por ejemplo, con 0 unidades, se elimina el producto</h3>';
-				echo '<label for="puntos">Unidades:</label>';
+				echo '<label for="del_unidades">Unidades:</label>';
                 echo '<input type="number" name="unidades_a_borrar" id="del_unidades" min="0" max='.$unidades.'><br><br>';
 				echo "<input type='submit' name='borrar_".$id."_producto' value='Actualizar'>";
 				$total=$total+$producto->getPrecio()*$unidades;

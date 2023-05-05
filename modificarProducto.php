@@ -19,7 +19,7 @@
             <main>
             <div class="container">
                 <div class="productos">
-                    <ul class="modificarProductos">
+
 
                         <?php
                             $productos = Producto::cargarProductos();
@@ -33,7 +33,7 @@
                             else{
                                 echo '<form action="validarEdicion.php?es=producto" method="post" enctype="multipart/form-data">';
                                 echo '<label>Selecciona el producto que quieres modificar:</label>';
-                            
+                                echo '<ul class="modificarProductos">';
                                 foreach($productos as $p){
                                     $id = $p->getId();
                                     $nombre = $p->getNombre();

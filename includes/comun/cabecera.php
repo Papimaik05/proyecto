@@ -58,7 +58,6 @@ function reconocerUsuario() {
             if (isset($_SESSION["login"]) && ($_SESSION["login"]===true)){
               ?>
               <li><a href="vistaCarrito.php">Carrito</a></li>
-              <br>
                 <?php
                 if($_SESSION["rol"] == "0"||$_SESSION["rol"] == "2"){
                   ?>
@@ -70,18 +69,17 @@ function reconocerUsuario() {
                       <li class="list__inside">
                       <a href="gestorProductos.php" class="nav__link nav__link--inside">Gestor Contenido</a>
                       </li>
-                      <br>
+                      
                       <li class="list__inside">
                       <a href="gestorNoticias.php" class="nav__link nav__link--inside">Gestor Noticias</a>
                       </li>
-                      <br>
+                      
                       <?php
                           if($_SESSION["rol"] == "0"){
                           ?>
                             <li class="list__inside">
                             <a  href="gestorUsuarios.php" class="nav__link nav__link--inside">Gestor Usuarios</a>
                             </li>
-                            <br>
                             <li class="list__inside">
                             <a  href="moderador.php" class="nav__link nav__link--inside">Gestor Moderador</a>
                             </li>
@@ -103,7 +101,7 @@ function reconocerUsuario() {
                       <li class="list__inside">
                       <a href="moderador.php" class="nav__link nav__link--inside">Gestor Moderador</a>
                       </li>
-                      <br>
+                      
                     </ul>
                   </li>
                 </ul>
