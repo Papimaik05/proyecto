@@ -25,7 +25,7 @@ $(document).ready(function() {
 		 	validar.innerHTML="&#x26a0";
 		 	$("#validEmail").show();
 			campo[0].setCustomValidity(
-		 		"El correo debe ser válido y acabar por @ucm.es");
+		 		"El correo debe ser válido y acabar por @ucm.es//@gmail.com//@marinos.com");
 		 }
 	});
 
