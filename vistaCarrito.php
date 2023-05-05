@@ -4,6 +4,7 @@ require_once __DIR__.'/includes/Producto.php';
 require_once __DIR__.'/includes/Experiencia.php';
 require_once './includes/compraproducto.php';
 require_once './includes/compraexperiencia.php';
+require_once './includes/level.php';
 ?>
 <?php
 function eliminar($cantidades, $tipo){
@@ -62,7 +63,7 @@ function eliminar($cantidades, $tipo){
 						$auxpuntos = $experiencia->getPuntos();
 						compraexperiencia::compraExp($username,$carrito['id'],$auxpuntos);
 						$_SESSION["puntos"]+=$auxpuntos;					
-						$_SESSION["level"]=level::getNombre(level::getLevel($_SESSION["puntos"]));
+						$_SESSION["level"]=level::getLevel($_SESSION["puntos"])->getNombre();
 					}
 				
 				}
@@ -151,6 +152,7 @@ function eliminar($cantidades, $tipo){
 			<?php
 				} else {
 				echo '<h2>El carrito está vacío</h2>';
+				echo '<img src="./img/carrito_vacio.gif" alt="carrito vacio" id="imgFelicitaciones">';
 				}
 
 

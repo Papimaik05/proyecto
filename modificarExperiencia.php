@@ -57,9 +57,9 @@
                                     echo '<label for="nivelminimo">Nivel mínimo:</label>';
                                     echo '<select name ="nivelminimo" id="nivelminimo">';
                                     
-                                    $result=level::getAllLevels();
-                                    while($row=mysqli_fetch_object($result)){
-                                        echo "<option value=$nivelminimo>$row->nombre</option>";
+                                    $levels=level::getAllLevels();
+                                    foreach($levels as $level){
+                                        echo "<option value=$nivelminimo>".$level->getNombre()."</option>";
                                     }
                                     echo'</select> <br><br>';
                                     echo '<label for="puntos">Puntos:</label>';

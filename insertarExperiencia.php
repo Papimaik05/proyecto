@@ -34,9 +34,10 @@ require_once './includes/level.php';
 								<label for="nivelminimo">Nivel mínimo:</label>
 								<select name ="nivelminimo" id="nivelminimo"> 
 									<?php
-										$result=level::getAllLevels();
-										while($row=mysqli_fetch_object($result)){
-											echo "<option>$row->nombre</option>";
+										$levels=level::getAllLevels();
+										foreach($levels as $level){
+											$nombre = $level->getNombre();
+											echo "<option>$nombre</option>";
 										}
 									?>
 								</select>

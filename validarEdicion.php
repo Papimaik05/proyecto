@@ -43,7 +43,8 @@
             $experiencia->setDescripcion($_POST['descripcion']);
         }
         if(!empty($_POST['nivelminimo'])){
-            $experiencia->setNivelMinimo(level::getNumero($_POST['nivelminimo']));
+            $level = level::getLevelByNombre($_POST['nivelminimo']);
+            $experiencia->setNivelMinimo($level->getNumero());
         }
         if(!empty($_POST['puntos'])){
             $experiencia->setPuntos($_POST['puntos']);
@@ -84,15 +85,12 @@
         else{
             $puntos=$usuario->getPuntos();
         }
-        if( !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-            if(correoValidoComplu($email) ||correoValidoGmail($email)||correoValidoMarinos($email)){
+        if((correoValidoComplu($email) ||correoValidoGmail($email)||correoValidoMarinos($email)) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $sinerrores=true;
-            }
-            else{
-                $mensaje="ERROR: El email debe acabar en @ucm.es // @gmail.com // @marinos.com";
-                $sinerrores=false;
-            }
+        }
+        else{
+            $mensaje="ERROR: El email debe acabar en @ucm.es // @gmail.com // @marinos.com";
+            $sinerrores=false;
         }
         if($sinerrores){
             $contr=$usuario->getContr();

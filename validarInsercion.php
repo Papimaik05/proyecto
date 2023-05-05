@@ -27,7 +27,8 @@
         $carpeta_destino=$_SERVER['DOCUMENT_ROOT'].'/proyecto/img/';
         move_uploaded_file($_FILES['imagen']['tmp_name'], $carpeta_destino . $nombre_img);
         $imagen = "./img/".$nombre_img;
-        $nivelminimo = level::getNumero($_POST['nivelminimo']);
+        $level = level::getLevelByNombre($_POST['nivelminimo']);
+        $nivelminimo = $level->getNumero();
         $ret = Experiencia::crea($nombre,$descripcion,$precio,$nivelminimo,$puntos,$imagen);
     }else if(isset($_POST["nombre"],$_POST["email"],$_POST["contr"],$_POST["contr2"],$_POST["rol"],$_POST["puntos"])&&$_POST["nombre"]!=''&&$_POST["email"]!=''&&$_POST["contr"]!=''&&$_POST["contr2"]!=''&&$_POST["rol"]!=''&&$_POST["puntos"]!=''){
         if ( mb_strlen($_POST["contr"]) < 3 ) {

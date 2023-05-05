@@ -35,17 +35,16 @@ require_once './includes/level.php';
                         </li>
                         <li class="dato">
                             <?php 
-                            $nivel = ucfirst($_SESSION['level']);
-                            $puntos = $_SESSION['puntos'] - level::getMinPuntos($nivel);
-                            $maximo = level::getMaxPuntos($nivel);
-                            $porcentaje = ($puntos/($maximo - level::getMinPuntos($nivel))) * 100;
-                            $level=level::getLevel($_SESSION["puntos"]);
+                            $nivel = level::getLevelByNombre(ucfirst($_SESSION['level']));
+                            $puntos = $_SESSION['puntos'] - $nivel->getMinPuntos();
+                            $maximo = $nivel->getMaxPuntos($nivel);
+                            $porcentaje = ($puntos/($maximo - $nivel->getMinPuntos())) * 100;
                             ?>
                             <span class="dato-titulo">Puntos:&nbsp;</span>
                             <div class="barra">
                                 <div class="nivel" style="width: 
                                 <?php 
-                                    if($level==level::poseidon){
+                                    if($nivel->getNumero()==level::poseidon){
                                         $porcentaje=100;
                                         echo $porcentaje;
                                     }
@@ -58,7 +57,7 @@ require_once './includes/level.php';
                         </li>
                     </ul>
                     <?php 
-                        if($level==level::poseidon){
+                        if($nivel->getNumero()==level::poseidon){
                             echo "<h3>Felicidades, tienes el nivel máximo!</h3>";
                         }
                         else{

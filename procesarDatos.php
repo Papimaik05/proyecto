@@ -2,6 +2,7 @@
 
 require_once './includes/config.php';
 require_once './includes/Usuario.php';
+require_once './includes/level.php';
 
 $formEnviado1 = isset($_POST['emailnuevo']);
 $formEnviado2 = isset($_POST['contrnuevo']);
@@ -75,7 +76,8 @@ require ('./includes/comun/cabecera.php');
             $_SESSION['rol'] = $rol;
             $_SESSION['email'] = $email;
             $_SESSION['contr'] = $password;
-            $_SESSION['level'] = level::getNombre(level::getLevel($_SESSION["puntos"]));
+            $level = level::getLevel($_SESSION["puntos"]);
+            $_SESSION['level'] = $level->getNombre();
             $_SESSION['carrito'] = array();
             header('Location: micuenta.php');
             }
