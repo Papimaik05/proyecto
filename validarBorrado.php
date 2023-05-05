@@ -1,5 +1,5 @@
 <?php
-    require_once './includes/producto.php';
+    require_once './includes/Producto.php';
     require_once './includes/Experiencia.php';   
     require_once './includes/Usuario.php'; 
     require_once './includes/Noticia.php';  
