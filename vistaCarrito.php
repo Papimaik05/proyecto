@@ -12,14 +12,22 @@ function eliminar($cantidades, $tipo){
 
 		if(isset($_POST['borrar_'.$id.'_'.$tipo])){
 			$i=0;
+			$units=0;
 			$carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : array();
 			foreach($carrito as $index => $producto){
 				if($producto['id'] == $id && $producto['tipo'] == $tipo){
 					$i=$index;
+					$units=$_POST["unidades_a_borrar"];
 				}
 			}
 			if (isset($carrito[$i])) {
-				unset($carrito[$i]);
+				if($units==0){
+					unset($carrito[$i]);
+				}
+				else{
+					$carrito[$i]['unidades']=$units;
+				}
+
 			}
 			$_SESSION['carrito'] = $carrito;
 			header("Location: vistaCarrito.php");
@@ -113,7 +121,10 @@ function eliminar($cantidades, $tipo){
 				echo  "<h2>" . $unidades . " Unidades </h2>";
 				echo "<form method='post' action='vistaCarrito.php'>";
 				echo "<input type='hidden' name='id' value='".$id."'>";
-				echo "<input type='submit' name='borrar_".$id."_producto' value='Eliminar'>";;
+				echo '<h3>*Seleccione las unidades con las que se desea quedar, por ejemplo, con 0 unidades, se elimina el producto</h3>';
+				echo '<label for="puntos">Unidades:</label>';
+                echo '<input type="number" name="unidades_a_borrar" id="del_unidades" min="0" max='.$unidades.'><br><br>';
+				echo "<input type='submit' name='borrar_".$id."_producto' value='Actualizar'>";
 				$total=$total+$producto->getPrecio()*$unidades;
 				
 			?>
