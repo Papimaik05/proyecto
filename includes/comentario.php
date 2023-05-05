@@ -107,11 +107,9 @@ public static function buscaPorId($idComentario){
             , $comentario->fecha_de_creacion
             , $comentario->meGusta
         );
-        $rs=$conn->query($query);
-        if ( $rs ) {
+        if ( $conn->query($query) ) {
             $comentario->id = $conn->insert_id;
             $result=true;
-            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -138,12 +136,10 @@ public static function buscaPorId($idComentario){
         $query = sprintf("DELETE FROM comentario WHERE id = '%d'"
             , $idComentario
         );
-        $rs=$conn->query($query);
-        if ( !$rs ) {
+        if ( ! $conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
-        $rs->free();
         return true;
     }
 
@@ -172,13 +168,11 @@ public static function buscaPorId($idComentario){
         $this->meGusta += 1;
         $conn = Aplicacion::getInstance()->getConexionBd();
         $query = sprintf("UPDATE comentario SET me_gusta = '%d' WHERE comentario.id = '%d'",$this->meGusta,$this->id);
-
-        $rs=$conn->query($query);
-        if (!$rs) {
+        if ( ! $conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
-        $rs->free();
+        
         return true;
     }
 }

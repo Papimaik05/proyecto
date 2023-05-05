@@ -35,8 +35,7 @@ class Usuario{
         $query = sprintf("DELETE FROM usuario WHERE username = '%s'"
             , $conn->real_escape_string($nombre)
         );
-        $rs=$conn->query($query);
-        if (!$rs) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
@@ -109,10 +108,9 @@ class Usuario{
         , $conn->real_escape_string($usuario->rol)
         , $conn->real_escape_string($usuario->puntos)
     );
-    $rs=$conn->query($query);
-        if ( $rs ) {
+
+        if ( $conn->query($query) ) {
             echo "<h2>Inserción con éxito </h2> <br>";
-            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -128,9 +126,7 @@ class Usuario{
             , $usuario->rol
             , $usuario->puntos
             , $conn->real_escape_string($usuario->username));
-
-            $rs=$conn->query($query);
-        if ( $rs ) {
+        if ( $conn->query($query) ) {
             if ( $conn->affected_rows != 1) {
                  echo "No se ha podido actualizar el usuario: " . $usuario->username;
                 exit();
@@ -139,7 +135,7 @@ class Usuario{
             echo "Error al actualizar en la BD: (" . $conn->errno . ") " . utf8_encode($conn->error);
             exit();
         }
-        $rs->free();
+        
         return $usuario;
     }
 

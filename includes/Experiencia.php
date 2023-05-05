@@ -55,11 +55,9 @@ class Experiencia {
             , $experiencia->puntos
             ,$conn->real_escape_string($experiencia->urlImagen)
         );
-        $rs=$conn->query($query);
-        if ($rs) {
+        if ( $conn->query($query) ) {
             $experiencia->id = $conn->insert_id;
             $result=true;
-            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -82,9 +80,7 @@ class Experiencia {
             , $conn->real_escape_string($experiencia->urlImagen)
             , $experiencia->id
         );
-        $rs=$conn->query($query);
-        if ($rs) {
-            $rs->free();
+        if ( $conn->query($query) ) {
             $result=true;
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
@@ -137,12 +133,10 @@ class Experiencia {
         $query = sprintf("DELETE FROM experiencias WHERE id = '%d'"
             , $idExperiencia
         );
-        $rs=$conn->query($query);
-        if (!$rs) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
-        $rs->free();
         return true;
     }
 

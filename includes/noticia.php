@@ -87,11 +87,9 @@ public static function buscaPorId($idNoticia){
             , $noticia->fecha            
             , $conn->real_escape_string($noticia->imagen)
         );
-        $rs=$conn->query($query);
-        if ( $rs) {
+        if ( $conn->query($query) ) {
             $noticia->id = $conn->insert_id;
             $result=true;
-            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -122,12 +120,10 @@ public static function buscaPorId($idNoticia){
         $query = sprintf("DELETE FROM noticia WHERE id = '%d'"
             , $idNoticia
         );
-        $rs=$conn->query($query);
-        if (!$rs) {
+        if ( ! $conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
-        $rs->free();
         return true;
     }
 
