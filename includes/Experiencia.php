@@ -47,7 +47,7 @@ class Experiencia {
        
         $conn=Aplicacion::getInstance()->getConexionBd();
         
-        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%d', '%d', '%d', '%s')"
+        $query=sprintf("INSERT INTO experiencias(nombre,descripcion,precio,nivelminimo,puntos, imagen) VALUES ('%s', '%s', '%f', '%d', '%d', '%s')"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $experiencia->precio
@@ -71,7 +71,7 @@ class Experiencia {
 
 
 
-        $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%d',nivelminimo='%d',puntos='%d', imagen='%s' WHERE P.id='%d'"
+        $query=sprintf("UPDATE experiencias P SET nombre = '%s', descripcion='%s',precio='%f',nivelminimo='%d',puntos='%d', imagen='%s' WHERE P.id='%d'"
             , $conn->real_escape_string($experiencia->nombre)
             , $conn->real_escape_string($experiencia->descripcion)
             , $experiencia->precio

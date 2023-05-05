@@ -30,7 +30,7 @@ require_once './includes/level.php';
 								<label for="descripcion">Descripción:</label>
 								<textarea name="descripcion" id="descripcion"></textarea><br><br>		    
 								<label for="precio">Precio:</label>
-								<input type="number" name="precio" id="precio"><br><br>
+								<input type="number"  inputmode="decimal" name="precio" id="precio" step="0.01" min="0"><br><br>
 								<label for="nivelminimo">Nivel mínimo:</label>
 								<select name ="nivelminimo" id="nivelminimo"> 
 									<?php

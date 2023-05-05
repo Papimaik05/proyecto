@@ -5,7 +5,7 @@ require_once './includes/config.php';
 
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="./css/style.css" />
+        <link rel="stylesheet" type="text/css" href="./css/style.css?id=3" />
         <title>Registro</title>
     </head>
 
@@ -19,8 +19,7 @@ require ('./includes/comun/cabecera.php');
         <h1>Registro</h1>
         <article>  
         <form action="procesarRegistro.php" method="post">
-            <fieldset>
-            <legend>Datos del usuario</legend>
+            <fieldset id="reg">
                     <div><label>Usuario:</label> <input required type="text" name="nombre" id="campoUser" />
 						<span id="validUser"></span> </div>
 					<div><label>Correo:</label> <input required type="email" name="email" id="campoEmail" />
@@ -33,7 +32,7 @@ require ('./includes/comun/cabecera.php');
                     }
                     ?>
                     <br>
-					<div><button type="submit" name="registro">Registrar</button></div>
+					<div><button type="submit" name="registro">Registrar</button></div>    
             </fieldset>
             <br>
         </form>

@@ -52,8 +52,8 @@
                                 echo '<textarea name="descripcion" id="descripcion"></textarea><br><br>';
                                 echo '<label for="unidades">Unidades:</label>';
                                 echo '<input type="number" name="unidades" id="unidades" min="0"><br><br>';
-                                echo '<label for="precio">Precio:</label>';
-                                echo '<input type="number" name="precio" id="precio" min="0"><br><br>';
+                                echo '<label for="precio">Precio:</label>';                            
+                                echo '<input type="number"  inputmode="decimal" name="precio" id="precio" step="0.01" min="0"><br><br>';
                                 echo '<label for="imagen">Selecciona una imagen:</label>';
                                 echo '<input type="file" name="imagen" id="imagen"><br><br>';
                                 echo '</fieldset>';
