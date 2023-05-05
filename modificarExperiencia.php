@@ -59,7 +59,7 @@
                                     
                                     $levels=level::getAllLevels();
                                     foreach($levels as $level){
-                                        echo "<option value=$nivelminimo>".$level->getNombre()."</option>";
+                                        echo '<option value="'.$level->getNombre().'">'.$level->getNombre().'</option>';
                                     }
                                     echo'</select> <br><br>';
                                     echo '<label for="puntos">Puntos:</label>';

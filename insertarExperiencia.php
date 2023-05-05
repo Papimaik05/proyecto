@@ -34,6 +34,7 @@ require_once './includes/level.php';
 								<label for="nivelminimo">Nivel mínimo:</label>
 								<select name ="nivelminimo" id="nivelminimo"> 
 									<?php
+										
 										$levels=level::getAllLevels();
 										foreach($levels as $level){
 											$nombre = $level->getNombre();

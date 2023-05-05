@@ -55,7 +55,7 @@ class level{
         $rs = $conn->query($query);
         if(mysqli_num_rows($rs) > 0){
             $i = 0;
-            while($fila = $resultado->fetch_assoc()){
+            while($fila = $rs->fetch_assoc()){
                 $levels[$i] = new level($fila['numero'], $fila['nombre'], $fila['minimo'], $fila['maximo']);
                 $i++;
             }
