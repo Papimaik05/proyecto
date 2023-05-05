@@ -53,9 +53,11 @@ class Producto {
             , $producto->precio
             , $conn->real_escape_string($producto->urlImagen)
         );
-        if ( $conn->query($query) ) {
+        $rs=$conn->query($query);
+        if ( $rs ) {
             $producto->id = $conn->insert_id;
             $result=true;
+            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -74,8 +76,10 @@ class Producto {
             , $conn->real_escape_string($producto->urlImagen)
             , $producto->id
         );
-        if ($conn->query($query)) {
+        $rs=$conn->query($query);
+        if ($rs) {
             $result=true;
+            $rs->free();
         } else {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
@@ -126,10 +130,12 @@ class Producto {
         $query = sprintf("DELETE FROM producto WHERE id = '%d'"
             , $idProducto
         );
-        if ( ! $conn->query($query) ) {
+        $rs=$conn->query($query);
+        if ( !$rs ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
             return false;
         }
+        $rs->free();
         return true;
     }
 
