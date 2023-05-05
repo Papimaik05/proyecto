@@ -43,9 +43,7 @@
                                     $imagen = $p->getImagen();
                                     echo "<li><input type='radio' name='producto' value='". $id ."' data-nombre='". $nombre ."' data-descripcion='". $descripcion ."' data-unidades='". $unidades ."' data-precio='". $precio ."' data-imagen='". $imagen ."'> ". $nombre ."</li>";
                                 }
-                                ?>
-                                </ul>
-                                <?php
+                                echo '</ul>';
                                 echo '<label>Ahora selecciona los valores a modificar: </label>';
                                 echo '<fieldset>';
                                 echo '<label for="nombre">Nombre:</label>';
