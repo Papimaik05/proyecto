@@ -9,7 +9,7 @@ class compraproducto{
         ,$unidadesinicio
         );
 
-        if ( $conn->query($query) ) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         } 
 
@@ -19,7 +19,7 @@ class compraproducto{
         , $unidadesfinal
         , $id);
 
-        if ( $conn->query($query) ) {
+        if (!$conn->query($query) ) {
             error_log("Error BD ({$conn->errno}): {$conn->error}");
         }
         
