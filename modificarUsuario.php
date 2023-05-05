@@ -53,11 +53,10 @@
                             echo '<label for="email">Email:</label>';
                             echo '<input type="text" name="email" id="email"><br><br>';
                             echo '<label for="rol">Rol:</label>';
-                            echo '<select name ="rol" id="rol">';
-                            
-                            $result=rol::getAllRols();
-                            while($row=mysqli_fetch_object($result)){
-                                echo "<option>$row->nombre</option>";
+                            echo '<select name ="rol" id="rol">';  
+                            $rols=rol::getAllRols();
+                            foreach($rols as $rol){
+                                echo '<option value="'.$rol->getNombre().'">'.$rol->getNombre().'</option>';
                             }
                             echo'</select> <br><br>';
                             echo '<label for="puntos">Puntos:</label>';
