@@ -19,19 +19,19 @@
                     </div>
                 </div>
                 <div class="form_respuesta">
-                <?php
-                echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
-                    ?>
-                    <h3>Responder al comentario:</h3>
-                    <label for="titulo">Titulo:</label>
-                    <input type="text" id="titulo" name="titulo" required>
-                    <br>
-                    <label for="contenido">Comentario:</label>
-                    <br>
-                    <textarea id="contenido" name="contenido" required></textarea>
-                    <br><br>
-                    <button type="submit" id="aux_padbot">Enviar</button>
-                </form>
+                    <?php
+                    echo '<form id="formRespuesta'.$comentario->getId().'" style="display:none;" method = "post" action="añadirComentario.php?id='.$comentario->getId().'">';
+                        ?>
+                        <h3>Responder al comentario:</h3>
+                        <label for="titulo">Titulo:</label>
+                        <input type="text" id="titulo" name="titulo" required>
+                        <br>
+                        <label for="contenido">Comentario:</label>
+                        <br>
+                        <textarea id="contenido" name="contenido" required></textarea>
+                        <br><br>
+                        <button type="submit" id="aux_padbot">Enviar</button>
+                    </form>
                 </div>
                 <span class="like-count"><?php $comentario->getMeGusta()?></span>
             
@@ -43,10 +43,10 @@
                     foreach($respuestas as $respuesta){
                         ?>
                         <div class="container_respuesta">
-                        <?php
-                        $nivNuevo = $nivel + 1;
-                        mostrarComentario($respuesta, $nivNuevo);
-                        ?>
+                            <?php
+                            $nivNuevo = $nivel + 1;
+                            mostrarComentario($respuesta, $nivNuevo);
+                            ?>
                         </div>
                         <?php
                     }

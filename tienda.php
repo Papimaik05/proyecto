@@ -70,22 +70,22 @@ require_once './includes/config.php';
             else{ 
                 ?>
                 <div class="catalogo">
-                <?php  
-                foreach($productos as $producto){
-                ?>
-                    <a class="item" <?php echo "href='vistaProducto.php?id=" . $producto->getId() . "'"; ?>>
-                        <?php  
-                        echo "<img src='". $producto->getImagen() ."' alt='imgProducto'>";
+                    <?php  
+                        foreach($productos as $producto){
                         ?>
-                        <div class="texto">
-                            <?php  
-                            echo "<h3>".$producto->getNombre()."</h3>";
-                            ?>
-                        </div>
-                    </a>    
-                <?php
-                }
-                ?>
+                            <a class="item" <?php echo "href='vistaProducto.php?id=" . $producto->getId() . "'"; ?>>
+                                <?php  
+                                echo "<img src='". $producto->getImagen() ."' alt='imgProducto'>";
+                                ?>
+                                <div class="texto">
+                                    <?php  
+                                    echo "<h3>".$producto->getNombre()."</h3>";
+                                    ?>
+                                </div>
+                            </a>    
+                        <?php
+                        }
+                    ?>
                 </div>    
             <?php
             }
