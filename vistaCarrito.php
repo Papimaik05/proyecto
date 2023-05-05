@@ -17,7 +17,7 @@ function eliminar($cantidades, $tipo){
 			foreach($carrito as $index => $producto){
 				if($producto['id'] == $id && $producto['tipo'] == $tipo){
 					$i=$index;
-					if($_POST["unidades_a_borrar_".$id.""]>-1){
+					if($_POST["unidades_a_borrar_".$id.""]>-1 || $tipo=='experiencia'){
 						$units=$_POST["unidades_a_borrar_".$id.""];
 					}else{
 						header("Location: vistaCarrito.php");
