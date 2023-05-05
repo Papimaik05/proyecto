@@ -19,9 +19,8 @@ function darMeGusta(idComentario) {
     xhr.send("idComentario=" + idComentario);
 }
 
-let imgchange = document.getElementById("imgchange");
-let siLike = document.getElementById("imgchange");
+let imgchange = document.getElementById("like-btn");
+let siLike = document.getElementById("like-btn");
 siLike.onclick = function() {
-
     imgchange.src = "./img/like.jpg";
 }

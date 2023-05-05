@@ -889,8 +889,8 @@ legend {
   border-color: #aaa;
 }
 
-.like-btn {
-  background-color: white;
+#like-btn {
+  background-color: blue;
   border: solid white;
   text-decoration: none;
   cursor: pointer;
