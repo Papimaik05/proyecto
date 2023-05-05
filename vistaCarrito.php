@@ -121,7 +121,7 @@ function eliminar($cantidades, $tipo){
 			
 				$producto = Producto::buscaPorId($id);
 				echo  "<h1>" . $producto->getNombre() . "</h1>";
-				echo '<img src="' . $producto->getImagen() . '" class="imgVistaProducto" alt="producto">';
+				echo '<img src="' . $producto->getImagen() . '" class="imgVistaProductoCarri" alt="producto">';
 				echo  "<h2>" . $producto->getPrecio() . " € </h2>";
 				echo  "<h2>" . $unidades . " Unidades </h2>";
 				echo "<form method='post' action='vistaCarrito.php'>";
