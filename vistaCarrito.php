@@ -151,6 +151,7 @@ function eliminar($cantidades, $tipo){
 			<?php
 				} else {
 				echo '<h2>El carrito está vacío</h2>';
+				echo '<img src="./img/carrito_vacio.gif" alt="carrito vacio" id="imgFelicitaciones">';
 				}
 
 
