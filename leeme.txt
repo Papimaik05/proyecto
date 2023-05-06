@@ -1,0 +1,15 @@
+Nuevas Funcionalidades:
+	Foro: Permite a los usuairos registrados comentar y responder a otros comentarios. Todos los usuarios y no registrados pueden dar likes a comentarios de otros usuarios.
+La figura del moderador permite eliminar mensajes que no se consideren adecuados, eliminando las respuestas de ese comentario con el.
+	Admin (gestor de usuarios): Permite añadir, eliminar y crear nuevos usuarios (solo permitido para el admin)
+	Noticias: El gestor de contenido puede subir o eliminar noticias visibles para todos los usuarios, incluso los no registrados
+
+Correccion de errores:
+En el carrito se incluyen las experiencias y se permiten disminuir las unidades de un producto
+Los formularios de modificaciones recuperan los datos y rellenan los campos
+Control de errores en los formularios y se evitan desbordamientos
+Barra de experiencia de nivel poseidon
+Nombre de las clases
+Validacion de los documentos
+Consultas de las clases level y rol
+Subida de imagenes en los formularios
